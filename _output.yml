@@ -1,0 +1,15 @@
+bookdown::gitbook:
+  split_by: section
+  css: styles.css
+  config:
+    toc:
+      before: |
+        <li><a href="./">Procedures and Guidelines</a></li>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+    download: ["pdf", "epub"]
+bookdown::pdf_book:
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: yes
+bookdown::epub_book: default
