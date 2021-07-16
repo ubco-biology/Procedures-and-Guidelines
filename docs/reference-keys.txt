@@ -16,3 +16,7 @@ data-directory-readme
 data-dictionary
 example-biol-116
 example-biol-125
+tidy-data
+wide-data
+tidy-data-1
+side-by-side-comparison

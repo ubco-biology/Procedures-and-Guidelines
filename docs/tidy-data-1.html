@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3.6 Data dictionary | Procedures and Guidelines</title>
+  <title>4.2 Tidy Data | Procedures and Guidelines</title>
   <meta name="description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3.6 Data dictionary | Procedures and Guidelines" />
+  <meta property="og:title" content="4.2 Tidy Data | Procedures and Guidelines" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3.6 Data dictionary | Procedures and Guidelines" />
+  <meta name="twitter:title" content="4.2 Tidy Data | Procedures and Guidelines" />
   
   <meta name="twitter:description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data-directory-readme.html"/>
-<link rel="next" href="example-biol-116.html"/>
+<link rel="prev" href="wide-data.html"/>
+<link rel="next" href="side-by-side-comparison.html"/>
 <script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -156,26 +156,155 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-dictionary" class="section level2" number="3.6">
-<h2><span class="header-section-number">3.6</span> Data dictionary</h2>
-<p>Lastly, we need to create a data dictionary which elaborates on how our data is stored and organized. To do this, open any markdown or text editor (ie. Typora, notepad etc), open a new file and save it to the data subfolder for your project. This time we will save the file as <code>_DATA-DICTIONARY.md</code>.</p>
-<p>A data dictionary helps others understand the meaning of each element in your datasets within the broader context of the project. Typically you will have an individual readme file for each dataset. This file should include:</p>
-<ul>
-<li>Date when the data dictionary was created and who created it</li>
-<li>Date when the data dictionary file was updated and who updated it</li>
-<li>A description of the raw data file</li>
-<li>A description of each variable for all datasets including data type, units, number of levels if categorical, and a description of variable levels where relevant</li>
-<li>When describing variables you need to provide the full names and definitions of each variable because often variables are abbreviated in datasets</li>
-</ul>
-<p>To see an example data dictionary click <a href="files/_DATA-DICTIONARY.md">here</a>.</p>
+<div id="tidy-data-1" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Tidy Data</h2>
+<p>In the previous example, our data were organized where day and quantity caught shared common columns. That is, not every variable had a dedicated column and consequently, not every variable had a value in every given cell - day did not have any cell values.</p>
+<p>Tidy data breaks this down and reserves on column per variable and one row per observation. Remember, we have three variables: site, day, and quantity caught. So let’s transform this…</p>
+<p>First, working with a collection tool where we have one table per day:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Site</th>
+<th>Day</th>
+<th>Trout_Caught</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mabel-lake</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Postill-lake</td>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>Ellison-lake</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>Site</th>
+<th>Day</th>
+<th>Trout_Caught</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mabel-lake</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Postill-lake</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>Ellison-lake</td>
+<td>2</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>Site</th>
+<th>Day</th>
+<th>Trout_Caught</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mabel-lake</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Postill-lake</td>
+<td>3</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>Ellison-lake</td>
+<td>3</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>And second, gathering this data into a single dataset, sorted by site:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Site</th>
+<th>Day</th>
+<th>Trout_Caught</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mabel-lake</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Mabel-lake</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>Mabel-lake</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Postill-lake</td>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>Postill-lake</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>Postill-lake</td>
+<td>3</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>Ellison-lake</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Ellison-lake</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>Ellison-lake</td>
+<td>3</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Now that’s tidy data!</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="data-directory-readme.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="example-biol-116.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="wide-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="side-by-side-comparison.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

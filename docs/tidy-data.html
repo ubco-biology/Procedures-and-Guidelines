@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3.6 Data dictionary | Procedures and Guidelines</title>
+  <title>Chapter 4 Tidy data | Procedures and Guidelines</title>
   <meta name="description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3.6 Data dictionary | Procedures and Guidelines" />
+  <meta property="og:title" content="Chapter 4 Tidy data | Procedures and Guidelines" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3.6 Data dictionary | Procedures and Guidelines" />
+  <meta name="twitter:title" content="Chapter 4 Tidy data | Procedures and Guidelines" />
   
   <meta name="twitter:description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data-directory-readme.html"/>
-<link rel="next" href="example-biol-116.html"/>
+<link rel="prev" href="example-biol-125.html"/>
+<link rel="next" href="wide-data.html"/>
 <script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -156,26 +156,30 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-dictionary" class="section level2" number="3.6">
-<h2><span class="header-section-number">3.6</span> Data dictionary</h2>
-<p>Lastly, we need to create a data dictionary which elaborates on how our data is stored and organized. To do this, open any markdown or text editor (ie. Typora, notepad etc), open a new file and save it to the data subfolder for your project. This time we will save the file as <code>_DATA-DICTIONARY.md</code>.</p>
-<p>A data dictionary helps others understand the meaning of each element in your datasets within the broader context of the project. Typically you will have an individual readme file for each dataset. This file should include:</p>
+<div id="tidy-data" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Tidy data</h1>
+<p>We’ve talked about file naming, directory structures, and documentation to ensure accessible, interpretable, and transparent data. Now it’s time to talk about organizing individual variables within a given file. When well organized, data values can be effectively analyzed, summarized, and visualized. When not, they can be onerous to work with and risk misinterpretation.</p>
+<p>In general, your data files should adhere to the principles of "tidy data". Tidy data is governed by the following 3 rules<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>:</p>
 <ul>
-<li>Date when the data dictionary was created and who created it</li>
-<li>Date when the data dictionary file was updated and who updated it</li>
-<li>A description of the raw data file</li>
-<li>A description of each variable for all datasets including data type, units, number of levels if categorical, and a description of variable levels where relevant</li>
-<li>When describing variables you need to provide the full names and definitions of each variable because often variables are abbreviated in datasets</li>
+<li>Each variable must have its own column.</li>
+<li>Each observation must have its own row.</li>
+<li>Each value must have its own cell.</li>
 </ul>
-<p>To see an example data dictionary click <a href="files/_DATA-DICTIONARY.md">here</a>.</p>
+<p>It’s easy to veer from these rules, as it’s often easier to collect data using data collection tools that violate these rules. When this is the case, we need to know how to re-organize our data to make it "tidy".</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>See: Wickham, H. &amp; Grolemund, G. (2017). <a href="https://r4ds.had.co.nz/tidy-data.html">Tidy Data</a>. <em>In R for Data Science</em>.<a href="tidy-data.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="data-directory-readme.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="example-biol-116.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="example-biol-125.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="wide-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
