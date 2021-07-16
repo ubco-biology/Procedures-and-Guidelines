@@ -80,7 +80,7 @@ Next we want to add some content to our <code>_README.md</code>. The purpose of 
 * A brief description of the contents of each major folder within the root folder
 * A brief description of file naming conventions used within the directory
 
-To see an example root directory readme file click [here](files/_rootREADME.md). 
+To see an example root directory readme file click [here](files/rootREADME.md). 
 
 ## Data directory readme
 
@@ -94,7 +94,7 @@ The purpose of this readme file is to provide a description of data collection m
 * A description of who was involved in data collection 
 * A brief description of where the data was collected 
 
-To see an example data directory readme file click [here](files/_dataREADME.md).
+To see an example data directory readme file click [here](files/dataREADME.md).
 
 ## Data dictionary
 
@@ -108,7 +108,7 @@ A data dictionary helps others understand the meaning of each element in your da
 * A description of each variable for all datasets including data type, units, number of levels if categorical, and a description of variable levels where relevant
 * When describing variables you need to provide the full names and definitions of each variable because often variables are abbreviated in datasets
 
-To see an example data dictionary click [here](files/_DATA-DICTIONARY.md). 
+To see an example data dictionary click [here](files/DATA-DICTIONARY.md). 
 
 ## Example BIOL 116
 
