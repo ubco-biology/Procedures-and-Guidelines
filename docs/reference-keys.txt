@@ -20,3 +20,4 @@ tidy-data
 wide-data
 tidy-data-1
 side-by-side-comparison
+glossary
