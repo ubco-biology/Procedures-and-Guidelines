@@ -3,6 +3,8 @@ bookdown::gitbook:
   css: styles.css
   config:
     toc:
+      collapse: section
+      scroll_highight: yes
       before: |
         <li><a href="./">Procedures and Guidelines</a></li>
       after: |
