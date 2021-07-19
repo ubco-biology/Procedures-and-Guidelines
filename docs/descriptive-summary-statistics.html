@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.1 Quick Reference | Procedures and Guidelines</title>
+  <title>5.2 Descriptive / summary statistics | Procedures and Guidelines</title>
   <meta name="description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.1 Quick Reference | Procedures and Guidelines" />
+  <meta property="og:title" content="5.2 Descriptive / summary statistics | Procedures and Guidelines" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.1 Quick Reference | Procedures and Guidelines" />
+  <meta name="twitter:title" content="5.2 Descriptive / summary statistics | Procedures and Guidelines" />
   
   <meta name="twitter:description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="file-naming-conventions.html"/>
-<link rel="next" href="whats-in-a-name.html"/>
+<link rel="prev" href="tables.html"/>
+<link rel="next" href="results-of-statistical-tests.html"/>
 <script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -183,35 +183,67 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="quick-reference" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Quick Reference</h2>
+<div id="descriptive-summary-statistics" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Descriptive / summary statistics</h2>
+<p>Here are some general guidelines to follow when displaying descriptive or summary statistics:</p>
 <ul>
-<li>File names should only contain letters in the English alphabet, numbers from 1-9, dashes "-", and underscores "_".</li>
-<li>Do not use spaces or special characters, including <code># % &amp; &lt; &gt; : " /  | ? * { } $ ! ' @ + ` =</code></li>
-<li>File names should be broken down into components that are separated by underscores "_".</li>
-<li>If more than one word is needed in each component, these are separated by dashes "-".</li>
-<li>All file should start with your last name and all other components should be meaningful (read on for what it means for a file name to be meaningful!)</li>
+<li>Round numbers to one more digit for measures of centre (e.g. mean), and 2 more digits for measures of spread (e.g. sd) than was used in measuring the data
+<ul>
+<li>For detailed guidelines about significant digits, consult the following webpage: <a href="https://www.physics.uoguelph.ca/significant-digits-tutorial" class="uri">https://www.physics.uoguelph.ca/significant-digits-tutorial</a></li>
+</ul></li>
+<li>Units are preceded by a space within text passages:
+<ul>
+<li>e.g. "Average height was 34.2 cm (± 3.43 SEM)."</li>
+</ul></li>
 </ul>
-<p>There are four variations on how these gudielines are implemented depending on what your file contatins.</p>
-<div id="lab-reports-and-manuscripts" class="section level3" number="2.1.1">
-<h3><span class="header-section-number">2.1.1</span> Lab reports and manuscripts</h3>
-<p><strong>Format</strong> LastName_Project_File-contents_Version.file-type</p>
-<p><strong>Example</strong> <code>Pither_BIOL116RProject_Manuscript_V0.docx</code></p>
-</div>
-<div id="figures-and-plots" class="section level3" number="2.1.2">
-<h3><span class="header-section-number">2.1.2</span> Figures and plots</h3>
-<p><strong>Format</strong> LastName_Project_Figure-title_Version.file-type</p>
-<p><strong>Example</strong> <code>Pither_BIOL116RProject_Figure-freq-plot_V1.png</code></p>
-</div>
-<div id="analysis" class="section level3" number="2.1.3">
-<h3><span class="header-section-number">2.1.3</span> Analysis</h3>
-<p><strong>Format</strong> LastName_Project_Analysis_Version.file-type</p>
-<p><strong>Example</strong> <code>Pither_BIOL116RProject_Analysis_V0.xlsx</code></p>
-</div>
-<div id="data" class="section level3" number="2.1.4">
-<h3><span class="header-section-number">2.1.4</span> Data</h3>
-<p><strong>Format</strong> LastName_Date_Project_Data-file-description.file-type</p>
-<p><strong>Example</strong> <code>Pither_20210921_BIOL116RProject_Data.csv</code></p>
+<p><strong>Describing Numerical Variables</strong></p>
+<ul>
+<li>Report mean with standard deviation, and additionally median with inter-quartile range for variables that exhibit a non-normal frequency distribution (e.g. is skewed) or that includes outliers</li>
+<li>Parameter estimates (i.e. mean) should be accompanied by measures of uncertainty, i.e. the <em>standard error of the mean</em> (SEM) or confidence <em>interval</em> (notation: lower limit – upper limit); confidence <em>limits</em>: (lower limit, upper limit)</li>
+<li>Confidence intervals are strongly encouraged because they inform about <em>effect size</em></li>
+<li>Measures of uncertainty for an estimate, such as SEM, can be preceded by a ± sign; do not make the common mistake of reporting a ± sign with a standard deviation, as it is not a measure of uncertainty in an estimate</li>
+</ul>
+<p><strong>Describing Categorical Variables</strong></p>
+<ul>
+<li>Report a frequency table (raw data) or a summary table with proportions for categories (the main descriptive statistic of interest), along with the confidence interval for the proportion if appropriate</li>
+</ul>
+<div id="example-1" class="section level3 unnumbered">
+<h3>Example</h3>
+<p><strong>Table 2.</strong> Descriptive statistics for an experiment investigating the effect of different protein diets on growth of chicks since birth. Chicks were weighed at birth and every second day after that until day 20. For more information on this dataset click <a href="https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/ChickWeight">here.</a></p>
+<table>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>n</th>
+<th>%</th>
+<th>Mean</th>
+<th>SD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Diet 1 <br />Diet 2 <br />Diet 3 <br />Diet 4</td>
+<td>220 <br />120 <br />120 <br />118</td>
+<td>38.1 <br />20.8 <br />20.8 <br />20.4</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Weight (gm)</td>
+<td>578</td>
+<td></td>
+<td>121.8</td>
+<td>71.10</td>
+</tr>
+<tr class="odd">
+<td>Time (days)</td>
+<td>578</td>
+<td></td>
+<td>10.7</td>
+<td>6.76</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
             </section>
@@ -219,8 +251,8 @@
           </div>
         </div>
       </div>
-<a href="file-naming-conventions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="whats-in-a-name.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="results-of-statistical-tests.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

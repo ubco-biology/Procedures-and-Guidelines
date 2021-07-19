@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.1 Quick Reference | Procedures and Guidelines</title>
+  <title>5.4 Figures | Procedures and Guidelines</title>
   <meta name="description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.1 Quick Reference | Procedures and Guidelines" />
+  <meta property="og:title" content="5.4 Figures | Procedures and Guidelines" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.1 Quick Reference | Procedures and Guidelines" />
+  <meta name="twitter:title" content="5.4 Figures | Procedures and Guidelines" />
   
   <meta name="twitter:description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="file-naming-conventions.html"/>
-<link rel="next" href="whats-in-a-name.html"/>
+<link rel="prev" href="results-of-statistical-tests.html"/>
+<link rel="next" href="glossary.html"/>
 <script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -183,44 +183,48 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="quick-reference" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Quick Reference</h2>
+<div id="figures" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Figures</h2>
+<p>When displaying data using a figure, follow these guidelines:</p>
 <ul>
-<li>File names should only contain letters in the English alphabet, numbers from 1-9, dashes "-", and underscores "_".</li>
-<li>Do not use spaces or special characters, including <code># % &amp; &lt; &gt; : " /  | ? * { } $ ! ' @ + ` =</code></li>
-<li>File names should be broken down into components that are separated by underscores "_".</li>
-<li>If more than one word is needed in each component, these are separated by dashes "-".</li>
-<li>All file should start with your last name and all other components should be meaningful (read on for what it means for a file name to be meaningful!)</li>
+<li>The figure heading should be placed below the graph and should provide sufficient information so the figure can be interpreted on its own</li>
+<li>The heading can include statistical statements (Fig. 1) or simply describe what is being shown (Fig. 2)</li>
+<li>Sample size(s) must be reported</li>
+<li>The first time a particular type of graph is shown (e.g. boxplot), details of graph features must be provided. Subsequent figures of the same type can refer to the first for details. See Fig. 2 for an example</li>
+<li>Use hollow symbols so that overlapping points can be seen (Fig. 3)</li>
+<li>Orient all text horizontal (except <em>y</em>-axis label), including all tick labels</li>
+<li>Place axis tick marks outside of figure border to avoid overlapping with observations</li>
+<li>Data points should not touch the axes</li>
+<li>Fitted lines (e.g. least-squares regression) included in figures should be fully explained in the heading,
+<ul>
+<li>e.g. “Line represents a least-squares linear regression line, <em>y</em> = 0.3 + 4.5<em>x</em> (<em>F</em> = 5.65, df = 36; P = 0.021)”.</li>
+</ul></li>
+<li>For more complex statistics (e.g. lines associated with mixed effects models) refer the reader to the text for details</li>
+<li>Bar plots should <strong>only</strong> be used to visualize categorical data (e.g. proportion of students with brown or blue eyes) or counts (number of flies on scat)</li>
+<li>When comparing numerical data among categories or groups (Figs. 1,2) use stripcharts (Fig. 1) when sample sizes are small (i.e. &lt;20) and boxplots otherwise (Fig. 2)</li>
 </ul>
-<p>There are four variations on how these gudielines are implemented depending on what your file contatins.</p>
-<div id="lab-reports-and-manuscripts" class="section level3" number="2.1.1">
-<h3><span class="header-section-number">2.1.1</span> Lab reports and manuscripts</h3>
-<p><strong>Format</strong> LastName_Project_File-contents_Version.file-type</p>
-<p><strong>Example</strong> <code>Pither_BIOL116RProject_Manuscript_V0.docx</code></p>
-</div>
-<div id="figures-and-plots" class="section level3" number="2.1.2">
-<h3><span class="header-section-number">2.1.2</span> Figures and plots</h3>
-<p><strong>Format</strong> LastName_Project_Figure-title_Version.file-type</p>
-<p><strong>Example</strong> <code>Pither_BIOL116RProject_Figure-freq-plot_V1.png</code></p>
-</div>
-<div id="analysis" class="section level3" number="2.1.3">
-<h3><span class="header-section-number">2.1.3</span> Analysis</h3>
-<p><strong>Format</strong> LastName_Project_Analysis_Version.file-type</p>
-<p><strong>Example</strong> <code>Pither_BIOL116RProject_Analysis_V0.xlsx</code></p>
-</div>
-<div id="data" class="section level3" number="2.1.4">
-<h3><span class="header-section-number">2.1.4</span> Data</h3>
-<p><strong>Format</strong> LastName_Date_Project_Data-file-description.file-type</p>
-<p><strong>Example</strong> <code>Pither_20210921_BIOL116RProject_Data.csv</code></p>
+<div id="examples" class="section level3 unnumbered">
+<h3>Examples</h3>
+<p><img src="images/FT_fig-1.png" /></p>
+<p><strong>Figure 1.</strong> Aggression was significantly higher among isolated ants (<em>n</em> = 8) compared to the control group (<em>n</em> = 6) (see text for details). Shown are individual observations (grey circles), group means (solid circles) with +/- 1 SEM.</p>
+<p><img src="images/FT_fig-2.png" /></p>
+<p><strong>Figure 2.</strong> Height of male (<em>n</em> = 64) and female (<em>n</em> = 90) students within BIOL202. Thick horizontal lines represent group medians, large circles represent group means, boxes delimit 1st to 3rd quartiles, whiskers extend to 1.5 x IQR, and small circles represent extreme observations.</p>
+<p><img src="images/FT_fig-3.png" /></p>
+<p><strong>Figure 3</strong>. Head circumference versus height for <em>n</em> = 150 BIOL202 students. The positive association is highly significant (Pearson <em>r</em> = 0.82; <em>P</em> &lt; 0.001).</p>
+
 </div>
 </div>
+<!-- </div> -->
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="file-naming-conventions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="whats-in-a-name.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="results-of-statistical-tests.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="glossary.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

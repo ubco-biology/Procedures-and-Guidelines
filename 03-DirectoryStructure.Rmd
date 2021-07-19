@@ -80,7 +80,7 @@ Next we want to add some content to our <code>_README.md</code>. The purpose of 
 * A brief description of the contents of each major folder within the root folder
 * A brief description of file naming conventions used within the directory
 
-To see an example root directory readme file click [here](files/rootREADME.md). 
+To see an example root directory readme file click [here](files/DS_rootREADME.md). 
 
 ## Data directory readme
 
@@ -94,7 +94,7 @@ The purpose of this readme file is to provide a description of data collection m
 * A description of who was involved in data collection 
 * A brief description of where the data was collected 
 
-To see an example data directory readme file click [here](files/dataREADME.md).
+To see an example data directory readme file click [here](files/DS_dataREADME.md).
 
 ## Data dictionary
 
@@ -108,7 +108,7 @@ A data dictionary helps others understand the meaning of each element in your da
 * A description of each variable for all datasets including data type, units, number of levels if categorical, and a description of variable levels where relevant
 * When describing variables you need to provide the full names and definitions of each variable because often variables are abbreviated in datasets
 
-To see an example data dictionary click [here](files/DATA-DICTIONARY.md). 
+To see an example data dictionary click [here](files/DS_DATA-DICTIONARY.md). 
 
 ## Example BIOL 116
 
@@ -189,6 +189,8 @@ Pither_BIOL116RProject_Lab-report_V3.docx
 
 And finally a screenshot from our desktop file manager...
 
+![](images/DS_biol116-directory-example.png)
+
 ## Example BIOL 125
 
 Let's work through another example where we start our project off using both appropriate directory structure and file naming conventions. Say you're a student in BIOL 125 working on a research project testing mealworm food preferences...
@@ -203,7 +205,7 @@ BIOL125MealwormProject/
 
 Within our root folder we create a <code>_README.md</code> file to describe our directory structure. Let's add our project name, date the folder was created and who created it, a short description of the project, group member names, file structure (major folders and their proposed content), and naming conventions to this readme file. Your file should look something like this:
 
-[_README.md](files/biol-125-readme_V0.md)
+[_README.md](files/DS_biol-125-readme_V0.md)
 
 Since we have just started our project, there won't be files in most subfolders we create. However, it's good to have the skeleton of what we want our directory to look like so everyone in the group places new files in the correct location. Later, if needed, we can modify our directory structure and update our readme file to reflect those changes.  
 
@@ -217,7 +219,7 @@ Pither_BIOL125MealwormProject_report_V0.docx
 
 Here is what our project directory looks like so far:
 
-<img src="images/directory-example-1.png" alt="" />
+![](images/DS_directory-example-1.png)
 
 ### Day 2 {-}
 
@@ -233,15 +235,15 @@ Since we have added our first dataset into our project folder, we need to create
 
 Let's start by creating the data directory readme and provide a description of our data set, collection methods, who collected the data, and where it was collected. It should look something like this:
 
-[_README.md](files/biol-125-data-readme_V0.md)
+[_README.md](files/DS_biol-125-data-readme_V0.md)
 
 Next, let's create a data dictionary for our new dataset. It should look something like this:
 
-[_DATA-DICTIONARY.md](files/biol-125-data-dictionary_V0.md)
+[_DATA-DICTIONARY.md](files/DS_biol-125-data-dictionary_V0.md)
 
 Now our project directory looks like this:
 
-<img src="images/directory-example-2.png" alt="" />
+![](images/DS_directory-example-2.png)
 
 ### Day 3 {-}
 
@@ -256,17 +258,17 @@ Pither_20210916_BIOL125MealwormProject_distance-data.csv
 
 Since we have a new dataset we'll have to update our data directory readme file with a description of the new dataset. Remember to note down the date it was updated and who it was updated by. Our updated data directory <code>_README.md</code> file should look something like this:
 
-[_README.md](files/biol-125-data-readme_V1.md)
+[_README.md](files/DS_biol-125-data-readme_V1.md)
 
 Now our updated data directory readme file includes descriptions for both datasets.
 
 In the interest of organization, let's keep our food preferences and distance data in their own subfolders. So, we'll create two new subfolders within the Data folder. We'll call one <code>Food-preferences/</code> and the other <code>Distance/</code>. This way we can organize csv files into the folder for the corresponding dataset. After doing this, we need to update the <code>_README.md</code> in our root folder, since we've modified our directory structure. This readme should now look something like this:
 
-[_README.md](files/biol-125-readme_V1.md)
+[_README.md](files/DS_biol-125-readme_V1.md)
 
 Next, let's also create a data dictionary for our new dataset within our distance subfolder. Remember to note down the date it was updated and who it was updated by. It should look something like this:
 
-[_DATA-DICTIONARY.md](files/biol-125-data-dictionary-distance_V0.md)
+[_DATA-DICTIONARY.md](files/DS_biol-125-data-dictionary-distance_V0.md)
 
 Since we made some updates to our project design and methods, I'll also go ahead and updated our lab report to reflect those changes alongside justification for the changes. Then, I'll be sure to save my updated lab report using the appropriate naming conventions. 
 
@@ -276,7 +278,7 @@ Pither_BIOL125MealwormProject_report_V1.docx
 
 Now our project directory looks like: 
 
-<img src="images/directory-example-3.png" alt="" />
+![](images/DS_directory-example-3.png)
 
 ### Day 4-5 {-}
 
@@ -299,7 +301,7 @@ Next, we'll save our analysis into the <code>Analysis/</code> subfolder and the 
 
 Now our project directory looks like:
 
-<img src="images/directory-example-4.png" alt="" />
+![](images/DS_directory-example-4.png)
 
 ### Day 6 {-}
 
@@ -313,7 +315,7 @@ Pither_BIOL125MealwormProject_report_V2.docx
 
 Our final directory looks like this:
 
-<img src="images/directory-example-5.png" alt="" />
+![](images/DS_directory-example-5.png)
 
 We can start to see that if you were to share your entire project directory with another person it would be relatively easy for them to locate files and understand the meaning behind each document in our project. They would also know when changes were made and who made these changes, so if they had any questions, they'd know exactly who to ask!
 

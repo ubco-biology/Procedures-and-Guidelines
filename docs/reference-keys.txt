@@ -20,4 +20,9 @@ tidy-data
 wide-data
 tidy-data-1
 side-by-side-comparison
+figures-and-tables
+tables
+descriptive-summary-statistics
+results-of-statistical-tests
+figures
 glossary
