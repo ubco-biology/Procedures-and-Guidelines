@@ -1,4 +1,4 @@
-# File Naming Conventions
+# File Naming
 
 File naming isn't exactly fun, but it is crucially important to being able to organize, describe, and manage any kind of work, especially research. So let's talk about file naming conventions, and those that you'll be expected to use while in Biology at UBCO.
 

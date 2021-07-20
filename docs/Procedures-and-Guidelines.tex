@@ -6,7 +6,7 @@
 ]{book}
 \title{Procedures and Guidelines}
 \author{Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar}
-\date{2021-07-19}
+\date{2021-07-20}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -68,6 +68,9 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+\usepackage[normalem]{ulem}
+% Avoid problems with \sout in headers with hyperref
+\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -132,8 +135,8 @@ Directory structures, being more complicated, bring with them the need to add ad
 
 Organizing and formatting data is a discussion about the best way to sort and parse our data into columns and rows so that we can effectively produce summaries, statistical calculations, and visualizations from these data; a core concept you'll be introduced to in this guidelines document is that of "tidy data".
 
-\hypertarget{file-naming-conventions}{%
-\chapter{File Naming Conventions}\label{file-naming-conventions}}
+\hypertarget{file-naming}{%
+\chapter{File Naming}\label{file-naming}}
 
 File naming isn't exactly fun, but it is crucially important to being able to organize, describe, and manage any kind of work, especially research. So let's talk about file naming conventions, and those that you'll be expected to use while in Biology at UBCO.
 
@@ -392,8 +395,8 @@ Pither_BIOL116RProject_Lab-report_V2.docx
 Pither_BIOL116RProject_Lab-report_V3.docx
 \end{verbatim}
 
-\hypertarget{directory-structure-conventions}{%
-\chapter{Directory Structure Conventions}\label{directory-structure-conventions}}
+\hypertarget{directory-structures}{%
+\chapter{Directory Structures}\label{directory-structures}}
 
 Now that we've covered naming conventions, let's pretend that you store everything on your computer in a single folder. Imagine how long it would take you to find data you collected on a specific day a few years ago. Instead of keeping every document in a single place, we often organize our files using directory (aka folder) structures. This helps us save precious time and improve our productivity.
 
@@ -1212,6 +1215,474 @@ When displaying data using a figure, follow these guidelines:
 \includegraphics{images/FT_fig-3.png}
 
 \textbf{Figure 3}. Head circumference versus height for \emph{n} = 150 BIOL202 students. The positive association is highly significant (Pearson \emph{r} = 0.82; \emph{P} \textless{} 0.001).
+
+\hypertarget{part-writing-and-citing}{%
+\part*{Writing and Citing}\label{part-writing-and-citing}}
+\addcontentsline{toc}{part}{Writing and Citing}
+
+\hypertarget{markdown-1}{%
+\chapter{Markdown}\label{markdown-1}}
+
+Markdown is a markup language that is used to format plain text files to help us provide additional meaning to our content. Markup languages are ideal authoring tools because they work on a principle of separating out content from formatting. Markup languages are ideal authoring tools for the sciences because they rely on plain text so any computer anywhere at anytime will be able to open them and consequently, we will be able to read them.
+
+Benefits of Markdown:
+
+\begin{itemize}
+\tightlist
+\item
+  Simple and easy to learn
+\item
+  Can be used to geerate many different outputs formats (ie. pdf, html, docx etc.)
+\item
+  Can be read on any device with any operating system
+\item
+  Many different web-applications and websites (ie. Reddit, GitHub) use it
+\end{itemize}
+
+In fact, when we think about best practices in science leveraging tools that allow for reproducibility and interoperability (they are independent of specific operating systems or programs for example), Markdown is an essential authoring tool.
+
+To learn more about Markdown see Matt Cone's Markdown Guide \href{https://www.markdownguide.org/getting-started\#:~:text=Why\%20Use\%20Markdown\%3F\%201\%20Markdown\%20can\%20be\%20used,future\%20proof.\%20...\%205\%20Markdown\%20is\%20everywhere.\%20}{here}.
+
+\hypertarget{how-markdown-works}{%
+\section{How Markdown Works}\label{how-markdown-works}}
+
+Markdown is a two step process. You write, with markup, in a plain text file. Another application then formats your document based on your markup.
+
+\includegraphics{images/MD_translation.png}
+
+This makes markdown very useful for producing many different types of documents from the same piece of prose, whether that be pdf, html, docx you name it. It also means that you have one working, editable document, which is plain text, and a series of distributable copies in other formats. More importantly, formatted in a way to address the needs of that particular audience.
+
+All of the content that you're reading right now was authored in Markdown. Note at the top of the page, you can download this content as a pdf or as an epub. But we only had to write it once.
+
+\hypertarget{what-you-need-to-get-started}{%
+\section{What You Need to Get Started}\label{what-you-need-to-get-started}}
+
+You'll need a text editor or a dedicated Markdown editor! What's the difference?
+
+A text editor will not format your markdown, it'll just display the plain text. When you open the \_README.md files that are dotted througout this book in \textbf{textedit} on a Mac or \textbf{notepad} on a Windows machine, you're seeing this raw, plain text output.
+
+A dedicated Markdown editor will format your Markdown as you type, so you get an idea as to how it will render if you were to save it as a pdf, html etc. There are a lot of Markdown editors available, many of them free and open source.
+
+Already have a favourite text editor or Markdown editor? Great. If not, we'd like to suggest the following, which provide an easy to use interface and work across two panes, one where you see your plain text output and one where you see how it will be rendered when formatted. Both are free and open source.
+
+\textbf{Mac OS}
+
+MacDown available at \url{https://macdown.uranusjr.com/}
+
+\textbf{Windows}
+
+Markdown Edit available at \url{https://mike-ward.net/Markdown-Edit/}
+
+\hypertarget{prose}{%
+\section{Prose}\label{prose}}
+
+You can just start writing if you've opened up a new document in MacDown, Markdown Edit, or whatever text or Markdown editor you happen to be using.
+
+There's a couple of things you'll note right away.
+
+\begin{itemize}
+\tightlist
+\item
+  Whether you use one space, " ", or many spaces in between your words, it will only render (display with formatting) as if there was one space.
+\item
+  Just hitting 'Enter' once doesn't put you on a new line. You need to hit 'Enter' twice.
+\end{itemize}
+
+\hypertarget{structure}{%
+\section{Structure}\label{structure}}
+
+\hypertarget{headings}{%
+\subsection*{Headings}\label{headings}}
+\addcontentsline{toc}{subsection}{Headings}
+
+You can add structure to your text document by adding headers with different hierarchies. To do this you add a number sign "\#" before the text. The number of "\#" symbols indicates the hierarchy of the header.
+
+Make sure you include a space " " between the "\#" and your header
+
+For example, the following\ldots{}
+
+\begin{verbatim}
+# This is a first-tier header
+## This is a second-tier header
+### This is a third-tier header
+#### This is a fourth-tier header
+\end{verbatim}
+
+\ldots would render as
+
+This is a first-tier header
+
+This is a second-tier header
+
+This is a third-tier header
+
+This is a fourth-tier header
+
+\hypertarget{emphasis-and-style}{%
+\section{Emphasis and Style}\label{emphasis-and-style}}
+
+There are a number of different Markdown syntaxes that we can use to add style and emphasis to specific parts of our document. Below are a few examples.
+
+\hypertarget{italics}{%
+\subsection*{Italics}\label{italics}}
+\addcontentsline{toc}{subsection}{Italics}
+
+You can make text italicized by encasing the text in a single asterisk "*" or underscore "\_".
+
+Input
+
+\begin{verbatim}
+*This is italicized*
+
+_This is also italicized_
+\end{verbatim}
+
+Output
+
+\emph{This is italicized}
+
+\emph{This is also italicized}
+
+\hypertarget{bold}{%
+\subsection*{Bold}\label{bold}}
+\addcontentsline{toc}{subsection}{Bold}
+
+You can make text bold by encasing the text in two asterisks "**" or underscores
+"\_\_".
+
+Input
+
+\begin{verbatim}
+**This is bold**
+
+__This is also bold__
+\end{verbatim}
+
+Output
+
+\textbf{This is bold}
+
+\textbf{This is also bold}
+
+\hypertarget{bold-and-italics}{%
+\subsubsection*{Bold and Italics}\label{bold-and-italics}}
+\addcontentsline{toc}{subsubsection}{Bold and Italics}
+
+If you want to make text both bold and italicized you can encase the text with three asterisks "***" or underscores "\_\_\_".
+
+Input
+
+\begin{verbatim}
+***This is bold and italicized***
+
+___This is also bold and italicized___
+\end{verbatim}
+
+Output
+
+\textbf{\emph{This is bold and italicized}}
+
+\textbf{\emph{This is also bold and italicized}}
+
+\textbf{NOTE} When italicizing or bolding characters within a string of text it's better to use an asterisk "*" rather than an underscore "\_". For example: Biology *is* awesome NOT Biology \_is\_ awesome
+
+\hypertarget{strikethrough}{%
+\subsection*{Strikethrough}\label{strikethrough}}
+\addcontentsline{toc}{subsection}{Strikethrough}
+
+You can strike through text by encasing it with two tildes, "\textasciitilde\textasciitilde".
+
+Input
+
+\begin{verbatim}
+~~This text has a strike through it~~
+\end{verbatim}
+
+Output
+
+\sout{This text has a strike through it}
+
+\hypertarget{code}{%
+\section{Code}\label{code}}
+
+You can show text as code by encasing it with three back ticks, ```.
+
+Input
+
+```
+
+This text looks like code
+
+```
+
+Output
+
+\begin{verbatim}
+This text looks like code
+\end{verbatim}
+
+\hypertarget{blockquotes}{%
+\section{Blockquotes}\label{blockquotes}}
+
+To create a blockquote using markdown, you need to place a greater-than, "\textgreater" sign in front of the text.
+
+Input
+
+\begin{verbatim}
+> This text is placed within a block quote
+\end{verbatim}
+
+Output
+
+\begin{quote}
+This text is placed within a block quote
+\end{quote}
+
+\textbf{NOTE} Leave a blank line both before the blockquote and after it.
+
+\hypertarget{lists}{%
+\section{Lists}\label{lists}}
+
+\hypertarget{ordered-lists}{%
+\subsection*{Ordered lists}\label{ordered-lists}}
+\addcontentsline{toc}{subsection}{Ordered lists}
+
+To create an ordered list in Markdown, you'll need to place the item number and a period in front of the text.
+
+Input
+
+\begin{verbatim}
+1. First item
+2. Second item
+3. Third item 
+\end{verbatim}
+
+Output:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  First item
+\item
+  Second item
+\item
+  Third item
+\end{enumerate}
+
+\hypertarget{unordered-lists}{%
+\subsection*{Unordered lists}\label{unordered-lists}}
+\addcontentsline{toc}{subsection}{Unordered lists}
+
+You can create an unordered list by placing an asterisk "*", dash "-", or plus sign "+" infront of the text.
+
+Input
+
+\begin{verbatim}
+* first item
+* second item
+* third item 
+\end{verbatim}
+
+\begin{verbatim}
+- first item
+- second item
+- third item
+\end{verbatim}
+
+\begin{verbatim}
++ first item
++ second item
++ third item 
+\end{verbatim}
+
+Output
+
+\begin{itemize}
+\tightlist
+\item
+  first item
+\item
+  second item
+\item
+  third item
+\end{itemize}
+
+\hypertarget{tables-1}{%
+\section{Tables}\label{tables-1}}
+
+When creating tables using Markdown, pipes "\textbar" separate columns while line breaks are used to separate rows. The column header is seperated by three or more hyphens "-\/-\/-" between each column's pipe "\textbar".
+
+Input
+
+\begin{verbatim}
+| Column 1 Header | Column 2 Header | Column 3 Header |
+| --- | --- | --- |
+| Column 1 item | Column 2 item | Column 3 item |
+| Column 1 item | Column 2 item | Column 3 item |
+\end{verbatim}
+
+Output
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+Column 1 Header & Column 2 Header & Column 3 Header \\
+\midrule
+\endhead
+Column 1 item & Column 2 item & Column 3 item \\
+Column 1 item & Column 2 item & Column 3 item \\
+\bottomrule
+\end{longtable}
+
+\textbf{NOTE}
+
+\begin{itemize}
+\tightlist
+\item
+  The number of hyphens, "-", used can make the cell width look incorrect. However, as long as there are three or more hyphens the rendered output will be the same.
+\item
+  Put a space, " ", between each pipe "\textbar" and the following word or dash "-"
+\end{itemize}
+
+\hypertarget{links}{%
+\section{Links}\label{links}}
+
+To create a link to a url or another document, encase the text with square brackets, "{[}{]}", and follow the text immediately with the link encased in parentheses, "()".
+
+Input
+
+\begin{verbatim}
+To visit the UBC Okanagan Faculty of Biology website click [here](https://biology.ok.ubc.ca/).
+\end{verbatim}
+
+Output
+
+To visit the UBC Okanagan Faculty of Biology website click \href{https://biology.ok.ubc.ca/}{here}.
+
+\hypertarget{images}{%
+\section{Images}\label{images}}
+
+Creating a link to an image follows a similar format to that of links, but the square brackets encasing the text are preceded with an exclamation mark "!". You can place either the url link or path to the image on your computer in the parentheses. If using a path on your computer, use a relative path.
+
+Input
+
+\begin{verbatim}
+![A magnificent caterpillar. Photo by Erik Karits on Unsplash](images/caterpillar)
+![A magnificent caterpillar. Photo by Erik Karits on Unsplash](https://unsplash.com/photos/F7SRtQGa2nw)
+\end{verbatim}
+
+Output
+
+\begin{figure}
+\centering
+\includegraphics{images/MD_Caterpillar.jpg}
+\caption{A magnificent caterpillar. Photo by \href{https://unsplash.com/@erik_karits?utm_source=unsplash\&utm_medium=referral\&utm_content=creditCopyText}{Erik Karits} on \href{https://unsplash.com/?utm_source=unsplash\&utm_medium=referral\&utm_content=creditCopyText}{Unsplash}}
+\end{figure}
+
+\hypertarget{markdown-flavours}{%
+\section{Markdown Flavours}\label{markdown-flavours}}
+
+Everything here is basic, or core, Markdown and will be supported by any markdown editor. Since Markdown is simply encoding document structure through markup, several different implementations have expanded on this core set and allow you to do other things, including footnotes, references etc.
+
+We'll just keep it simple for the moment; this is all you really need for your \_README.md files! Later, you'll be introduced to RMarkdown which, when used in conjunction with R, will allow you to render statistical analyses within your Markdown document and build reference lists among other things.
+
+\hypertarget{apa-citations}{%
+\chapter{APA Citations}\label{apa-citations}}
+
+This is a brief overview of the 7th edition of APA for quick reference. For a more in depth review, please consult \href{https://guides.library.ubc.ca/apacitationstyle}{the library's APA Citation Guide}. For the full APA manual, please consul the \href{http://resolve.library.ubc.ca/cgi-bin/catsearch?bid=10057275}{Publication Manual of the American Psychological Association}, available through the library.
+
+Additional resources you may wish to consult include:
+
+\begin{itemize}
+\tightlist
+\item
+  The \href{https://apastyle.apa.org/blog/}{APA Style Blog} - great for searching for examples not listed in the 7th edition
+\item
+  Purdue OWL's \href{https://owl.purdue.edu/owl/research_and_citation/apa_style/apa_formatting_and_style_guide/general_format.html}{website} for still more examples
+\end{itemize}
+
+\hypertarget{in-text-citations}{%
+\section{In-text Citations}\label{in-text-citations}}
+
+Always appear right after the content you are summarizing, paraphrasing, or quoting. The format is as follows:
+
+\textbf{Summarizing or Paraphrasing}
+
+\begin{itemize}
+\tightlist
+\item
+  (Author, YYYY)
+\end{itemize}
+
+\textbf{Quoting}
+
+\begin{itemize}
+\tightlist
+\item
+  (Author, YYYY, p.~\#) 1 page
+\item
+  (Author, YYYY, pp.~\#\#-\#\#) Multiple pages
+\end{itemize}
+
+\hypertarget{narrative-vs-parenthetical}{%
+\subsection*{Narrative vs Parenthetical}\label{narrative-vs-parenthetical}}
+\addcontentsline{toc}{subsection}{Narrative vs Parenthetical}
+
+If you mention the author or authors in text, you do not need to include this information in the brackets, "()". This is called a narrative citation.
+
+\textbf{Narrative in-text citation:} Raimi (2018) outlines the risks and benefits of fracking through an economic analysis and energy security benefits.
+
+The alternative is called a parenthetical citation.
+
+\textbf{Parenthetical in-text citation:} Several benefits and risks can be identified in the implementation of fracking for oil extraction. Considerations include regulation, water pollution, tremors etc. (Raimi, 2018).
+
+\hypertarget{quick-format-guide}{%
+\subsection*{Quick Format Guide}\label{quick-format-guide}}
+\addcontentsline{toc}{subsection}{Quick Format Guide}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+\# of Authors & Narrative Example & Parenthetical Example \\
+\midrule
+\endhead
+1 & Bradley (2017) & (Bradley, 2017) \\
+2 & Janmaat and Rahimova (2018) & (Janmaat \& Rahimova, 2018) \\
+3 or more & Mei et al.~(2018) & (Mei et al., 2018) \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{reference-list}{%
+\section{Reference List}\label{reference-list}}
+
+\textbf{NOTE}
+
+\begin{itemize}
+\tightlist
+\item
+  Every source used in your in-text citations needs to be listed as part of your reference list, in alphabetical order by author(s)' last names.
+\item
+  The word \textbf{References} should appear at the top of your reference list, and it should be centred and bolded on the page
+\item
+  Titles should be written in sentence case, that is, capitalize the first word and only subsequent proper nouns. If the title is broken up by a colon (:), capitalize the first word after the colon.
+\item
+  List all authors in the order that they appear in the source.
+\end{itemize}
+
+\hypertarget{journal-article-with-a-doi-1-2-authors}{%
+\subsection*{Journal article with a DOI (1-2 authors)}\label{journal-article-with-a-doi-1-2-authors}}
+\addcontentsline{toc}{subsection}{Journal article with a DOI (1-2 authors)}
+
+List all authors in reference list and in-text citations.
+
+Janmaat, J., \& Rahimova, N. (2018). Managing drought risk in the Okanagan: A roll for dry-year option contracts? \emph{Canadian Public Policy}, \emph{44}(2), 112-125. \url{https://doi.org/10.3138/cpp.2017-003}
+
+\hypertarget{journal-article-with-a-doi-3-20-authors}{%
+\subsection*{Journal article with a DOI (3-20 authors)}\label{journal-article-with-a-doi-3-20-authors}}
+\addcontentsline{toc}{subsection}{Journal article with a DOI (3-20 authors)}
+
+List all authors in the reference list and only first author in the in-text citations.
+
+Mei, Y., Yu, K., Lo, J. C. Y., Takeuchi, L. E., Hadjesfandiari, N., Yazdani-Ahmadabadi, H., Brooks, D. E., Lange, D., \& Kizhakkedathu, J. N. (2018). Polymer-nanoparticle interaction as a design principle in the development of a durable ultrathin universal binary antibiofilm coating with long-term activity. \emph{ACS Nano}, \emph{12}(12), 11881-11891. \url{https://doi.org/10.1021/acsnano.8b05512}
 
 \hypertarget{part-glossary}{%
 \part*{Glossary}\label{part-glossary}}

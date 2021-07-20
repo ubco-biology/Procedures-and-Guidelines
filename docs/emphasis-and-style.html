@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3.3 readme files and data dictionaries | Procedures and Guidelines</title>
+  <title>6.5 Emphasis and Style | Procedures and Guidelines</title>
   <meta name="description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3.3 readme files and data dictionaries | Procedures and Guidelines" />
+  <meta property="og:title" content="6.5 Emphasis and Style | Procedures and Guidelines" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3.3 readme files and data dictionaries | Procedures and Guidelines" />
+  <meta name="twitter:title" content="6.5 Emphasis and Style | Procedures and Guidelines" />
   
   <meta name="twitter:description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="directory-naming.html"/>
-<link rel="next" href="root-folder-readme.html"/>
+<link rel="prev" href="structure.html"/>
+<link rel="next" href="code.html"/>
 <script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -224,33 +224,51 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="readme-files-and-data-dictionaries" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> readme files and data dictionaries</h2>
-<p>When naming files we embed metadata into our file naming conventions to encode relevant information for the reader. But we can only store so much information in a file name. So we also include three additional files</p>
-<ul>
-<li>one called <code>_README</code> that resides in our root folder and elaborates on the contents of our folder structure;</li>
-<li>a second, also called <code>_README</code>, but that resides in our data directory and discusses some of the particulars of the how, where, and who of the actual data collection; and</li>
-<li>one called <code>_DATA-DICTIONARY</code> that also resides in our data directory and elaborates on how our data is stored and organized.</li>
-</ul>
-<p>These files - containing a brief description of the major folder contents, naming conventions that were followed, and data structure - are critical for transparency and reproducibility, because they allow others to easily understand the contents of your directory and data without needing to ask you. This is especially helpful when working with a group or sharing directories with others.</p>
-<div id="general-rules" class="section level3 unnumbered">
-<h3>General rules</h3>
-<p>A readme file and data dictionary should</p>
-<ul>
-<li>exist in at least two locations, the root directory and the data directory.</li>
-<li>be prepended with an underscore "_". This will push these files to the top of the directory for easy access.</li>
-<li><code>_README</code> and <code>_DATA-DICTIONARY</code> files should be in all caps, so they really stand out; this should be the first thing you look at when looking at any directory or folder, as this is your guide to its contents.</li>
-</ul>
+<div id="emphasis-and-style" class="section level2" number="6.5">
+<h2><span class="header-section-number">6.5</span> Emphasis and Style</h2>
+<p>There are a number of different Markdown syntaxes that we can use to add style and emphasis to specific parts of our document. Below are a few examples.</p>
+<div id="italics" class="section level3 unnumbered">
+<h3>Italics</h3>
+<p>You can make text italicized by encasing the text in a single asterisk "*" or underscore "_".</p>
+<p>Input</p>
+<pre><code>*This is italicized*
+
+_This is also italicized_</code></pre>
+<p>Output</p>
+<p><em>This is italicized</em></p>
+<p><em>This is also italicized</em></p>
 </div>
-<div id="file-formats" class="section level3 unnumbered">
-<h3>File formats</h3>
-<p>readme files and data dictionaries should be written in plain text, this will ensure that the file describing your project and all of its files can be opened on any computer. You will often see readme files called <code>_README.txt</code> or <code>_DATA-DICTIONARY.txt</code>.</p>
-<p>Our example readme and data dictionaries use a plain text format called markdown.</p>
-<div id="markdown" class="section level4 unnumbered">
-<h4>markdown</h4>
-<p>We recommend that you create your readme files as markdown, a way of formatting plain text files, allowing us to provide additional meaning to our content. For example, in plain text, if we want to emphasize content, we don’t really have a way of doing this. In markdown, we can use italics and bolding if needed. We can also create lists and tables.</p>
-<p>Learn the basic syntax of markdown <a href="">here</a>.</p>
+<div id="bold" class="section level3 unnumbered">
+<h3>Bold</h3>
+<p>You can make text bold by encasing the text in two asterisks "**" or underscores
+"__".</p>
+<p>Input</p>
+<pre><code>**This is bold**
+
+__This is also bold__</code></pre>
+<p>Output</p>
+<p><strong>This is bold</strong></p>
+<p><strong>This is also bold</strong></p>
+<div id="bold-and-italics" class="section level4 unnumbered">
+<h4>Bold and Italics</h4>
+<p>If you want to make text both bold and italicized you can encase the text with three asterisks "***" or underscores "___".</p>
+<p>Input</p>
+<pre><code>***This is bold and italicized***
+
+___This is also bold and italicized___</code></pre>
+<p>Output</p>
+<p><strong><em>This is bold and italicized</em></strong></p>
+<p><strong><em>This is also bold and italicized</em></strong></p>
+<p><strong>NOTE</strong> When italicizing or bolding characters within a string of text it's better to use an asterisk "*" rather than an underscore "_". For example: Biology *is* awesome NOT Biology _is_ awesome</p>
 </div>
+</div>
+<div id="strikethrough" class="section level3 unnumbered">
+<h3>Strikethrough</h3>
+<p>You can strike through text by encasing it with two tildes, "~~".</p>
+<p>Input</p>
+<pre><code>~~This text has a strike through it~~</code></pre>
+<p>Output</p>
+<p><del>This text has a strike through it</del></p>
 </div>
 </div>
             </section>
@@ -258,8 +276,8 @@
           </div>
         </div>
       </div>
-<a href="directory-naming.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="root-folder-readme.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="structure.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="code.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

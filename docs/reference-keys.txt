@@ -1,5 +1,5 @@
 introduction
-file-naming-conventions
+file-naming
 quick-reference
 lab-reports-and-manuscripts
 figures-and-plots
@@ -7,7 +7,7 @@ analysis
 data
 whats-in-a-name
 an-example
-directory-structure-conventions
+directory-structures
 directory-hierarchies
 directory-naming
 readme-files-and-data-dictionaries
@@ -25,4 +25,20 @@ tables
 descriptive-summary-statistics
 results-of-statistical-tests
 figures
+markdown-1
+how-markdown-works
+what-you-need-to-get-started
+prose
+structure
+emphasis-and-style
+code
+blockquotes
+lists
+tables-1
+links
+images
+markdown-flavours
+apa-citations
+in-text-citations
+reference-list
 glossary
