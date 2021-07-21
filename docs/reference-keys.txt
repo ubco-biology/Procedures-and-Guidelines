@@ -1,4 +1,4 @@
-introduction
+file-and-data-management
 file-naming
 quick-reference
 lab-reports-and-manuscripts
@@ -20,7 +20,7 @@ tidy-data
 wide-data
 tidy-data-1
 side-by-side-comparison
-figures-and-tables
+figures-tables
 tables
 descriptive-summary-statistics
 results-of-statistical-tests
@@ -29,7 +29,7 @@ markdown-1
 how-markdown-works
 what-you-need-to-get-started
 prose
-structure
+structure-1
 emphasis-and-style
 code
 blockquotes

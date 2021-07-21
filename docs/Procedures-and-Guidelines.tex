@@ -6,7 +6,7 @@
 ]{book}
 \title{Procedures and Guidelines}
 \author{Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar}
-\date{2021-07-20}
+\date{2021-07-21}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -92,7 +92,15 @@
 \chapter*{Welcome}\label{welcome}}
 \addcontentsline{toc}{chapter}{Welcome}
 
-Write any prefatory content here.
+The procedures and guidelines articulated in this document represent accepted standards for the conduct and presentation of student works in the Biology undergraduate curriculum at UBC Okanagan.
+
+These guidelines are modeled on best practices in the life sciences and where necessary, adapted specifically for the biological sciences and student engagement in learning and research.
+
+\textbf{For Students} These are guidelines only. You may be asked to adhere to them directly as part of your coursework or you may be asked to work with a specific implementation of what is suggested here.
+
+\textbf{For Instructors} Any concerns or omissions from these procedures and guidelines can be forwarded to Jason Pither (\href{mailto:jason.pither@ubc.ca}{\nolinkurl{jason.pither@ubc.ca}}) or Mathew Vis-Dunbar (\href{mailto:mathew.vis-dunbar@ubc.ca}{\nolinkurl{mathew.vis-dunbar@ubc.ca}})
+
+\textbf{NOTE} This is a living document. Expect that content will be added over time and adapted as needs and circumstances change.
 
 \hypertarget{copyright}{%
 \section*{Copyright}\label{copyright}}
@@ -102,20 +110,52 @@ This work is licenced under the Creative Commons \href{https://creativecommons.o
 
 Please use the following for citing this document
 
-Copeland, C., Pither, J., Vis-Dunbar, M. (2021). \emph{Procedures and Guidelines}. \href{}{url}
+Copeland, C., Pither, J., Vis-Dunbar, M. (2021). \emph{Procedures and Guidelines}. \url{https://ubco-biology.github.io/Procedures-and-Guidelines/}
 
-All source files are available \href{}{url}.
+All source files are available at \url{https://github.com/ubco-biology/Procedures-and-Guidelines}.
 
-\hypertarget{conventions}{%
-\section*{Conventions}\label{conventions}}
-\addcontentsline{toc}{section}{Conventions}
+\hypertarget{why-procedures-and-guidelines}{%
+\section*{Why Procedures and Guidelines?}\label{why-procedures-and-guidelines}}
+\addcontentsline{toc}{section}{Why Procedures and Guidelines?}
+
+When we talk about procedures and guidelines, we're very much talking about standards and conventions. Standards and conventions allow the products of research to be easily consumed, interpreted, adapted and re-used. For example, the metric system did wonders for standardizing how we measure distances and weight. The chaos that would ensue if every entomologist took specimen measurements with their own system - or determined wing span from different points of origin across the same species!
+
+Standards and conventions allow us to also explore our data and outputs to greater extents than historically possible by allowing us to leverage computers; computers rely on standards to parse and merge data. Without standardization in what and how markers of climate change are recorded, we would be unable to pool the massive amounts of data collected globally to build the understanding that we are for how our climate is changing.
+
+These qualities of standards and conventions - easy consumption, interpretation, adaptation, and re-use - are integral to robust, transparent, reproducible research; qualities that underpin the development of a strong evidence base on which to conduct further research and inform practices and policy.
+
+\hypertarget{structure}{%
+\section*{Structure}\label{structure}}
+\addcontentsline{toc}{section}{Structure}
+
+This book is divided into 4 sections.
+
+\begin{itemize}
+\tightlist
+\item
+  File and Data Management
+\item
+  Data Presentation
+\item
+  Writing and Citing
+\item
+  Glossary
+\end{itemize}
+
+\textbf{File and data management} covers content related to how to organize, name, and store research data. Broadly speaking, this covers all aspects of research data management.
+
+\textbf{Data presentation} covers how data should be presented when summarized or analyzed.
+
+\textbf{Writing and citing} touches on tools and approaches to support properly formatted and cited open publications.
+
+\textbf{Glossary} is a set of standard definitions for concepts that one will encounter throughout the Biology undergraduate curriculum. When possible, course materials will link directly here.
 
 \hypertarget{part-file-and-data-management}{%
 \part*{File and Data Management}\label{part-file-and-data-management}}
 \addcontentsline{toc}{part}{File and Data Management}
 
-\hypertarget{introduction}{%
-\chapter{Introduction}\label{introduction}}
+\hypertarget{file-and-data-management}{%
+\chapter{File and Data Management}\label{file-and-data-management}}
 
 Well organized data is critical to transparency, reproducibility and generally maintaining one's sanity when conducting research. When we talk about file and data management we may be referring to one of many aspects of making our data understandable to others, to a computer, or to our future selves that have succumb to memory lapses. Making data comprehensible is really about well structured and communicated metadata that is, whenever possible, implemented according to conventions or standards.
 
@@ -236,8 +276,8 @@ Special characters are any characters that are \textbf{not} part of the English 
 
 When operating in a multi-lingual or non-English environment, this can prove problematic, but it is an unfortunate legacy of the development of computer standards that has yet to be fully resolved.
 
-\hypertarget{conventions-1}{%
-\subsubsection*{Conventions}\label{conventions-1}}
+\hypertarget{conventions}{%
+\subsubsection*{Conventions}\label{conventions}}
 \addcontentsline{toc}{subsubsection}{Conventions}
 
 Convention has file naming proceed in the following order, with each element separated by an underscore "\_", and words within an element joined with a dash "-". The file type is generally added with a period "." and usually automatically generated when an application creates a file.
@@ -483,7 +523,7 @@ Our example readme and data dictionaries use a plain text format called markdown
 
 We recommend that you create your readme files as markdown, a way of formatting plain text files, allowing us to provide additional meaning to our content. For example, in plain text, if we want to emphasize content, we don't really have a way of doing this. In markdown, we can use italics and bolding if needed. We can also create lists and tables.
 
-Learn the basic syntax of markdown \href{}{here}.
+Learn the basic syntax of markdown \href{https://ubco-biology.github.io/Procedures-and-Guidelines/markdown-1.html}{here}.
 
 \hypertarget{root-folder-readme}{%
 \section{Root folder readme}\label{root-folder-readme}}
@@ -983,8 +1023,8 @@ Ellison-lake & 3 & 1 \\
 \part*{Data Presentation}\label{part-data-presentation}}
 \addcontentsline{toc}{part}{Data Presentation}
 
-\hypertarget{figures-and-tables}{%
-\chapter{Figures and Tables}\label{figures-and-tables}}
+\hypertarget{figures-tables}{%
+\chapter{Figures \& Tables}\label{figures-tables}}
 
 These guidelines are based on current "best practices" in Biology. You may encounter small differences when working with data or reading the results of research from other disciplines. They aim to achieve consistency among faculty, instructors, and students in how data are summarized and presented within lab reports and research papers.
 
@@ -1060,7 +1100,7 @@ Root mass (mg)
 + data for two individuals misplaced
 
 \hypertarget{descriptive-summary-statistics}{%
-\section{Descriptive / summary statistics}\label{descriptive-summary-statistics}}
+\section{Descriptive \& Summary Statistics}\label{descriptive-summary-statistics}}
 
 Here are some general guidelines to follow when displaying descriptive or summary statistics:
 
@@ -1288,8 +1328,8 @@ There's a couple of things you'll note right away.
   Just hitting 'Enter' once doesn't put you on a new line. You need to hit 'Enter' twice.
 \end{itemize}
 
-\hypertarget{structure}{%
-\section{Structure}\label{structure}}
+\hypertarget{structure-1}{%
+\section{Structure}\label{structure-1}}
 
 \hypertarget{headings}{%
 \subsection*{Headings}\label{headings}}

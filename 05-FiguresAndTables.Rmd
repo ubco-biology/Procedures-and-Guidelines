@@ -1,6 +1,6 @@
 # (PART\*) Data Presentation {-}
 
-# Figures and Tables 
+# Figures & Tables 
 
 These guidelines are based on current \"best practices\" in Biology. You may encounter small differences when working with data or reading the results of research from other disciplines. They aim to achieve consistency among faculty, instructors, and students in how data are summarized and presented within lab reports and research papers.
 
@@ -56,7 +56,7 @@ The following is an example of a properly formatted table
 
 \+ data for two individuals misplaced
 
-## Descriptive / summary statistics
+## Descriptive & Summary Statistics
 
 Here are some general guidelines to follow when displaying descriptive or summary statistics:
 

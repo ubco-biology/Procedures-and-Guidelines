@@ -1,0 +1,15 @@
+# (PART\*) File and Data Management {-}
+
+# File and Data Management
+
+Well organized data is critical to transparency, reproducibility and generally maintaining one's sanity when conducting research. When we talk about file and data management we may be referring to one of many aspects of making our data understandable to others, to a computer, or to our future selves that have succumb to memory lapses. Making data comprehensible is really about well structured and communicated metadata that is, whenever possible, implemented according to conventions or standards.
+
+So, when we talk about file and data management, broadly speaking, we're talking about
+
+* File naming and file naming conventions
+* Directory structures
+* Organizing and formatting data at the variable level
+
+Directory structures, being more complicated, bring with them the need to add additional documentation, such as a description of the directory structure and what we might expect to find where. It will also often include more detailed documentation about how to interpret what is inside specific files; one example of this is the data dictionary that describes each of the variables collected for the study.
+
+Organizing and formatting data is a discussion about the best way to sort and parse our data into columns and rows so that we can effectively produce summaries, statistical calculations, and visualizations from these data; a core concept you'll be introduced to in this guidelines document is that of \"tidy data\".

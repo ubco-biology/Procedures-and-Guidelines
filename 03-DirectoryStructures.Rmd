@@ -64,7 +64,7 @@ Our example readme and data dictionaries use a plain text format called markdown
 
 We recommend that you create your readme files as markdown, a way of formatting plain text files, allowing us to provide additional meaning to our content. For example, in plain text, if we want to emphasize content, we don't really have a way of doing this. In markdown, we can use italics and bolding if needed. We can also create lists and tables.
 
-Learn the basic syntax of markdown [here]().
+Learn the basic syntax of markdown [here](https://ubco-biology.github.io/Procedures-and-Guidelines/markdown-1.html).
 
 ## Root folder readme
 

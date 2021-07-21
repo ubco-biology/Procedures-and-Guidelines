@@ -1,86 +1,27 @@
-## Set up
+The procedures and guidelines articulated in this document represent accepted standards for the conduct and presentation of student works in the Biology undergraduate curriculum at UBC Okanagan.
 
-**Install**
+These guidelines are modeled on best practices in the life sciences and where necessary, adapted specifically for the biological sciences and student engagement in learning and research.
 
-* R
-* RStudio
-  * Not strictly necessary, but advisable
-* Pandoc
-  * Bundled with RStudio, but also available as a stand alone
-* LateX
-  * Simplest option is to install Tinytex package in R, but can be handled separately.
+**For Students** These are guidelines only. You may be asked to adhere to them directly as part of your coursework or you may be asked to work with a specific implementation of what is suggested here.
 
-<hr />
+**For Instructors** Any concerns or omissions from these procedures and guidelines can be forwarded to Jason Pither (jason.pither@ubc.ca) or Mathew Vis-Dunbar (mathew.vis-dunbar@ubc.ca)
 
-**In RStudio**
+**NOTE** This is a living document. Expect that content will be added over time and adapted as needs and circumstances change.
 
-Install bookdown
+## Why a Procedures and Guidelines ebook? {-}
 
-```{r}
-install.packages("bookdown")
-```
+When we talk about procedures and guidelines, we\'re very much talking about standards and conventions. Standards and conventions allow the products of research to be easily consumed, interpreted, adapted and re-used. For example, the metric system did wonders for standardizing how we measure distances and weight. The chaos that would ensue if every entomologist took specimen measurements with their own system - or determined wing span from different points of origin across the same species!
 
-Install Tinytex
+Standards and conventions allow us to also explore our data and outputs to greater extents than historically possible by allowing us to leverage computers; computers rely on standards to parse and merge data. Without standardization in what and how markers of climate change are recorded, we would be unable to pool the massive amounts of data collected globally to build the understanding that we are for how our climate is changing.
 
-```{r}
-install.packages("tinytex")
+These qualities of standards and conventions - easy consumption, interpretation, adaptation, and re-use - are integral to robust, transparent, reproducible research; qualities that underpin the development of a strong evidence base on which to conduct further research and inform practices and policy.
 
-tinytex::install_tinytex()
-```
+## Copyright {-}
 
-## Template
+This work is licenced under the Creative Commons [Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-| File          | Description                                                  |
-| ------------- | ------------------------------------------------------------ |
-| index.Rdm     | Contains file specific yaml, including document title, authorship, date etc. as well as a default welcome, copyright and conventions section. |
-| _bookdown.yml | Contains generic yaml, including book file name, output directory, cleaning instructions, language and certain UI elements, such as section breaks. |
-| _output.yml   | Contains output specific yaml, generating html, pdf, and epub formats. |
-| styles.css    | Global css settings                                          |
+Please use the following for citing this document
 
-## Instructions
+Copeland, C., Pither, J., Vis-Dunbar, M. (2021). *Procedures and Guidelines*. [https://ubco-biology.github.io/Procedures-and-Guidelines/](https://ubco-biology.github.io/Procedures-and-Guidelines/)
 
-### Building the book
-
-Open the file template.Rproj This will provide you with a workding directory in RStudio with all of the above files. 
-
-#### Update _output.yml
-
-Update the toc before text to reflect the title of your book.
-
-#### Update _bookdown.yml
-
-Update the book_filename reflect the title of your book. Separate words with hyphens \"-\" and do not use special characters, including spaces.
-
-#### Update index.Rdm
-
-* In the yaml, adjust the title, description, and bibliography fields. If not using a bibliography, remove bibliography, biblio-style, and link-citations fields.
-* Update the citation in the copyright section.
-* Update or remove the conventions section.
-
-#### Naming files
-
-.Rmd / .md files should be numbered in the order in which you wish to have them compiled. index.Rmd will be compiled first by default and does not require numbering, subsequent files should look like:
-
-* 01_FirstFile.Rmd
-* 02_SecondFile.Rmd
-
-#### Conventions
-
-* Chapters are defined by h1 headers (#). This is default behaviour.
-* Pagination is defined by h2 headers (##). This is defined in _bookdown.yml split_by: section
-* Books may be further broken down into parts if needed using the special header # (PART). [See section 2.2.3 Specia Headers](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#special-headers)
-* bookdown files are exported to a <code>docs/</code> directory in the project root folder, defined in _bookdown.yml.
-
-#### .nojekyll
-
-GitHub pages uses Jekyll to render markdown to html. We're not using this, so to keep Jekyll out of the way, put a .nojekyll file in the <code>docs/</code> directory. To this, open a shell, navigate to your docs directory and execute <code>touch .nojekyll</code>
-
-#### Avoiding errors
-
-* If including citations, ensure that all bib records have a date field; it may be necessary to manually add \"n.d.\" if no date is available.
-* When giving the book a name in _bookdown.yml file, ensure the file name is connected by hyphens \"-\", and that special charaters are avoided - this includes spaces.
-
-### Publishing the book
-
-* Create a repository for the project, upload content and set up git hub pages to look in the <code>docs/</code> directory.
-
+All source files are available at [https://github.com/ubco-biology/Procedures-and-Guidelines](https://github.com/ubco-biology/Procedures-and-Guidelines).
