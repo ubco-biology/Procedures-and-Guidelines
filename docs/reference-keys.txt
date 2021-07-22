@@ -41,4 +41,6 @@ markdown-flavours
 apa-citations
 in-text-citations
 reference-list
+academic-integrity
+copyright-1
 glossary
