@@ -117,7 +117,8 @@ When displaying data using a figure, follow these guidelines:
 	* e.g. \“Line represents a least-squares linear regression line, *y* = 0.3 + 4.5*x* (*F* = 5.65, df = 36; P = 0.021)\”. 
 * For more complex statistics (e.g. lines associated with mixed effects models) refer the reader to the text for details
 * Bar plots should **only** be used to visualize categorical data (e.g. proportion of students with brown or blue eyes) or counts (number of flies on scat)
-* When comparing numerical data among categories or groups (Figs. 1,2) use stripcharts (Fig. 1) when sample sizes are small (i.e. <20) and boxplots otherwise (Fig. 2)
+* When comparing numerical data among categories or groups (Figs. 1,2) use stripcharts (Fig. 1) when sample sizes are small (i.e. <20) and boxplots otherwise (Fig. 2). 
+* Note that the stripchart has the advantage of showing all the data (i.e. each observation is represented by a point), whereas the boxplot summarizes the data visually.  When sample sizes per group are very large, it would get very messy if you tried to show all the data.  However, there are graphs like ["violin plots"](https://www.r-graph-gallery.com/violin.html) that offer a nice compromise. 
 
 ### Examples {-}
 
