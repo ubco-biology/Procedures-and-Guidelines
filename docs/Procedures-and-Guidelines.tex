@@ -4,14 +4,10 @@
 %
 \documentclass[
 ]{book}
-\title{Procedures and Guidelines}
-\author{Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar}
-\date{2021-07-22}
-
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{iftex}
-\ifPDFTeX
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -75,11 +71,15 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
-\ifLuaTeX
+\ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
+
+\title{Procedures and Guidelines}
+\author{Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar}
+\date{2021-08-09}
 
 \begin{document}
 \maketitle
@@ -1145,23 +1145,6 @@ Here are some general guidelines to follow when displaying descriptive or summar
 \item
   Report a frequency table (raw data) or a summary table with proportions for categories (the main descriptive statistic of interest), along with the confidence interval for the proportion if appropriate
 \end{itemize}
-
-\hypertarget{example-1}{%
-\subsection*{Example}\label{example-1}}
-\addcontentsline{toc}{subsection}{Example}
-
-\textbf{Table 2.} Descriptive statistics for an experiment investigating the effect of different protein diets on growth of chicks since birth. Chicks were weighed at birth and every second day after that until day 20. For more information on this dataset click \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/ChickWeight}{here.}
-
-\begin{longtable}[]{@{}lllll@{}}
-\toprule
-Variable & n & \% & Mean & SD \\
-\midrule
-\endhead
-Diet 1 Diet 2 Diet 3 Diet 4 & 220 120 120 118 & 38.1 20.8 20.8 20.4 & & \\
-Weight (gm) & 578 & & 121.8 & 71.10 \\
-Time (days) & 578 & & 10.7 & 6.76 \\
-\bottomrule
-\end{longtable}
 
 \hypertarget{results-of-statistical-tests}{%
 \section{Results of Statistical Tests}\label{results-of-statistical-tests}}
