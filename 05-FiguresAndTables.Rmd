@@ -76,16 +76,6 @@ Here are some general guidelines to follow when displaying descriptive or summar
 
 * Report a frequency table (raw data) or a summary table with proportions for categories (the main descriptive statistic of interest), along with the confidence interval for the proportion if appropriate
 
-### Example {-}
-
-**Table 2.** Descriptive statistics for an experiment investigating the effect of different protein diets on growth of chicks since birth. Chicks were weighed at birth and every second day after that until day 20. For more information on this dataset click [here.](https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/ChickWeight)
-
-| Variable                                      | n                                 | %                                     | Mean  | SD    |
-| --------------------------------------------- | --------------------------------- | ------------------------------------- | ----- | ----- |
-| Diet 1 <br />Diet 2 <br />Diet 3 <br />Diet 4 | 220 <br />120 <br />120 <br />118 | 38.1 <br />20.8 <br />20.8 <br />20.4 |       |       |
-| Weight (gm)                                   | 578                               |                                       | 121.8 | 71.10 |
-| Time (days)                                   | 578                               |                                       | 10.7  | 6.76  |
-
 ## Results of Statistical Tests
 
 Here are some guidelines for reporting the results of statistical tests: 
