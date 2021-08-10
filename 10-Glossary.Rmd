@@ -1,4 +1,7 @@
 # Glossary
+
+*Last updated `r Sys.Date()`*
+
 <a id="A-priori-hypothesis">**A priori hypothesis:**</a> Hypothesis that is generated before the research study takes place. Presenting the hypothesis before the study takes place helps in avoiding replacing the hypothesis later with one that fits the data better aka hypothesizing after the fact (HARKing). 
 
 <a id="Alternative-hypothesis">**Alternative hypothesis:**</a> In contrast to the null hypothesis, the alternative hypothesis suggests there is a relationship between phenomena, variables, or populations. In other words, any differences are not the result of random chance. 

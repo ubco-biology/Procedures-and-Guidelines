@@ -2,16 +2,18 @@
 
 # Markdown 
 
+*Last updated `r Sys.Date()`*
+
 Markdown is a markup language that is used to format plain text files to help us provide additional meaning to our content. Markup languages are ideal authoring tools because they work on a principle of separating out content from formatting. Markup languages are ideal authoring tools for the sciences because they rely on plain text so any computer anywhere at anytime will be able to open them and consequently, we will be able to read them.
 
 Benefits of Markdown:
 
 * Simple and easy to learn
-* Can be used to geerate many different outputs formats (ie. pdf, html, docx etc.)
+* Can be used to generate many different outputs formats (ie. pdf, html, docx etc.)
 * Can be read on any device with any operating system 
 * Many different web-applications and websites (ie. Reddit, GitHub) use it 
 
-In fact, when we think about best practices in science leveraging tools that allow for reproducibility and interoperability (they are independent of specific operating systems or programs for example), Markdown is an essential authoring tool.
+In fact, when we think about best practices in science leveraging tools that allow for reproducibility and interpretability (they are independent of specific operating systems or programs for example), Markdown is an essential authoring tool.
 
 To learn more about Markdown see Matt Cone's Markdown Guide [here](https://www.markdownguide.org/getting-started#:~:text=Why%20Use%20Markdown%3F%201%20Markdown%20can%20be%20used,future%20proof.%20...%205%20Markdown%20is%20everywhere.%20).
 

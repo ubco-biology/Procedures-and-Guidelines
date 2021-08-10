@@ -1,5 +1,7 @@
 # Tidy data
 
+*Last updated `r Sys.Date()`*
+
 We've talked about file naming, directory structures, and documentation to ensure accessible, interpretable, and transparent data. Now it's time to talk about organizing individual variables within a given file. When well organized, data values can be effectively analyzed, summarized, and visualized. When not, they can be onerous to work with and risk misinterpretation.
 
 In general, your data files should adhere to the principles of \"tidy data\". Tidy data is governed by the following 3 rules^[See: Wickham, H. & Grolemund, G. (2017). [Tidy Data](https://r4ds.had.co.nz/tidy-data.html). *In R for Data Science*.]:

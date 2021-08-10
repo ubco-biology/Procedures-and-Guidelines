@@ -1,5 +1,7 @@
 # File Naming
 
+*Last updated `r Sys.Date()`*
+
 File naming isn't exactly fun, but it is crucially important to being able to organize, describe, and manage any kind of work, especially research. So let's talk about file naming conventions, and those that you'll be expected to use while in Biology at UBCO.
 
 We'll start with the rules, we'll then break these down and explain the process.

@@ -1,5 +1,7 @@
 # APA Citations
 
+*Last updated `r Sys.Date()`*
+
 This is a brief overview of the 7th edition of APA for quick reference. For a more in depth review, please consult [the library's APA Citation Guide](https://guides.library.ubc.ca/apacitationstyle). For the full APA manual, please consul the [Publication Manual of the American Psychological Association](http://resolve.library.ubc.ca/cgi-bin/catsearch?bid=10057275), available through the library.
 
 Additional resources you may wish to consult include:
