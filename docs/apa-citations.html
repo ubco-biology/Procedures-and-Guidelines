@@ -24,7 +24,7 @@
 <meta name="author" content="Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar" />
 
 
-<meta name="date" content="2021-08-09" />
+<meta name="date" content="2021-08-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,16 +194,7 @@
 </ul></li>
 <li class="chapter" data-level="8" data-path="academic-integrity.html"><a href="academic-integrity.html"><i class="fa fa-check"></i><b>8</b> Academic Integrity</a></li>
 <li class="chapter" data-level="9" data-path="copyright-1.html"><a href="copyright-1.html"><i class="fa fa-check"></i><b>9</b> Copyright</a></li>
-<li class="part"><span><b>Glossary</b></span></li>
-<li class="chapter" data-level="10" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i><b>10</b> Glossary</a>
-<ul>
-<li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html#a"><i class="fa fa-check"></i>A</a></li>
-<li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html#b"><i class="fa fa-check"></i>B</a></li>
-<li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html#c"><i class="fa fa-check"></i>C</a></li>
-<li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html#d"><i class="fa fa-check"></i>D</a></li>
-<li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html#e"><i class="fa fa-check"></i>E</a></li>
-<li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html#f"><i class="fa fa-check"></i>F</a></li>
-</ul></li>
+<li class="chapter" data-level="10" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i><b>10</b> Glossary</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -291,6 +282,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

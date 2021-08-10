@@ -4,10 +4,14 @@
 %
 \documentclass[
 ]{book}
+\title{Procedures and Guidelines}
+\author{Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar}
+\date{2021-08-10}
+
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -71,15 +75,11 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
-\ifluatex
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
-
-\title{Procedures and Guidelines}
-\author{Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar}
-\date{2021-08-09}
 
 \begin{document}
 \maketitle
@@ -1723,50 +1723,50 @@ Copyright is the legal ownership of a work, like a book, image, graph, journal a
 
 Learn more about copyright at UBC from the \href{https://learningcommons.ubc.ca/resource-guides/respect-copyright/}{UBC Learning Commons}.
 
-\hypertarget{part-glossary}{%
-\part*{Glossary}\label{part-glossary}}
-\addcontentsline{toc}{part}{Glossary}
-
 \hypertarget{glossary}{%
 \chapter{Glossary}\label{glossary}}
 
-\hypertarget{a}{%
-\subsection*{A}\label{a}}
-\addcontentsline{toc}{subsection}{A}
-
 \textbf{A priori hypothesis:} Hypothesis that is generated before the research study takes place. Presenting the hypothesis before the study takes place helps in avoiding replacing the hypothesis later with one that fits the data better aka hypothesizing after the fact (HARKing).
 
-\hypertarget{b}{%
-\subsection*{B}\label{b}}
-\addcontentsline{toc}{subsection}{B}
+\textbf{Alternative hypothesis:} In contrast to the null hypothesis, the alternative hypothesis suggests there is a relationship between phenomena, variables, or populations. In other words, any differences are not the result of random chance.
+
+\textbf{Analysis of variance (ANOVA):} A statistical test used to compare the mean of a numeric variable in relation to a single categorical variable that has more than two groups.
+
+\textbf{Assumptions:} There are often assumptions associated with statistical tests. This means that for the test to provide reliable results the data must meet specific criteria or conditions. These assumptions need to be checked prior to conducting any analyses.
 
 \textbf{Bias:} Error is introduced and false conclusions might be drawn because our sample doesn't meet established standards for faithful representation of our population of interest.
 
+\textbf{Binomial distribution:} A discrete probability distribution of the number of successes where there are exactly two possible outcomes (success and failure).
+
+\textbf{Binomial test:} A statistical test that determines the probability of getting a particular proportion when there are exactly two possible outcomes (success and failure).
+
 \textbf{Burden of proof:} The obligation that when a causal link is suggested that evidence to support this link must be presented. This can be accomplished through independent replication of studies where if they demonstrate the same conclusions it reinforces the validity of the causal link between those variables.
 
-\hypertarget{c}{%
-\subsection*{C}\label{c}}
-\addcontentsline{toc}{subsection}{C}
+\textbf{Chi-square (\(\chi\)\textsuperscript{2}) contingency test:} A statistical test used to assess whether there is an association between categorical variables. This test is used on contingency tables that are larger than 2 x 2.
+
+\textbf{Chi-square (\(\chi\)\textsuperscript{2}) goodness of fit test:} A statistical test used to test how well an observed discrete frequency (or probability) distribution fits some specified expectation.
 
 \textbf{Clinical trials:} Experiments that involve i) human participants who are assigned in advance to a group that receives a particular treatment designed to produce a biomedical or behavioural result and ii) evaluation of the effect of the treatments (NIH, 2017)
 
 \textbf{Citizen science:} When members of the public engage in the research process. Often involving collaboration with researchers.
 
+\textbf{Coefficient of determination (R2):} The proportion of the variance in the response variable that can be explained or predicted by the independent variable. It describes the strength of the relationship between two variables.
+
+\textbf{Coefficient of variation (CV):} A relative measure of variability that indicates the size of a standard deviation in relation to its mean." {[}Frost, Jim n.d.{]}(\href{https://statisticsbyjim.com/basics/coefficient-variation/\#:~:text=The\%20coefficient\%20of\%20variation\%20(CV)\%20is\%20a\%20relative,also\%20known\%20as\%20the\%20relative\%20standard\%20deviation\%20(RSD).}{Coefficient of Variation in Statistics - Statistics By Jim}
+
+\textbf{Comma-separated values (CSV) file:} A plain text file where each line of the file represents a record and each field (column) entry for that record is separated by a comma. This file format is frequently used by researchers to store data.
+
+\textbf{Confidence interval:} An estimated range of values that has an associated probability. The probability describes the likelihood that this range of values will contain the true value of a parameter (ie. mean). For example, a 95\% confidence interval suggests we can be 95\% confident that the true parameter lies within that range of values. Or in other words, on average we can expect the true parameter to lie in this range, 95\% of the time.
+
 \textbf{Confirmatory research:} Researchers used a well designed experiment to test the validity of predetermined hypotheses that can be disproved.
 
 \textbf{Critical analysis:} Careful examination and evaluation of all parts of a research article including consideration of the study's strengths and weaknesses as they relate to study design, implementation, data collection, data analysis, and interpretation.
 
-\hypertarget{d}{%
-\subsection*{D}\label{d}}
-\addcontentsline{toc}{subsection}{D}
+\textbf{Data transformation:} A process where the format of the values within a dataset are changed. For example, all of the values within a dataset might be log transformed. This is often done when the original data does not meet the assumptions of a particular statistical test. After the data transformation researchers will re-assess those assumptions to see if they can perform the test on the newly transformed data.
 
 \textbf{Descriptive statistics:} A number used to summarize or describe a given data set or sample. Examples include mean, median, mode, standard deviation, and interquartile range.
 
 \textbf{Diversity:} The practice or quality of having individuals who vary in terms of social class, ethnic background, sexual orientation, gender, religion, ability, etc.
-
-\hypertarget{e}{%
-\subsection*{E}\label{e}}
-\addcontentsline{toc}{subsection}{E}
 
 \textbf{Effect size:} A measure of the degree of association between one variable and another, or in experimental contexts, of the impact of one variable on another.
 
@@ -1774,11 +1774,9 @@ Learn more about copyright at UBC from the \href{https://learningcommons.ubc.ca/
 
 \textbf{Exploratory research:} Research that is performed to gain a better understanding of an existing problem. For example, it might give rise to hypotheses that can then be tested through confirmatory research.
 
-\hypertarget{f}{%
-\subsection*{F}\label{f}}
-\addcontentsline{toc}{subsection}{F}
-
 \textbf{File and data management:} Refers to practices used to collect, generate, and store data and files throughout the research process. Researchers should document what type of data they have collected, the methods used, and any relevant context. Files and data should be stored such that they are organized, accessible, and interpretable by both the researcher and others.
+
+\textbf{Fisher's exact test:} A statistical test used to assess whether there is an association between categorical variables. This test is used on contingency tables that have exactly 2 x 2 dimensions.
 
 \textbf{HARKing:} A form of questionable research practices where the researcher changes their hypothesis after the study is conducted so that the hypothesis better fits the data. In other words, the researcher suggests that this post hoc (after the fact) hypothesis was formed a priori. This has a number of implications including: ``harming the progress of science by preventing the research community from identifying already falsified hypotheses, contributes to the replication crisis, and it increases the probability that the findings are not reproducible or generalizable in the population of interest''. (\href{https://health.ucdavis.edu/ctsc/area/Resource_Library/documents/HARKing_0Jan2021.pdf}{UCDavis Health, n.d.})
 
@@ -1788,25 +1786,67 @@ Learn more about copyright at UBC from the \href{https://learningcommons.ubc.ca/
 
 \textbf{Inclusion:} The philosophy or practice of considering individuals from diverse backgrounds in relation to the community, organization, or society, and ensuring that they feel that they belong, supporting them in giving their best efforts, and giving them equal opportunities to advance and participate in decision-making.
 
+\textbf{Interquartile range:} A descriptive statistic that measures the variation within the middle section of a set of values. Specifically, it describes the range between the first and third quartiles of a set of values.
+
+\textbf{Linear regression:} A statistical method used to model the linear relationship between independent and dependent variables.
+
+\textbf{Literate programming:} A coding paradigm where natural language is written alongside or between lines of code to provide an explanation for the code's logic. This practice helps enhance reproducibility and understanding by guiding readers through the programmers thought process.
+
 \textbf{Literature review:} A review of scholarly sources related to a specific research question or topic. Involves recording a list of research studies consulted, how they were found, and the strengths, limitations, and weaknesses of each.
 
+\textbf{Long format data:} A method for organizing data where all of one subject's observations are represented by distinct rows.
+
+\textbf{Markdown:} Markdown is a markup language that is used to format plain text files to help us provide additional meaning to our content. For example, using Markdown you can use bold, italics, and create tables. Markup languages are ideal authoring tools because they work on a principle of separating out content from formatting.
+
+\textbf{Mean:} A commonly used descriptive statistic that measures the central tendency of a numeric variable. Specifically, the mean is the arithmetic average of a group of values.
+
+\textbf{Median:} A descriptive statistic measuring the central tendency of a numeric variable. The median is the value separating the upper and lower halves of the variable. In other words the middle value of a group of numbers.
+
 \textbf{Metadata:} Data that provides information about other data.
+
+\textbf{Mode:} A descriptive statistic for a either a numeric or categorical variable. The mode is the value that appears most frequently.
+
+\textbf{Null hypothesis (Ho):} Used alongside the alternative hypothesis in hypothesis testing. The null hypothesis states that there is no significant effect or relationship between phenomena, variables, or populations. Rather any differences observed are the result of random chance.
+
+\textbf{Odds ratio:} Measure of the relative odds of the occurrence of a specific event (ie. cancer) given the exposure to a variable of interest (ie. smoking). This ratio is often used to determine the odds of health related outcomes.
+
+\textbf{One-sample t-test:} A statistical test used to compare a numeric response variable (ie. mean) to an expected value.
 
 \textbf{Open notebooks:} Involves i) publishing or linking to data on an online platform before results are published in a peer-reviewed journal; ii) making information about the methodology and equipment used in a study publicly available; iii) openly discussing both positive and negative results in real time, as they are obtained.
 
 \textbf{Open science:} A movement and set of practices intended to combat the replication crisis, QRPs, and style trumping substance by making all parts of the scientific research process transparent and accessible, allowing for a critical review of how a study was conducted, ultimately enabling that study to be independently replicated. It also involves changing scientific culture to reward not just novel findings, but also the many other aspects of conducting good scientific research.
 
+\textbf{P value (\emph{p}):} The probability of getting a result that is the same or more extreme than what was observed. If the probability of getting that result due to random chance is sufficiently low, then it could be interpreted that there is a significant relationship. In contrast, a high \emph{p} value indicates a larger likelihood that the result was due to random chance and therefore there may be no significant relationship. The \emph{p} value required to establish significance is set by the researchers in advance of the study and is known as the significance level (\(\alpha\)).
+
+\textbf{Paired t-test:} A statistical test used to compare the means of two samples where an observation in one sample can be paired with an observation in the other sample. For example, observations might be linked because they were before and after observations on the same subject or in the same place,.
+
 \textbf{Participatory research:} Turns the relationship between researcher and subject into a partnership, where both contribute to the research question, methods, and outcomes.
 
+\textbf{Pearson correlation:} A statistical test that measures the linear correlation between two numeric variables.
+
 \textbf{Peer review:} Peers of the author critically review the author's study. Traditionally peer review focused on the evaluation of studies prior to publication, however open science practices suggest additional peer review at the study design stage prior to implementation. This ensures the study design meets accepted quality standards before it is conducted.
+
+\textbf{Plain text:} Simple text that is human readable. It can includes letters, numbers, symbols, and spaces but does not have any special formatting and is not computationally tagged.
+
+\textbf{Post-hoc test:} If a significant result is found when performing a statistical test, post hoc tests can be done to provide more details about where those significant differences are arising from. They are another form of statistical tests.
+
+\textbf{Probability:} Describes the likelihood of an event occurring. For example, when a fair coin is flipped the probability of getting tails is 0.5.
+
+\textbf{Proportion:} A number between 0 and 1 that represents the fraction of the total population with a certain attribute. For example, if 10 students have red hair in a school with 100 students, then the proportion of students with red hair is 10/100 or 0.1.
 
 \textbf{Questionable research practices:} A grey area of scientific practice in which researchers do not engage in outright misconduct such as fraud or plagiarism, but may unwittingly break rules of acceptable scientific practice in the pursuit of novel and promising results.
 
 \textbf{R:} a programming language and free software for statistical computing. When used throughout the research process, it allows for openness in the research workflow and computational reproducibility.
 
+\textbf{Relative path:} In contrast to an absolute path, a relative path is a URL that only contains a portion of the path. It is relative to the root of the document and thus should start the path with the directory name that contains the document. For example, if you are writing a Markdown document and would like to include an image of a mealworm, place the mealworm image into the same directory (folder) as the Markdown document and the relative path may look like /BIOL116/project/mealworm.png. Whereas the absolute path might look like C:://Documents/BIOL116/project/mealworm.png.
+
+\textbf{Random assignment:} Assigning participants of a research study to each condition using a method of randomization. This ensures that each participant has an equal chance of being placed in each condition and helps to minimize bias.
+
+\textbf{Range:} A descriptive statistic or measure of variation for a set of values. Specifically, it measures the difference between the highest and lowest values.
+
 \textbf{Replication:} Thorough repetition of a study, using the same methods but different data.
 
-\textbf{Replication crisis}: Many studies cannot be competently analyzed or replicated. This is because critical information about them---design, data, methods, lab notes, analyses and code---may not be made available, or may be poorly communicated. This problem is escalated further because new and original findings are considered more exciting than re-testing or replicating previously conducted studies.
+\textbf{Replication crisis:} Many studies cannot be competently analyzed or replicated. This is because critical information about them---design, data, methods, lab notes, analyses and code---may not be made available, or may be poorly communicated. This problem is escalated further because new and original findings are considered more exciting than re-testing or replicating previously conducted studies.
 
 \textbf{Reproducibility:} "Obtaining consistent results using the same input data; computational steps, methods, and code; and conditions of analysis".
 
@@ -1818,12 +1858,26 @@ Learn more about copyright at UBC from the \href{https://learningcommons.ubc.ca/
 
 \textbf{Scientific integrity:} "The condition resulting from adherence to professional values and practices when conducting, reporting, and applying the results of scientific activities that ensures objectivity, clarity, and reproducibility, and that provides insulation from bias, fabrication, falsification, plagiarism, inappropriate influence, political interference, censorship, and inadequate procedural and information security." (\href{https://www.usda.gov/our-agency/staff-offices/office-chief-scientist-ocs/scientific-integrity-and-research-misconduct}{USDA, n.d.})
 
+\textbf{Significance level (\(\alpha\)):} The probability of rejecting the null hypothesis when it is true. For example, a significance level of 0.05 means there is a 5\% chance that researchers might conclude a significant relationship or difference exists when there is no true relationship or difference. This is also known as the Type I error rate. The significance level is set by researchers before conducting a study and the \emph{p} value result is compared to the \(\alpha\) to determine if there is a significant relationship or difference.
+
+\textbf{Spearman rank correlation:} A nonparametric statistical test that measures the statistical dependence of ranking between two numeric variables.
+
+\textbf{Standard deviation:} A type of descriptive statistic that is used to quantify the amount of variation within a set of values. A set of values with a large standard deviation exhibits high variability whereas a low standard deviation indicates the values are close together.
+
+\textbf{Standard error:} The standard deviation of the sampling distribution for a specific parameter. For example, if the parameter of interest is the mean, the standard error of the mean would be the standard deviation of the sampling distribution of the mean.
+
 \textbf{Statistical analysis:} Involves collecting, organizing, exploring, interpreting, and presenting data to uncover patterns or trends in the data. Involves using statistics to describe the study sample and use that sample to make inferences about the population of interest.
 
 \textbf{Statistical significance:} If a result is determined to have statistical significance it means that the result from the study is not likely to have occurred randomly or by chance. In other words, the result is likely to be caused by something other than chance. The significance level (𝝰) is set by the researcher in advance of the study being performed. Often 𝝰 is set to 0.05, which indicates a 5\% chance of making the wrong decision and determining that the null hypothesis is false when it is in fact true.
 
 \textbf{Study power (aka statistical power):} The probability that a random sample taken from a population will lead to rejection of the study's null hypothesis if that null hypothesis is in fact false. That is, power is a measure of how reliable a study is as a test for its hypothesis; power is positively influenced by things like large sample sizes and relationships characterized by large effect sizes.
 
+\textbf{Two-sample t-test:} A statistical test used to compare the means of two independent samples.
+
+\textbf{Variance:} A descriptive statistic that "measures how far a set of numbers is spread out from their average value." \href{\%5BVariance\%20-\%20Wikipedia\%5D(https://en.wikipedia.org/wiki/Variance)}{Wikipedia, n.d.} In other words, a high variance indicates the values are spread further from the mean whereas a low variance indicates they are close to the mean.
+
 \textbf{Version control:} Saving changes to files while retaining the changes on all previous versions of the file. This practice contributes to transparency and openness in science.
+
+\textbf{Wide format data:} A method for organizing data where each row represents an individual subject and each column represents an observation for that subject.
 
 \end{document}
