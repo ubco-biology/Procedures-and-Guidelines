@@ -58,9 +58,9 @@ There's a couple of things you\'ll note right away.
 
 ### Headings  {-}
 
-You can add structure to your text document by adding headers with different hierarchies. To do this you add a number sign \"\#\" before the text. The number of \"\#\" symbols indicates the hierarchy of the header.
+You can add structure to your text document by adding headers with different hierarchies. To do this you add a number sign `#` before the text. The number of `#` symbols indicates the hierarchy of the header.
 
-Make sure you include a space \" \" between the \"\#\" and your header
+Make sure you include a space \" \" between the `#` and your header
 
 For example, the following...
 
@@ -84,7 +84,7 @@ There are a number of different Markdown syntaxes that we can use to add style a
 
 ### Italics {-}
 
-You can make text italicized by encasing the text in a single asterisk \"\*\" or underscore \"\_\".
+You can make text italicized by encasing the text in a single asterisk `*` or underscore `_`.
 
 Input
 
@@ -102,8 +102,8 @@ Output
 
 ### Bold {-} 
 
-You can make text bold by encasing the text in two asterisks \"\*\*\" or underscores 
-\"\_\_\".
+You can make text bold by encasing the text in two asterisks `**` or underscores 
+`__`.
 
 Input
 
@@ -121,7 +121,7 @@ Output
 
 #### Bold and Italics {-}
 
-If you want to make text both bold and italicized you can encase the text with three asterisks \"\*\*\*\" or underscores \"\_\_\_\".
+If you want to make text both bold and italicized you can encase the text with three asterisks `***` or underscores `___`.
 
 Input
 
@@ -137,11 +137,11 @@ Output
 
 ***This is also bold and italicized***
 
-**NOTE** When italicizing or bolding characters within a string of text it\'s better to use an asterisk \"\*\" rather than an underscore \"\_\". For example: Biology \*is\* awesome NOT Biology \_is\_ awesome
+**NOTE** When italicizing or bolding characters within a string of text it\'s better to use an asterisk `*` rather than an underscore `_`. For example: Biology \*is\* awesome NOT Biology \_is\_ awesome
 
 ### Strikethrough  {-}
 
-You can strike through text by encasing it with two tildes, \"\~\~\".
+You can strike through text by encasing it with two tildes, `~~`.
 
 Input
 
@@ -173,7 +173,7 @@ This text looks like code
 
 ## Blockquotes
 
-To create a blockquote using markdown, you need to place a greater-than, \"\>\" sign in front of the text.
+To create a blockquote using markdown, you need to place a greater-than, `>` sign in front of the text.
 
 Input
 
@@ -209,7 +209,7 @@ Output:
 
 ### Unordered lists {-}
 
-You can create an unordered list by placing an asterisk \"\*\", dash \"\-\", or plus sign \"\+\" infront of the text.
+You can create an unordered list by placing an asterisk `*`, dash `-`, or plus sign `+` in front of the text.
 
 Input
 
@@ -239,7 +239,7 @@ Output
 
 ## Tables
 
-When creating tables using Markdown, pipes \"\|\" separate columns while line breaks are used to separate rows. The column header is seperated by three or more hyphens \"\-\-\-\" between each column\'s pipe \"\|\". 
+When creating tables using Markdown, pipes `|` separate columns while line breaks are used to separate rows. The column header is separated by three or more hyphens `---` between each column\'s pipe `|`. A colon `:` can be added to the left of the hyphens to left align the column, to the right to right align, and on both ends to centre. The following example is left aligned.
 
 Input
 
@@ -259,12 +259,12 @@ Output
 
 **NOTE**
 
-* The number of hyphens, \"\-\", used can make the cell width look incorrect. However, as long as there are three or more hyphens the rendered output will be the same. 
-* Put a space, \" \", between each pipe \"\|\" and the following word or dash \"\-\"
+* The number of hyphens, `-`, used can make the cell width look incorrect. However, as long as there are three or more hyphens the rendered output will be the same. 
+* Put a space, \" \", between each pipe `|` and the following word or dash `-`
 
 ## Links
 
-To create a link to a url or another document, encase the text with square brackets, \"\[\]\", and follow the text immediately with the link encased in parentheses, \"()\".
+To create a link to a url or another document, encase the text with square brackets, `[ ]`, and follow the text immediately with the link encased in parentheses, `( )`.
 
 Input
 
@@ -278,7 +278,7 @@ To visit the UBC Okanagan Faculty of Biology website click [here](https://biolog
 
 ## Images
 
-Creating a link to an image follows a similar format to that of links, but the square brackets encasing the text are preceded with an exclamation mark \"\!\". You can place either the url link or path to the image on your computer in the parentheses. If using a path on your computer, use a relative path.
+Creating a link to an image follows a similar format to that of links, but the square brackets encasing the text are preceded with an exclamation mark `!`. You can place either the url link or path to the image on your computer in the parentheses. If using a path on your computer, use a relative path.
 
 Input
 
