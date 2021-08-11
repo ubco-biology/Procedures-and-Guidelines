@@ -4,7 +4,7 @@
 
 Now that we've covered naming conventions, let's pretend that you store everything on your computer in a single folder. Imagine how long it would take you to find data you collected on a specific day a few years ago. Instead of keeping every document in a single place, we often organize our files using directory (aka folder) structures. This helps us save precious time and improve our productivity. 
 
-One major aspect of Open Science is ensuring transparency in the research process. This includes sharing files from all the steps of the research lifecycle (ie. a priori hypothesis, study design, data, analysis etc.) with others so that our research can be understood and replicated more easily. 
+One major aspect of Open Science is ensuring transparency in the research process. This includes sharing files from all the steps of the research lifecycle (i.e. a priori hypothesis, study design, data, analysis etc.) with others so that our research can be understood and replicated more easily. 
 
 The way we currently organize folders and files on our computer may make sense to us, but a problem arises when we need to share those folders and files with other people. A folder name that is meaningful for us may make no sense to another person. So let's cover some conventions to help you organize the files on your computer in a way that is meaningful to both you and others. 
 
@@ -12,7 +12,7 @@ The way we currently organize folders and files on our computer may make sense t
 
 First, let's talk about how to properly structure a folder hierarchy. 
 
-The highest ranking folder is generally called the **root directory**, or sometimes the top-level folder. We'll call it the root directory here. This folder will contain all of the subfolders and files related to a particular project, including its data, analysis, lab reports etc. It will also contain what is called a readme file.
+The highest-ranking folder is generally called the **root directory**, or sometimes the top-level folder. We'll call it the root directory here. This folder will contain all of the subfolders and files related to a particular project, including its data, analysis, lab reports etc. It will also contain what is called a readme file.
 
 The structure should look something like the following:
 
@@ -34,31 +34,32 @@ In case there is any doubt, here are some examples of what are considered specia
 
 <code># % & < > : \" / \ | ? * { } $ ! \' @ + \` =</code>
 
-**Remember** spaces, \" \", qualify as special characters when it comes to file naming. 
+**Remember**: spaces, \" \", qualify as special characters when it comes to file naming. 
 
-**Remember** when we name the root folder we want to clearly communicate what the project is. And similarly, within this root folder, we want clearly labeled subfolders for each relevant aspect of the project. Common discrete subdirectories include ones for figures, data, manuscript etc. 
+**Remember**: when we name the root folder we want to clearly communicate what the project is. And similarly, within this root folder, we want clearly labeled subfolders for each relevant aspect of the project. Common discrete subdirectories include ones for figures, data, manuscript etc. 
 
 ## readme files and data dictionaries
 
-When naming files we embed metadata into our file naming conventions to encode relevant information for the reader. But we can only store so much information in a file name. So we also include three additional files
+When naming files we embed metadata into our file naming conventions to encode relevant information for the reader. But we can only store so much information in a file name. So we also include three additional files:
 
-* one called <code>_README</code> that resides in our root folder and elaborates on the contents of our folder structure;
-* a second, also called <code>_README</code>, but that resides in our data directory and discusses some of the particulars of the how, where, and who of the actual data collection; and
-* one called <code>_DATA-DICTIONARY</code> that also resides in our data directory and elaborates on how our data is stored and organized.
+* A <code>_README</code> file which resides in our root folder and elaborates on the contents of our folder structure.
+* A <code>_README</code> file that resides in our data directory and discusses some of the particulars of the how, where, and who did the actual data collection.
+* A <code>_DATA-DICTIONARY</code> file that also resides in our data directory and elaborates on how our data is stored and organized.
 
-These files - containing a brief description of the major folder contents, naming conventions that were followed, and data structure - are critical for transparency and reproducibility, because they allow others to easily understand the contents of your directory and data without needing to ask you. This is especially helpful when working with a group or sharing directories with others.
+
+These files - containing a brief description of the major folder contents, naming conventions, and data structure - are critical for transparency and reproducibility because they allow others to easily understand the contents of your directory and data without needing to ask you. This is especially helpful when working with a group or sharing directories with others.
 
 ### General rules {-}
 
-A readme file and data dictionary should
+A readme file and data dictionary should:
 
-* exist in at least two locations, the root directory and the data directory.
-* be prepended with an underscore \"\_\". This will push these files to the top of the directory for easy access.
+* Exist in at least two locations, the root directory and the data directory.
+* Be prepended with an underscore \"\_\". This will push these files to the top of the directory for easy access.
 * <code>_README</code> and <code>_DATA-DICTIONARY</code> files should be in all caps, so they really stand out; this should be the first thing you look at when looking at any directory or folder, as this is your guide to its contents.
 
 ### File formats {-}
 
-readme files and data dictionaries should be written in plain text, this will ensure that the file describing your project and all of its files can be opened on any computer. You will often see readme files called <code>_README.txt</code> or <code>_DATA-DICTIONARY.txt</code>.
+Readme files and data dictionaries should be written in plain text, for this will ensure that the files describing your project can be opened on any computer. You will often see readme files called <code>_README.txt</code> or <code>_DATA-DICTIONARY.txt</code>.
 
 Our example readme and data dictionaries use a plain text format called markdown.
 
@@ -70,11 +71,11 @@ Learn the basic syntax of markdown [here](https://ubco-biology.github.io/Procedu
 
 ## Root folder readme
 
-To create a root folder readme file, use any markdown or text editor (ie. Typora, notepad etc), open a new file and save it to the root folder for your project ensuring the file type is <code>.md</code>.
+To create a root folder readme file, use any markdown or text editor (e.g. Typora, notepad etc.), open a new file and save it to the root folder for your project, ensuring the file type is <code>.md</code>.
 
 Name your readme file <code>_README.md</code>.  
 
-Next we want to add some content to our <code>_README.md</code>. The purpose of this document is to describe the directory structure of our project. To adequately describe our directory structure we should include:
+Next, we want to add some content to our <code>_README.md</code>. The purpose of this document is to describe the directory structure of our project. To adequately describe our directory structure we should include:
 
 * A brief description of the project or purpose of the root folder
 * Date when the root folder was created and who created it
@@ -86,7 +87,7 @@ To see an example root directory readme file click [here](files/DS_rootREADME.md
 
 ## Data directory readme
 
-Next, we want to create another readme file but this file will be placed within the subfolder that contains our project\'s data. To do this, open any markdown or text editor (ie. Typora, notepad etc), open a new file and save it to the data subfolder for your project ensuring the file type is .md. Name your readme file <code>_README.md</code>.  
+Next, we want to create another readme file, but this file will be placed within the subfolder that contains our project\'s data. To do this, open any markdown or text editor (e.g. Typora, notepad etc.), open a new file and save it to the data subfolder for your project, ensuring the file type is .md. Name your readme file <code>_README.md</code>.  
 
 The purpose of this readme file is to provide a description of data collection methods. We will include:
 
@@ -100,7 +101,7 @@ To see an example data directory readme file click [here](files/DS_dataREADME.md
 
 ## Data dictionary
 
-Lastly, we need to create a data dictionary which elaborates on how our data is stored and organized. To do this, open any markdown or text editor (ie. Typora, notepad etc), open a new file and save it to the data subfolder for your project. This time we will save the file as <code>_DATA-DICTIONARY.md</code>.
+Lastly, we need to create a data dictionary which elaborates on how our data is stored and organized. To do this, open any markdown or text editor (e.g. Typora, notepad etc.), open a new file and save it to the data subfolder for your project. This time we will save the file as <code>_DATA-DICTIONARY.md</code>.
 
 A data dictionary helps others understand the meaning of each element in your datasets within the broader context of the project. Typically you will have an individual readme file for each dataset. This file should include:
 
@@ -114,7 +115,7 @@ To see an example data dictionary click [here](files/DS_DATA-DICTIONARY.md).
 
 ## Example BIOL 116
 
-In BIOL 116, we used a flat folder structure to hold all of our files. In the example used, no readme files were created, as we made the assumption that the project was \"simple\" enough in its structure to not warrant a readme file. On reflection, this was an oversight and we probably should have created a readme file describing what was in each file. Neither did we create a data dictionary. We'll do better on future assignments now that we know about the value of both forms of documentation. Anyway, in that example, we ended up with one folder of files that looked like the following before submitting our final assignment:
+In our previous BIOL 116 example, we used a flat folder structure to hold all of our files. With this example, no readme files were created, as we made the assumption that the project was \"simple\" enough in its structure to not warrant a readme file. On reflection, this was an oversight, and we probably should have created a readme file describing what was in each file. Neither did we create a data dictionary. We'll do better on future assignments now that we know about the value of both forms of documentation. Anyway, in that example, we ended up with one folder of files that looked like the following before submitting our final assignment:
 
 ```
 Pither_20210921_BIOL116RProject_ph-data.csv
@@ -205,7 +206,7 @@ On day one of our research project, we are asked to prepare the beginning of a l
 BIOL125MealwormProject/
 ```
 
-Within our root folder we create a <code>_README.md</code> file to describe our directory structure. Let's add our project name, date the folder was created and who created it, a short description of the project, group member names, file structure (major folders and their proposed content), and naming conventions to this readme file. Your file should look something like this:
+Within our root folder, we create a <code>_README.md</code> file to describe our directory structure. Let's add our project name, date the folder was created and who created it, a short description of the project, group member names, file structure (major folders and their proposed content), and naming conventions to this readme file. Your file should look something like this:
 
 [_README.md](files/DS_biol-125-readme_V0.md)
 
@@ -233,7 +234,7 @@ New files:
 Pither_20210915_BIOL125MealwormProject_food-preference-data.csv
 ```
 
-Since we have added our first dataset into our project folder, we need to create a corresponding data directory <code>_README.md</code> and <code>_DATA-DICTIONMARY.md</code>.
+Since we have added our first dataset into our project folder, we need to create a corresponding <code>_README.md</code> and <code>_DATA-DICTIONMARY.md</code>.
 
 Let's start by creating the data directory readme and provide a description of our data set, collection methods, who collected the data, and where it was collected. It should look something like this:
 
@@ -249,7 +250,7 @@ Now our project directory looks like this:
 
 ### Day 3 {-}
 
-Now that our group has completed its pilot project, we decided to expand our data collection and start recording how far mealworms are willing to travel to get each food. In addition to this new distance data we continued to collect data on food preferences. 
+Now that our group has completed its pilot project, we decided to expand our data collection and start recording how far mealworms are willing to travel to get food. In addition to this new distance data, we continued to collect data on food preferences. 
 
 New files:
 
@@ -258,21 +259,21 @@ Pither_20210916_BIOL125MealwormProject_food-preference-data.csv
 Pither_20210916_BIOL125MealwormProject_distance-data.csv
 ```
 
-Since we have a new dataset we'll have to update our data directory readme file with a description of the new dataset. Remember to note down the date it was updated and who it was updated by. Our updated data directory <code>_README.md</code> file should look something like this:
+Since we have a new dataset, we'll have to update our data directory readme file with a description of the new dataset. Remember to note the date it was updated and who it was updated by. Our updated data directory <code>_README.md</code> file should look something like this:
 
 [_README.md](files/DS_biol-125-data-readme_V1.md)
 
 Now our updated data directory readme file includes descriptions for both datasets.
 
-In the interest of organization, let's keep our food preferences and distance data in their own subfolders. So, we'll create two new subfolders within the Data folder. We'll call one <code>Food-preferences/</code> and the other <code>Distance/</code>. This way we can organize csv files into the folder for the corresponding dataset. After doing this, we need to update the <code>_README.md</code> in our root folder, since we've modified our directory structure. This readme should now look something like this:
+In the interest of organization, let's keep our food preferences and distance data in separate subfolders. So, we'll create two new subfolders within the Data folder. We'll call one <code>Food-preferences/</code> and the other <code>Distance/</code>. This way, we can organize csv files into specific folders for each corresponding dataset. After doing this, we need to update the <code>_README.md</code> in our root folder since we've modified our directory structure. This readme should now look something like this:
 
 [_README.md](files/DS_biol-125-readme_V1.md)
 
-Next, let's also create a data dictionary for our new dataset within our distance subfolder. Remember to note down the date it was updated and who it was updated by. It should look something like this:
+Next, let's also create a data dictionary for our new dataset within our distance subfolder. Remember to note the date it was updated and who it was updated by. It should look something like this:
 
 [_DATA-DICTIONARY.md](files/DS_biol-125-data-dictionary-distance_V0.md)
 
-Since we made some updates to our project design and methods, I'll also go ahead and updated our lab report to reflect those changes alongside justification for the changes. Then, I'll be sure to save my updated lab report using the appropriate naming conventions. 
+Since we made some updates to our project design and methods, I'll also go ahead and update our lab report to reflect those changes alongside justification for the changes. Then, I'll be sure to save my updated lab report using the appropriate naming conventions. 
 
 ```
 Pither_BIOL125MealwormProject_report_V1.docx
@@ -319,5 +320,5 @@ Our final directory looks like this:
 
 ![](images/DS_directory-example-5.png)
 
-We can start to see that if you were to share your entire project directory with another person it would be relatively easy for them to locate files and understand the meaning behind each document in our project. They would also know when changes were made and who made these changes, so if they had any questions, they'd know exactly who to ask!
+We can start to see that if you were to share your entire project directory with another person, it would be relatively easy for them to locate files and understand the meaning behind each document in our project. They would also know when changes were made and who made these changes, so if they had any questions, they'd know exactly who to ask!
 

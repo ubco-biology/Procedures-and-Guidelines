@@ -2,9 +2,9 @@
 
 *Last updated `r Sys.Date()`*
 
-File naming isn't exactly fun, but it is crucially important to being able to organize, describe, and manage any kind of work, especially research. So let's talk about file naming conventions, and those that you'll be expected to use while in Biology at UBCO.
+File naming isn’t exactly fun, but it is crucial for organizing, describing, and managing all kinds of work, especially research. So, let’s talk about the file naming conventions that you will be expected to use while at UBCO.
 
-We'll start with the rules, we'll then break these down and explain the process.
+We'll start with the rules, we'll then break these rules down and explain the processes behind them.
 
 ## Quick Reference
 
@@ -12,9 +12,9 @@ We'll start with the rules, we'll then break these down and explain the process.
 * Do not use spaces or special characters, including <code># % & < > : \" / \ | ? * { } $ ! \' @ + ` =</code>
 * File names should be broken down into components that are separated by underscores \"\_\".
 * If more than one word is needed in each component, these are separated by dashes \"-\".
-* All file should start with your last name and all other components should be meaningful (read on for what it means for a file name to be meaningful!)
+* All files should start with your last name and all other components should be meaningful (read on for what it means for a file name to be meaningful!)
 
-There are four variations on how these gudielines are implemented depending on what your file contatins.
+There are four variations on how these guidelines are implemented depending on what your file contains.
 
 ### Lab reports and manuscripts
 
@@ -57,23 +57,29 @@ To be human interpretable, a file name needs to be meaningful. To do this, it ne
 
 That is, we should be able to look at a file and tell, *who* created it, *when* it was created, *what* it is related to, *what* is inside of it, if it has been *updated*, and what *application* I should expect to be able to open it with. As we'll see shortly, we don't always include a date, and we don't always include information about modifying a file.
 
-All said though, that's a fair bit of information to hold in a file name!
+All said, that's a fair bit of information to hold in a file name!
 
 ### Machine readable {-}
 
-What does it mean for a file name to be machine readable or machine interpretable? This means building our file names in such a way that we can easily organize our files so that they can be sorted by an application and in a way that makes sense to us. It also means building our names according to set patterns, which can then be parsed along known delimiters. Lastly, it means building our names in such a way that if we move them from one computer to another, from one application to another, or from one operating system to another, the files remain interpretable in exactly the same way.
+What does it mean for a file name to be machine readable or machine interpretable? It means building our file names in such a way that we can easily organize them so that they can be sorted by an application and in a way that makes sense to us. It also means building our names according to set patterns, which can then be parsed along known delimiters. Lastly, it means building our names in such a way that if we move them from one computer to another, from one application to another, or from one operating system to another, the files remain interpretable in exactly the same way.
 
-How do we this? We avoid special characters and we follow conventions.
+How do we do this? We avoid special characters and follow conventions.
 
 #### Special characters {-}
 
-Special characters are any characters that are **not** part of the English alphabet, a number from 0 - 9, or one of either a dash \"-\" or underscore \"_\". This means that a space \" \" is a special character, which means that your file names should not have spaces.
+Special characters are all characters **except**:
+* Any character that is a part of the English alphabet
+* Numbers from 0 - 9
+* Dashes \"-\"
+* Underscores \"_\"
+
+This means that a space \" \" is a special character, which means that your file names should not have spaces.
 
 When operating in a multi-lingual or non-English environment, this can prove problematic, but it is an unfortunate legacy of the development of computer standards that has yet to be fully resolved.
 
 #### Conventions {-}
 
-Convention has file naming proceed in the following order, with each element separated by an underscore \"_\", and words within an element joined with a dash \"-\". The file type is generally added with a period \".\" and usually automatically generated when an application creates a file.
+Convention has file naming proceed in the following order, with each element separated by an underscore \"_\", and words within an element joined with a dash \"-\". The file type is generally added with a period \".\" and is usually automatically generated when an application creates a file.
 
 | Element-1 | \_Element-2 | \_Element-3 | \_Element-4     | _Element-5 | .Element-5 |
 | --------- | ----------- | ----------- | --------------- | ---------- | ---------- |
@@ -81,15 +87,15 @@ Convention has file naming proceed in the following order, with each element sep
 
 #### Dates {-}
 
-Dates should be written in the format **yyyymmdd**. No spaces, no dashes, no words, just 8 numbers representing the year, month, and day, with months and days that are from 1 - 9 being led by a 0. So, January 23, 2020, would be written **20200123**. And September 5, 2021 would be written **20210905**. When written this way, they will always be sorted by your computer from earliest date to latest date.
+Dates should be written in the following format: **yyyymmdd**. They should contain no spaces, no dashes, no words, just 8 numbers. Months and Days that are from 1 - 9 should be led by a 0. For example, January 23, 2020, should be written **20200123**. When written this way, your computer will always sort your files from the earliest date to the latest date.
 
-Dates are very important for things like data, because the date of collection has direct relevance. Dates are less important for things like figures and manuscripts, as these are derived from the already dated data.
+Keeping track of dates is especially important for data because the date on which your data was collected has direct relevance. Dates are less important for things like figures because they are derived from previously dated data.
 
 #### Versions {-}
 
-Version tracking is achieved in file naming by adding <code>_V*n*</code> where *n* is the version number. With each major change, we increase *n* by 1. So version 1 would read <code>_V1</code> and when updated, it would read <code>_V2</code>.
+Version tracking is achieved in file naming by adding <code>_V*n*</code> where *n* is the version number. With each major change, we increase *n* by 1. So version 1 would read <code>_V1</code>, and when updated, it would read <code>_V2</code>.
 
-Versions are very important for things like manuscripts and interpretations of data, such as figures and other visualizations, where we will continue to change and modify these throughout a project. Our data, however, while it has a collection date, should not be modified, and should not then be versioned.
+Versions are very important for things like manuscripts and interpretations of data, such as figures and other visualizations, which we will continue to change and modify throughout a project. Data, however, while it has a collection date, should not be modified, and should not then be versioned.
 
 ## An example
 
@@ -99,9 +105,9 @@ Say you're in BIOL 116 and you're working on your research project. Your researc
 
 * Preparing the beginning of a manuscript that states your research question, hypothesis, and proposed methods.
 * Conducting your experiment and recording your data. This process might span more than one day.
-* Updating your manuscript, describing any changes that were made to your methods
-* Organizing the results of your experiment and interpreting and visualizing your data
-* Updating your manuscript to include your results and your interpretation of these results, including a visual interpretation
+* Updating your manuscript, describing any changes that were made to your methods.
+* Organizing the results of your experiment and interpreting and visualizing your data.
+* Updating your manuscript to include your results and your interpretation of these results, including a visual interpretation.
 * Completing your manuscript by discussing the importance of and / or limitations of the experiment, and finally producing a conclusion.
 
 In this scenario, we have **1 project**, **1 manuscript**, **1 dataset**, and at least **1 figure**. In addition, our dataset is constructed from data collected over several days, and our manuscript is revised 3 times before final submission.
@@ -127,7 +133,7 @@ Pither_20210921_BIOL116RProject_ph-data.csv
 Pither_BIOL116RProject_Lab-report_V0.docx
 ```
 
-We have not changed our manuscript, so there's no change to the name. We have collected some data though. We can easily see who collected this data (Pither), when it was collected (September 21, 2021), that it's connected to the BIOL 116 Research Project (BIOL116RProject), and that it's data related to PH exposure. Lastly, it is formatted as comma separated values (csv), which can be opened by any spreadsheet program or text editor.
+We have not changed our manuscript, so there's no change to the name. However, we have collected some data. We can easily see who collected this data (Pither), when it was collected (September 21, 2021), that it's connected to the BIOL 116 Research Project (BIOL116RProject), and that it's data related to PH exposure. Lastly, it is formatted as comma separated values (csv), which can be opened by any spreadsheet program or text editor.
 
 #### Day 3-5 {-}
 
@@ -141,11 +147,11 @@ Pither_20210924_BIOL116RProject_ph-data.csv
 Pither_BIOL116RProject_Lab-report_V0.docx
 ```
 
-Again, we have not changed our manuscript, so there's no change to the name. We have collected some more data though, all related to PH, and we have one file for each day, organized from earliest day of collection to most recent.
+Again, we have not changed our manuscript, so there's no change to the name. However, we have collected some more data related to PH. We have one file for each day, organized from the earliest day of collection to the most recent.
 
 #### Day 6 {-}
 
-Today, I did two things. I have no more data to collect, so I updated my manuscript to include any modifications made to my original methods section, I then submitted this. I also started to analyze my data; to do this, I merged all of the data that I have into a single file for analysis. Now my files look like this:
+Today, I did two things. I have no more data to collect, so I updated my manuscript to include any modifications made to my original methods section, I then submitted this. I also started to analyze my data; to do this, I merged all my data into a single file for analysis. Now my files look like this:
 
 ```
 Pither_20210921_BIOL116RProject_ph-data.csv
@@ -157,11 +163,11 @@ Pither_BIOL116RProject_Lab-report_V0.docx
 Pither_BIOL116RProject_Lab-report_V1.docx
 ```
 
-At this stage, I have my data collated into a document where I can work with it without impacting the original data. We can see that I have done this in Excel (xlsx), and that I should expect to be able to open this file in Excel. I also now have a V1 of my manuscript, as I have now added a new section to it; when submitting it, my TA knows that the file with V1 should have this updated section.
+At this stage, I have my data collated into a document where I can work on it without impacting the original data. We can see that I have done this in Excel (xlsx), and that I should expect to be able to open this file in Excel. I also now have a V1 of my manuscript, as I have now added a new section to it; when submitting it, my TA knows that the file with V1 should have this updated section.
 
 #### Day 7 {-}
 
-Today, I built two visualizations using the data in my Analysis document, one linear regression and one bar plot of frequency counts; I save these as images to insert into my manuscript. I then updated my manuscript to include my results and these two figures and submitted V2 of my manuscript. Now my files look like this: 
+Today, I built two visualizations using the data in my analysis document, one linear regression and one bar plot of frequency counts; I save these as images to insert into my manuscript. I then updated my manuscript to include my results and these two figures and submitted V2 of my manuscript. Now my files look like this: 
 
 ```
 Pither_20210921_BIOL116RProject_ph-data.csv
@@ -176,7 +182,7 @@ Pither_BIOL116RProject_Lab-report_V1.docx
 Pither_BIOL116RProject_Lab-report_V2.docx
 ```
 
-We can start to see the advantage here of naming conventions. I can easily see which files are which, what they contain, and what their timeline of development is. Also, my computer easily sorts these into meaningful categories - my data is grouped together, sorted by date. My analyses, figures, and manuscripts are all respectively grouped together and sorted by version.
+We can start to see the advantage here of naming conventions. I can easily see which files are which, what they contain, and what their timeline of development is. Also, my computer easily sorts these into meaningful categories - my data is grouped together, sorted by date. My analyses, figures, and manuscripts are all respectively grouped and sorted by version.
 
 #### Day 8 {-}
 
