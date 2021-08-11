@@ -8,10 +8,10 @@ We'll start with the rules, we'll then break these rules down and explain the pr
 
 ## Quick Reference
 
-* File names should only contain letters in the English alphabet, numbers from 1-9, dashes \"-\", and underscores \"\_\".
+* File names should only contain letters in the English alphabet, numbers from 1-9, dashes `-`, and underscores `_`.
 * Do not use spaces or special characters, including <code># % & < > : \" / \ | ? * { } $ ! \' @ + ` =</code>
-* File names should be broken down into components that are separated by underscores \"\_\".
-* If more than one word is needed in each component, these are separated by dashes \"-\".
+* File names should be broken down into components that are separated by underscores `_`.
+* If more than one word is needed in each component, these are separated by dashes `-`.
 * All files should start with your last name and all other components should be meaningful (read on for what it means for a file name to be meaningful!)
 
 There are four variations on how these guidelines are implemented depending on what your file contains.
@@ -68,10 +68,11 @@ How do we do this? We avoid special characters and follow conventions.
 #### Special characters {-}
 
 Special characters are all characters **except**:
+
 * Any character that is a part of the English alphabet
-* Numbers from 0 - 9
-* Dashes \"-\"
-* Underscores \"_\"
+* Numbers from `0 - 9`
+* Dashes `-`
+* Underscores `_`
 
 This means that a space \" \" is a special character, which means that your file names should not have spaces.
 
@@ -79,15 +80,15 @@ When operating in a multi-lingual or non-English environment, this can prove pro
 
 #### Conventions {-}
 
-Convention has file naming proceed in the following order, with each element separated by an underscore \"_\", and words within an element joined with a dash \"-\". The file type is generally added with a period \".\" and is usually automatically generated when an application creates a file.
+Convention has file naming proceed in the following order, with each element separated by an underscore `_`, and words within an element joined with a dash `-`. The file type is generally added with a period `.` and is usually automatically generated when an application creates a file.
 
 | Element-1 | \_Element-2 | \_Element-3 | \_Element-4     | _Element-5 | .Element-5 |
-| --------- | ----------- | ----------- | --------------- | ---------- | ---------- |
+| :--------- | :----------- | :----------- | :--------------- | :---------- | :---------- |
 | Last-Name | _Date       | \_Project   | \_File-Contents | \_Version  | .File-type |
 
 #### Dates {-}
 
-Dates should be written in the following format: **yyyymmdd**. They should contain no spaces, no dashes, no words, just 8 numbers. Months and Days that are from 1 - 9 should be led by a 0. For example, January 23, 2020, should be written **20200123**. When written this way, your computer will always sort your files from the earliest date to the latest date.
+Dates should be written in the following format `yyyymmdd`. They should contain no spaces, no dashes, no words, just 8 numbers. Months and Days that are from 1 - 9 should be led by a 0. For example, January 23, 2020, should be written **20200123**. When written this way, your computer will always sort your files from the earliest date to the latest date.
 
 Keeping track of dates is especially important for data because the date on which your data was collected has direct relevance. Dates are less important for things like figures because they are derived from previously dated data.
 

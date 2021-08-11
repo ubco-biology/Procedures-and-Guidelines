@@ -33,7 +33,7 @@
   
 <link rel="prev" href="quick-reference.html"/>
 <link rel="next" href="an-example.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -238,43 +238,45 @@
 <p>How do we do this? We avoid special characters and follow conventions.</p>
 <div id="special-characters" class="section level4 unnumbered">
 <h4>Special characters</h4>
-<p>Special characters are all characters <strong>except</strong>:
-* Any character that is a part of the English alphabet
-* Numbers from 0 - 9
-* Dashes "-"
-* Underscores "_"</p>
+<p>Special characters are all characters <strong>except</strong>:</p>
+<ul>
+<li>Any character that is a part of the English alphabet</li>
+<li>Numbers from <code>0 - 9</code></li>
+<li>Dashes <code>-</code></li>
+<li>Underscores <code>_</code></li>
+</ul>
 <p>This means that a space " " is a special character, which means that your file names should not have spaces.</p>
 <p>When operating in a multi-lingual or non-English environment, this can prove problematic, but it is an unfortunate legacy of the development of computer standards that has yet to be fully resolved.</p>
 </div>
 <div id="conventions" class="section level4 unnumbered">
 <h4>Conventions</h4>
-<p>Convention has file naming proceed in the following order, with each element separated by an underscore "_", and words within an element joined with a dash "-". The file type is generally added with a period "." and is usually automatically generated when an application creates a file.</p>
+<p>Convention has file naming proceed in the following order, with each element separated by an underscore <code>_</code>, and words within an element joined with a dash <code>-</code>. The file type is generally added with a period <code>.</code> and is usually automatically generated when an application creates a file.</p>
 <table>
 <thead>
 <tr class="header">
-<th>Element-1</th>
-<th>_Element-2</th>
-<th>_Element-3</th>
-<th>_Element-4</th>
-<th>_Element-5</th>
-<th>.Element-5</th>
+<th align="left">Element-1</th>
+<th align="left">_Element-2</th>
+<th align="left">_Element-3</th>
+<th align="left">_Element-4</th>
+<th align="left">_Element-5</th>
+<th align="left">.Element-5</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Last-Name</td>
-<td>_Date</td>
-<td>_Project</td>
-<td>_File-Contents</td>
-<td>_Version</td>
-<td>.File-type</td>
+<td align="left">Last-Name</td>
+<td align="left">_Date</td>
+<td align="left">_Project</td>
+<td align="left">_File-Contents</td>
+<td align="left">_Version</td>
+<td align="left">.File-type</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="dates" class="section level4 unnumbered">
 <h4>Dates</h4>
-<p>Dates should be written in the following format: <strong>yyyymmdd</strong>. They should contain no spaces, no dashes, no words, just 8 numbers. Months and Days that are from 1 - 9 should be led by a 0. For example, January 23, 2020, should be written <strong>20200123</strong>. When written this way, your computer will always sort your files from the earliest date to the latest date.</p>
+<p>Dates should be written in the following format <code>yyyymmdd</code>. They should contain no spaces, no dashes, no words, just 8 numbers. Months and Days that are from 1 - 9 should be led by a 0. For example, January 23, 2020, should be written <strong>20200123</strong>. When written this way, your computer will always sort your files from the earliest date to the latest date.</p>
 <p>Keeping track of dates is especially important for data because the date on which your data was collected has direct relevance. Dates are less important for things like figures because they are derived from previously dated data.</p>
 </div>
 <div id="versions" class="section level4 unnumbered">
@@ -342,20 +344,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
