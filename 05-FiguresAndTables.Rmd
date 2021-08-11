@@ -98,7 +98,7 @@ Here are some guidelines for reporting the results of statistical tests:
 **Table 3.**
 
 |           | SS     | df   | MS     | F    | P     |
-| --------- | ------ | ---- | ------ | ---- | ----- |
+| :--------- | :------ | :---- | :------ | :---- | :----- |
 | Treatment | 7.224  | 2    | 3.6122 | 7.29 | 0.004 |
 | Error     | 9.415  | 19   | 0.4955 |      |       |
 | Total     | 16.640 | 21   | 4.1078 |      |       |
