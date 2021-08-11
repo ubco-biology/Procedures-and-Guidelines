@@ -79,7 +79,7 @@
 
 \title{Procedures and Guidelines}
 \author{Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar}
-\date{2021-08-10}
+\date{2021-08-11}
 
 \begin{document}
 \maketitle
@@ -118,11 +118,11 @@ All source files are available at \url{https://github.com/ubco-biology/Procedure
 \section*{Why Procedures and Guidelines?}\label{why-procedures-and-guidelines}}
 \addcontentsline{toc}{section}{Why Procedures and Guidelines?}
 
-When we talk about procedures and guidelines, we're very much talking about standards and conventions. Standards and conventions allow the products of research to be easily consumed, interpreted, adapted and re-used. For example, the metric system did wonders for standardizing how we measure distances and weight. The chaos that would ensue if every entomologist took specimen measurements with their own system - or determined wing span from different points of origin across the same species!
+When we talk about procedures and guidelines, we're very much talking about standards and conventions. Standards and conventions allow the products of research to be easily consumed, interpreted, adapted and re-used. For example, the metric system did wonders for standardizing how we measure distances and weight. The chaos that would ensue if every entomologist took specimen measurements with their own system - or determined wingspan from different points of origin across the same species!
 
-Standards and conventions allow us to also explore our data and outputs to greater extents than historically possible by allowing us to leverage computers; computers rely on standards to parse and merge data. Without standardization in what and how markers of climate change are recorded, we would be unable to pool the massive amounts of data collected globally to build the understanding that we are for how our climate is changing.
+Standards and conventions allow us to explore our data and outputs to greater extents than historically possible by helping us leverage computers; computers rely on standards to parse and merge data. For instance, without the standardization of how markers of climate change are recorded, we would be unable to pool the massive amounts of globally collected data that is used to monitor and fight climate change.
 
-These qualities of standards and conventions - easy consumption, interpretation, adaptation, and re-use - are integral to robust, transparent, reproducible research; qualities that underpin the development of a strong evidence base on which to conduct further research and inform practices and policy.
+These qualities of standards and conventions - easy consumption, interpretation, adaptation, and re-use - are integral to robust, transparent, reproducible research; these qualities underpin the development of a strong evidence base on which to conduct further research and inform practices and policy.
 
 \hypertarget{structure}{%
 \section*{Structure}\label{structure}}
@@ -157,9 +157,9 @@ This book is divided into 4 sections.
 \hypertarget{file-and-data-management}{%
 \chapter{File and Data Management}\label{file-and-data-management}}
 
-\emph{Last updated 2021-08-10}
+\emph{Last updated 2021-08-11}
 
-Well organized data is critical to transparency, reproducibility and generally maintaining one's sanity when conducting research. When we talk about file and data management we may be referring to one of many aspects of making our data understandable to others, to a computer, or to our future selves that have succumb to memory lapses. Making data comprehensible is really about well structured and communicated metadata that is, whenever possible, implemented according to conventions or standards.
+Well-organized data is critical to transparency, reproducibility, and generally maintaining one's sanity when conducting research. When we talk about file and data management, we may be referring to one of many aspects of making our data understandable to others, to a computer, or to our future selves that have succumb to memory lapses. Making data comprehensible is really about well-structured and communicated metadata that is, whenever possible, implemented according to conventions or standards.
 
 So, when we talk about file and data management, broadly speaking, we're talking about
 
@@ -175,16 +175,16 @@ So, when we talk about file and data management, broadly speaking, we're talking
 
 Directory structures, being more complicated, bring with them the need to add additional documentation, such as a description of the directory structure and what we might expect to find where. It will also often include more detailed documentation about how to interpret what is inside specific files; one example of this is the data dictionary that describes each of the variables collected for the study.
 
-Organizing and formatting data is a discussion about the best way to sort and parse our data into columns and rows so that we can effectively produce summaries, statistical calculations, and visualizations from these data; a core concept you'll be introduced to in this guidelines document is that of "tidy data".
+Organizing and formatting data is a discussion about the best way to sort and parse our data into columns and rows so that we can effectively produce summaries, statistical calculations, and visualizations; a core concept that you will be introduced to in this guidelines document is that of "tidy data".
 
 \hypertarget{file-naming}{%
 \chapter{File Naming}\label{file-naming}}
 
-\emph{Last updated 2021-08-10}
+\emph{Last updated 2021-08-11}
 
-File naming isn't exactly fun, but it is crucially important to being able to organize, describe, and manage any kind of work, especially research. So let's talk about file naming conventions, and those that you'll be expected to use while in Biology at UBCO.
+File naming isn't exactly fun, but it is crucial for organizing, describing, and managing all kinds of work, especially research. So, let's talk about the file naming conventions that you will be expected to use while at UBCO.
 
-We'll start with the rules, we'll then break these down and explain the process.
+We'll start with the rules, we'll then break these rules down and explain the processes behind them.
 
 \hypertarget{quick-reference}{%
 \section{Quick Reference}\label{quick-reference}}
@@ -200,10 +200,10 @@ We'll start with the rules, we'll then break these down and explain the process.
 \item
   If more than one word is needed in each component, these are separated by dashes "-".
 \item
-  All file should start with your last name and all other components should be meaningful (read on for what it means for a file name to be meaningful!)
+  All files should start with your last name and all other components should be meaningful (read on for what it means for a file name to be meaningful!)
 \end{itemize}
 
-There are four variations on how these gudielines are implemented depending on what your file contatins.
+There are four variations on how these guidelines are implemented depending on what your file contains.
 
 \hypertarget{lab-reports-and-manuscripts}{%
 \subsection{Lab reports and manuscripts}\label{lab-reports-and-manuscripts}}
@@ -262,21 +262,27 @@ To be human interpretable, a file name needs to be meaningful. To do this, it ne
 
 That is, we should be able to look at a file and tell, \emph{who} created it, \emph{when} it was created, \emph{what} it is related to, \emph{what} is inside of it, if it has been \emph{updated}, and what \emph{application} I should expect to be able to open it with. As we'll see shortly, we don't always include a date, and we don't always include information about modifying a file.
 
-All said though, that's a fair bit of information to hold in a file name!
+All said, that's a fair bit of information to hold in a file name!
 
 \hypertarget{machine-readable}{%
 \subsection*{Machine readable}\label{machine-readable}}
 \addcontentsline{toc}{subsection}{Machine readable}
 
-What does it mean for a file name to be machine readable or machine interpretable? This means building our file names in such a way that we can easily organize our files so that they can be sorted by an application and in a way that makes sense to us. It also means building our names according to set patterns, which can then be parsed along known delimiters. Lastly, it means building our names in such a way that if we move them from one computer to another, from one application to another, or from one operating system to another, the files remain interpretable in exactly the same way.
+What does it mean for a file name to be machine readable or machine interpretable? It means building our file names in such a way that we can easily organize them so that they can be sorted by an application and in a way that makes sense to us. It also means building our names according to set patterns, which can then be parsed along known delimiters. Lastly, it means building our names in such a way that if we move them from one computer to another, from one application to another, or from one operating system to another, the files remain interpretable in exactly the same way.
 
-How do we this? We avoid special characters and we follow conventions.
+How do we do this? We avoid special characters and follow conventions.
 
 \hypertarget{special-characters}{%
 \subsubsection*{Special characters}\label{special-characters}}
 \addcontentsline{toc}{subsubsection}{Special characters}
 
-Special characters are any characters that are \textbf{not} part of the English alphabet, a number from 0 - 9, or one of either a dash "-" or underscore "\_". This means that a space " " is a special character, which means that your file names should not have spaces.
+Special characters are all characters \textbf{except}:
+* Any character that is a part of the English alphabet
+* Numbers from 0 - 9
+* Dashes "-"
+* Underscores "\_"
+
+This means that a space " " is a special character, which means that your file names should not have spaces.
 
 When operating in a multi-lingual or non-English environment, this can prove problematic, but it is an unfortunate legacy of the development of computer standards that has yet to be fully resolved.
 
@@ -284,7 +290,7 @@ When operating in a multi-lingual or non-English environment, this can prove pro
 \subsubsection*{Conventions}\label{conventions}}
 \addcontentsline{toc}{subsubsection}{Conventions}
 
-Convention has file naming proceed in the following order, with each element separated by an underscore "\_", and words within an element joined with a dash "-". The file type is generally added with a period "." and usually automatically generated when an application creates a file.
+Convention has file naming proceed in the following order, with each element separated by an underscore "\_", and words within an element joined with a dash "-". The file type is generally added with a period "." and is usually automatically generated when an application creates a file.
 
 \begin{longtable}[]{@{}llllll@{}}
 \toprule
@@ -299,17 +305,17 @@ Last-Name & \_Date & \_Project & \_File-Contents & \_Version & .File-type \\
 \subsubsection*{Dates}\label{dates}}
 \addcontentsline{toc}{subsubsection}{Dates}
 
-Dates should be written in the format \textbf{yyyymmdd}. No spaces, no dashes, no words, just 8 numbers representing the year, month, and day, with months and days that are from 1 - 9 being led by a 0. So, January 23, 2020, would be written \textbf{20200123}. And September 5, 2021 would be written \textbf{20210905}. When written this way, they will always be sorted by your computer from earliest date to latest date.
+Dates should be written in the following format: \textbf{yyyymmdd}. They should contain no spaces, no dashes, no words, just 8 numbers. Months and Days that are from 1 - 9 should be led by a 0. For example, January 23, 2020, should be written \textbf{20200123}. When written this way, your computer will always sort your files from the earliest date to the latest date.
 
-Dates are very important for things like data, because the date of collection has direct relevance. Dates are less important for things like figures and manuscripts, as these are derived from the already dated data.
+Keeping track of dates is especially important for data because the date on which your data was collected has direct relevance. Dates are less important for things like figures because they are derived from previously dated data.
 
 \hypertarget{versions}{%
 \subsubsection*{Versions}\label{versions}}
 \addcontentsline{toc}{subsubsection}{Versions}
 
-Version tracking is achieved in file naming by adding \_V\emph{n} where \emph{n} is the version number. With each major change, we increase \emph{n} by 1. So version 1 would read \_V1 and when updated, it would read \_V2.
+Version tracking is achieved in file naming by adding \_V\emph{n} where \emph{n} is the version number. With each major change, we increase \emph{n} by 1. So version 1 would read \_V1, and when updated, it would read \_V2.
 
-Versions are very important for things like manuscripts and interpretations of data, such as figures and other visualizations, where we will continue to change and modify these throughout a project. Our data, however, while it has a collection date, should not be modified, and should not then be versioned.
+Versions are very important for things like manuscripts and interpretations of data, such as figures and other visualizations, which we will continue to change and modify throughout a project. Data, however, while it has a collection date, should not be modified, and should not then be versioned.
 
 \hypertarget{an-example}{%
 \section{An example}\label{an-example}}
@@ -325,11 +331,11 @@ Say you're in BIOL 116 and you're working on your research project. Your researc
 \item
   Conducting your experiment and recording your data. This process might span more than one day.
 \item
-  Updating your manuscript, describing any changes that were made to your methods
+  Updating your manuscript, describing any changes that were made to your methods.
 \item
-  Organizing the results of your experiment and interpreting and visualizing your data
+  Organizing the results of your experiment and interpreting and visualizing your data.
 \item
-  Updating your manuscript to include your results and your interpretation of these results, including a visual interpretation
+  Updating your manuscript to include your results and your interpretation of these results, including a visual interpretation.
 \item
   Completing your manuscript by discussing the importance of and / or limitations of the experiment, and finally producing a conclusion.
 \end{itemize}
@@ -361,7 +367,7 @@ Pither_20210921_BIOL116RProject_ph-data.csv
 Pither_BIOL116RProject_Lab-report_V0.docx
 \end{verbatim}
 
-We have not changed our manuscript, so there's no change to the name. We have collected some data though. We can easily see who collected this data (Pither), when it was collected (September 21, 2021), that it's connected to the BIOL 116 Research Project (BIOL116RProject), and that it's data related to PH exposure. Lastly, it is formatted as comma separated values (csv), which can be opened by any spreadsheet program or text editor.
+We have not changed our manuscript, so there's no change to the name. However, we have collected some data. We can easily see who collected this data (Pither), when it was collected (September 21, 2021), that it's connected to the BIOL 116 Research Project (BIOL116RProject), and that it's data related to PH exposure. Lastly, it is formatted as comma separated values (csv), which can be opened by any spreadsheet program or text editor.
 
 \hypertarget{day-3-5}{%
 \subsubsection*{Day 3-5}\label{day-3-5}}
@@ -377,13 +383,13 @@ Pither_20210924_BIOL116RProject_ph-data.csv
 Pither_BIOL116RProject_Lab-report_V0.docx
 \end{verbatim}
 
-Again, we have not changed our manuscript, so there's no change to the name. We have collected some more data though, all related to PH, and we have one file for each day, organized from earliest day of collection to most recent.
+Again, we have not changed our manuscript, so there's no change to the name. However, we have collected some more data related to PH. We have one file for each day, organized from the earliest day of collection to the most recent.
 
 \hypertarget{day-6}{%
 \subsubsection*{Day 6}\label{day-6}}
 \addcontentsline{toc}{subsubsection}{Day 6}
 
-Today, I did two things. I have no more data to collect, so I updated my manuscript to include any modifications made to my original methods section, I then submitted this. I also started to analyze my data; to do this, I merged all of the data that I have into a single file for analysis. Now my files look like this:
+Today, I did two things. I have no more data to collect, so I updated my manuscript to include any modifications made to my original methods section, I then submitted this. I also started to analyze my data; to do this, I merged all my data into a single file for analysis. Now my files look like this:
 
 \begin{verbatim}
 Pither_20210921_BIOL116RProject_ph-data.csv
@@ -395,13 +401,13 @@ Pither_BIOL116RProject_Lab-report_V0.docx
 Pither_BIOL116RProject_Lab-report_V1.docx
 \end{verbatim}
 
-At this stage, I have my data collated into a document where I can work with it without impacting the original data. We can see that I have done this in Excel (xlsx), and that I should expect to be able to open this file in Excel. I also now have a V1 of my manuscript, as I have now added a new section to it; when submitting it, my TA knows that the file with V1 should have this updated section.
+At this stage, I have my data collated into a document where I can work on it without impacting the original data. We can see that I have done this in Excel (xlsx), and that I should expect to be able to open this file in Excel. I also now have a V1 of my manuscript, as I have now added a new section to it; when submitting it, my TA knows that the file with V1 should have this updated section.
 
 \hypertarget{day-7}{%
 \subsubsection*{Day 7}\label{day-7}}
 \addcontentsline{toc}{subsubsection}{Day 7}
 
-Today, I built two visualizations using the data in my Analysis document, one linear regression and one bar plot of frequency counts; I save these as images to insert into my manuscript. I then updated my manuscript to include my results and these two figures and submitted V2 of my manuscript. Now my files look like this:
+Today, I built two visualizations using the data in my analysis document, one linear regression and one bar plot of frequency counts; I save these as images to insert into my manuscript. I then updated my manuscript to include my results and these two figures and submitted V2 of my manuscript. Now my files look like this:
 
 \begin{verbatim}
 Pither_20210921_BIOL116RProject_ph-data.csv
@@ -416,7 +422,7 @@ Pither_BIOL116RProject_Lab-report_V1.docx
 Pither_BIOL116RProject_Lab-report_V2.docx
 \end{verbatim}
 
-We can start to see the advantage here of naming conventions. I can easily see which files are which, what they contain, and what their timeline of development is. Also, my computer easily sorts these into meaningful categories - my data is grouped together, sorted by date. My analyses, figures, and manuscripts are all respectively grouped together and sorted by version.
+We can start to see the advantage here of naming conventions. I can easily see which files are which, what they contain, and what their timeline of development is. Also, my computer easily sorts these into meaningful categories - my data is grouped together, sorted by date. My analyses, figures, and manuscripts are all respectively grouped and sorted by version.
 
 \hypertarget{day-8}{%
 \subsubsection*{Day 8}\label{day-8}}
@@ -442,11 +448,11 @@ Pither_BIOL116RProject_Lab-report_V3.docx
 \hypertarget{directory-structures}{%
 \chapter{Directory Structures}\label{directory-structures}}
 
-\emph{Last updated 2021-08-10}
+\emph{Last updated 2021-08-11}
 
 Now that we've covered naming conventions, let's pretend that you store everything on your computer in a single folder. Imagine how long it would take you to find data you collected on a specific day a few years ago. Instead of keeping every document in a single place, we often organize our files using directory (aka folder) structures. This helps us save precious time and improve our productivity.
 
-One major aspect of Open Science is ensuring transparency in the research process. This includes sharing files from all the steps of the research lifecycle (ie. a priori hypothesis, study design, data, analysis etc.) with others so that our research can be understood and replicated more easily.
+One major aspect of Open Science is ensuring transparency in the research process. This includes sharing files from all the steps of the research lifecycle (i.e.~a priori hypothesis, study design, data, analysis etc.) with others so that our research can be understood and replicated more easily.
 
 The way we currently organize folders and files on our computer may make sense to us, but a problem arises when we need to share those folders and files with other people. A folder name that is meaningful for us may make no sense to another person. So let's cover some conventions to help you organize the files on your computer in a way that is meaningful to both you and others.
 
@@ -455,7 +461,7 @@ The way we currently organize folders and files on our computer may make sense t
 
 First, let's talk about how to properly structure a folder hierarchy.
 
-The highest ranking folder is generally called the \textbf{root directory}, or sometimes the top-level folder. We'll call it the root directory here. This folder will contain all of the subfolders and files related to a particular project, including its data, analysis, lab reports etc. It will also contain what is called a readme file.
+The highest-ranking folder is generally called the \textbf{root directory}, or sometimes the top-level folder. We'll call it the root directory here. This folder will contain all of the subfolders and files related to a particular project, including its data, analysis, lab reports etc. It will also contain what is called a readme file.
 
 The structure should look something like the following:
 
@@ -478,39 +484,39 @@ In case there is any doubt, here are some examples of what are considered specia
 
 \# \% \& \textless{} \textgreater{} : " / ~\textbar{} ? * \{ \} \$ ! ' @ + ` =
 
-\textbf{Remember} spaces, " ", qualify as special characters when it comes to file naming.
+\textbf{Remember}: spaces, " ", qualify as special characters when it comes to file naming.
 
-\textbf{Remember} when we name the root folder we want to clearly communicate what the project is. And similarly, within this root folder, we want clearly labeled subfolders for each relevant aspect of the project. Common discrete subdirectories include ones for figures, data, manuscript etc.
+\textbf{Remember}: when we name the root folder we want to clearly communicate what the project is. And similarly, within this root folder, we want clearly labeled subfolders for each relevant aspect of the project. Common discrete subdirectories include ones for figures, data, manuscript etc.
 
 \hypertarget{readme-files-and-data-dictionaries}{%
 \section{readme files and data dictionaries}\label{readme-files-and-data-dictionaries}}
 
-When naming files we embed metadata into our file naming conventions to encode relevant information for the reader. But we can only store so much information in a file name. So we also include three additional files
+When naming files we embed metadata into our file naming conventions to encode relevant information for the reader. But we can only store so much information in a file name. So we also include three additional files:
 
 \begin{itemize}
 \tightlist
 \item
-  one called \_README that resides in our root folder and elaborates on the contents of our folder structure;
+  A \_README file which resides in our root folder and elaborates on the contents of our folder structure.
 \item
-  a second, also called \_README, but that resides in our data directory and discusses some of the particulars of the how, where, and who of the actual data collection; and
+  A \_README file that resides in our data directory and discusses some of the particulars of the how, where, and who did the actual data collection.
 \item
-  one called \_DATA-DICTIONARY that also resides in our data directory and elaborates on how our data is stored and organized.
+  A \_DATA-DICTIONARY file that also resides in our data directory and elaborates on how our data is stored and organized.
 \end{itemize}
 
-These files - containing a brief description of the major folder contents, naming conventions that were followed, and data structure - are critical for transparency and reproducibility, because they allow others to easily understand the contents of your directory and data without needing to ask you. This is especially helpful when working with a group or sharing directories with others.
+These files - containing a brief description of the major folder contents, naming conventions, and data structure - are critical for transparency and reproducibility because they allow others to easily understand the contents of your directory and data without needing to ask you. This is especially helpful when working with a group or sharing directories with others.
 
 \hypertarget{general-rules}{%
 \subsection*{General rules}\label{general-rules}}
 \addcontentsline{toc}{subsection}{General rules}
 
-A readme file and data dictionary should
+A readme file and data dictionary should:
 
 \begin{itemize}
 \tightlist
 \item
-  exist in at least two locations, the root directory and the data directory.
+  Exist in at least two locations, the root directory and the data directory.
 \item
-  be prepended with an underscore "\_". This will push these files to the top of the directory for easy access.
+  Be prepended with an underscore "\_". This will push these files to the top of the directory for easy access.
 \item
   \_README and \_DATA-DICTIONARY files should be in all caps, so they really stand out; this should be the first thing you look at when looking at any directory or folder, as this is your guide to its contents.
 \end{itemize}
@@ -519,7 +525,7 @@ A readme file and data dictionary should
 \subsection*{File formats}\label{file-formats}}
 \addcontentsline{toc}{subsection}{File formats}
 
-readme files and data dictionaries should be written in plain text, this will ensure that the file describing your project and all of its files can be opened on any computer. You will often see readme files called \_README.txt or \_DATA-DICTIONARY.txt.
+Readme files and data dictionaries should be written in plain text, for this will ensure that the files describing your project can be opened on any computer. You will often see readme files called \_README.txt or \_DATA-DICTIONARY.txt.
 
 Our example readme and data dictionaries use a plain text format called markdown.
 
@@ -534,11 +540,11 @@ Learn the basic syntax of markdown \href{https://ubco-biology.github.io/Procedur
 \hypertarget{root-folder-readme}{%
 \section{Root folder readme}\label{root-folder-readme}}
 
-To create a root folder readme file, use any markdown or text editor (ie. Typora, notepad etc), open a new file and save it to the root folder for your project ensuring the file type is .md.
+To create a root folder readme file, use any markdown or text editor (e.g.~Typora, notepad etc.), open a new file and save it to the root folder for your project, ensuring the file type is .md.
 
 Name your readme file \_README.md.
 
-Next we want to add some content to our \_README.md. The purpose of this document is to describe the directory structure of our project. To adequately describe our directory structure we should include:
+Next, we want to add some content to our \_README.md. The purpose of this document is to describe the directory structure of our project. To adequately describe our directory structure we should include:
 
 \begin{itemize}
 \tightlist
@@ -559,7 +565,7 @@ To see an example root directory readme file click \href{files/DS_rootREADME.md}
 \hypertarget{data-directory-readme}{%
 \section{Data directory readme}\label{data-directory-readme}}
 
-Next, we want to create another readme file but this file will be placed within the subfolder that contains our project's data. To do this, open any markdown or text editor (ie. Typora, notepad etc), open a new file and save it to the data subfolder for your project ensuring the file type is .md. Name your readme file \_README.md.
+Next, we want to create another readme file, but this file will be placed within the subfolder that contains our project's data. To do this, open any markdown or text editor (e.g.~Typora, notepad etc.), open a new file and save it to the data subfolder for your project, ensuring the file type is .md. Name your readme file \_README.md.
 
 The purpose of this readme file is to provide a description of data collection methods. We will include:
 
@@ -582,7 +588,7 @@ To see an example data directory readme file click \href{files/DS_dataREADME.md}
 \hypertarget{data-dictionary}{%
 \section{Data dictionary}\label{data-dictionary}}
 
-Lastly, we need to create a data dictionary which elaborates on how our data is stored and organized. To do this, open any markdown or text editor (ie. Typora, notepad etc), open a new file and save it to the data subfolder for your project. This time we will save the file as \_DATA-DICTIONARY.md.
+Lastly, we need to create a data dictionary which elaborates on how our data is stored and organized. To do this, open any markdown or text editor (e.g.~Typora, notepad etc.), open a new file and save it to the data subfolder for your project. This time we will save the file as \_DATA-DICTIONARY.md.
 
 A data dictionary helps others understand the meaning of each element in your datasets within the broader context of the project. Typically you will have an individual readme file for each dataset. This file should include:
 
@@ -605,7 +611,7 @@ To see an example data dictionary click \href{files/DS_DATA-DICTIONARY.md}{here}
 \hypertarget{example-biol-116}{%
 \section{Example BIOL 116}\label{example-biol-116}}
 
-In BIOL 116, we used a flat folder structure to hold all of our files. In the example used, no readme files were created, as we made the assumption that the project was "simple" enough in its structure to not warrant a readme file. On reflection, this was an oversight and we probably should have created a readme file describing what was in each file. Neither did we create a data dictionary. We'll do better on future assignments now that we know about the value of both forms of documentation. Anyway, in that example, we ended up with one folder of files that looked like the following before submitting our final assignment:
+In our previous BIOL 116 example, we used a flat folder structure to hold all of our files. With this example, no readme files were created, as we made the assumption that the project was "simple" enough in its structure to not warrant a readme file. On reflection, this was an oversight, and we probably should have created a readme file describing what was in each file. Neither did we create a data dictionary. We'll do better on future assignments now that we know about the value of both forms of documentation. Anyway, in that example, we ended up with one folder of files that looked like the following before submitting our final assignment:
 
 \begin{verbatim}
 Pither_20210921_BIOL116RProject_ph-data.csv
@@ -711,7 +717,7 @@ On day one of our research project, we are asked to prepare the beginning of a l
 BIOL125MealwormProject/
 \end{verbatim}
 
-Within our root folder we create a \_README.md file to describe our directory structure. Let's add our project name, date the folder was created and who created it, a short description of the project, group member names, file structure (major folders and their proposed content), and naming conventions to this readme file. Your file should look something like this:
+Within our root folder, we create a \_README.md file to describe our directory structure. Let's add our project name, date the folder was created and who created it, a short description of the project, group member names, file structure (major folders and their proposed content), and naming conventions to this readme file. Your file should look something like this:
 
 \href{files/DS_biol-125-readme_V0.md}{\_README.md}
 
@@ -741,7 +747,7 @@ New files:
 Pither_20210915_BIOL125MealwormProject_food-preference-data.csv
 \end{verbatim}
 
-Since we have added our first dataset into our project folder, we need to create a corresponding data directory \_README.md and \_DATA-DICTIONMARY.md.
+Since we have added our first dataset into our project folder, we need to create a corresponding \_README.md and \_DATA-DICTIONMARY.md.
 
 Let's start by creating the data directory readme and provide a description of our data set, collection methods, who collected the data, and where it was collected. It should look something like this:
 
@@ -759,7 +765,7 @@ Now our project directory looks like this:
 \subsection*{Day 3}\label{day-3}}
 \addcontentsline{toc}{subsection}{Day 3}
 
-Now that our group has completed its pilot project, we decided to expand our data collection and start recording how far mealworms are willing to travel to get each food. In addition to this new distance data we continued to collect data on food preferences.
+Now that our group has completed its pilot project, we decided to expand our data collection and start recording how far mealworms are willing to travel to get food. In addition to this new distance data, we continued to collect data on food preferences.
 
 New files:
 
@@ -768,21 +774,21 @@ Pither_20210916_BIOL125MealwormProject_food-preference-data.csv
 Pither_20210916_BIOL125MealwormProject_distance-data.csv
 \end{verbatim}
 
-Since we have a new dataset we'll have to update our data directory readme file with a description of the new dataset. Remember to note down the date it was updated and who it was updated by. Our updated data directory \_README.md file should look something like this:
+Since we have a new dataset, we'll have to update our data directory readme file with a description of the new dataset. Remember to note the date it was updated and who it was updated by. Our updated data directory \_README.md file should look something like this:
 
 \href{files/DS_biol-125-data-readme_V1.md}{\_README.md}
 
 Now our updated data directory readme file includes descriptions for both datasets.
 
-In the interest of organization, let's keep our food preferences and distance data in their own subfolders. So, we'll create two new subfolders within the Data folder. We'll call one Food-preferences/ and the other Distance/. This way we can organize csv files into the folder for the corresponding dataset. After doing this, we need to update the \_README.md in our root folder, since we've modified our directory structure. This readme should now look something like this:
+In the interest of organization, let's keep our food preferences and distance data in separate subfolders. So, we'll create two new subfolders within the Data folder. We'll call one Food-preferences/ and the other Distance/. This way, we can organize csv files into specific folders for each corresponding dataset. After doing this, we need to update the \_README.md in our root folder since we've modified our directory structure. This readme should now look something like this:
 
 \href{files/DS_biol-125-readme_V1.md}{\_README.md}
 
-Next, let's also create a data dictionary for our new dataset within our distance subfolder. Remember to note down the date it was updated and who it was updated by. It should look something like this:
+Next, let's also create a data dictionary for our new dataset within our distance subfolder. Remember to note the date it was updated and who it was updated by. It should look something like this:
 
 \href{files/DS_biol-125-data-dictionary-distance_V0.md}{\_DATA-DICTIONARY.md}
 
-Since we made some updates to our project design and methods, I'll also go ahead and updated our lab report to reflect those changes alongside justification for the changes. Then, I'll be sure to save my updated lab report using the appropriate naming conventions.
+Since we made some updates to our project design and methods, I'll also go ahead and update our lab report to reflect those changes alongside justification for the changes. Then, I'll be sure to save my updated lab report using the appropriate naming conventions.
 
 \begin{verbatim}
 Pither_BIOL125MealwormProject_report_V1.docx
@@ -833,12 +839,12 @@ Our final directory looks like this:
 
 \includegraphics{images/DS_directory-example-5.png}
 
-We can start to see that if you were to share your entire project directory with another person it would be relatively easy for them to locate files and understand the meaning behind each document in our project. They would also know when changes were made and who made these changes, so if they had any questions, they'd know exactly who to ask!
+We can start to see that if you were to share your entire project directory with another person, it would be relatively easy for them to locate files and understand the meaning behind each document in our project. They would also know when changes were made and who made these changes, so if they had any questions, they'd know exactly who to ask!
 
 \hypertarget{tidy-data}{%
 \chapter{Tidy data}\label{tidy-data}}
 
-\emph{Last updated 2021-08-10}
+\emph{Last updated 2021-08-11}
 
 We've talked about file naming, directory structures, and documentation to ensure accessible, interpretable, and transparent data. Now it's time to talk about organizing individual variables within a given file. When well organized, data values can be effectively analyzed, summarized, and visualized. When not, they can be onerous to work with and risk misinterpretation.
 
@@ -1034,7 +1040,7 @@ Ellison-lake & 3 & 1 \\
 \hypertarget{figures-tables}{%
 \chapter{Figures \& Tables}\label{figures-tables}}
 
-\emph{Last updated 2021-08-10}
+\emph{Last updated 2021-08-11}
 
 These guidelines are based on current "best practices" in Biology. You may encounter small differences when working with data or reading the results of research from other disciplines. They aim to achieve consistency among faculty, instructors, and students in how data are summarized and presented within lab reports and research papers.
 
@@ -1258,7 +1264,7 @@ When displaying data using a figure, follow these guidelines:
 \hypertarget{markdown-1}{%
 \chapter{Markdown}\label{markdown-1}}
 
-\emph{Last updated 2021-08-10}
+\emph{Last updated 2021-08-11}
 
 Markdown is a markup language that is used to format plain text files to help us provide additional meaning to our content. Markup languages are ideal authoring tools because they work on a principle of separating out content from formatting. Markup languages are ideal authoring tools for the sciences because they rely on plain text so any computer anywhere at anytime will be able to open them and consequently, we will be able to read them.
 
@@ -1626,7 +1632,7 @@ We'll just keep it simple for the moment; this is all you really need for your \
 \hypertarget{apa-citations}{%
 \chapter{APA Citations}\label{apa-citations}}
 
-\emph{Last updated 2021-08-10}
+\emph{Last updated 2021-08-11}
 
 This is a brief overview of the 7th edition of APA for quick reference. For a more in depth review, please consult \href{https://guides.library.ubc.ca/apacitationstyle}{the library's APA Citation Guide}. For the full APA manual, please consul the \href{http://resolve.library.ubc.ca/cgi-bin/catsearch?bid=10057275}{Publication Manual of the American Psychological Association}, available through the library.
 
@@ -1726,7 +1732,7 @@ Mei, Y., Yu, K., Lo, J. C. Y., Takeuchi, L. E., Hadjesfandiari, N., Yazdani-Ahma
 \hypertarget{academic-integrity}{%
 \chapter{Academic Integrity}\label{academic-integrity}}
 
-\emph{Last updated 2021-08-10}
+\emph{Last updated 2021-08-11}
 
 Academic integrity is the act of performing honest, responsible scholarship, much like scientific integrity is honest, responsible science. Academic integrity is very much about how we conduct ourselves in the pursuit of our studies, respecting those we learn from and work with and the contributions they make to our scholarly and scientific endeavours.
 
@@ -1735,7 +1741,7 @@ Learn more about academic integrity from the \href{https://learningcommons.ubc.c
 \hypertarget{copyright-1}{%
 \chapter{Copyright}\label{copyright-1}}
 
-\emph{Last updated 2021-08-10}
+\emph{Last updated 2021-08-11}
 
 Copyright is the legal ownership of a work, like a book, image, graph, journal article. Copyright law governs how and when we are allowed to redistribute what someone else has produced and how others can redistribute what we've produced.
 
@@ -1744,7 +1750,7 @@ Learn more about copyright at UBC from the \href{https://learningcommons.ubc.ca/
 \hypertarget{glossary}{%
 \chapter{Glossary}\label{glossary}}
 
-\emph{Last updated 2021-08-10}
+\emph{Last updated 2021-08-11}
 
 \textbf{A priori hypothesis:} Hypothesis that is generated before the research study takes place. Presenting the hypothesis before the study takes place helps in avoiding replacing the hypothesis later with one that fits the data better aka hypothesizing after the fact (HARKing).
 
