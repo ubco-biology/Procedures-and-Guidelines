@@ -245,7 +245,7 @@ Input
 
 ```
 | Column 1 Header | Column 2 Header | Column 3 Header |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | Column 1 item | Column 2 item | Column 3 item |
 | Column 1 item | Column 2 item | Column 3 item |
 ```
@@ -253,7 +253,7 @@ Input
 Output
 
 | Column 1 Header | Column 2 Header | Column 3 Header |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | Column 1 item | Column 2 item | Column 3 item |
 | Column 1 item | Column 2 item | Column 3 item |
 
