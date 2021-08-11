@@ -19,19 +19,19 @@ Non-tidy data - sometimes called \"wide\" data as it tends to use more columns, 
 So, say we collected data about the number of trout caught at local lakes across several days. We might end up with the following data tables if we used a separate table, sheet of paper etc. to record our findings.
 
 | Site         | Trout_Caught_Day_1 |
-| ------------ | ------------------ |
+| :------------ | :------------------ |
 | Mabel-lake   | 1                  |
 | Postill-lake | 3                  |
 | Ellison-lake | 0                  |
 
 | Site         | Trout_Caught_Day_2 |
-| ------------ | ------------------ |
+| :------------ | :------------------ |
 | Mabel-lake   | 1                  |
 | Postill-lake | 3                  |
 | Ellison-lake | 0                  |
 
 | Site         | Trout_Caught_Day_3 |
-| ------------ | ------------------ |
+| :------------ | :------------------ |
 | Mabel-lake   | 1                  |
 | Postill-lake | 3                  |
 | Ellison-lake | 0                  |
@@ -41,7 +41,7 @@ It is also very likely though that we set up an Excel sheet where we recorded th
 Doing this, we'd end up with a table something like the following:
 
 | Site         | Trout_Caught_Day_1 | Trout_Caught_Day_2 | Trout_Caught_Day_3 |
-| ------------ | ------------------- | -------------------- | -------------------- |
+| :------------ | :------------------- | :-------------------- | :-------------------- |
 | Mabel-lake   | 1                   | 3                  | 3 |
 | Postill-lake | 3                   | 4               | 5 |
 | Ellison-Lake | 0                   | 5                    | 1 |
@@ -63,19 +63,19 @@ Tidy data breaks this down and reserves on column per variable and one row per o
 First, working with a collection tool where we have one table per day:
 
 | Site         | Day  | Trout_Caught |
-| ------------ | ---- | ------------ |
+| :------------ | :---- | :------------ |
 | Mabel-lake   | 1    | 1            |
 | Postill-lake | 1    | 3            |
 | Ellison-lake | 1    | 0            |
 
 | Site         | Day  | Trout_Caught |
-| ------------ | ---- | ------------ |
+| :------------ | :---- | :------------ |
 | Mabel-lake   | 2    | 3            |
 | Postill-lake | 2    | 4            |
 | Ellison-lake | 2    | 5            |
 
 | Site         | Day  | Trout_Caught |
-| ------------ | ---- | ------------ |
+| :------------ | :---- | :------------ |
 | Mabel-lake   | 3    | 3            |
 | Postill-lake | 3    | 5            |
 | Ellison-lake | 3    | 1            |
@@ -83,7 +83,7 @@ First, working with a collection tool where we have one table per day:
 And second, gathering this data into a single dataset, sorted by site:
 
 | Site         | Day  | Trout_Caught |
-| ------------ | ---- | ------------ |
+| :------------ | :---- | :------------ |
 | Mabel-lake   | 1    | 1            |
 | Mabel-lake   | 2    | 3            |
 | Mabel-lake   | 3    | 3            |
@@ -101,7 +101,7 @@ Now that's tidy data!
 ### Wide Data {-}
 
 | Site         | Trout_Caught_Day_1 | Trout_Caught_Day_2 | Trout_Caught_Day_3 |
-| ------------ | ------------------ | ------------------ | ------------------ |
+| :------------ | :------------------ | :------------------ | :------------------ |
 | Mabel-lake   | 1                  | 3                  | 3                  |
 | Postill-lake | 3                  | 4                  | 5                  |
 | Ellison-Lake | 0                  | 5                  | 1                  |
@@ -109,7 +109,7 @@ Now that's tidy data!
 ### Tidy Data {-}
 
 | Site         | Day  | Trout_Caught |
-| ------------ | ---- | ------------ |
+| :------------ | :---- | :------------ |
 | Mabel-lake   | 1    | 1            |
 | Mabel-lake   | 2    | 3            |
 | Mabel-lake   | 3    | 3            |
