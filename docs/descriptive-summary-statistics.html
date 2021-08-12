@@ -24,7 +24,7 @@
 <meta name="author" content="Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar" />
 
 
-<meta name="date" content="2021-08-11" />
+<meta name="date" content="2021-08-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="tables.html"/>
 <link rel="next" href="results-of-statistical-tests.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -230,14 +230,15 @@
 </ul>
 <p><strong>Describing Numerical Variables</strong></p>
 <ul>
-<li>Report mean with standard deviation, and additionally median with inter-quartile range for variables that exhibit a non-normal frequency distribution (e.g. is skewed) or that includes outliers</li>
-<li>Parameter estimates (i.e. mean) should be accompanied by measures of uncertainty, i.e. the <em>standard error of the mean</em> (SEM) or confidence <em>interval</em> (notation: lower limit – upper limit); confidence <em>limits</em>: (lower limit, upper limit)</li>
-<li>Confidence intervals are strongly encouraged because they inform about <em>effect size</em></li>
-<li>Measures of uncertainty for an estimate, such as SEM, can be preceded by a ± sign; do not make the common mistake of reporting a ± sign with a standard deviation, as it is not a measure of uncertainty in an estimate</li>
+<li>Report mean with standard deviation, and additionally median with inter-quartile range for variables that exhibit a non-normal frequency distribution (e.g. is skewed) or that includes outliers.</li>
+<li>Parameter estimates (i.e. mean) should be accompanied by measures of uncertainty, i.e. the <em>standard error of the mean</em> (SEM); confidence <em>interval</em> (notation: lower limit – upper limit); or confidence <em>limits</em>: (lower limit, upper limit).</li>
+<li>Confidence intervals are strongly encouraged because they inform about <em>effect size</em>.</li>
+<li>Measures of uncertainty for an estimate, such as SEM, can be preceded by a ± sign; do not make the common mistake of reporting a ± sign with a standard deviation, as it is not a measure of uncertainty in an estimate.</li>
 </ul>
 <p><strong>Describing Categorical Variables</strong></p>
 <ul>
-<li>Report a frequency table (raw data) or a summary table with proportions for categories (the main descriptive statistic of interest), along with the confidence interval for the proportion if appropriate</li>
+<li>Report a frequency table for the raw data</li>
+<li>Alternatively, since proportions are the main descriptive statistic of interest, provide a summary table with proportions for each category. Include the confidence interval for the proportion if appropriate.</li>
 </ul>
 </div>
             </section>
@@ -298,6 +299,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

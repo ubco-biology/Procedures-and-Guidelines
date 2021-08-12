@@ -24,7 +24,7 @@
 <meta name="author" content="Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar" />
 
 
-<meta name="date" content="2021-08-11" />
+<meta name="date" content="2021-08-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="descriptive-summary-statistics.html"/>
 <link rel="next" href="figures.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -219,14 +219,14 @@
 <h2><span class="header-section-number">5.3</span> Results of Statistical Tests</h2>
 <p>Here are some guidelines for reporting the results of statistical tests:</p>
 <ul>
-<li>Your <em>Methods</em> section should clearly state the significance level (α), and this should be decided prior to the study</li>
-<li>Test statistics (e.g. Student’s <em>t</em> or an "F" from ANOVA) should be rounded to 2 decimal places, and associated <em>P</em>-values should report 3 decimal places, or if smaller than 0.001, then &lt;0.001. <em>P</em>-values do not indicate effect size, so reporting <em>P</em> = 10^-6 is not more impressive than <em>P</em> &lt;0.001</li>
-<li>Concluding statements should, in the absence of a table, include the test, test statistic value, degrees of freedom (<em>df</em>) or sample sizes, <em>P</em>-value, and confidence interval (if appropriate) in parentheses.
+<li>Your <em>Methods</em> section should clearly state your significance level (α), which should be decided prior to the beginning of the study.</li>
+<li>Test statistics (e.g. Student’s <em>t</em> or an "F" from ANOVA) should be rounded to 2 decimal places, and associated <em>P</em>-values should report 3 decimal places. If your <em>P</em>-value is less than 0.001, it should be reported as &lt;0.001. <em>P</em>-values do not indicate effect size, so reporting <em>P</em> = 10^-6 is not more impressive than <em>P</em> &lt;0.001.</li>
+<li>In the absence of a table, your concluding statement should include the name of the test, test statistic value, degrees of freedom (df) or sample sizes, P-value, and confidence interval (if appropriate). All of this should be in parentheses.
 <ul>
 <li>For example: "On average, hair loss was significantly greater among fathers compared to childless men (Welch’s 2-sample <em>t</em>-test; <em>t</em> = 4.23; <em>n</em> F = 18, <em>n</em> C = 20; <em>P</em> = 0.018; 95% CI for difference: 9.34 – 18.22%)."<br />
 </li>
 </ul></li>
-<li>Regression and ANOVA results should be shown in a standard ANOVA table format</li>
+<li>Regression and ANOVA results should be shown in a standard ANOVA table format.</li>
 </ul>
 <p><strong>Example of ANOVA table format</strong></p>
 <p><strong>Table 3.</strong></p>
@@ -327,6 +327,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

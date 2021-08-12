@@ -2,7 +2,7 @@
 
 *Last updated `r Sys.Date()`*
 
-This is a brief overview of the 7th edition of APA for quick reference. For a more in depth review, please consult [the library's APA Citation Guide](https://guides.library.ubc.ca/apacitationstyle). For the full APA manual, please consul the [Publication Manual of the American Psychological Association](http://resolve.library.ubc.ca/cgi-bin/catsearch?bid=10057275), available through the library.
+This chapter is a brief overview of the 7th edition of APA. For a more in depth review, please consult [the library's APA Citation Guide](https://guides.library.ubc.ca/apacitationstyle). For the full APA manual, please consult the [Publication Manual of the American Psychological Association](http://resolve.library.ubc.ca/cgi-bin/catsearch?bid=10057275), available through the library.
 
 Additional resources you may wish to consult include:
 
@@ -11,7 +11,7 @@ Additional resources you may wish to consult include:
 
 ## In-text Citations
 
-Always appear right after the content you are summarizing, paraphrasing, or quoting. The format is as follows:
+In-text citations always appear right after the content you are summarizing, paraphrasing, or quoting. The format is as follows:
 
 **Summarizing or Paraphrasing**
 
@@ -26,7 +26,7 @@ Always appear right after the content you are summarizing, paraphrasing, or quot
 
 If you mention the author or authors in text, you do not need to include this information in the brackets, \"()\". This is called a narrative citation.
 
-**Narrative in-text citation:** Raimi (2018) outlines the risks and benefits of fracking through an economic analysis and energy security benefits.
+**Narrative in-text citation:** Raimi (2018) outlines the risks and benefits of fracking through economic analysis and energy security benefits.
 
 The alternative is called a parenthetical citation.
 
@@ -51,12 +51,12 @@ The alternative is called a parenthetical citation.
 
 ### Journal article with a DOI (1-2 authors) {-}
 
-List all authors in reference list and in-text citations.
+List all authors in the reference list and in-text citations.
 
 Janmaat, J., & Rahimova, N. (2018). Managing drought risk in the Okanagan: A roll for dry-year option contracts? *Canadian Public Policy*, *44*(2), 112-125. https://doi.org/10.3138/cpp.2017-003
 
 ### Journal article with a DOI (3-20 authors) {-}
 
-List all authors in the reference list and only first author in the in-text citations.
+List all authors in the reference list and only the first author in the in-text citations.
 
 Mei, Y., Yu, K., Lo, J. C. Y., Takeuchi, L. E., Hadjesfandiari, N.,  Yazdani-Ahmadabadi, H., Brooks, D. E., Lange, D., & Kizhakkedathu,  J. N. (2018). Polymer-nanoparticle interaction as a design principle in  the development of a durable ultrathin universal binary antibiofilm  coating with long-term activity. *ACS Nano*, *12*(12), 11881-11891. https://doi.org/10.1021/acsnano.8b05512
