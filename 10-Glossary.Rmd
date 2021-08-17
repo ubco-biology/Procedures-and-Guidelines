@@ -106,6 +106,8 @@
 
 <a id="Post-hoc-test">**Post-hoc test:**</a> If a significant result is found when performing a statistical test, post hoc tests can be done to provide more details about where those significant differences are arising from. They are another form of statistical tests. 
 
+<a id="Prediction">**Prediction:**</a> The expected results of an experiment based on a specific hypothesis. 
+
 <a id="Probability">**Probability:**</a> Describes the likelihood of an event occurring. For example, when a fair coin is flipped the probability of getting tails is 0.5. 
 
 <a id="Proportion">**Proportion:**</a> A number between 0 and 1 that represents the fraction of the total population with a certain attribute. For example, if 10 students have red hair in a school with 100 students, then the proportion of students with red hair is 10/100 or 0.1. 
