@@ -79,7 +79,7 @@
 
 \title{Procedures and Guidelines}
 \author{Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar}
-\date{2021-08-12}
+\date{2021-08-17}
 
 \begin{document}
 \maketitle
@@ -157,7 +157,7 @@ This book is divided into 4 sections.
 \hypertarget{file-and-data-management}{%
 \chapter{File and Data Management}\label{file-and-data-management}}
 
-\emph{Last updated 2021-08-12}
+\emph{Last updated 2021-08-17}
 
 Well-organized data is critical to transparency, reproducibility, and generally maintaining one's sanity when conducting research. When we talk about file and data management, we may be referring to one of many aspects of making our data understandable to others, to a computer, or to our future selves that have succumb to memory lapses. Making data comprehensible is really about well-structured and communicated metadata that is, whenever possible, implemented according to conventions or standards.
 
@@ -180,7 +180,7 @@ Organizing and formatting data is a discussion about the best way to sort and pa
 \hypertarget{file-naming}{%
 \chapter{File Naming}\label{file-naming}}
 
-\emph{Last updated 2021-08-12}
+\emph{Last updated 2021-08-17}
 
 File naming isn't exactly fun, but it is crucial for organizing, describing, and managing all kinds of work, especially research. So, let's talk about the file naming conventions that you will be expected to use while at UBCO.
 
@@ -456,7 +456,7 @@ Pither_BIOL116RProject_Lab-report_V3.docx
 \hypertarget{directory-structures}{%
 \chapter{Directory Structures}\label{directory-structures}}
 
-\emph{Last updated 2021-08-12}
+\emph{Last updated 2021-08-17}
 
 Now that we've covered naming conventions, let's pretend that you store everything on your computer in a single folder. Imagine how long it would take you to find data you collected on a specific day a few years ago. Instead of keeping every document in a single place, we often organize our files using directory (aka folder) structures. This helps us save precious time and improve our productivity.
 
@@ -852,7 +852,7 @@ We can start to see that if you were to share your entire project directory with
 \hypertarget{tidy-data}{%
 \chapter{Tidy data}\label{tidy-data}}
 
-\emph{Last updated 2021-08-12}
+\emph{Last updated 2021-08-17}
 
 We've talked about file naming, directory structures, and documentation to ensure accessible, interpretable, and transparent data. Now it's time to talk about organizing individual variables within a given file. When properly organized, data values can be effectively analyzed, summarized, and visualized. When not, they can be onerous to work with and risk misinterpretation.
 
@@ -1048,7 +1048,7 @@ Ellison-lake & 3 & 1 \\
 \hypertarget{figures-tables}{%
 \chapter{Figures \& Tables}\label{figures-tables}}
 
-\emph{Last updated 2021-08-12}
+\emph{Last updated 2021-08-17}
 
 These guidelines are based on current "best practices" in Biology. You may encounter small differences when working with data or reading the results of research from other disciplines. Our aim is to achieve consistency among faculty, instructors, and students in how data are summarized and presented within lab reports and research papers.
 
@@ -1075,53 +1075,53 @@ When presenting data in a table keep in mind the following:
 
 The following is an example of a properly formatted table.
 
-\textbf{Table 1.} Summary of trait measurements made on individuals of \emph{Solidago} ssp. collected within shaded and open habitats in the vicinity of Portland, Oregon.
+\textbf{Table 1.} Summary of trait measurements made on individuals of \emph{Solidago} ssp. collected within shaded and open habitats in the vicinity of Portland, Oregon. "sd" denotes standard deviation.
 
 Trait
 
 Habitat: Shaded (n = 20)
 
-Habitat: Open (n+ = 18)
+Habitat: Open (n = 18*)
 
 Mean (sd)
 
-95\% confidence limit
+95\% confidence interval
 
 Mean (sd)
 
-95\% confidence limit
+95\% confidence interval
 
 Leaf area (cm2)
 
 4.59 (0.974)
 
-4.14, 5.05
+4.14 - 5.05
 
 4.54 (0.972)
 
-4.24, 5.15
+4.24 - 5.15
 
 Leaf mass (mg)
 
 2.52 (0.765)
 
-2.15, 2.89
+2.15 - 2.89
 
-w.62 (0.705)
+2.62 (0.705)
 
-2.25, 2.99
+2.25 - 2.99
 
 Root mass (mg)
 
 9.97 (2.754)
 
-8.67, 11.26
+8.67 - 11.26
 
 9.90 (2.454)
 
-8.37, 11.16
+8.37 - 11.16
 
-+ data for two individuals misplaced
+* data for two individuals misplaced
 
 \hypertarget{descriptive-summary-statistics}{%
 \section{Descriptive \& Summary Statistics}\label{descriptive-summary-statistics}}
@@ -1153,13 +1153,13 @@ Here are some general guidelines to follow when displaying descriptive or summar
 \begin{itemize}
 \tightlist
 \item
-  Report mean with standard deviation, and additionally median with inter-quartile range for variables that exhibit a non-normal frequency distribution (e.g.~is skewed) or that includes outliers.
+  Report mean with standard deviation, and additionally median with inter-quartile range for variables that exhibit a non-normal frequency distribution (e.g.~is skewed) or that includes outliers
 \item
-  Parameter estimates (i.e.~mean) should be accompanied by measures of uncertainty, i.e.~the \emph{standard error of the mean} (SEM); confidence \emph{interval} (notation: lower limit -- upper limit); or confidence \emph{limits}: (lower limit, upper limit).
+  Parameter estimates (i.e.~mean) should be accompanied by measures of uncertainty, i.e.~the \emph{standard error of the mean} \texttt{SEM} or confidence \emph{interval} (notation: lower limit -- upper limit); confidence \emph{limits}: (lower limit, upper limit)
 \item
-  Confidence intervals are strongly encouraged because they inform about \emph{effect size}.
+  Confidence intervals are strongly encouraged because they inform about \emph{effect size}
 \item
-  Measures of uncertainty for an estimate, such as SEM, can be preceded by a ± sign; do not make the common mistake of reporting a ± sign with a standard deviation, as it is not a measure of uncertainty in an estimate.
+  Measures of uncertainty for an estimate, such as SEM, can be preceded by a \texttt{±} sign; do not make the common mistake of reporting a \texttt{±} sign with a standard deviation, as it is not a measure of uncertainty in an estimate
 \end{itemize}
 
 \textbf{Describing Categorical Variables}
@@ -1167,9 +1167,7 @@ Here are some general guidelines to follow when displaying descriptive or summar
 \begin{itemize}
 \tightlist
 \item
-  Report a frequency table for the raw data
-\item
-  Alternatively, since proportions are the main descriptive statistic of interest, provide a summary table with proportions for each category. Include the confidence interval for the proportion if appropriate.
+  Report a frequency table (raw data) or a summary table with proportions for categories (the main descriptive statistic of interest), along with the confidence interval for the proportion if appropriate.
 \end{itemize}
 
 \hypertarget{results-of-statistical-tests}{%
@@ -1178,19 +1176,14 @@ Here are some general guidelines to follow when displaying descriptive or summar
 Here are some guidelines for reporting the results of statistical tests:
 
 \begin{itemize}
-\tightlist
 \item
-  Your \emph{Methods} section should clearly state your significance level (α), which should be decided prior to the beginning of the study.
+  Your \emph{Methods} section should clearly state the significance level (\(\alpha\)), and this should be decided prior to the study
 \item
-  Test statistics (e.g.~Student's \emph{t} or an "F" from ANOVA) should be rounded to 2 decimal places, and associated \emph{P}-values should report 3 decimal places. If your \emph{P}-value is less than 0.001, it should be reported as \textless0.001. \emph{P}-values do not indicate effect size, so reporting \emph{P} = 10\^{}-6 is not more impressive than \emph{P} \textless0.001.
+  Test statistics (e.g.~Student's \texttt{t} or an \texttt{F} from ANOVA) should be rounded to 2 decimal places, and associated \texttt{P-values} should report 3 decimal places, or if smaller than 0.001, then \textless0.001. \texttt{P-values} do not indicate effect size, so reporting \(P = 10^{-6}\) is not more impressive than \emph{P} \textless0.001
 \item
-  In the absence of a table, your concluding statement should include the name of the test, test statistic value, degrees of freedom (df) or sample sizes, P-value, and confidence interval (if appropriate). All of this should be in parentheses.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    For example: "On average, hair loss was significantly greater among fathers compared to childless men (Welch's 2-sample \emph{t}-test; \emph{t} = 4.23; \emph{n} F = 18, \emph{n} C = 20; \emph{P} = 0.018; 95\% CI for difference: 9.34 -- 18.22\%)."\\
-  \end{itemize}
+  Concluding statements should, in the absence of a table, include the test, test statistic value, degrees of freedom \texttt{df} or sample sizes, \texttt{P-value}, and confidence interval (if appropriate) in parentheses.
+\item
+  For example: "On average, hair loss was significantly greater among fathers compared to childless men (Welch's 2-sample \emph{t}-test; \emph{t} = 4.23; \emph{n} F = 18, \emph{n} C = 20; \emph{P} = 0.018; 95\% CI for difference: 9.34 -- 18.22\%)."\\
 \item
   Regression and ANOVA results should be shown in a standard ANOVA table format.
 \end{itemize}
@@ -1239,16 +1232,16 @@ When displaying data using a figure, follow these guidelines:
   \begin{itemize}
   \tightlist
   \item
-    e.g.~``Line represents a least-squares linear regression line, \emph{y} = 0.3 + 4.5\emph{x} (\emph{F} = 5.65, df = 36; P = 0.021)''.
+    e.g.~"Line represents a least-squares linear regression line, \emph{y} = 0.3 + 4.5\emph{x} (\emph{F} = 5.65, df = 36; P = 0.021)".
   \end{itemize}
 \item
   For more complex statistics (e.g.~lines associated with mixed effects models) refer the reader to the text for details
 \item
   Bar plots should \textbf{only} be used to visualize categorical data (e.g.~proportion of students with brown or blue eyes) or counts (number of flies on scat)
 \item
-  When comparing numerical data among categories or groups (Figs. 1,2), use stripcharts (Fig. 1) when sample sizes are small (i.e.~\textless20) and boxplots otherwise (Fig. 2).
+  When comparing numerical data among categories or groups (Figs. 1,2) use stripcharts (Fig. 1) when sample sizes are small (i.e.~\textless20) and boxplots otherwise (Fig. 2).
 \item
-  Note that the stripchart has the advantage of showing all the data (i.e.~each observation is represented by a point), whereas the boxplot summarizes the data visually. When sample sizes per group are very large, it would get very messy if you tried to show all the data. However, there are graphs like \href{https://www.r-graph-gallery.com/violin.html}{``violin plots''} that offer a nice compromise.
+  Note that the stripchart has the advantage of showing all the data (i.e.~each observation is represented by a point), whereas the boxplot summarizes the data visually. When sample sizes per group are very large, it would get very messy if you tried to show all the data. However, there are graphs like \href{https://www.r-graph-gallery.com/violin.html}{"violin plots"} that offer a nice compromise.
 \end{itemize}
 
 \hypertarget{examples}{%
@@ -1274,7 +1267,7 @@ When displaying data using a figure, follow these guidelines:
 \hypertarget{markdown-1}{%
 \chapter{Markdown}\label{markdown-1}}
 
-\emph{Last updated 2021-08-12}
+\emph{Last updated 2021-08-17}
 
 Markdown is a markup language used to format plain text files to help us provide additional meaning to our content. Markup languages are ideal authoring tools because they work on the principle of separating content from formatting. Markup languages are ideal authoring tools for the sciences because they rely on plain text, so any computer anywhere at any time will be able to open them and consequently, we will be able to read them.
 
@@ -1642,7 +1635,7 @@ We'll keep it simple for the moment; this is all you really need for your \_READ
 \hypertarget{apa-citations}{%
 \chapter{APA Citations}\label{apa-citations}}
 
-\emph{Last updated 2021-08-12}
+\emph{Last updated 2021-08-17}
 
 This chapter is a brief overview of the 7th edition of APA. For a more in depth review, please consult \href{https://guides.library.ubc.ca/apacitationstyle}{the library's APA Citation Guide}. For the full APA manual, please consult the \href{http://resolve.library.ubc.ca/cgi-bin/catsearch?bid=10057275}{Publication Manual of the American Psychological Association}, available through the library.
 
@@ -1742,7 +1735,7 @@ Mei, Y., Yu, K., Lo, J. C. Y., Takeuchi, L. E., Hadjesfandiari, N., Yazdani-Ahma
 \hypertarget{academic-integrity}{%
 \chapter{Academic Integrity}\label{academic-integrity}}
 
-\emph{Last updated 2021-08-12}
+\emph{Last updated 2021-08-17}
 
 Academic integrity is the act of performing honest, responsible scholarship, much like scientific integrity is honest, responsible science. Academic integrity is very much about how we conduct ourselves in the pursuit of our studies, respecting those we learn from and work with and the contributions they make to our scholarly and scientific endeavours.
 
@@ -1751,7 +1744,7 @@ Learn more about academic integrity from the \href{https://learningcommons.ubc.c
 \hypertarget{copyright-1}{%
 \chapter{Copyright}\label{copyright-1}}
 
-\emph{Last updated 2021-08-12}
+\emph{Last updated 2021-08-17}
 
 Copyright is the legal ownership of a work, like a book, image, graph, journal article. Copyright law governs how and when we are allowed to redistribute what someone else has produced and how others can redistribute what we've produced.
 
@@ -1760,7 +1753,7 @@ Learn more about copyright at UBC from the \href{https://learningcommons.ubc.ca/
 \hypertarget{glossary}{%
 \chapter{Glossary}\label{glossary}}
 
-\emph{Last updated 2021-08-12}
+\emph{Last updated 2021-08-17}
 
 \textbf{A priori hypothesis:} Hypothesis that is generated before the research study takes place. Presenting the hypothesis before the study takes place helps in avoiding replacing the hypothesis later with one that fits the data better aka hypothesizing after the fact (HARKing).
 
@@ -1865,6 +1858,8 @@ Learn more about copyright at UBC from the \href{https://learningcommons.ubc.ca/
 \textbf{Plain text:} Simple text that is human readable. It can includes letters, numbers, symbols, and spaces but does not have any special formatting and is not computationally tagged.
 
 \textbf{Post-hoc test:} If a significant result is found when performing a statistical test, post hoc tests can be done to provide more details about where those significant differences are arising from. They are another form of statistical tests.
+
+\textbf{Prediction:} The expected results of an experiment based on a specific hypothesis.
 
 \textbf{Probability:} Describes the likelihood of an event occurring. For example, when a fair coin is flipped the probability of getting tails is 0.5.
 
