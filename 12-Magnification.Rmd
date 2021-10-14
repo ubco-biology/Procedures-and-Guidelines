@@ -1,0 +1,157 @@
+# (PART\*) Appendix {-}
+
+# A: Magnification of A Drawing
+
+To determine the scale of a sketch or drawing, we must know the size of the object we\'re drawing and the size of the image we\'re representing this object with. Mathematically, this is expressed as
+
+$$m = \frac{d}{o}$$
+
+where 
+
+* $m$ = magnification (or scale) of drawing
+* $d$ = size of drawing
+* $o$ = size of object
+
+## Object Size
+
+Two different methods are described here to calculate an object\'s size under the microscope. The first uses estimation whereas the second, more precise measure, involves calibration of an ocular micrometer. It is very likely that you frequently won\'t have access to an ocular micrometer, in which case the estimation method should suffice.
+
+## Method 1: Estimation
+
+### Field of View Diameter {-}
+
+First, determine the field of view diameter of your microscope for each objective setting.
+
+<div class = "note">
+**Note**
+
+These values might be provided to you in your lab manual. If so, proceed to the next section, [estimating object size](#estimating-object-size).
+</div>
+
+To calculate field of view diameter, we first need to know the field number (FN). When you look at your microscope eyepiece, the FN is displayed after the ocular lens magnification. For example, you might see 10x/16. In this case, 10x is the ocular lens magnification and 16 mm is the FN. 
+
+To calculate the field of view diameter use the following formula:
+
+$$d = \frac{f}{o}$$
+
+where
+
+* $d$ = field of view diameter
+* $f$ = field number
+* $o$ = objective magnification
+
+Assuming the FN on our microscope is 16 mm, let's calculate the field of view diameter for the 4x objective.
+
+$$d = \frac{16 mm}{4} = 4 mm$$
+
+Repeat this process for the remainder of the objectives on your microscope. Your final result should look something like this:
+
+| Ocular-magnification | Objective-magnification | Total-magnification | Field-of-view-diameter |
+| -------------------- | ----------------------- | ------------------- | ---------------------- |
+| 10x                  | 4x                      | 40x                 | 4 mm                   |
+| 10x                  | 10x                     | 100x                | 1.6 mm                 |
+| 10x                  | 40x                     | 400x                | 0.4 mm                 |
+| 10x                  | 100x                    | 1000x               | 0.16 mm                |
+
+### Estimating Object Size {-}
+
+Next, estimate the size of the object you are looking at. 
+
+Since you know the diameter of the field of view for each lens, you can easily estimate the length or size of objects you are looking at by roughly comparing the object\'s size to the diameter of the circle. The formula for doing this is:
+
+$$o = fr \times d$$
+where
+
+* $o$ = object size
+* $fr$ = fraction of the field of view taken up by the object
+* $d$ = field of view diameter 
+
+For example, suppose you are looking at a protozoan that extends 3/4 of the way across the field under 400x total magnification. Using the table above for the microscope in this example, we can see that at 400x total magnification, the objective magnification is 40x and the diameter of the field of view is 0.4 mm. Plugging these numbers into the formula above, we can estimate the length of the object at 0.3 mm.
+
+$$o = \frac{3}{4} \times 0.4mm = 0.3mm$$
+
+![*Caption* Estimating object size.<br />Image produced by Clerissa Copeland licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)](images/DM_estimating-object-size.png)
+
+## Method 2: Ocular Micrometer
+
+The ocular micrometer is inserted into one of the eyepieces of the microscope and looks like a ruler.
+
+![*Caption* The Ocular Micrometer.<br />Image produced by Mathew Vis-Dunbar licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)](images/DM_ocular-micrometer.png)
+
+The distance between the markings on the micrometer are used to measure objects in the field of view and represent different sizes of increments at different magnifications because the diameter of the field of view decreases as the magnification increases. 
+
+In order to determine the size represented by the increments at different magnifications, the ocular micrometer must be calibrated against a stage micrometer (a special slide containing a scale marked off in 10$\mu$m increments).
+
+### Calibrating the Ocular Micrometer {-}
+
+To calibrate the ocular micrometer, follow these steps:
+
+1. Look through the microscope eyepieces and note the ocular micrometer.
+2. Obtain a stage micrometer and bring the scale into focus using the 40x objective (remember to focus it first using the 4x and 10x objectives). 
+3. Rotate the ocular lens tube until the markings of the ocular micrometer are lined up parallel to those of the stage micrometer and superimposed on them.
+4. Use the mechanical stage adjustment knob to move the stage micrometer so that the lines of both micrometers coincide at the left edge of the field. 
+
+![*Caption* Calibration of the ocular micrometer. Note that this diagram is only an example and  will not necessarily reflect the alignment you will see under your own microscope.<br />Image produced by Mathew Vis-Dunbar licensed under [CC BY-NC-SA 4.0]](images/DM_ocular-micrometer-calibration.png)
+
+5. Starting with the lowest magnification objective, carefully observe and count the number of increments on the ocular micrometer that correspond to a single 10$\mu$m division (the smallest division on the stage micrometer) of the stage micrometer. Repeat this for each objective lens. 
+6. Calculate the size of one ocular micrometer unit using the following formula:
+
+$$o=\frac{10\mu m}{u}$$
+
+where 
+
+* $o$ = size of 1 ocular micrometer unit (in $\mu$m)
+* 10$\mu m$ is the width of 1 stage micrometer unit
+* $u$ = # of ocular micrometer units in 1 stage micrometer unit
+
+Example: Using a particular objective lens, you find that there are 5 ocular units in one stage micrometer unit. By using the formula above, you can then determine that each ocular micrometer unit for that objective is equal to 2 $\mu$m. See the calculations below:
+
+$$o=\frac{10\mu m}{5 ocular micrometer units}=2\mu m$$ 
+
+7. Now you can calculate the size of a specimen by counting the number of ocular micrometer increments spanned by the specimen and multiplying it by the width of the ocular micrometer unit at that specific magnification. If your specimen is longer than it is wide, do this for both the width and the length of your specimen. 
+
+<div class = "note">
+**Note**
+
+Make sure to measure more than one specimen and report the range of sizes for each dimension to account for the natural variation that occurs in the population. For example, a bacillus-shaped bacterium that ranges between 1 to 5 $\mu m$ in width and 4 to 10 $\mu m$ in length would be expressed as 1-5$\mu m$ x 4-10 $\mu m$.
+</div>
+
+## Drawing Size
+
+Next, you must measure your drawing. 
+
+Now that you have estimated the size of the object, you must measure your drawing using a ruler. Let's suppose that in the above example that the protozoan drawing is 6 cm (or 60 mm) long. 
+
+![*Caption* Measuring drawing size.<br />Image produced by Clerissa Copeland licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)](images/DM_measuring-drawing-size.png)
+
+## Calculating Scale
+
+Lastly, you can determine the drawing magnification using the following formula: 
+
+$$m = \frac{d}{o}$$
+
+where 
+
+* $m$ = magnification (or scale) of drawing
+* $d$ = size of drawing
+* $o$ = size of object
+
+Now that you know both the size of the drawing and the size of the object, you can plug that information into the above formula. 
+
+In the previous example (Under Estimating object size using field of view diameter), the protozoan drawing is 60 mm and the size of the protozoan was estimated to be 0.3 mm. Plugging these values into the formula, we get a magnification of 200x.
+
+$$m = \frac{60mm}{0.3mm} = 200$$
+
+Alternatively, you can write this as a ratio with <code>drawing size: real life size</code>. In this case the scale would be 200:1. 
+
+<div class = "note">
+**Note**
+
+Place the scale or magnification on the bottom right of your drawing. 
+
+Units must match and then they cancel out, leaving the \"x\" to indicate magnification. You may also use the word \"times\" instead of \"x\".
+</div>
+
+Here is the final image. 
+
+![Whole (wet) mount of *Vorticella campanula* viewed at 400x total magnification using a brightfield compound microscope. Macronucleus not seen.<br />Image produced by Clerissa Copeland licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)](images/DM_final-image.png)

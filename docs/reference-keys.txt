@@ -25,6 +25,11 @@ tables
 descriptive-summary-statistics
 results-of-statistical-tests
 figures
+sketches-drawings
+the-role-of-sketches
+sketching-guidelines
+good-example-sketches
+poor-example-sketch
 markdown-1
 how-markdown-works
 what-you-need-to-get-started
@@ -44,3 +49,9 @@ reference-list
 academic-integrity
 copyright-1
 glossary
+a-magnification-of-a-drawing
+object-size
+method-1-estimation
+method-2-ocular-micrometer
+drawing-size
+calculating-scale

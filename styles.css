@@ -1,0 +1,19 @@
+.note, .advanced {
+  padding: 10px;
+  margin: 20px 0px;
+  border-radius: 5px;
+}
+
+.note {
+  border: 1pt solid #0d4a7b;
+  background-color: #f0f7fd;
+}
+
+.advanced {
+  border: 1pt solid #1f7b0d;
+  background-color: #f1fdf0;
+}
+
+td {
+  vertical-align: top;
+}
