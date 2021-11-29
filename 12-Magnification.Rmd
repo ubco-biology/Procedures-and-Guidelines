@@ -1,6 +1,6 @@
 # (PART\*) Appendix {-}
 
-# A: Magnification of A Drawing
+# A1: Magnification of A Drawing {-}
 
 To determine the scale of a sketch or drawing, we must know the size of the object we\'re drawing and the size of the image we\'re representing this object with. Mathematically, this is expressed as
 

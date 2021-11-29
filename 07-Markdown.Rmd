@@ -29,21 +29,35 @@ All of the content that you\'re reading right now was authored in Markdown. Note
 
 ## What You Need to Get Started
 
-You'll need a text editor or a dedicated Markdown editor! What's the difference?
+You\'ll need a text editor or a dedicated Markdown editor! What's the difference?
 
 A text editor will not format your markdown, it\'ll just display the plain text. When you open the <code>_README.md</code> files noted throughout this book (either in **TextEdit** on a Mac or **Notepad** on Windows), you see the raw, plain text output.
 
-A dedicated Markdown editor will format your Markdown as you type, so you get an idea as to how it will render if you were to save it as a pdf, html etc. There are a lot of Markdown editors available, many of them free and open source.
+<div class = "note">
+**Note**
 
-Already have a favourite text editor or Markdown editor? Great. If not, we\'d like to suggest the following, which provide an easy-to-use interface and work across two panes, one where you see your plain text output and one where you see how it will be rendered when formatted. Both are free and open source.
+TextEdit on your mac is not actually a plain text editor; while TextEdit can read and open a Markdown file, it cannot create a Markdown file. MacOS does not ship with a plain text editor like Notepad on Windows. So if you\'re on a Mac, you\'ll need to download a text editor.
+</div>
 
-**Mac OS**
+A dedicated Markdown editor will format your Markdown as you type, so you get an idea as to how it will render if you were to save it as a pdf, html etc. There are a lot of Markdown editors available, many of them free and open source, and many for very specific use cases. When you have some free time, you may choose to check out the following comprehensive list [https://www.markdownguide.org/tools/](https://www.markdownguide.org/tools/).
 
-MacDown available at https://macdown.uranusjr.com/
+In between a plain text editor and a dedicated Markdown editor are those text editors with add-ons to help you navigate your markup. These options provide a lot of flexibility and finding a text editor of this ilk that you like will be of benefit going forward in your degree. An excellent free and open source, cross platform option is [Atom](https://atom.io/), which has built in support for Markdown rendering.
 
-**Windows**
+### Atom {-}
 
-Markdown Edit available at https://mike-ward.net/Markdown-Edit/
+Download Atom at [https://atom.io/](https://atom.io/)
+
+Once downloaded, launch it and you\'ll be presented with an `untitled` blank document. Save it somewhere with a file name of your choosing and a file type of `.md` - so something like, `my-first-note.md`. You can then toggle Markdown preview on and off with your packages menu
+
+![Toggling Markdown preview in Atom.](images/MD_preview-toggle.png)
+
+<div class = "note">
+**Note**
+
+One other thing that you\'ll want to do is to set up how Atom handles tabs. A tab may be either `hard` or `soft`. A `hard` tab is encoded with a tab character, which can throw off the interoperability that we\'re trying to achieve with using a plain text editor. A `soft` tab is simply encoded as a series of spaces; this plays much better in general as text is moved between programs and operating systems.
+
+So, head into `Settings > Editor > Tab Type` and ensure that it is set to `soft`. At the same time, you should probably turn on `Soft Wrap`.
+</div>
 
 ## Prose
 

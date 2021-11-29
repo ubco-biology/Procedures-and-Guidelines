@@ -49,7 +49,6 @@ reference-list
 academic-integrity
 copyright-1
 glossary
-a-magnification-of-a-drawing
 object-size
 method-1-estimation
 method-2-ocular-micrometer
