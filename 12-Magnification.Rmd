@@ -23,8 +23,6 @@ Two different methods are described here to calculate an object\'s size under th
 First, determine the field of view diameter of your microscope for each objective setting.
 
 <div class = "note">
-**Note**
-
 These values might be provided to you in your lab manual. If so, proceed to the next section, [estimating object size](#estimating-object-size).
 </div>
 
@@ -111,8 +109,6 @@ $$o=\frac{10\mu m}{5 ocular micrometer units}=2\mu m$$
 7. Now you can calculate the size of a specimen by counting the number of ocular micrometer increments spanned by the specimen and multiplying it by the width of the ocular micrometer unit at that specific magnification. If your specimen is longer than it is wide, do this for both the width and the length of your specimen. 
 
 <div class = "note">
-**Note**
-
 Make sure to measure more than one specimen and report the range of sizes for each dimension to account for the natural variation that occurs in the population. For example, a bacillus-shaped bacterium that ranges between 1 to 5 $\mu m$ in width and 4 to 10 $\mu m$ in length would be expressed as 1-5$\mu m$ x 4-10 $\mu m$.
 </div>
 
@@ -145,8 +141,6 @@ $$m = \frac{60mm}{0.3mm} = 200$$
 Alternatively, you can write this as a ratio with <code>drawing size: real life size</code>. In this case the scale would be 200:1. 
 
 <div class = "note">
-**Note**
-
 Place the scale or magnification on the bottom right of your drawing. 
 
 Units must match and then they cancel out, leaving the \"x\" to indicate magnification. You may also use the word \"times\" instead of \"x\".

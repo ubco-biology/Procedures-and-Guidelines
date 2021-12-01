@@ -18,8 +18,6 @@ These guidelines are modeled on best practices in the life sciences and where ne
 **For Instructors** Any concerns or omissions from these procedures and guidelines can be forwarded to Jason Pither (jason.pither@ubc.ca) or Mathew Vis-Dunbar (mathew.vis-dunbar@ubc.ca)
 
 <div class = "note">
-**Note**
-
 This is a living document. Expect that content will be added over time and adapted as needs and circumstances change.
 </div>
 
@@ -32,6 +30,12 @@ Please use the following for citing this document
 Copeland, C., Pither, J., Vis-Dunbar, M. (2021). *Procedures and Guidelines*. [https://ubco-biology.github.io/Procedures-and-Guidelines/](https://ubco-biology.github.io/Procedures-and-Guidelines/)
 
 All source files are available at [https://github.com/ubco-biology/Procedures-and-Guidelines](https://github.com/ubco-biology/Procedures-and-Guidelines).
+
+## UBCO Biology open materials {-}
+
+This resource is part of a larger project to host UBCO Biology lab materials in an open, accessible format.
+
+All BIOL open materials can be found at [https://ubco-biology.github.io/](https://ubco-biology.github.io/)
 
 ## Why Procedures and Guidelines? {-}
 

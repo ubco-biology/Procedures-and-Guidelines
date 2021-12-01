@@ -34,8 +34,6 @@ You\'ll need a text editor or a dedicated Markdown editor! What's the difference
 A text editor will not format your markdown, it\'ll just display the plain text. When you open the <code>_README.md</code> files noted throughout this book (either in **TextEdit** on a Mac or **Notepad** on Windows), you see the raw, plain text output.
 
 <div class = "note">
-**Note**
-
 TextEdit on your mac is not actually a plain text editor; while TextEdit can read and open a Markdown file, it cannot create a Markdown file. MacOS does not ship with a plain text editor like Notepad on Windows. So if you\'re on a Mac, you\'ll need to download a text editor.
 </div>
 
@@ -52,8 +50,6 @@ Once downloaded, launch it and you\'ll be presented with an `untitled` blank doc
 ![Toggling Markdown preview in Atom.](images/MD_preview-toggle.png)
 
 <div class = "note">
-**Note**
-
 One other thing that you\'ll want to do is to set up how Atom handles tabs. A tab may be either `hard` or `soft`. A `hard` tab is encoded with a tab character, which can throw off the interoperability that we\'re trying to achieve with using a plain text editor. A `soft` tab is simply encoded as a series of spaces; this plays much better in general as text is moved between programs and operating systems.
 
 So, head into `Settings > Editor > Tab Type` and ensure that it is set to `soft`. At the same time, you should probably turn on `Soft Wrap`.
@@ -199,7 +195,9 @@ Output
 
 > This text is placed within a block quote
 
-**NOTE** Leave a blank line both before the blockquote and after it.
+<div class = "note">
+Leave a blank line both before the blockquote and after it.
+</div>
 
 ## Lists
 
