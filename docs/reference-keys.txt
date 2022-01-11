@@ -46,6 +46,13 @@ markdown-flavours
 apa-citations
 in-text-citations
 reference-list
+reference-management-zotero
+installation-first-launch
+browser-plugin
+accounts-sync-setup
+adding-citations
+renaming-pdfs
+syncing-to-the-cloud
 academic-integrity
 copyright-1
 glossary
