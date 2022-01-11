@@ -1,8 +1,0 @@
-# Academic Integrity
-
-*Last updated `r Sys.Date()`*
-
-Academic integrity is the act of performing honest, responsible scholarship, much like scientific integrity is honest, responsible science. Academic integrity is very much about how we conduct ourselves in the pursuit of our studies, respecting those we learn from and work with and the contributions they make to our scholarly and scientific endeavours.
-
-Learn more about academic integrity from the [UBCO \"Academic Integrity Resources for Students\"](https://students.ok.ubc.ca/academic-success/learning-hub/online-resources/academic-integrity/).
-
