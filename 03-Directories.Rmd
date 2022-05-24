@@ -37,7 +37,7 @@ If we were to represent this graphically--as a hierarchy--we'd have something li
 
 Your **working directory** is the folder you're working in or the folder that holds the file that you have open.
 
-Let's say you create a folder on your `Desktop` called `BIOL-125/` to hold all of your coursework for this class. And in it you have another folder for your research project--`Research-Project/`--in which you have a Word file for keeping notes--`biol-125_research-project_notes.docx`.
+Let's say you create a folder on your `Desktop/` called `BIOL-125/` to hold all of your coursework for this class. And in it you have another folder for your research project--`Research-Project/`--in which you have a Word file for keeping notes--`biol-125_research-project_notes.docx`.
 
 A directory map would now look something like the following:
 
@@ -52,9 +52,9 @@ A directory map would now look something like the following:
 │   │   |   |   |     ├── biol-125_research-project_notes.docx
 ```
 
-When you open your `Research_project` folder, we call this your working directory--the directory that holds the files that you are currently working with, or that you currently have access to. If you clicked on your `Desktop`, your working directory would switch to your `Desktop`, since we know that your `Desktop` is just another folder.
+When you open your `Research_Project/` folder, we call this your working directory--the directory that holds the files that you are currently working with, or that you currently have access to. If you clicked on your `Desktop/`, your working directory would switch to your `Desktop/`, since we know that your `Desktop/` is just another folder.
 
-This has implications for how the applications that you work with access the files on your computer. If you opened your file `biol-125_research-project_notes.docx`, `Research-Project` would not only be your working directory, it would be Microsoft Word's working directory for that file. With `biol-125_research-project_notes.docx` open, if you went to `File > Open...` in Word, it would prompt you to open a file in the directory `Research-Project`.
+This has implications for how the applications that you work with access the files on your computer. If you opened your file `biol-125_research-project_notes.docx`, `Research-Project` would not only be your working directory, it would be Microsoft Word's working directory for that file. With `biol-125_research-project_notes.docx` open, if you went to `File > Open...` in Word, it would prompt you to open a file in the directory `Research-Project`, because this is where the application is looking for working files.
 
 Generally, in day to day life, we don't need to worry about things like working directories. When we conduct research though, and we use tools like `R`, working directories--and knowing where directories and files are in relation to the directory that you are currently in--have significant implications for how things work and for computational reproducibility.
 
@@ -79,10 +79,10 @@ If you have a file in your `Analysis/` folder open, `Analysis/` is your working 
 
 When talking about file locations, a path tells us where a file lives within a directory structure. Paths can be absolute or relative.
 
-### Absolute paths
+### Absolute paths {-}
 
-Absolute paths tell us the location of a file relative to the whole directory structure. Using the example above, the absolute path of `biol-125_research-project_notes.docx` is `Users/youUserName/Desktop/BIOL-125/Research-Project/`.
+Absolute paths tell us the location of a file relative to the whole directory structure. Using the previous example, the absolute path of `biol-125_research-project_notes.docx` is `Users/youUserName/Desktop/BIOL-125/Research-Project/`.
 
-### Relative paths
+### Relative paths {-}
 
 Relative paths on the other hand tell us the location of a file relative a working directory. So, if you're working directory is your Desktop, the relative path of `biol-125_research-project_notes.docx` is `BIOL-125/Research-Project`.

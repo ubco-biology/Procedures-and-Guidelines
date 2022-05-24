@@ -112,8 +112,8 @@
 <li class="chapter" data-level="3.1" data-path="working-directory.html"><a href="working-directory.html"><i class="fa fa-check"></i><b>3.1</b> Working directory</a></li>
 <li class="chapter" data-level="3.2" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html"><i class="fa fa-check"></i><b>3.2</b> Relative and Absolute Paths</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html#absolute-paths"><i class="fa fa-check"></i><b>3.2.1</b> Absolute paths</a></li>
-<li class="chapter" data-level="3.2.2" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html#relative-paths"><i class="fa fa-check"></i><b>3.2.2</b> Relative paths</a></li>
+<li class="chapter" data-level="" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html#absolute-paths"><i class="fa fa-check"></i>Absolute paths</a></li>
+<li class="chapter" data-level="" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html#relative-paths"><i class="fa fa-check"></i>Relative paths</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="directory-structures.html"><a href="directory-structures.html"><i class="fa fa-check"></i><b>4</b> Directory Structures</a>
@@ -290,7 +290,7 @@
 <div id="working-directory" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Working directory</h2>
 <p>Your <strong>working directory</strong> is the folder you’re working in or the folder that holds the file that you have open.</p>
-<p>Let’s say you create a folder on your <code>Desktop</code> called <code>BIOL-125/</code> to hold all of your coursework for this class. And in it you have another folder for your research project–<code>Research-Project/</code>–in which you have a Word file for keeping notes–<code>biol-125_research-project_notes.docx</code>.</p>
+<p>Let’s say you create a folder on your <code>Desktop/</code> called <code>BIOL-125/</code> to hold all of your coursework for this class. And in it you have another folder for your research project–<code>Research-Project/</code>–in which you have a Word file for keeping notes–<code>biol-125_research-project_notes.docx</code>.</p>
 <p>A directory map would now look something like the following:</p>
 <pre><code>├── Users/
 │   ├── yourUserName/
@@ -300,8 +300,8 @@
 │   │   |   ├── BIOL-125
 │   │   |   |   ├── Research-Project/
 │   │   |   |   |     ├── biol-125_research-project_notes.docx</code></pre>
-<p>When you open your <code>Research_project</code> folder, we call this your working directory–the directory that holds the files that you are currently working with, or that you currently have access to. If you clicked on your <code>Desktop</code>, your working directory would switch to your <code>Desktop</code>, since we know that your <code>Desktop</code> is just another folder.</p>
-<p>This has implications for how the applications that you work with access the files on your computer. If you opened your file <code>biol-125_research-project_notes.docx</code>, <code>Research-Project</code> would not only be your working directory, it would be Microsoft Word’s working directory for that file. With <code>biol-125_research-project_notes.docx</code> open, if you went to <code>File &gt; Open...</code> in Word, it would prompt you to open a file in the directory <code>Research-Project</code>.</p>
+<p>When you open your <code>Research_Project/</code> folder, we call this your working directory–the directory that holds the files that you are currently working with, or that you currently have access to. If you clicked on your <code>Desktop/</code>, your working directory would switch to your <code>Desktop/</code>, since we know that your <code>Desktop/</code> is just another folder.</p>
+<p>This has implications for how the applications that you work with access the files on your computer. If you opened your file <code>biol-125_research-project_notes.docx</code>, <code>Research-Project</code> would not only be your working directory, it would be Microsoft Word’s working directory for that file. With <code>biol-125_research-project_notes.docx</code> open, if you went to <code>File &gt; Open...</code> in Word, it would prompt you to open a file in the directory <code>Research-Project</code>, because this is where the application is looking for working files.</p>
 <p>Generally, in day to day life, we don’t need to worry about things like working directories. When we conduct research though, and we use tools like <code>R</code>, working directories–and knowing where directories and files are in relation to the directory that you are currently in–have significant implications for how things work and for computational reproducibility.</p>
 <p>In the next section, we’ll look at common directory structures used to organize research. For the moment, we’ll assume that you have a research project and that associated with that research project you have data and that you’re analyzing that data, and that you’re using two different folders to hold the files associated with these activities. So a map something like the following:</p>
 <pre><code>├── Users/
