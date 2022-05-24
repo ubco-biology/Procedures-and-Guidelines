@@ -5,14 +5,14 @@
 Directories are just folders; we'll use the terms interchangeably. All of the files on your computer are organized around folders. In some respects, this means that your computer is synonymous with a filing cabinet; you open it up and there are a bunch of folders holding files and sub-folders. Following this analogy, if you were to open your computer--and you were on a Mac--you'd see 16 folders, including the following:
 
 ```
-Applications
-Users
-home
-Library
-Volumes
-System
-bin
-usr
+Applications/
+Users/
+home/
+Library/
+Volumes/
+System/
+bin/
+usr/
 ```
 
 There's a very good chance you've never seen any of these folders. We call this the root of your file system; these folders don't sit inside of any other folders, they only hold other folders and files.
