@@ -1,7 +1,0 @@
-# Copyright
-
-*Last updated `r Sys.Date()`*
-
-Copyright is the legal ownership of a work, like a book, image, graph, journal article. Copyright law governs how and when we are allowed to redistribute what someone else has produced and how others can redistribute what we've produced.
-
-Learn more about copyright at UBC from the [UBC Learning Commons](https://copyright.ubc.ca/).
