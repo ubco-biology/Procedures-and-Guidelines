@@ -7,6 +7,11 @@ analysis
 data
 whats-in-a-name
 an-example
+directories
+working-directory
+relative-and-absolute-paths
+absolute-paths
+relative-paths
 directory-structures
 directory-hierarchies
 directory-naming

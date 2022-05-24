@@ -1,0 +1,122 @@
+# Tidy data
+
+*Last updated `r Sys.Date()`*
+
+We've talked about file naming, directory structures, and documentation to ensure accessible, interpretable, and transparent data. Now it's time to talk about organizing individual variables within a given file. When properly organized, data values can be effectively analyzed, summarized, and visualized. When not, they can be onerous to work with and risk misinterpretation.
+
+In general, your data files should adhere to the principles of \"tidy data\". Tidy data is governed by the following 3 rules^[See: Wickham, H. & Grolemund, G. (2017). [Tidy Data](https://r4ds.had.co.nz/tidy-data.html). *In R for Data Science*.]:
+
+* Each variable must have its own column.
+* Each observation must have its own row.
+* Each value must have its own cell.
+
+It's easy to veer from these rules, as it's often easier to collect data using data collection tools that violate these rules. When this is the case, we need to know how to re-organize our data to make it \"tidy\".
+
+## Wide Data
+
+Non-tidy data - sometimes called \"wide\" data as it tends to use more columns, but fewer rows - tends to lump observations together in cells. It is often easier to collect data in this way.
+
+So, say we collected data about the number of trout caught at local lakes across several days. We might end up with the following data tables if we used a separate table, sheet of paper etc. to record our findings.
+
+| Site         | Trout_Caught_Day_1 |
+| :------------ | :------------------ |
+| Mabel-lake   | 1                  |
+| Postill-lake | 3                  |
+| Ellison-lake | 0                  |
+
+| Site         | Trout_Caught_Day_2 |
+| :------------ | :------------------ |
+| Mabel-lake   | 1                  |
+| Postill-lake | 3                  |
+| Ellison-lake | 0                  |
+
+| Site         | Trout_Caught_Day_3 |
+| :------------ | :------------------ |
+| Mabel-lake   | 1                  |
+| Postill-lake | 3                  |
+| Ellison-lake | 0                  |
+
+It is also very likely that we set up an Excel sheet where we recorded the site as the first column and our days and fish caught combined in subsequent columns, one column for each day. Even if we hadn't collected our data this way, we might be tempted to group our above data together for analysis or assignment submission in this way.
+
+Doing this, we'd end up with a table something like the following:
+
+| Site         | Trout_Caught_Day_1 | Trout_Caught_Day_2 | Trout_Caught_Day_3 |
+| :------------ | :------------------- | :-------------------- | :-------------------- |
+| Mabel-lake   | 1                   | 3                  | 3 |
+| Postill-lake | 3                   | 4               | 5 |
+| Ellison-Lake | 0                   | 5                    | 1 |
+
+But for analysis - for \"tidy\" data - we want one column per variable. In this case, we have three variables:
+
+* site
+* day
+* quantity caught
+
+So let's get this cleaned up...
+
+## Tidy Data
+
+In the previous example, our data were organized where day and quantity caught shared common columns. That is, not every variable had a dedicated column and consequently, not every variable had a value in every given cell - day did not have any cell values.
+
+Tidy data breaks this down and reserves one column per variable and one row per observation. Remember, we have three variables: site, day, and quantity caught. So let's transform this...
+
+First, working with a collection tool where we have one table per day:
+
+| Site         | Day  | Trout_Caught |
+| :------------ | :---- | :------------ |
+| Mabel-lake   | 1    | 1            |
+| Postill-lake | 1    | 3            |
+| Ellison-lake | 1    | 0            |
+
+| Site         | Day  | Trout_Caught |
+| :------------ | :---- | :------------ |
+| Mabel-lake   | 2    | 3            |
+| Postill-lake | 2    | 4            |
+| Ellison-lake | 2    | 5            |
+
+| Site         | Day  | Trout_Caught |
+| :------------ | :---- | :------------ |
+| Mabel-lake   | 3    | 3            |
+| Postill-lake | 3    | 5            |
+| Ellison-lake | 3    | 1            |
+
+And second, gathering this data into a single dataset, sorted by site:
+
+| Site         | Day  | Trout_Caught |
+| :------------ | :---- | :------------ |
+| Mabel-lake   | 1    | 1            |
+| Mabel-lake   | 2    | 3            |
+| Mabel-lake   | 3    | 3            |
+| Postill-lake | 1    | 3            |
+| Postill-lake | 2    | 4            |
+| Postill-lake | 3    | 5            |
+| Ellison-lake | 1    | 0            |
+| Ellison-lake | 2    | 5            |
+| Ellison-lake | 3    | 1            |
+
+Now that's tidy data!
+
+## Side by Side Comparison
+
+### Wide Data {-}
+
+| Site         | Trout_Caught_Day_1 | Trout_Caught_Day_2 | Trout_Caught_Day_3 |
+| :------------ | :------------------ | :------------------ | :------------------ |
+| Mabel-lake   | 1                  | 3                  | 3                  |
+| Postill-lake | 3                  | 4                  | 5                  |
+| Ellison-Lake | 0                  | 5                  | 1                  |
+
+### Tidy Data {-}
+
+| Site         | Day  | Trout_Caught |
+| :------------ | :---- | :------------ |
+| Mabel-lake   | 1    | 1            |
+| Mabel-lake   | 2    | 3            |
+| Mabel-lake   | 3    | 3            |
+| Postill-lake | 1    | 3            |
+| Postill-lake | 2    | 4            |
+| Postill-lake | 3    | 5            |
+| Ellison-lake | 1    | 0            |
+| Ellison-lake | 2    | 5            |
+| Ellison-lake | 3    | 1            |
+
