@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4.8 Example BIOL 125 | Procedures and Guidelines</title>
   <meta name="description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4.8 Example BIOL 125 | Procedures and Guidelines" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar" />
 
 
-<meta name="date" content="2022-05-24" />
+<meta name="date" content="2022-05-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="example-biol-116.html"/>
 <link rel="next" href="tidy-data.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RXD24BGZ8"></script>
 <script>
@@ -112,8 +111,12 @@
 <li class="chapter" data-level="3.1" data-path="working-directory.html"><a href="working-directory.html"><i class="fa fa-check"></i><b>3.1</b> Working directory</a></li>
 <li class="chapter" data-level="3.2" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html"><i class="fa fa-check"></i><b>3.2</b> Relative and Absolute Paths</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html#absolute-paths"><i class="fa fa-check"></i><b>3.2.1</b> Absolute paths</a></li>
-<li class="chapter" data-level="3.2.2" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html#relative-paths"><i class="fa fa-check"></i><b>3.2.2</b> Relative paths</a></li>
+<li class="chapter" data-level="" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html#absolute-paths"><i class="fa fa-check"></i>Absolute paths</a></li>
+<li class="chapter" data-level="" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html#relative-paths"><i class="fa fa-check"></i>Relative paths</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="set-a-working-directory-in-rstudio.html"><a href="set-a-working-directory-in-rstudio.html"><i class="fa fa-check"></i><b>3.3</b> Set a Working Directory in RStudio</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="set-a-working-directory-in-rstudio.html"><a href="set-a-working-directory-in-rstudio.html#preferred-method-creating-a-project"><i class="fa fa-check"></i><b>3.3.1</b> Preferred Method: Creating a Project</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="directory-structures.html"><a href="directory-structures.html"><i class="fa fa-check"></i><b>4</b> Directory Structures</a>
@@ -287,11 +290,11 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="example-biol-125" class="section level2" number="4.8">
-<h2><span class="header-section-number">4.8</span> Example BIOL 125</h2>
+<div id="example-biol-125" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> Example BIOL 125<a href="example-biol-125.html#example-biol-125" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let’s work through another example where we start our project off using both appropriate directory structure and file naming conventions. Say you’re a student in BIOL 125 working on a research project testing mealworm food preferences…</p>
-<div id="day-1-1" class="section level3 unnumbered">
-<h3>Day 1</h3>
+<div id="day-1-1" class="section level3 unnumbered hasAnchor">
+<h3>Day 1<a href="example-biol-125.html#day-1-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>On day one of our research project, we are asked to prepare the beginning of a lab report that states our research question, hypothesis, and proposed methods. First, we need to create the root folder for our project:</p>
 <pre><code>BIOL125MealwormProject/</code></pre>
 <p>Within our root folder, we create a <code>_README.md</code> file to describe our directory structure. Let’s add our project name, date the folder was created and who created it, a short description of the project, group member names, file structure (major folders and their proposed content), and naming conventions to this readme file. Your file should look something like this:</p>
@@ -303,8 +306,8 @@
 <p>Here is what our project directory looks like so far:</p>
 <p><img src="images/DS_directory-example-1.png" /></p>
 </div>
-<div id="day-2-1" class="section level3 unnumbered">
-<h3>Day 2</h3>
+<div id="day-2-1" class="section level3 unnumbered hasAnchor">
+<h3>Day 2<a href="example-biol-125.html#day-2-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Today, we completed a pilot experiment and collected some data. We saved this data file into our project’s corresponding Data folder using appropriate naming conventions.</p>
 <p>New files:</p>
 <pre><code>Pither_20210915_BIOL125MealwormProject_food-preference-data.csv</code></pre>
@@ -316,8 +319,8 @@
 <p>Now our project directory looks like this:</p>
 <p><img src="images/DS_directory-example-2.png" /></p>
 </div>
-<div id="day-3" class="section level3 unnumbered">
-<h3>Day 3</h3>
+<div id="day-3" class="section level3 unnumbered hasAnchor">
+<h3>Day 3<a href="example-biol-125.html#day-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Now that our group has completed its pilot project, we decided to expand our data collection and start recording how far mealworms are willing to travel to get food. In addition to this new distance data, we continued to collect data on food preferences.</p>
 <p>New files:</p>
 <pre><code>Pither_20210916_BIOL125MealwormProject_food-preference-data.csv
@@ -334,8 +337,8 @@ Pither_20210916_BIOL125MealwormProject_distance-data.csv</code></pre>
 <p>Now our project directory looks like:</p>
 <p><img src="images/DS_directory-example-3.png" /></p>
 </div>
-<div id="day-4-5" class="section level3 unnumbered">
-<h3>Day 4-5</h3>
+<div id="day-4-5" class="section level3 unnumbered hasAnchor">
+<h3>Day 4-5<a href="example-biol-125.html#day-4-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Over these days, we collected our last rounds of data, created some figures, and analyzed the data. So we have a bunch of new files that we need to make sure are placed correctly within our project directory.</p>
 <p>New files:</p>
 <pre><code>Pither_20210917_BIOL125MealwormProject_food-preference-data.csv
@@ -349,8 +352,8 @@ Pither_20210918_BIOL125MealwormProject_Figure-scatterplot_V0.png</code></pre>
 <p>Now our project directory looks like:</p>
 <p><img src="images/DS_directory-example-4.png" /></p>
 </div>
-<div id="day-6-1" class="section level3 unnumbered">
-<h3>Day 6</h3>
+<div id="day-6-1" class="section level3 unnumbered hasAnchor">
+<h3>Day 6<a href="example-biol-125.html#day-6-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Today is the last day of our project and we completed the final copy of our report. We will make sure this is saved into the Report folder using the appropriate naming conventions.</p>
 <p>New files:</p>
 <pre><code>Pither_BIOL125MealwormProject_report_V2.docx</code></pre>
@@ -422,6 +425,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

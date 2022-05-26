@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3.1 Working directory | Procedures and Guidelines</title>
   <meta name="description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3.1 Working directory | Procedures and Guidelines" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar" />
 
 
-<meta name="date" content="2022-05-24" />
+<meta name="date" content="2022-05-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="directories.html"/>
 <link rel="next" href="relative-and-absolute-paths.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RXD24BGZ8"></script>
 <script>
@@ -114,6 +113,10 @@
 <ul>
 <li class="chapter" data-level="" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html#absolute-paths"><i class="fa fa-check"></i>Absolute paths</a></li>
 <li class="chapter" data-level="" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html#relative-paths"><i class="fa fa-check"></i>Relative paths</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="set-a-working-directory-in-rstudio.html"><a href="set-a-working-directory-in-rstudio.html"><i class="fa fa-check"></i><b>3.3</b> Set a Working Directory in RStudio</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="set-a-working-directory-in-rstudio.html"><a href="set-a-working-directory-in-rstudio.html#preferred-method-creating-a-project"><i class="fa fa-check"></i><b>3.3.1</b> Preferred Method: Creating a Project</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="directory-structures.html"><a href="directory-structures.html"><i class="fa fa-check"></i><b>4</b> Directory Structures</a>
@@ -287,8 +290,8 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="working-directory" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Working directory</h2>
+<div id="working-directory" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Working directory<a href="working-directory.html#working-directory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Your <strong>working directory</strong> is the folder you’re working in or the folder that holds the file that you have open.</p>
 <p>Let’s say you create a folder on your <code>Desktop/</code> called <code>BIOL-125/</code> to hold all of your coursework for this class. And in it you have another folder for your research project–<code>Research-Project/</code>–in which you have a Word file for keeping notes–<code>biol-125_research-project_notes.docx</code>.</p>
 <p>A directory map would now look something like the following:</p>
@@ -377,6 +380,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

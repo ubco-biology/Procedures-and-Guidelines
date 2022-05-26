@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3.2 Relative and Absolute Paths | Procedures and Guidelines</title>
   <meta name="description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3.2 Relative and Absolute Paths | Procedures and Guidelines" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar" />
 
 
-<meta name="date" content="2022-05-24" />
+<meta name="date" content="2022-05-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,8 +31,7 @@
   
   
 <link rel="prev" href="working-directory.html"/>
-<link rel="next" href="directory-structures.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<link rel="next" href="set-a-working-directory-in-rstudio.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RXD24BGZ8"></script>
 <script>
@@ -114,6 +113,10 @@
 <ul>
 <li class="chapter" data-level="" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html#absolute-paths"><i class="fa fa-check"></i>Absolute paths</a></li>
 <li class="chapter" data-level="" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html#relative-paths"><i class="fa fa-check"></i>Relative paths</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="set-a-working-directory-in-rstudio.html"><a href="set-a-working-directory-in-rstudio.html"><i class="fa fa-check"></i><b>3.3</b> Set a Working Directory in RStudio</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="set-a-working-directory-in-rstudio.html"><a href="set-a-working-directory-in-rstudio.html#preferred-method-creating-a-project"><i class="fa fa-check"></i><b>3.3.1</b> Preferred Method: Creating a Project</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="directory-structures.html"><a href="directory-structures.html"><i class="fa fa-check"></i><b>4</b> Directory Structures</a>
@@ -287,27 +290,25 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="relative-and-absolute-paths" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Relative and Absolute Paths</h2>
+<div id="relative-and-absolute-paths" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Relative and Absolute Paths<a href="relative-and-absolute-paths.html#relative-and-absolute-paths" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>When talking about file locations, a path tells us where a file lives within a directory structure. Paths can be absolute or relative.</p>
-<div id="absolute-paths" class="section level3 unnumbered">
-<h3>Absolute paths</h3>
+<div id="absolute-paths" class="section level3 unnumbered hasAnchor">
+<h3>Absolute paths<a href="relative-and-absolute-paths.html#absolute-paths" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Absolute paths tell us the location of a file relative to the whole directory structure. Using the previous example, the absolute path of <code>biol-125_research-project_notes.docx</code> is <code>Users/youUserName/Desktop/BIOL-125/Research-Project/</code>.</p>
 </div>
-<div id="relative-paths" class="section level3 unnumbered">
-<h3>Relative paths</h3>
+<div id="relative-paths" class="section level3 unnumbered hasAnchor">
+<h3>Relative paths<a href="relative-and-absolute-paths.html#relative-paths" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Relative paths on the other hand tell us the location of a file relative a working directory. So, if you’re working directory is your Desktop, the relative path of <code>biol-125_research-project_notes.docx</code> is <code>BIOL-125/Research-Project</code>.</p>
-
 </div>
 </div>
-<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
 <a href="working-directory.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="directory-structures.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="set-a-working-directory-in-rstudio.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -362,6 +363,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

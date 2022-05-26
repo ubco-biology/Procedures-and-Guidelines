@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6.4 Figures | Procedures and Guidelines</title>
   <meta name="description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6.4 Figures | Procedures and Guidelines" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar" />
 
 
-<meta name="date" content="2022-05-24" />
+<meta name="date" content="2022-05-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="results-of-statistical-tests.html"/>
 <link rel="next" href="sketches-drawings.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RXD24BGZ8"></script>
 <script>
@@ -112,8 +111,12 @@
 <li class="chapter" data-level="3.1" data-path="working-directory.html"><a href="working-directory.html"><i class="fa fa-check"></i><b>3.1</b> Working directory</a></li>
 <li class="chapter" data-level="3.2" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html"><i class="fa fa-check"></i><b>3.2</b> Relative and Absolute Paths</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html#absolute-paths"><i class="fa fa-check"></i><b>3.2.1</b> Absolute paths</a></li>
-<li class="chapter" data-level="3.2.2" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html#relative-paths"><i class="fa fa-check"></i><b>3.2.2</b> Relative paths</a></li>
+<li class="chapter" data-level="" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html#absolute-paths"><i class="fa fa-check"></i>Absolute paths</a></li>
+<li class="chapter" data-level="" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html#relative-paths"><i class="fa fa-check"></i>Relative paths</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="set-a-working-directory-in-rstudio.html"><a href="set-a-working-directory-in-rstudio.html"><i class="fa fa-check"></i><b>3.3</b> Set a Working Directory in RStudio</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="set-a-working-directory-in-rstudio.html"><a href="set-a-working-directory-in-rstudio.html#preferred-method-creating-a-project"><i class="fa fa-check"></i><b>3.3.1</b> Preferred Method: Creating a Project</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="directory-structures.html"><a href="directory-structures.html"><i class="fa fa-check"></i><b>4</b> Directory Structures</a>
@@ -287,8 +290,8 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="figures" class="section level2" number="6.4">
-<h2><span class="header-section-number">6.4</span> Figures</h2>
+<div id="figures" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Figures<a href="figures.html#figures" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>When displaying data using a figure, follow these guidelines:</p>
 <ul>
 <li>The figure heading should be placed below the graph and should provide sufficient information so the figure can be interpreted on its own</li>
@@ -308,8 +311,8 @@
 <li>When comparing numerical data among categories or groups (Figs. 1,2) use stripcharts (Fig. 1) when sample sizes are small (i.e. &lt;20) and boxplots otherwise (Fig. 2).</li>
 <li>Note that the stripchart has the advantage of showing all the data (i.e. each observation is represented by a point), whereas the boxplot summarizes the data visually. When sample sizes per group are very large, it would get very messy if you tried to show all the data. However, there are graphs like <a href="https://www.r-graph-gallery.com/violin.html">"violin plots"</a> that offer a nice compromise.</li>
 </ul>
-<div id="examples" class="section level3 unnumbered">
-<h3>Examples</h3>
+<div id="examples" class="section level3 unnumbered hasAnchor">
+<h3>Examples<a href="figures.html#examples" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><img src="images/FT_fig-1.png" /></p>
 <p><strong>Figure 1.</strong> Aggression was significantly higher among isolated ants (<em>n</em> = 8) compared to the control group (<em>n</em> = 6) (see text for details). Shown are individual observations (grey circles), group means (solid circles) with +/- 1 SEM.</p>
 <p><img src="images/FT_fig-2.png" /></p>

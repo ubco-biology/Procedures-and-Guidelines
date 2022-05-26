@@ -10,8 +10,10 @@ an-example
 directories
 working-directory
 relative-and-absolute-paths
-absolute-paths
-relative-paths
+set-a-working-directory-in-rstudio
+preferred-method-creating-a-project
+create-a-new-project-in-a-new-folder
+create-a-new-project-in-an-existing-folder
 directory-structures
 directory-hierarchies
 directory-naming

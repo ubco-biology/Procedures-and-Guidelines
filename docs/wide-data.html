@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5.1 Wide Data | Procedures and Guidelines</title>
   <meta name="description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5.1 Wide Data | Procedures and Guidelines" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar" />
 
 
-<meta name="date" content="2022-05-24" />
+<meta name="date" content="2022-05-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="tidy-data.html"/>
 <link rel="next" href="tidy-data-1.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RXD24BGZ8"></script>
 <script>
@@ -112,8 +111,12 @@
 <li class="chapter" data-level="3.1" data-path="working-directory.html"><a href="working-directory.html"><i class="fa fa-check"></i><b>3.1</b> Working directory</a></li>
 <li class="chapter" data-level="3.2" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html"><i class="fa fa-check"></i><b>3.2</b> Relative and Absolute Paths</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html#absolute-paths"><i class="fa fa-check"></i><b>3.2.1</b> Absolute paths</a></li>
-<li class="chapter" data-level="3.2.2" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html#relative-paths"><i class="fa fa-check"></i><b>3.2.2</b> Relative paths</a></li>
+<li class="chapter" data-level="" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html#absolute-paths"><i class="fa fa-check"></i>Absolute paths</a></li>
+<li class="chapter" data-level="" data-path="relative-and-absolute-paths.html"><a href="relative-and-absolute-paths.html#relative-paths"><i class="fa fa-check"></i>Relative paths</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="set-a-working-directory-in-rstudio.html"><a href="set-a-working-directory-in-rstudio.html"><i class="fa fa-check"></i><b>3.3</b> Set a Working Directory in RStudio</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="set-a-working-directory-in-rstudio.html"><a href="set-a-working-directory-in-rstudio.html#preferred-method-creating-a-project"><i class="fa fa-check"></i><b>3.3.1</b> Preferred Method: Creating a Project</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="directory-structures.html"><a href="directory-structures.html"><i class="fa fa-check"></i><b>4</b> Directory Structures</a>
@@ -287,8 +290,8 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="wide-data" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Wide Data</h2>
+<div id="wide-data" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Wide Data<a href="wide-data.html#wide-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Non-tidy data - sometimes called "wide" data as it tends to use more columns, but fewer rows - tends to lump observations together in cells. It is often easier to collect data in this way.</p>
 <p>So, say we collected data about the number of trout caught at local lakes across several days. We might end up with the following data tables if we used a separate table, sheet of paper etc. to record our findings.</p>
 <table>
@@ -360,6 +363,12 @@
 <p>It is also very likely that we set up an Excel sheet where we recorded the site as the first column and our days and fish caught combined in subsequent columns, one column for each day. Even if we hadn’t collected our data this way, we might be tempted to group our above data together for analysis or assignment submission in this way.</p>
 <p>Doing this, we’d end up with a table something like the following:</p>
 <table>
+<colgroup>
+<col width="17%" />
+<col width="26%" />
+<col width="28%" />
+<col width="28%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Site</th>
