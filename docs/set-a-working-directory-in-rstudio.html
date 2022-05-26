@@ -6,10 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3.3 Set a Working Directory in RStudio | Procedures and Guidelines</title>
   <meta name="description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3.3 Set a Working Directory in RStudio | Procedures and Guidelines" />
   <meta property="og:type" content="book" />
+  
   
   <meta property="og:description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
   
@@ -32,6 +33,7 @@
   
 <link rel="prev" href="relative-and-absolute-paths.html"/>
 <link rel="next" href="directory-structures.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,9 +51,8 @@
 
 
 
-<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
-<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RXD24BGZ8"></script>
 <script>
@@ -290,10 +291,10 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="set-a-working-directory-in-rstudio" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Set a Working Directory in RStudio<a href="set-a-working-directory-in-rstudio.html#set-a-working-directory-in-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="preferred-method-creating-a-project" class="section level3 hasAnchor" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> Preferred Method: Creating a Project<a href="set-a-working-directory-in-rstudio.html#preferred-method-creating-a-project" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="set-a-working-directory-in-rstudio" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Set a Working Directory in RStudio</h2>
+<div id="preferred-method-creating-a-project" class="section level3" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Preferred Method: Creating a Project</h3>
 <p>Let’s say you’re working on an experiment and you’d like to write a reproducible lab report using Markdown in RStudio. The first step is to create a new R project. An R project is a file that sits in the root directory on your computer. When you open your RStudio session via this project file, it automatically tells R to use that root folder as your working directory. In other words, it tells R to look in this root folder for any files you refer to within your R Markdown script. The biggest benefit to this approach for setting a working directory is that if I decided to move my root folder to another location on my computer or open this folder on a different computer, all of the file paths specified in my R script will still work.</p>
 <p>There are two options to create a new R project:</p>
 <ul>
@@ -301,8 +302,8 @@
 <li>Associate a project with an existing working directory (create a new project file within an existing folder)</li>
 </ul>
 <p>So if you have a bunch of files related to your experiment and these are already saved in a folder on your computer, it makes more sense to create a new project within that existing folder. Alternatively, if you are starting from scratch you might prefer to create a new project within a brand new folder. Let’s go through an example of how to create a new project with each method.</p>
-<div id="create-a-new-project-in-a-new-folder" class="section level4 hasAnchor" number="3.3.1.1">
-<h4><span class="header-section-number">3.3.1.1</span> Create a New Project in a New Folder<a href="set-a-working-directory-in-rstudio.html#create-a-new-project-in-a-new-folder" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="create-a-new-project-in-a-new-folder" class="section level4" number="3.3.1.1">
+<h4><span class="header-section-number">3.3.1.1</span> Create a New Project in a New Folder</h4>
 <p>The first step is to open RStudio and select ‘New Project’ from the ‘File’ drop down menu.</p>
 <p><img src="images/D_new-project-1.png" /></p>
 <p>You will then be asked to specify if you’d like to create a ‘New Directory’ or use an ‘Existing Directory’. In this case select ‘New Directory’.</p>
@@ -316,8 +317,8 @@
 <p>Finally, R will bring you back to the main screen and under the ‘Files’ region (bottom right panel) you will see your new project file. Now R is automatically using your new folder containing the project file as the working directory. As you create new files associated with your experiment, make sure you save them to the root folder that contains this project file.</p>
 <p><img src="images/D_new-project-in-new-folder-6.png" /></p>
 </div>
-<div id="create-a-new-project-in-an-existing-folder" class="section level4 hasAnchor" number="3.3.1.2">
-<h4><span class="header-section-number">3.3.1.2</span> Create a New Project in an Existing Folder<a href="set-a-working-directory-in-rstudio.html#create-a-new-project-in-an-existing-folder" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="create-a-new-project-in-an-existing-folder" class="section level4" number="3.3.1.2">
+<h4><span class="header-section-number">3.3.1.2</span> Create a New Project in an Existing Folder</h4>
 <p>Recall, that the first step is to open RStudio and select ‘New Project’ from the ‘File’ drop down menu.</p>
 <p><img src="images/D_new-project-1.png" /></p>
 <p>You will then be asked to specify if you’d like to create a ‘New Directory’ or use an ‘Existing Directory’. In this case select ‘Existing Directory’.</p>

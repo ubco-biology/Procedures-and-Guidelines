@@ -1,3 +1,9 @@
+/**custom colours**/
+
+.summary {
+  background-color:  #fef9e7 !important;
+}
+
 .note, .advanced, .flag, .takeAway {
   padding: 10px;
   margin: 20px 0px;
