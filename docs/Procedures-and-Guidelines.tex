@@ -4,10 +4,6 @@
 %
 \documentclass[
 ]{book}
-\title{Procedures and Guidelines}
-\author{Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar}
-\date{2022-05-26}
-
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{iftex}
@@ -80,6 +76,10 @@
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
+
+\title{Procedures and Guidelines}
+\author{Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar}
+\date{2022-06-07}
 
 \begin{document}
 \maketitle
@@ -165,7 +165,7 @@ This book is divided into 4 sections.
 \hypertarget{file-and-data-management}{%
 \chapter{File and Data Management}\label{file-and-data-management}}
 
-\emph{Last updated 2022-05-26}
+\emph{Last updated 2022-06-07}
 
 Well-organized data is critical to transparency, reproducibility, and generally maintaining one's sanity when conducting research. When we talk about file and data management, we may be referring to one of many aspects of making our data understandable to others, to a computer, or to our future selves that have succumb to memory lapses. Making data comprehensible is really about well-structured and communicated metadata that is, whenever possible, implemented according to conventions or standards.
 
@@ -188,7 +188,7 @@ Organizing and formatting data is a discussion about the best way to sort and pa
 \hypertarget{file-naming}{%
 \chapter{File Naming}\label{file-naming}}
 
-\emph{Last updated 2022-05-26}
+\emph{Last updated 2022-06-07}
 
 File naming isn't exactly fun, but it is crucial for organizing, describing, and managing all kinds of work, especially research. So, let's talk about the file naming conventions that you will be expected to use while at UBCO.
 
@@ -308,9 +308,27 @@ When operating in a multi-lingual or non-English environment, this can prove pro
 
 Convention has file naming proceed in the following order, with each element separated by an underscore \texttt{\_}, and words within an element joined with a dash \texttt{-}. The file type is generally added with a period \texttt{.} and is usually automatically generated when an application creates a file.
 
-\begin{longtable}[]{@{}llllll@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1389}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2222}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1528}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1528}}@{}}
 \toprule
-Element-1 & \_Element-2 & \_Element-3 & \_Element-4 & \_Element-5 & .Element-5 \\
+\begin{minipage}[b]{\linewidth}\raggedright
+Element-1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\_Element-2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\_Element-3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\_Element-4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\_Element-5
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+.Element-5
+\end{minipage} \\
 \midrule
 \endhead
 Last-Name & \_Date & \_Project & \_File-Contents & \_Version & .File-type \\
@@ -464,7 +482,7 @@ Pither_BIOL116RProject_Lab-report_V3.docx
 \hypertarget{directories}{%
 \chapter{Directories}\label{directories}}
 
-\emph{Last updated 2022-05-26}
+\emph{Last updated 2022-06-07}
 
 Directories are just folders; we'll use the terms interchangeably. All of the files on your computer are organized around folders. In some respects, this means that your computer is synonymous with a filing cabinet; you open it up and there are a bunch of folders holding files and sub-folders. Following this analogy, if you were to open your computer--and you were on a Mac--you'd see 16 folders, including the following:
 
@@ -632,7 +650,7 @@ You may have heard of other methods that can be used to set a working directory 
 \hypertarget{directory-structures}{%
 \chapter{Directory Structures}\label{directory-structures}}
 
-\emph{Last updated 2022-05-26}
+\emph{Last updated 2022-06-07}
 
 Now that we've covered naming conventions and have a sense of how our systems are organized around folder structures, let's pretend that you store everything on your computer in a single folder--some of us are probably known to use our desktops for this. Imagine how long it would take you to find data you collected on a specific day a few years ago. Instead of keeping every document in a single place, we often organize our files using directory or folder structures. This helps us save precious time and improve our productivity.
 
@@ -1032,7 +1050,7 @@ We can start to see that if you were to share your entire project directory with
 \hypertarget{tidy-data}{%
 \chapter{Tidy data}\label{tidy-data}}
 
-\emph{Last updated 2022-05-26}
+\emph{Last updated 2022-06-07}
 
 We've talked about file naming, directory structures, and documentation to ensure accessible, interpretable, and transparent data. Now it's time to talk about organizing individual variables within a given file. When properly organized, data values can be effectively analyzed, summarized, and visualized. When not, they can be onerous to work with and risk misinterpretation.
 
@@ -1094,9 +1112,21 @@ It is also very likely that we set up an Excel sheet where we recorded the site 
 
 Doing this, we'd end up with a table something like the following:
 
-\begin{longtable}[]{@{}llll@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1733}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2800}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2800}}@{}}
 \toprule
-Site & Trout\_Caught\_Day\_1 & Trout\_Caught\_Day\_2 & Trout\_Caught\_Day\_3 \\
+\begin{minipage}[b]{\linewidth}\raggedright
+Site
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Trout\_Caught\_Day\_1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Trout\_Caught\_Day\_2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Trout\_Caught\_Day\_3
+\end{minipage} \\
 \midrule
 \endhead
 Mabel-lake & 1 & 3 & 3 \\
@@ -1189,9 +1219,21 @@ Now that's tidy data!
 \subsection*{Wide Data}\label{wide-data-1}}
 \addcontentsline{toc}{subsection}{Wide Data}
 
-\begin{longtable}[]{@{}llll@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1857}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2714}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2714}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2714}}@{}}
 \toprule
-Site & Trout\_Caught\_Day\_1 & Trout\_Caught\_Day\_2 & Trout\_Caught\_Day\_3 \\
+\begin{minipage}[b]{\linewidth}\raggedright
+Site
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Trout\_Caught\_Day\_1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Trout\_Caught\_Day\_2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Trout\_Caught\_Day\_3
+\end{minipage} \\
 \midrule
 \endhead
 Mabel-lake & 1 & 3 & 3 \\
@@ -1228,7 +1270,7 @@ Ellison-lake & 3 & 1 \\
 \hypertarget{figures-tables}{%
 \chapter{Figures \& Tables}\label{figures-tables}}
 
-\emph{Last updated 2022-05-26}
+\emph{Last updated 2022-06-07}
 
 These guidelines are based on current "best practices" in Biology. You may encounter small differences when working with data or reading the results of research from other disciplines. Our aim is to achieve consistency among faculty, instructors, and students in how data are summarized and presented within lab reports and research papers.
 
@@ -1443,7 +1485,7 @@ When displaying data using a figure, follow these guidelines:
 \hypertarget{sketches-drawings}{%
 \chapter{Sketches \& Drawings}\label{sketches-drawings}}
 
-\emph{Last updated 2022-05-26}
+\emph{Last updated 2022-06-07}
 
 We've heard it before, a picture is worth a thousand words. While a common place phrase, it echoes very true in biological research. Describing in text the morphological features of an organism is no easy task. Trying to form a mental image of an organism described in text still more difficult! As a simple example, imagine trying to draw a representation of \emph{Fritillaria pudica} from the botanical description in the \href{http://www.efloras.org/florataxon.aspx?flora_id=1\&taxon_id=242101628}{Flora of North America}. No easy task. So let's talk about sketches\ldots{}
 
@@ -1589,7 +1631,7 @@ This figure is not directed to have the anterior region at the top, the labellin
 \hypertarget{markdown-1}{%
 \chapter{Markdown}\label{markdown-1}}
 
-\emph{Last updated 2022-05-26}
+\emph{Last updated 2022-06-07}
 
 Markdown is a markup language used to format plain text files to help us provide additional meaning to our content. Markup languages are ideal authoring tools because they work on the principle of separating content from formatting. Markup languages are ideal authoring tools for the sciences because they rely on plain text, so any computer anywhere at any time will be able to open them and consequently, we will be able to read them.
 
@@ -1969,7 +2011,7 @@ We'll keep it simple for the moment; this is all you really need for your \_READ
 \hypertarget{apa-citations}{%
 \chapter{APA Citations}\label{apa-citations}}
 
-\emph{Last updated 2022-05-26}
+\emph{Last updated 2022-06-07}
 
 This chapter is a brief overview of the 7th edition of APA. For a more in depth review, please consult \href{https://guides.library.ubc.ca/apacitationstyle}{the library's APA Citation Guide}. For the full APA manual, please consult the \href{http://resolve.library.ubc.ca/cgi-bin/catsearch?bid=10057275}{Publication Manual of the American Psychological Association}, available through the library.
 
@@ -2069,7 +2111,7 @@ Mei, Y., Yu, K., Lo, J. C. Y., Takeuchi, L. E., Hadjesfandiari, N., Yazdani-Ahma
 \hypertarget{reference-management-zotero}{%
 \chapter{Reference Management: Zotero}\label{reference-management-zotero}}
 
-\emph{Last updated 2022-05-26}
+\emph{Last updated 2022-06-07}
 
 Imperative to managing our education and research is managing our readings and references. We can do this manually or we can take advantage of a tool - citation management software - specifically designed to keep your references organized, shareable, and easily citable.
 
@@ -2195,7 +2237,7 @@ You'll see your recently synced citation and associated attachments.
 \hypertarget{academic-integrity}{%
 \chapter{Academic Integrity}\label{academic-integrity}}
 
-\emph{Last updated 2022-05-26}
+\emph{Last updated 2022-06-07}
 
 Academic integrity is the act of performing honest, responsible scholarship, much like scientific integrity is honest, responsible science. Academic integrity is very much about how we conduct ourselves in the pursuit of our studies, respecting those we learn from and work with and the contributions they make to our scholarly and scientific endeavours.
 
@@ -2204,7 +2246,7 @@ Learn more about academic integrity from the \href{https://students.ok.ubc.ca/ac
 \hypertarget{copyright-1}{%
 \chapter{Copyright}\label{copyright-1}}
 
-\emph{Last updated 2022-05-26}
+\emph{Last updated 2022-06-07}
 
 Copyright is the legal ownership of a work, like a book, image, graph, journal article. Copyright law governs how and when we are allowed to redistribute what someone else has produced and how others can redistribute what we've produced.
 
@@ -2213,7 +2255,7 @@ Learn more about copyright at UBC from the \href{https://copyright.ubc.ca/}{UBC 
 \hypertarget{glossary}{%
 \chapter{Glossary}\label{glossary}}
 
-\emph{Last updated 2022-05-26}
+\emph{Last updated 2022-06-07}
 
 \textbf{A priori hypothesis:} Hypothesis that is generated before the research study takes place. Presenting the hypothesis before the study takes place helps in avoiding replacing the hypothesis later with one that fits the data better aka hypothesizing after the fact (HARKing).
 
@@ -2221,13 +2263,13 @@ Learn more about copyright at UBC from the \href{https://copyright.ubc.ca/}{UBC 
 
 \textbf{Analysis of variance (ANOVA):} A statistical test used to compare the mean of a numeric variable in relation to a single categorical variable that has more than two groups.
 
-\textbf{Assumptions:} There are often assumptions associated with statistical tests. This means that for the test to provide reliable results the data must meet specific criteria or conditions. These assumptions need to be checked prior to conducting any analyses.
+\textbf{Assumptions:} There are often assumptions associated with statistical tests. This means that for the test to provide reliable results, the data must meet specific criteria or conditions. These assumptions need to be checked prior to conducting any analyses.
 
 \textbf{Bias:} Error is introduced and false conclusions might be drawn because our sample doesn't meet established standards for faithful representation of our population of interest.
 
-\textbf{Binomial distribution:} A discrete probability distribution of the number of successes where there are exactly two possible outcomes (success and failure).
+\textbf{Binomial distribution:} A discrete probability distribution of the number of successes where there are exactly two possible outcomes (e.g., success and failure).
 
-\textbf{Binomial test:} A statistical test that determines the probability of getting a particular proportion when there are exactly two possible outcomes (success and failure).
+\textbf{Binomial test:} A statistical test that determines the probability of getting a particular proportion when there are exactly two possible outcomes (e.g., success and failure).
 
 \textbf{Burden of proof:} The obligation that when a causal link is suggested that evidence to support this link must be presented. This can be accomplished through independent replication of studies where if they demonstrate the same conclusions it reinforces the validity of the causal link between those variables.
 
@@ -2239,11 +2281,11 @@ Learn more about copyright at UBC from the \href{https://copyright.ubc.ca/}{UBC 
 
 \textbf{Citizen science:} When members of the public engage in the research process. Often involving collaboration with researchers.
 
-\textbf{Clinical trials:} Experiments that involve i) human participants who are assigned in advance to a group that receives a particular treatment designed to produce a biomedical or behavioural result and ii) evaluation of the effect of the treatments (NIH, 2017)
+\textbf{Clinical trials:} Experiments that involve i) human participants who are assigned in advance to a group that receives a particular treatment designed to produce a biomedical or behavioural result and ii) evaluation of the effect of the treatments
 
 \textbf{Coefficient of determination (R2):} The proportion of the variance in the response variable that can be explained or predicted by the independent variable. It describes the strength of the relationship between two variables.
 
-\textbf{Coefficient of variation (CV):} A relative measure of variability that indicates the size of a standard deviation in relation to its mean." {[}Frost, Jim n.d.{]}(\href{https://statisticsbyjim.com/basics/coefficient-variation/\#:~:text=The\%20coefficient\%20of\%20variation\%20(CV)\%20is\%20a\%20relative,also\%20known\%20as\%20the\%20relative\%20standard\%20deviation\%20(RSD).}{Coefficient of Variation in Statistics - Statistics By Jim}
+\textbf{Coefficient of variation (CV):} A relative measure of variability that indicates the size of a standard deviation in relation to its mean.
 
 \textbf{Comma-separated values (CSV) file:} A plain text file where each line of the file represents a record and each field (column) entry for that record is separated by a comma. This file format is frequently used by researchers to store data.
 
@@ -2275,7 +2317,7 @@ Learn more about copyright at UBC from the \href{https://copyright.ubc.ca/}{UBC 
 
 \textbf{Fisher's exact test:} A statistical test used to assess whether there is an association between categorical variables. This test is used on contingency tables that have exactly 2 x 2 dimensions.
 
-\textbf{HARKing:} A form of questionable research practices where the researcher changes their hypothesis after the study is conducted so that the hypothesis better fits the data. In other words, the researcher suggests that this post hoc (after the fact) hypothesis was formed a priori. This has a number of implications including: ``harming the progress of science by preventing the research community from identifying already falsified hypotheses, contributes to the replication crisis, and it increases the probability that the findings are not reproducible or generalizable in the population of interest''. (\href{https://health.ucdavis.edu/ctsc/area/Resource_Library/documents/HARKing_0Jan2021.pdf}{UCDavis Health, n.d.})
+\textbf{HARKing:} A form of questionable research practices where the researcher changes their hypothesis after the study is conducted so that the hypothesis better fits the data. In other words, the researcher suggests that this after the fact hypothesis was formed a priori. This has a number of implications including harming the progress of science by preventing the research community from identifying already falsified hypotheses, contributes to the replication crisis, and it increases the probability that the findings are not reproducible or generalizable in the population of interest.
 
 \textbf{Hypothesis:} A proposed explanation for an observed phenomenon. Often structured in an ``If\ldots{} then\ldots{} because\ldots{}'' format. Hypotheses must be present a priori, be falsifiable, and measurable.
 
@@ -2351,13 +2393,13 @@ Learn more about copyright at UBC from the \href{https://copyright.ubc.ca/}{UBC 
 
 \textbf{Range:} A descriptive statistic or measure of variation for a set of values. Specifically, it measures the difference between the highest and lowest values.
 
-\textbf{Registered report:} ``A publishing format that emphasizes the importance of the research question and the quality of methodology by conducting peer review prior to data collection. High quality protocols are then provisionally accepted for publication if the authors follow through with the registered methodology.'' \href{https://www.cos.io/initiatives/registered-reports}{Center for Open Science}
+\textbf{Registered report:} A publishing format where peer review of the research question and methods is conducted prior to data collection. High quality protocols are then provisionally accepted for publication if the authors follow through with the registered methods.
 
 \textbf{Replication:} Thorough repetition of a study, using the same methods but different data.
 
 \textbf{Replication crisis:} Many studies cannot be competently analyzed or replicated. This is because critical information about them---design, data, methods, lab notes, analyses and code---may not be made available, or may be poorly communicated. This problem is escalated further because new and original findings are considered more exciting than re-testing or replicating previously conducted studies.
 
-\textbf{Reproducibility:} "Obtaining consistent results using the same input data; computational steps, methods, and code; and conditions of analysis".
+\textbf{Reproducibility:} Obtaining consistent results using the same input data; computational steps, methods, and code; and conditions of analysis.
 
 \textbf{Research transparency:} The quality or practice of revealing all inputs and outputs of the research process clearly, as well as making evident the exact reasoning and process used in coming to a decision or taking actions in research, in such a way that the study can be replicated. As well, transparency means taking care to disclose important information in a respectful and responsible fashion.
 
@@ -2365,7 +2407,7 @@ Learn more about copyright at UBC from the \href{https://copyright.ubc.ca/}{UBC 
 
 \textbf{Scientific method:} An empirical method for acquiring knowledge which includes making an observation, asking a question, forming a hypothesis, making a prediction based on the hypothesis, and testing the prediction.
 
-\textbf{Scientific integrity:} "The condition resulting from adherence to professional values and practices when conducting, reporting, and applying the results of scientific activities that ensures objectivity, clarity, and reproducibility, and that provides insulation from bias, fabrication, falsification, plagiarism, inappropriate influence, political interference, censorship, and inadequate procedural and information security." (\href{https://www.usda.gov/our-agency/staff-offices/office-chief-scientist-ocs/scientific-integrity-and-research-misconduct}{USDA, n.d.})
+\textbf{Scientific integrity:} Adhering to professional values and practices when conducting, reporting, and applying the results of scientific activities. Adherence to these values ensures objectivity, clarity, and reproducibility, and provides insulation from bias, fabrication, falsification, plagiarism, inappropriate influence, political interference, censorship, and inadequate procedural and information security.
 
 \textbf{Significance level (\(\alpha\)):} The probability of rejecting the null hypothesis when it is true. For example, a significance level of 0.05 means there is a 5\% chance that researchers might conclude a significant relationship or difference exists when there is no true relationship or difference. This is also known as the Type I error rate. The significance level is set by researchers before conducting a study and the \emph{p} value result is compared to the \(\alpha\) to determine if there is a significant relationship or difference.
 
@@ -2383,7 +2425,7 @@ Learn more about copyright at UBC from the \href{https://copyright.ubc.ca/}{UBC 
 
 \textbf{Two-sample t-test:} A statistical test used to compare the means of two independent samples.
 
-\textbf{Variance:} A descriptive statistic that "measures how far a set of numbers is spread out from their average value." \href{\%5BVariance\%20-\%20Wikipedia\%5D(https://en.wikipedia.org/wiki/Variance)}{Wikipedia, n.d.} In other words, a high variance indicates the values are spread further from the mean whereas a low variance indicates they are close to the mean.
+\textbf{Variance:} A descriptive statistic that measures how far a set of numbers is spread out from their average value. In other words, a high variance indicates the values are spread further from the mean whereas a low variance indicates they are close to the mean.
 
 \textbf{Version control:} Saving changes to files while retaining the changes on all previous versions of the file. This practice contributes to transparency and openness in science.
 
@@ -2454,10 +2496,10 @@ Assuming the FN on our microscope is 16 mm, let's calculate the field of view di
 Repeat this process for the remainder of the objectives on your microscope. Your final result should look something like this:
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.24}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.27}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.23}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.26}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2381}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2738}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2262}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2619}}@{}}
 \toprule
 \begin{minipage}[b]{\linewidth}\raggedright
 Ocular-magnification

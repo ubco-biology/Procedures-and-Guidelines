@@ -8,13 +8,13 @@
 
 <a id="Analysis-of-variance-(ANOVA)">**Analysis of variance (ANOVA):**</a> A statistical test used to compare the mean of a numeric variable in relation to a single categorical variable that has more than two groups. 
 
-<a id="Assumptions">**Assumptions:**</a> There are often assumptions associated with statistical tests. This means that for the test to provide reliable results the data must meet specific criteria or conditions. These assumptions need to be checked prior to conducting any analyses. 
+<a id="Assumptions">**Assumptions:**</a> There are often assumptions associated with statistical tests. This means that for the test to provide reliable results, the data must meet specific criteria or conditions. These assumptions need to be checked prior to conducting any analyses. 
 
 <a id="Bias">**Bias:**</a> Error is introduced and false conclusions might be drawn because our sample doesn't meet established standards for faithful representation of our population of interest.
 
-<a id="Binomial-distribution">**Binomial distribution:**</a> A discrete probability distribution of the number of successes where there are exactly two possible outcomes (success and failure).
+<a id="Binomial-distribution">**Binomial distribution:**</a> A discrete probability distribution of the number of successes where there are exactly two possible outcomes (e.g., success and failure).
 
-<a id="Binomial-test">**Binomial test:**</a> A statistical test that determines the probability of getting a particular proportion when there are exactly two possible outcomes (success and failure).
+<a id="Binomial-test">**Binomial test:**</a> A statistical test that determines the probability of getting a particular proportion when there are exactly two possible outcomes (e.g., success and failure).
 
 <a id="Burden-of-proof">**Burden of proof:**</a> The obligation that when a causal link is suggested that evidence to support this link must be presented. This can be accomplished through independent replication of studies where if they demonstrate the same conclusions it reinforces the validity of the causal link between those variables. 
 
@@ -26,11 +26,11 @@
 
 <a id="Citizen-science">**Citizen science:**</a> When members of the public engage in the research process. Often involving collaboration with researchers. 
 
-<a id="Clinical-trials">**Clinical trials:**</a> Experiments that involve i) human participants who are assigned in advance to a group that receives a particular treatment designed to produce a biomedical or behavioural result and ii) evaluation of the effect of the treatments (NIH, 2017)
+<a id="Clinical-trials">**Clinical trials:**</a> Experiments that involve i) human participants who are assigned in advance to a group that receives a particular treatment designed to produce a biomedical or behavioural result and ii) evaluation of the effect of the treatments
 
 <a id="Coefficient-of-determination-(R<sup>2</sup>)">**Coefficient of determination (R<sup>2</sup>):**</a> The proportion of the variance in the response variable that can be explained or predicted by the independent variable. It describes the strength of the relationship between two variables.
 
-<a id="Coefficient-of-variation-(CV)">**Coefficient of variation (CV):**</a> A relative measure of variability that indicates the size of a standard deviation in relation to its mean.\" [Frost, Jim n.d.]([Coefficient of Variation in Statistics - Statistics By Jim](https://statisticsbyjim.com/basics/coefficient-variation/#:~:text=The coefficient of variation (CV) is a relative,also known as the relative standard deviation (RSD).)
+<a id="Coefficient-of-variation-(CV)">**Coefficient of variation (CV):**</a> A relative measure of variability that indicates the size of a standard deviation in relation to its mean.
 
 <a id="Comma-separated-values-(CSV)-file">**Comma-separated values (CSV) file:**</a> A plain text file where each line of the file represents a record and each field (column) entry for that record is separated by a comma. This file format is frequently used by researchers to store data.
 
@@ -40,7 +40,7 @@
 
 <a id="Continuous-quantitative-data">**Continuous quantitative data:**</a> Numeric data that lies on a continuum. So there are infinite possible values between integers and our data collection tool or convention determines to what decimal point we record the values to. Some examples include temperature, height, and distance.  
 
-<a id="Critical-analysis">**Critical analysis:**</a> Careful examination and evaluation of all parts of a research article including consideration of the study’s strengths and weaknesses as they relate to study design, implementation, data collection, data analysis, and interpretation. 
+<a id="Critical-analysis">**Critical analysis:**</a> Careful examination and evaluation of all parts of a research article including consideration of the study\’s strengths and weaknesses as they relate to study design, implementation, data collection, data analysis, and interpretation. 
 
 <a id="Data-transformation">**Data transformation:**</a> A process where the format of the values within a dataset are changed. For example, all of the values within a dataset might be log transformed. This is often done when the original data does not meet the assumptions of a particular statistical test. After the data transformation researchers will re-assess those assumptions to see if they can perform the test on the newly transformed data.
 
@@ -62,13 +62,13 @@
 
 <a id="Fisher's-exact-test">**Fisher's exact test:**</a> A statistical test used to assess whether there is an association between categorical variables. This test is used on contingency tables that have exactly 2 x 2 dimensions. 
 
-<a id="HARKing">**HARKing:**</a> A form of questionable research practices where the researcher changes their hypothesis after the study is conducted so that the hypothesis better fits the data. In other words, the researcher suggests that this post hoc (after the fact) hypothesis was formed a priori. This has a number of implications including: “harming the progress of science by preventing the research community from identifying already falsified hypotheses, contributes to the replication crisis, and it increases the probability that the findings are not reproducible or generalizable in the population of interest”. ([UCDavis Health, n.d.](https://health.ucdavis.edu/ctsc/area/Resource_Library/documents/HARKing_0Jan2021.pdf))
+<a id="HARKing">**HARKing:**</a> A form of questionable research practices where the researcher changes their hypothesis after the study is conducted so that the hypothesis better fits the data. In other words, the researcher suggests that this after the fact hypothesis was formed a priori. This has a number of implications including harming the progress of science by preventing the research community from identifying already falsified hypotheses, contributes to the replication crisis, and it increases the probability that the findings are not reproducible or generalizable in the population of interest.
 
 <a id="Hypothesis">**Hypothesis:**</a> A proposed explanation for an observed phenomenon. Often structured in an “If… then… because…” format. Hypotheses must be present a priori, be falsifiable, and measurable. 
 
 <a id="Hypothesis-testing">**Hypothesis testing:**</a> Typically involves setting a null and alternative hypothesis and performing an appropriate statistical analysis to test those hypotheses. Often used in confirmatory research. 
 
-<a id="Inclusion">**Inclusion:**</a>  The philosophy or practice of considering individuals from diverse backgrounds in relation to the community, organization, or society, and ensuring that they feel that they belong, supporting them in giving their best efforts, and giving them equal opportunities to advance and participate in decision-making.
+<a id="Inclusion">**Inclusion:**</a> The philosophy or practice of considering individuals from diverse backgrounds in relation to the community, organization, or society, and ensuring that they feel that they belong, supporting them in giving their best efforts, and giving them equal opportunities to advance and participate in decision-making.
 
 <a id="Interquartile-range">**Interquartile range:**</a> A descriptive statistic that measures the variation within the middle section of a set of values. Specifically, it describes the range between the first and third quartiles of a set of values.
 
@@ -98,7 +98,7 @@
 
 <a id="Odds-ratio">**Odds ratio:**</a> Measure of the relative odds of the occurrence of a specific event (ie. cancer) given the exposure to a variable of interest (ie. smoking). This ratio is often used to determine the odds of health related outcomes.
 
-<a id="One-sample-t-test">**One-sample t-test:**</a> A statistical test used to compare a numeric response variable   (ie. mean) to an expected value. 
+<a id="One-sample-t-test">**One-sample t-test:**</a> A statistical test used to compare a numeric response variable (ie. mean) to an expected value. 
 
 <a id="Open-notebooks">**Open notebooks:**</a> Involves i) publishing or linking to data on an online platform before results are published in a peer-reviewed journal; ii) making information about the methodology and equipment used in a study publicly available; iii) openly discussing both positive and negative results in real time, as they are obtained.
 
@@ -138,13 +138,13 @@
 
 <a id="Range">**Range:**</a> A descriptive statistic or measure of variation for a set of values. Specifically, it measures the difference between the highest and lowest values.
 
-<a id="Registered-report">**Registered report:**</a> "A publishing format that emphasizes the importance of the research question and the quality of methodology by conducting peer review prior to data collection. High quality protocols are then provisionally accepted for publication if the authors follow through with the registered methodology." [Center for Open Science](https://www.cos.io/initiatives/registered-reports)
+<a id="Registered-report">**Registered report:**</a> A publishing format where peer review of the research question and methods is conducted prior to data collection. High quality protocols are then provisionally accepted for publication if the authors follow through with the registered methods.
 
 <a id="Replication">**Replication:**</a> Thorough repetition of a study, using the same methods but different data.
 
 <a id="Replication-crisis">**Replication crisis:**</a> Many studies cannot be competently analyzed or replicated. This is because critical information about them—design, data, methods, lab notes, analyses and code—may not be made available, or may be poorly communicated. This problem is escalated further because new and original findings are considered more exciting than re-testing or replicating previously conducted studies. 
 
-<a id="Reproducibility">**Reproducibility:**</a> \"Obtaining consistent results using the same input data; computational steps, methods, and code; and conditions of analysis\". 
+<a id="Reproducibility">**Reproducibility:**</a> Obtaining consistent results using the same input data; computational steps, methods, and code; and conditions of analysis. 
 
 <a id="Research-transparency">**Research transparency:**</a> The quality or practice of revealing all inputs and outputs of the research process clearly, as well as making evident the exact reasoning and process used in coming to a decision or taking actions in research, in such a way that the study can be replicated. As well, transparency means taking care to disclose important information in a respectful and responsible fashion.
 
@@ -152,7 +152,7 @@
 
 <a id="Scientific-method">**Scientific method:**</a> An empirical method for acquiring knowledge which includes making an observation, asking a question, forming a hypothesis, making a prediction based on the hypothesis, and testing the prediction. 
 
-<a id="Scientific-integrity">**Scientific integrity:**</a> \"The condition resulting from adherence to professional values and practices when conducting, reporting, and applying the results of scientific activities that ensures objectivity, clarity, and reproducibility, and that provides insulation from bias, fabrication, falsification, plagiarism, inappropriate influence, political interference, censorship, and inadequate procedural and information security.\" ([USDA, n.d.](https://www.usda.gov/our-agency/staff-offices/office-chief-scientist-ocs/scientific-integrity-and-research-misconduct))
+<a id="Scientific-integrity">**Scientific integrity:**</a> Adhering to professional values and practices when conducting, reporting, and applying the results of scientific activities. Adherence to these values ensures objectivity, clarity, and reproducibility, and provides insulation from bias, fabrication, falsification, plagiarism, inappropriate influence, political interference, censorship, and inadequate procedural and information security.
 
 <a id="Significance-level-($\alpha$)">**Significance level ($\alpha$):**</a> The probability of rejecting the null hypothesis when it is true. For example, a significance level of 0.05 means there is a 5% chance that researchers might conclude a significant relationship or difference exists when there is no true relationship or difference. This is also known as the Type I error rate.  The significance level is set by researchers before conducting a study and the *p* value result is compared to the $\alpha$ to determine if there is a significant relationship or difference. 
 
@@ -170,7 +170,7 @@
 
 <a id="Two-sample-t-test">**Two-sample t-test:**</a> A statistical test used to compare the means of two independent samples. 
 
-<a id="Variance">**Variance:**</a> A descriptive statistic that \"measures how far a set of numbers is spread out from their average value.\" [Wikipedia, n.d.]([Variance - Wikipedia](https://en.wikipedia.org/wiki/Variance)) In other words, a high variance indicates the values are spread further from the mean whereas a low variance indicates they are close to the mean.
+<a id="Variance">**Variance:**</a> A descriptive statistic that measures how far a set of numbers is spread out from their average value. In other words, a high variance indicates the values are spread further from the mean whereas a low variance indicates they are close to the mean.
 
 <a id="Version-control">**Version control:**</a> Saving changes to files while retaining the changes on all previous versions of the file. This practice contributes to transparency and openness in science. 
 

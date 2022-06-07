@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2.2 What’s in a name | Procedures and Guidelines</title>
   <meta name="description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2.2 What’s in a name | Procedures and Guidelines" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Recommended guidelines for producing and formatting research outputs, including data, figures, and reports." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar" />
 
 
-<meta name="date" content="2022-05-26" />
+<meta name="date" content="2022-06-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="quick-reference.html"/>
 <link rel="next" href="an-example.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RXD24BGZ8"></script>
 <script>
@@ -291,11 +290,11 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="whats-in-a-name" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> What’s in a name</h2>
+<div id="whats-in-a-name" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> What’s in a name<a href="whats-in-a-name.html#whats-in-a-name" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>File names need to achieve two primary goals, they need to make sense to a human reading them and they need to be constructed in a way that allows a computer to parse or process them. That is, file names should be <strong>human interpretable</strong> and <strong>machine readable</strong>. How do we achieve this?</p>
-<div id="human-interpretable" class="section level3 unnumbered">
-<h3>Human interpretable</h3>
+<div id="human-interpretable" class="section level3 unnumbered hasAnchor">
+<h3>Human interpretable<a href="whats-in-a-name.html#human-interpretable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To be human interpretable, a file name needs to be meaningful. To do this, it needs to convey some basic information to a person reading it. We do this by integrating metadata into the file name. The metadata elements we include are:</p>
 <ul>
 <li>Who created the file</li>
@@ -308,12 +307,12 @@
 <p>That is, we should be able to look at a file and tell, <em>who</em> created it, <em>when</em> it was created, <em>what</em> it is related to, <em>what</em> is inside of it, if it has been <em>updated</em>, and what <em>application</em> I should expect to be able to open it with. As we’ll see shortly, we don’t always include a date, and we don’t always include information about modifying a file.</p>
 <p>All said, that’s a fair bit of information to hold in a file name!</p>
 </div>
-<div id="machine-readable" class="section level3 unnumbered">
-<h3>Machine readable</h3>
+<div id="machine-readable" class="section level3 unnumbered hasAnchor">
+<h3>Machine readable<a href="whats-in-a-name.html#machine-readable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>What does it mean for a file name to be machine readable or machine interpretable? It means building our file names in such a way that we can easily organize them so that they can be sorted by an application and in a way that makes sense to us. It also means building our names according to set patterns, which can then be parsed along known delimiters. Lastly, it means building our names in such a way that if we move them from one computer to another, from one application to another, or from one operating system to another, the files remain interpretable in exactly the same way.</p>
 <p>How do we do this? We avoid special characters and follow conventions.</p>
-<div id="special-characters" class="section level4 unnumbered">
-<h4>Special characters</h4>
+<div id="special-characters" class="section level4 unnumbered hasAnchor">
+<h4>Special characters<a href="whats-in-a-name.html#special-characters" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Special characters are all characters <strong>except</strong>:</p>
 <ul>
 <li>Any character that is a part of the English alphabet</li>
@@ -324,10 +323,18 @@
 <p>This means that a space " " is a special character, which means that your file names should not have spaces.</p>
 <p>When operating in a multi-lingual or non-English environment, this can prove problematic, but it is an unfortunate legacy of the development of computer standards that has yet to be fully resolved.</p>
 </div>
-<div id="conventions" class="section level4 unnumbered">
-<h4>Conventions</h4>
+<div id="conventions" class="section level4 unnumbered hasAnchor">
+<h4>Conventions<a href="whats-in-a-name.html#conventions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Convention has file naming proceed in the following order, with each element separated by an underscore <code>_</code>, and words within an element joined with a dash <code>-</code>. The file type is generally added with a period <code>.</code> and is usually automatically generated when an application creates a file.</p>
 <table>
+<colgroup>
+<col width="13%" />
+<col width="16%" />
+<col width="16%" />
+<col width="22%" />
+<col width="15%" />
+<col width="15%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Element-1</th>
@@ -350,13 +357,13 @@
 </tbody>
 </table>
 </div>
-<div id="dates" class="section level4 unnumbered">
-<h4>Dates</h4>
+<div id="dates" class="section level4 unnumbered hasAnchor">
+<h4>Dates<a href="whats-in-a-name.html#dates" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Dates should be written in the following format <code>yyyymmdd</code>. They should contain no spaces, no dashes, no words, just 8 numbers. Months and Days that are from 1 - 9 should be led by a 0. For example, January 23, 2020, should be written <strong>20200123</strong>. When written this way, your computer will always sort your files from the earliest date to the latest date.</p>
 <p>Keeping track of dates is especially important for data because the date on which your data was collected has direct relevance. Dates are less important for things like figures because they are derived from previously dated data.</p>
 </div>
-<div id="versions" class="section level4 unnumbered">
-<h4>Versions</h4>
+<div id="versions" class="section level4 unnumbered hasAnchor">
+<h4>Versions<a href="whats-in-a-name.html#versions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Version tracking is achieved in file naming by adding <code>_V<em>n</em></code> where <em>n</em> is the version number. With each major change, we increase <em>n</em> by 1. So version 1 would read <code>_V1</code>, and when updated, it would read <code>_V2</code>.</p>
 <p>Versions are very important for things like manuscripts and interpretations of data, such as figures and other visualizations, which we will continue to change and modify throughout a project. Data, however, while it has a collection date, should not be modified, and should not then be versioned.</p>
 </div>
