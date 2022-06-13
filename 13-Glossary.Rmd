@@ -94,7 +94,7 @@
 
 <a id="Nominal-categorical-data">**Nominal categorical data:**</a> In contrast to ordinal categorical data, this data has two or more discrete categories that have no natural order. For example, hair colour or blood type. 
 
-<a id="Null-hypothesis-(H<sub>o</sub>)">**Null hypothesis (H<sub>o</sub>):**</a> Used alongside the alternative hypothesis in hypothesis testing. The null hypothesis states that there is no significant effect or relationship between phenomena, variables, or populations. Rather any differences observed are the result of random chance.   
+<a id="Null-hypothesis">**Null hypothesis (H<sub>o</sub>):**</a> Used alongside the alternative hypothesis in hypothesis testing. The null hypothesis states that there is no significant effect or relationship between phenomena, variables, or populations. Rather any differences observed are the result of random chance.   
 
 <a id="Odds-ratio">**Odds ratio:**</a> Measure of the relative odds of the occurrence of a specific event (ie. cancer) given the exposure to a variable of interest (ie. smoking). This ratio is often used to determine the odds of health related outcomes.
 
