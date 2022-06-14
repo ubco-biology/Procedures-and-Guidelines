@@ -77,11 +77,11 @@ If you have a file in your `Analysis/` folder open, `Analysis/` is your working 
 
 ## Relative and Absolute Paths
 
-When talking about file locations, a path tells us where a file lives within a directory structure. Paths can be absolute or relative.
+When talking about file locations, a path tells us where a file lives within a directory structure. Paths can be absolute or relative. In general, relative paths are preferrable for reproducibility.
 
 ### Absolute paths {-}
 
-Absolute paths tell us the location of a file relative to the whole directory structure. Using the previous example, the absolute path of `biol-125_research-project_notes.docx` is `Users/youUserName/Desktop/BIOL-125/Research-Project/`.
+Absolute paths tell us the location of a file relative to the whole directory structure. Using the previous example, the absolute path of `biol-125_research-project_notes.docx` is `/Users/yourUserName/Desktop/BIOL-125/Research-Project/`.
 
 ### Relative paths {-}
 
@@ -89,18 +89,22 @@ Relative paths on the other hand tell us the location of a file relative a worki
 
 ## Set a Working Directory in RStudio
 
-### Preferred Method: Creating a Project
+### Preferred Method: Creating a Project {-}
 
-Let's say you're working on an experiment and you'd like to write a reproducible lab report using Markdown in RStudio. The first step is to create a new R project. An R project is a file that sits in the root directory on your computer. When you open your RStudio session via this project file, it automatically tells R to use that root folder as your working directory. In other words, it tells R to look in this root folder for any files you refer to within your R Markdown script. The biggest benefit to this approach for setting a working directory is that if I decided to move my root folder to another location on my computer or open this folder on a different computer, all of the file paths specified in my R script will still work. 
+Let's say you're working on an experiment and you'd like to write a reproducible lab report using Markdown in RStudio. The first step is to create a new R project--which creates a file ending in `.Rproj`. A `.Rproj` file is a file that sits in the root directory of your project. When you open your RStudio session via this project file, it automatically tells `R` to use that root folder as your working directory. In other words, it tells R to look relatie to this root folder for any files or folders you refer to within your R Markdown script.
+
+The biggest benefit to this approach for setting a working directory is that if you decide--or need--to move your project's root folder to another location on your computer or transfer your project's root folder to a different computer, all of the file paths specified in your `R` script will still be valid and work, because they will all be relative to your project's root folder. 
 
 There are two options to create a new R project:
 
-* Start a project in a brand new working directory (create a new project file within a brand new folder)
-* Associate a project with an existing working directory (create a new project file within an existing folder)
+* Create a new project file within a *brand new folder*.
+* Create a new project file within an *existing folder*.
 
-So if you have a bunch of files related to your experiment and these are already saved in a folder on your computer, it makes more sense to create a new project within that existing folder. Alternatively, if you are starting from scratch you might prefer to create a new project within a brand new folder. Let's go through an example of how to create a new project with each method.
+So if you have a bunch of files related to your experiment and these are already saved in a folder on your computer, it makes more sense to create a new project within that existing folder. Alternatively, if you are starting from scratch you might prefer to create a new project within a brand new folder.
 
-#### Create a New Project in a New Folder
+Let's go through an example of how to create a new project with each method.
+
+### Create a New Project in a New Folder {-}
 
 The first step is to open RStudio and select 'New Project' from the 'File' drop down menu. 
 
@@ -114,7 +118,7 @@ You will then be prompted to choose a project type. Choose 'New Project'.
 
 ![](images/D_new-project-in-new-folder-3.png)
 
-Now name what will be your working directory/root folder according to appropriate [naming conventions](https://ubco-biology.github.io/Procedures-and-Guidelines/directory-naming). Click 'Browse' and select a location to save this folder to on your computer. In this example, I saved the folder to the Desktop.
+Now name what will be your working directory/root folder according to appropriate [naming conventions](https://ubco-biology.github.io/Procedures-and-Guidelines/directory-naming). Click 'Browse' and select a location to save this folder to on your computer.
 
 ![](images/D_new-project-in-new-folder-4.png)
 
@@ -122,11 +126,11 @@ Then click 'Create Project'.
 
 ![](images/D_new-project-in-new-folder-5.png)
 
-Finally, R will bring you back to the main screen and under the 'Files' region (bottom right panel) you will see your new project file. Now R is automatically using your new folder containing the project file as the working directory. As you create new files associated with your experiment, make sure you save them to the root folder that contains this project file.
+Finally, `R` will bring you back to the main screen and under the 'Files' region (bottom right panel) you will see your new project file. Now `R` is automatically using your new folder containing the project file as the working directory. As you create new files associated with your experiment, make sure you save them within the root folder that contains this project file.
 
 ![](images/D_new-project-in-new-folder-6.png)
 
-#### Create a New Project in an Existing Folder
+### Create a New Project in an Existing Folder {-}
 
 Recall, that the first step is to open RStudio and select 'New Project' from the 'File' drop down menu. 
 
@@ -144,7 +148,7 @@ Then click 'Create Project'.
 
 ![](images/D_new-project-old-folder-4.png)
 
-Finally, R will bring you back to the main screen and under the 'Files' region (bottom right panel) you will see your new project file. Now R is automatically using your new folder containing the project file as the working directory. Remember, as you create new files associated with your experiment, make sure you save them to the root folder that contains this project file.
+Finally, `R` will bring you back to the main screen and under the 'Files' region (bottom right panel) you will see your new project file. Now `R` is automatically using your new folder containing the project file as the working directory. Remember, as you create new files associated with your experiment, make sure you save them within the root folder that contains this project file.
 
 ![](images/D_new-project-old-folder-5.png)
 
@@ -152,6 +156,6 @@ Finally, R will bring you back to the main screen and under the 'Files' region (
 If you close RStudio and want to re-open the project you'll need to tell R that you want to use the root folder with the project file in it as your working directory. To do this, you'll need to locate the project file on your computer and open it, or open RStudio and select 'Open Project' under the 'File' drop down menu. 
 </div> 
 
-You may have heard of other methods that can be used to set a working directory in R ie. `setwd()`. However, the downside of using this method is that it relies on an [absolute path](https://ubco-biology.github.io/Procedures-and-Guidelines/relative-and-absolute-paths) to access your working directory ie. Users/youUserName/Desktop/BIOL-116/Research-Project/. So if you move the root folder, containing all the files related to your experiment, you'll have to edit your R script and change the absolute path. Additionally, if you send this script to a lab partner or colleague they will have to edit the script to match where the root folder is located on their computer. Using an R project instead, negates this problem by creating a [relative path](https://ubco-biology.github.io/Procedures-and-Guidelines/relative-and-absolute-paths) to the root folder.
+You may have heard of other methods that can be used to set a working directory in `R`. In fact, there's a built in command--`setwd()`--to set a working directory other than the one currently being used. If you chose this method over using an R Project file, you would need to set your working directory every time you wanted to work on your project, or, alternatively, have the first line of code in your script set your working directory using an absolute path. The downside of using this method is that it relies on extra steps or [absolute paths](https://ubco-biology.github.io/Procedures-and-Guidelines/relative-and-absolute-paths) to access your working directory. Consequently, if you move the project's root folder--containing all the files related to your experiment--you'll have to edit your `R` script and change the absolute path. This impacts computational reproducibility. If you send your work to a lab partner or colleague they will have to edit the script, updating the absolute path to match where they've placed the project folder on their computer. An R project negates this problem by leveragin [relative paths](https://ubco-biology.github.io/Procedures-and-Guidelines/relative-and-absolute-paths).
 
 

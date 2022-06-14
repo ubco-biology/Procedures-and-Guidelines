@@ -116,7 +116,9 @@
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="set-a-working-directory-in-rstudio.html"><a href="set-a-working-directory-in-rstudio.html"><i class="fa fa-check"></i><b>3.3</b> Set a Working Directory in RStudio</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="set-a-working-directory-in-rstudio.html"><a href="set-a-working-directory-in-rstudio.html#preferred-method-creating-a-project"><i class="fa fa-check"></i><b>3.3.1</b> Preferred Method: Creating a Project</a></li>
+<li class="chapter" data-level="" data-path="set-a-working-directory-in-rstudio.html"><a href="set-a-working-directory-in-rstudio.html#preferred-method-creating-a-project"><i class="fa fa-check"></i>Preferred Method: Creating a Project</a></li>
+<li class="chapter" data-level="" data-path="set-a-working-directory-in-rstudio.html"><a href="set-a-working-directory-in-rstudio.html#create-a-new-project-in-a-new-folder"><i class="fa fa-check"></i>Create a New Project in a New Folder</a></li>
+<li class="chapter" data-level="" data-path="set-a-working-directory-in-rstudio.html"><a href="set-a-working-directory-in-rstudio.html#create-a-new-project-in-an-existing-folder"><i class="fa fa-check"></i>Create a New Project in an Existing Folder</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="directory-structures.html"><a href="directory-structures.html"><i class="fa fa-check"></i><b>4</b> Directory Structures</a>
@@ -292,32 +294,35 @@
             <section class="normal" id="section-">
 <div id="set-a-working-directory-in-rstudio" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> Set a Working Directory in RStudio<a href="set-a-working-directory-in-rstudio.html#set-a-working-directory-in-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="preferred-method-creating-a-project" class="section level3 hasAnchor" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> Preferred Method: Creating a Project<a href="set-a-working-directory-in-rstudio.html#preferred-method-creating-a-project" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Let’s say you’re working on an experiment and you’d like to write a reproducible lab report using Markdown in RStudio. The first step is to create a new R project. An R project is a file that sits in the root directory on your computer. When you open your RStudio session via this project file, it automatically tells R to use that root folder as your working directory. In other words, it tells R to look in this root folder for any files you refer to within your R Markdown script. The biggest benefit to this approach for setting a working directory is that if I decided to move my root folder to another location on my computer or open this folder on a different computer, all of the file paths specified in my R script will still work.</p>
+<div id="preferred-method-creating-a-project" class="section level3 unnumbered hasAnchor">
+<h3>Preferred Method: Creating a Project<a href="set-a-working-directory-in-rstudio.html#preferred-method-creating-a-project" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let’s say you’re working on an experiment and you’d like to write a reproducible lab report using Markdown in RStudio. The first step is to create a new R project–which creates a file ending in <code>.Rproj</code>. A <code>.Rproj</code> file is a file that sits in the root directory of your project. When you open your RStudio session via this project file, it automatically tells <code>R</code> to use that root folder as your working directory. In other words, it tells R to look relatie to this root folder for any files or folders you refer to within your R Markdown script.</p>
+<p>The biggest benefit to this approach for setting a working directory is that if you decide–or need–to move your project’s root folder to another location on your computer or transfer your project’s root folder to a different computer, all of the file paths specified in your <code>R</code> script will still be valid and work, because they will all be relative to your project’s root folder.</p>
 <p>There are two options to create a new R project:</p>
 <ul>
-<li>Start a project in a brand new working directory (create a new project file within a brand new folder)</li>
-<li>Associate a project with an existing working directory (create a new project file within an existing folder)</li>
+<li>Create a new project file within a <em>brand new folder</em>.</li>
+<li>Create a new project file within an <em>existing folder</em>.</li>
 </ul>
-<p>So if you have a bunch of files related to your experiment and these are already saved in a folder on your computer, it makes more sense to create a new project within that existing folder. Alternatively, if you are starting from scratch you might prefer to create a new project within a brand new folder. Let’s go through an example of how to create a new project with each method.</p>
-<div id="create-a-new-project-in-a-new-folder" class="section level4 hasAnchor" number="3.3.1.1">
-<h4><span class="header-section-number">3.3.1.1</span> Create a New Project in a New Folder<a href="set-a-working-directory-in-rstudio.html#create-a-new-project-in-a-new-folder" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>So if you have a bunch of files related to your experiment and these are already saved in a folder on your computer, it makes more sense to create a new project within that existing folder. Alternatively, if you are starting from scratch you might prefer to create a new project within a brand new folder.</p>
+<p>Let’s go through an example of how to create a new project with each method.</p>
+</div>
+<div id="create-a-new-project-in-a-new-folder" class="section level3 unnumbered hasAnchor">
+<h3>Create a New Project in a New Folder<a href="set-a-working-directory-in-rstudio.html#create-a-new-project-in-a-new-folder" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The first step is to open RStudio and select ‘New Project’ from the ‘File’ drop down menu.</p>
 <p><img src="images/D_new-project-1.png" /></p>
 <p>You will then be asked to specify if you’d like to create a ‘New Directory’ or use an ‘Existing Directory’. In this case select ‘New Directory’.</p>
 <p><img src="images/D_new-project-in-new-folder-2.png" /></p>
 <p>You will then be prompted to choose a project type. Choose ‘New Project’.</p>
 <p><img src="images/D_new-project-in-new-folder-3.png" /></p>
-<p>Now name what will be your working directory/root folder according to appropriate <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/directory-naming">naming conventions</a>. Click ‘Browse’ and select a location to save this folder to on your computer. In this example, I saved the folder to the Desktop.</p>
+<p>Now name what will be your working directory/root folder according to appropriate <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/directory-naming">naming conventions</a>. Click ‘Browse’ and select a location to save this folder to on your computer.</p>
 <p><img src="images/D_new-project-in-new-folder-4.png" /></p>
 <p>Then click ‘Create Project’.</p>
 <p><img src="images/D_new-project-in-new-folder-5.png" /></p>
-<p>Finally, R will bring you back to the main screen and under the ‘Files’ region (bottom right panel) you will see your new project file. Now R is automatically using your new folder containing the project file as the working directory. As you create new files associated with your experiment, make sure you save them to the root folder that contains this project file.</p>
+<p>Finally, <code>R</code> will bring you back to the main screen and under the ‘Files’ region (bottom right panel) you will see your new project file. Now <code>R</code> is automatically using your new folder containing the project file as the working directory. As you create new files associated with your experiment, make sure you save them within the root folder that contains this project file.</p>
 <p><img src="images/D_new-project-in-new-folder-6.png" /></p>
 </div>
-<div id="create-a-new-project-in-an-existing-folder" class="section level4 hasAnchor" number="3.3.1.2">
-<h4><span class="header-section-number">3.3.1.2</span> Create a New Project in an Existing Folder<a href="set-a-working-directory-in-rstudio.html#create-a-new-project-in-an-existing-folder" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="create-a-new-project-in-an-existing-folder" class="section level3 unnumbered hasAnchor">
+<h3>Create a New Project in an Existing Folder<a href="set-a-working-directory-in-rstudio.html#create-a-new-project-in-an-existing-folder" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Recall, that the first step is to open RStudio and select ‘New Project’ from the ‘File’ drop down menu.</p>
 <p><img src="images/D_new-project-1.png" /></p>
 <p>You will then be asked to specify if you’d like to create a ‘New Directory’ or use an ‘Existing Directory’. In this case select ‘Existing Directory’.</p>
@@ -326,14 +331,13 @@
 <p><img src="images/D_new-project-old-folder-3.png" /></p>
 <p>Then click ‘Create Project’.</p>
 <p><img src="images/D_new-project-old-folder-4.png" /></p>
-<p>Finally, R will bring you back to the main screen and under the ‘Files’ region (bottom right panel) you will see your new project file. Now R is automatically using your new folder containing the project file as the working directory. Remember, as you create new files associated with your experiment, make sure you save them to the root folder that contains this project file.</p>
+<p>Finally, <code>R</code> will bring you back to the main screen and under the ‘Files’ region (bottom right panel) you will see your new project file. Now <code>R</code> is automatically using your new folder containing the project file as the working directory. Remember, as you create new files associated with your experiment, make sure you save them within the root folder that contains this project file.</p>
 <p><img src="images/D_new-project-old-folder-5.png" /></p>
 <div class="note">
 <p>If you close RStudio and want to re-open the project you’ll need to tell R that you want to use the root folder with the project file in it as your working directory. To do this, you’ll need to locate the project file on your computer and open it, or open RStudio and select ‘Open Project’ under the ‘File’ drop down menu.</p>
 </div>
-<p>You may have heard of other methods that can be used to set a working directory in R ie. <code>setwd()</code>. However, the downside of using this method is that it relies on an <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/relative-and-absolute-paths">absolute path</a> to access your working directory ie. Users/youUserName/Desktop/BIOL-116/Research-Project/. So if you move the root folder, containing all the files related to your experiment, you’ll have to edit your R script and change the absolute path. Additionally, if you send this script to a lab partner or colleague they will have to edit the script to match where the root folder is located on their computer. Using an R project instead, negates this problem by creating a <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/relative-and-absolute-paths">relative path</a> to the root folder.</p>
+<p>You may have heard of other methods that can be used to set a working directory in <code>R</code>. In fact, there’s a built in command–<code>setwd()</code>–to set a working directory other than the one currently being used. If you chose this method over using an R Project file, you would need to set your working directory every time you wanted to work on your project, or, alternatively, have the first line of code in your script set your working directory using an absolute path. The downside of using this method is that it relies on extra steps or <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/relative-and-absolute-paths">absolute paths</a> to access your working directory. Consequently, if you move the project’s root folder–containing all the files related to your experiment–you’ll have to edit your <code>R</code> script and change the absolute path. This impacts computational reproducibility. If you send your work to a lab partner or colleague they will have to edit the script, updating the absolute path to match where they’ve placed the project folder on their computer. An R project negates this problem by leveragin <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/relative-and-absolute-paths">relative paths</a>.</p>
 
-</div>
 </div>
 </div>
 <!-- </div> -->
