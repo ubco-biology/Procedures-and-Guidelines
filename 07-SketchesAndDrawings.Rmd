@@ -8,8 +8,8 @@ We've heard it before, a picture is worth a thousand words. While a common place
 
 Detailed notetaking is an essential aspect of the research process. There are countless benefits to taking detailed notes throughout as you work in the lab or on research projects. Some of these benefits include: 
 
-* Increased transparency and openness in your research and thought processes.
-* Enhanced reproducibility of your experiments and lab work.
+* Increased <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Research-transparency">transparency</a> and openness in your research and thought processes.
+* Enhanced <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Reproducibility">reproducibility</a> of your experiments and lab work.
 * Your notes may be able to help you explain variability or unexpected results.
 
 While detailed written notes can be extremely helpful, their combination with sketches is powerful. Some things you might sketch include:

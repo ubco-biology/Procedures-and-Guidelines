@@ -4,7 +4,7 @@
 
 Now that we've covered naming conventions and have a sense of how our systems are organized around folder structures, let's pretend that you store everything on your computer in a single folder--some of us are probably known to use our desktops for this. Imagine how long it would take you to find data you collected on a specific day a few years ago. Instead of keeping every document in a single place, we often organize our files using directory or folder structures. This helps us save precious time and improve our productivity. 
 
-One major aspect of Open Science is ensuring transparency in the research process. This includes sharing files from all the steps of the research lifecycle (i.e. a priori hypothesis, study design, data, analysis etc.) with others so that our research can be understood and replicated more easily. 
+One major aspect of <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Open-science">Open Science</a> is ensuring <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Research-transparency">transparency</a> in the research process. This includes sharing files from all the steps of the <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Research-lifecycle">research lifecycle</a> (i.e. <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#A-priori-hypothesis">a priori hypothesis</a>, study design, data, analysis etc.) with others so that our research can be understood and replicated more easily. 
 
 The way we currently organize folders and files on our computer may make sense to us, but a problem arises when we need to share those folders and files with other people. A folder name that is meaningful for us may make no sense to another person. So let's cover some conventions to help you organize the files on your computer in a way that is meaningful to both you and others. 
 
@@ -44,14 +44,14 @@ In case there is any doubt, here are some examples of what are considered specia
 
 ## readme files and data dictionaries
 
-When naming files we embed metadata into our file naming conventions to encode relevant information for the reader. But we can only store so much information in a file name. So we also include three additional files:
+When naming files we embed <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Metadata">metadata</a> into our file naming conventions to encode relevant information for the reader. But we can only store so much information in a file name. So we also include three additional files:
 
 * A <code>_README</code> file which resides in our root folder and elaborates on the contents of our folder structure.
 * A <code>_README</code> file that resides in our data directory and discusses some of the particulars of the how, where, and who did the actual data collection.
 * A <code>_DATA-DICTIONARY</code> file that also resides in our data directory and elaborates on how our data is stored and organized.
 
 
-These files - containing a brief description of the major folder contents, naming conventions, and data structure - are critical for transparency and reproducibility because they allow others to easily understand the contents of your directory and data without needing to ask you. This is especially helpful when working with a group or sharing directories with others.
+These files - containing a brief description of the major folder contents, naming conventions, and data structure - are critical for <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Research-transparency">transparency</a> and <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Reproducibility">reproducibility</a> because they allow others to easily understand the contents of your directory and data without needing to ask you. This is especially helpful when working with a group or sharing directories with others.
 
 ### General rules {-}
 
@@ -65,17 +65,17 @@ A readme file and data dictionary should:
 
 Readme files and data dictionaries should be written in plain text, for this will ensure that the files describing your project can be opened on any computer. You will often see readme files called <code>_README.txt</code> or <code>_DATA-DICTIONARY.txt</code>.
 
-Our example readme and data dictionaries use a plain text format called markdown.
+Our example readme and data dictionaries use a plain text format called <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Markdown">markdown</a>.
 
 #### markdown {-}
 
-We recommend that you create your readme files as markdown, a way of formatting plain text files, allowing us to provide additional meaning to our content. For example, in plain text, if we want to emphasize content, we don't really have a way of doing this. In markdown, we can use italics and bolding if needed. We can also create lists and tables.
+We recommend that you create your readme files as markdown, a way of formatting <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Plain-text">plain text</a> files, allowing us to provide additional meaning to our content. For example, in plain text, if we want to emphasize content, we don't really have a way of doing this. In markdown, we can use italics and bolding if needed. We can also create lists and tables.
 
 Learn the basic syntax of markdown [here](https://ubco-biology.github.io/Procedures-and-Guidelines/markdown-1.html).
 
 ## Root folder readme
 
-To create a root folder readme file, use any markdown or text editor (e.g. Typora, notepad etc.), open a new file and save it to the root folder for your project, ensuring the file type is <code>.md</code>.
+To create a root folder readme file, use any markdown or text editor (e.g. VS Code, Typora, notepad etc.), open a new file and save it to the root folder for your project, ensuring the file type is <code>.md</code>.
 
 Name your readme file <code>_README.md</code>.  
 
@@ -91,7 +91,7 @@ To see an example root directory readme file click [here](files/DS_rootREADME.md
 
 ## Data directory readme
 
-Next, we want to create another readme file, but this file will be placed within the subfolder that contains our project\'s data. To do this, open any markdown or text editor (e.g. Typora, notepad etc.), open a new file and save it to the data subfolder for your project, ensuring the file type is .md. Name your readme file <code>_README.md</code>.  
+Next, we want to create another readme file, but this file will be placed within the subfolder that contains our project\'s data. To do this, open any markdown or text editor (e.g. VS Code, Typora, notepad etc.), open a new file and save it to the data subfolder for your project, ensuring the file type is .md. Name your readme file <code>_README.md</code>.  
 
 The purpose of this readme file is to provide a description of data collection methods. We will include:
 
@@ -105,7 +105,7 @@ To see an example data directory readme file click [here](files/DS_dataREADME.md
 
 ## Data dictionary
 
-Lastly, we need to create a data dictionary which elaborates on how our data is stored and organized. To do this, open any markdown or text editor (e.g. Typora, notepad etc.), open a new file and save it to the data subfolder for your project. This time we will save the file as <code>_DATA-DICTIONARY.md</code>.
+Lastly, we need to create a data dictionary which elaborates on how our data is stored and organized. To do this, open any markdown or text editor (e.g. VS Code, Typora, notepad etc.), open a new file and save it to the data subfolder for your project. This time we will save the file as <code>_DATA-DICTIONARY.md</code>.
 
 A data dictionary helps others understand the meaning of each element in your datasets within the broader context of the project. Typically you will have an individual readme file for each dataset. This file should include:
 

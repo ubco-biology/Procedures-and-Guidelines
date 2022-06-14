@@ -6,7 +6,7 @@
 
 <a id="Alternative-hypothesis">**Alternative hypothesis:**</a> In contrast to the null hypothesis, the alternative hypothesis suggests there is a relationship between phenomena, variables, or populations. In other words, any differences are not the result of random chance. 
 
-<a id="Analysis-of-variance-(ANOVA)">**Analysis of variance (ANOVA):**</a> A statistical test used to compare the mean of a numeric variable in relation to a single categorical variable that has more than two groups. 
+<a id="Analysis-of-variance">**Analysis of variance (ANOVA):**</a> A statistical test used to compare the mean of a numeric variable in relation to a single categorical variable that has more than two groups. 
 
 <a id="Assumptions">**Assumptions:**</a> There are often assumptions associated with statistical tests. This means that for the test to provide reliable results, the data must meet specific criteria or conditions. These assumptions need to be checked prior to conducting any analyses. 
 

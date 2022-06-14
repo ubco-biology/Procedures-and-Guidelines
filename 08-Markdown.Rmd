@@ -4,7 +4,7 @@
 
 *Last updated `r Sys.Date()`*
 
-Markdown is a markup language used to format plain text files to help us provide additional meaning to our content. Markup languages are ideal authoring tools because they work on the principle of separating content from formatting. Markup languages are ideal authoring tools for the sciences because they rely on plain text, so any computer anywhere at any time will be able to open them and consequently, we will be able to read them.
+<a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Markdown">Markdown</a> is a markup language used to format <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Plain-text">plain text</a> files to help us provide additional meaning to our content. Markup languages are ideal authoring tools because they work on the principle of separating content from formatting. Markup languages are ideal authoring tools for the sciences because they rely on plain text, so any computer anywhere at any time will be able to open them and consequently, we will be able to read them.
 
 Benefits of Markdown:
 
@@ -13,13 +13,13 @@ Benefits of Markdown:
 * Can be read on any device with any operating system 
 * Many different web-applications and websites (e.g. Reddit, GitHub) use markdown 
 
-In fact, when we think about the best practices in science, Markdown is an essential authoring tool because it allows for reproducibility and interpretability (i.e. is independent of specific operating systems or programs).
+In fact, when we think about the best practices in science, Markdown is an essential authoring tool because it allows for <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Reproducibility">reproducibility</a> and interpretability (i.e. is independent of specific operating systems or programs).
 
 To learn more about Markdown see Matt Cone's Markdown Guide [here](https://www.markdownguide.org/getting-started#:~:text=Why%20Use%20Markdown%3F%201%20Markdown%20can%20be%20used,future%20proof.%20...%205%20Markdown%20is%20everywhere.%20).
 
 ## How Markdown Works
 
-Markdown is a two step process. You write, with markup, in a plain text file. Another application then formats your document based on your markup.
+Markdown is a two step process. You write, with markup, in a <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Plain-text">plain text</a> file. Another application then formats your document based on your markup.
 
 ![](images/MD_translation.png)
 
@@ -29,7 +29,7 @@ All of the content that you\'re reading right now was authored in Markdown. Note
 
 ## What You Need to Get Started
 
-You\'ll need a text editor or a dedicated Markdown editor! What's the difference?
+You\'ll need a text editor or a dedicated <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Markdown">Markdown</a> editor! What's the difference?
 
 A text editor will not format your markdown, it\'ll just display the plain text. When you open the <code>_README.md</code> files noted throughout this book (either in **TextEdit** on a Mac or **Notepad** on Windows), you see the raw, plain text output.
 
@@ -39,7 +39,7 @@ TextEdit on your mac is not actually a plain text editor; while TextEdit can rea
 
 A dedicated Markdown editor will format your Markdown as you type, so you get an idea as to how it will render if you were to save it as a pdf, html etc. There are a lot of Markdown editors available, many of them free and open source, and many for very specific use cases. When you have some free time, you may choose to check out the following comprehensive list [https://www.markdownguide.org/tools/](https://www.markdownguide.org/tools/).
 
-In between a plain text editor and a dedicated Markdown editor are those text editors with add-ons to help you navigate your markup. These options provide a lot of flexibility and finding a text editor of this ilk that you like will be of benefit going forward in your degree. An excellent free and open source, cross platform option is [Atom](https://atom.io/), which has built in support for Markdown rendering.
+In between a plain text editor and a dedicated Markdown editor are those text editors with add-ons to help you navigate your markup. These options provide a lot of flexibility and finding a text editor of this ilk that you like will be of benefit going forward in your degree. An excellent free and open source, cross platform option is [VS Code](https://code.visualstudio.com/), which has built in support for Markdown rendering.
 
 ### Atom {-}
 
@@ -305,6 +305,6 @@ Output
 
 ## Markdown Flavours
 
-Everything here is basic, or core, Markdown and will be supported by any markdown editor. Since Markdown is simply encoding document structure through markup, several different implementations have expanded on this core set and allow you to do other things, including footnotes, references etc.
+Everything here is basic, or core, <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Markdown">Markdown</a> and will be supported by any markdown editor. Since Markdown is simply encoding document structure through markup, several different implementations have expanded on this core set and allow you to do other things, including footnotes, references etc.
 
-We\'ll keep it simple for the moment; this is all you really need for your <code>_README.md</code> files! Later, you\'ll be introduced to RMarkdown, which, when used in conjunction with R, will allow you to render statistical analyses within your Markdown document and build reference lists, among other things.
+We\'ll keep it simple for the moment; this is all you really need for your <code>_README.md</code> files! Later, you\'ll be introduced to RMarkdown, which, when used in conjunction with R, will allow you to render <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Statistical-analysis">statistical analyses</a> within your Markdown document and build reference lists, among other things.

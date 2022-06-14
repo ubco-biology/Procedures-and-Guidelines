@@ -60,34 +60,34 @@ The following is an example of a properly formatted table.
 
 ## Descriptive & Summary Statistics
 
-Here are some general guidelines to follow when displaying descriptive or summary statistics:
+Here are some general guidelines to follow when displaying <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Descriptive-statistics">descriptive</a> or summary statistics:
 
-* Round numbers to one more digit for measures of centre (e.g. mean), and 2 more digits for measures of spread (e.g. sd) than was used in measuring the data
+* Round numbers to one more digit for measures of centre (e.g. <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Mean">mean</a>), and 2 more digits for measures of spread (e.g. <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Standard-deviation">sd</a>) than was used in measuring the data
 	* For detailed guidelines about significant digits, consult the following webpage: https://www.physics.uoguelph.ca/significant-digits-tutorial
 * Units are preceded by a space within text passages: 
 	* e.g. \"Average height was 34.2 cm (± 3.43 SEM).\"
 
 **Describing Numerical Variables**
 
-* Report mean with standard deviation, and additionally median with inter-quartile range for variables that exhibit a non-normal frequency distribution (e.g. is skewed) or that includes outliers
-* Parameter estimates (i.e. mean) should be accompanied by measures of uncertainty, i.e. the *standard error of the mean* `SEM` or confidence *interval* (notation: lower limit – upper limit); confidence *limits*: (lower limit, upper limit)
-* Confidence intervals are strongly encouraged because they inform about *effect size*
+* Report mean with <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Standard-deviation">standard deviation</a>, and additionally <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Median">median</a> with <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Interquartile-range">inter-quartile range</a> for variables that exhibit a non-normal frequency distribution (e.g. is skewed) or that includes outliers
+* Parameter estimates (i.e. mean) should be accompanied by measures of uncertainty, i.e. the *<a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Standard-error">standard error</a> of the mean* `SEM` or <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Confidence-interval">confidence *interval*</a> (notation: lower limit – upper limit); confidence *limits*: (lower limit, upper limit)
+* Confidence intervals are strongly encouraged because they inform about <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Effect-size">*effect size*</a>
 * Measures of uncertainty for an estimate, such as SEM, can be preceded by a `±` sign; do not make the common mistake of reporting a `±` sign with a standard deviation, as it is not a measure of uncertainty in an estimate
 
 **Describing Categorical Variables**
 
-* Report a frequency table (raw data) or a summary table with proportions for categories (the main descriptive statistic of interest), along with the confidence interval for the proportion if appropriate.
+* Report a frequency table (<a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Raw-data">raw data</a>) or a summary table with proportions for categories (the main descriptive statistic of interest), along with the confidence interval for the <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Proportion">proportion</a> if appropriate.
 
 ## Results of Statistical Tests
 
 Here are some guidelines for reporting the results of statistical tests: 
 
-* Your *Methods* section should clearly state the significance level ($\alpha$), and this should be decided prior to the study
-* Test statistics (e.g. Student’s `t` or an `F` from ANOVA) should be rounded to 2 decimal places, and associated `P-values` should report 3 decimal places, or if smaller than 0.001, then <0.001. `P-values` do not indicate effect size, so reporting $P = 10^{-6}$ is not more impressive than *P* <0.001 
-* Concluding statements should, in the absence of a table, include the test, test statistic value, degrees of freedom `df` or sample sizes, `P-value`, and confidence interval (if appropriate) in parentheses.
+* Your *Methods* section should clearly state the <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Significance-level-($\alpha$)">significance level</a> ($\alpha$), and this should be decided prior to the study
+* Test statistics (e.g. Student’s `t` or an `F` from <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Analysis-of-variance">ANOVA</a>) should be rounded to 2 decimal places, and associated <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#P-value-(*p*)">`P-values`</a> should report 3 decimal places, or if smaller than 0.001, then <0.001. `P-values` do not indicate <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Effect-size">`effect size</a>, so reporting $P = 10^{-6}$ is not more impressive than *P* <0.001 
+* Concluding statements should, in the absence of a table, include the test, test statistic value, degrees of freedom `df` or sample sizes, `P-value`, and <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Confidence-interval">`confidence interval</a> (if appropriate) in parentheses.
 
 * For example: \"On average, hair loss was significantly greater among fathers compared to childless men (Welch’s 2-sample *t*-test; *t* = 4.23; *n* F = 18, *n* C = 20; *P* = 0.018; 95% CI for difference: 9.34 – 18.22%).\"  
-* Regression and ANOVA results should be shown in a standard ANOVA table format.
+* `Regression and <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Analysis-of-variance">`ANOVA</a> results should be shown in a standard ANOVA table format.
 
 **Example of ANOVA table format**
 
@@ -114,7 +114,7 @@ When displaying data using a figure, follow these guidelines:
 * Fitted lines (e.g. least-squares regression) included in figures should be fully explained in the heading, 
 	* e.g. \"Line represents a least-squares linear regression line, *y* = 0.3 + 4.5*x* (*F* = 5.65, df = 36; P = 0.021)\". 
 * For more complex statistics (e.g. lines associated with mixed effects models) refer the reader to the text for details
-* Bar plots should **only** be used to visualize categorical data (e.g. proportion of students with brown or blue eyes) or counts (number of flies on scat)
+* Bar plots should **only** be used to visualize categorical data (e.g. <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Proportion">proportion</a> of students with brown or blue eyes) or counts (number of flies on scat)
 * When comparing numerical data among categories or groups (Figs. 1,2) use stripcharts (Fig. 1) when sample sizes are small (i.e. <20) and boxplots otherwise (Fig. 2). 
 * Note that the stripchart has the advantage of showing all the data (i.e. each observation is represented by a point), whereas the boxplot summarizes the data visually.  When sample sizes per group are very large, it would get very messy if you tried to show all the data.  However, there are graphs like [\"violin plots\"](https://www.r-graph-gallery.com/violin.html) that offer a nice compromise. 
 

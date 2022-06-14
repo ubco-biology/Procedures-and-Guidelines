@@ -46,7 +46,7 @@ File names need to achieve two primary goals, they need to make sense to a human
 
 ### Human interpretable {-}
 
-To be human interpretable, a file name needs to be meaningful. To do this, it needs to convey some basic information to a person reading it. We do this by integrating metadata into the file name. The metadata elements we include are:
+To be human interpretable, a file name needs to be meaningful. To do this, it needs to convey some basic information to a person reading it. We do this by integrating <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Metadata">metadata</a> into the file name. The metadata elements we include are:
 
 * Who created the file
 * The date on which it was created
@@ -61,7 +61,7 @@ All said, that's a fair bit of information to hold in a file name!
 
 ### Machine readable {-}
 
-What does it mean for a file name to be machine readable or machine interpretable? It means building our file names in such a way that we can easily organize them so that they can be sorted by an application and in a way that makes sense to us. It also means building our names according to set patterns, which can then be parsed along known delimiters. Lastly, it means building our names in such a way that if we move them from one computer to another, from one application to another, or from one operating system to another, the files remain interpretable in exactly the same way.
+What does it mean for a file name to be machine readable or machine interpretable? It means building our file names in such a way that we can easily organize them so that they can be sorted by an application and in a way that makes sense to us. It also means building our names according to set patterns, which can then be parsed along known <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Delimiters">delimiters</a>. Lastly, it means building our names in such a way that if we move them from one computer to another, from one application to another, or from one operating system to another, the files remain interpretable in exactly the same way.
 
 How do we do this? We avoid special characters and follow conventions.
 
@@ -104,7 +104,7 @@ So what does this look like?
 
 Say you're in BIOL 116 and you're working on your research project. Your research project involves:
 
-* Preparing the beginning of a manuscript that states your research question, hypothesis, and proposed methods.
+* Preparing the beginning of a manuscript that states your research question, <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Hypothesis">hypothesis</a>, and proposed methods.
 * Conducting your experiment and recording your data. This process might span more than one day.
 * Updating your manuscript, describing any changes that were made to your methods.
 * Organizing the results of your experiment and interpreting and visualizing your data.
@@ -168,7 +168,7 @@ At this stage, I have my data collated into a document where I can work on it wi
 
 #### Day 7 {-}
 
-Today, I built two visualizations using the data in my analysis document, one linear regression and one bar plot of frequency counts; I save these as images to insert into my manuscript. I then updated my manuscript to include my results and these two figures and submitted V2 of my manuscript. Now my files look like this: 
+Today, I built two visualizations using the data in my analysis document, one <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Linear-regression">linear regression</a> and one bar plot of frequency counts; I save these as images to insert into my manuscript. I then updated my manuscript to include my results and these two figures and submitted V2 of my manuscript. Now my files look like this: 
 
 ```
 Pither_20210921_BIOL116RProject_ph-data.csv

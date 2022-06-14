@@ -56,8 +56,8 @@ When you open your `Research_Project/` folder, we call this your working directo
 
 This has implications for how the applications that you work with access the files on your computer. If you opened your file `biol-125_research-project_notes.docx`, `Research-Project` would not only be your working directory, it would be Microsoft Word's working directory for that file. With `biol-125_research-project_notes.docx` open, if you went to `File > Open...` in Word, it would prompt you to open a file in the directory `Research-Project`, because this is where the application is looking for working files.
 
-Generally, in day to day life, we don't need to worry about things like working directories. When we conduct research though, and we use tools like `R`, working directories--and knowing where directories and files are in relation to the directory that you are currently in--have significant implications for how things work and for computational reproducibility.
-
+Generally, in day to day life, we don't need to worry about things like working directories. When we conduct research though, and we use tools like <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#R">`R`</a>, working directories--and knowing where directories and files are in relation to the directory that you are currently in--have significant implications for how things work and for computational <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Reproducibility">reproducibility.
+</a>
 In the next section, we'll look at common directory structures used to organize research. For the moment, we'll assume that you have a research project and that associated with that research project you have data and that you're analyzing that data, and that you're using two different folders to hold the files associated with these activities. So a map something like the following:
 
 ```

@@ -4,7 +4,7 @@
 
 *Last updated `r Sys.Date()`*
 
-Well-organized data is critical to transparency, reproducibility, and generally maintaining one's sanity when conducting research. When we talk about file and data management, we may be referring to one of many aspects of making our data understandable to others, to a computer, or to our future selves that have succumb to memory lapses. Making data comprehensible is really about well-structured and communicated metadata that is, whenever possible, implemented according to conventions or standards.
+Well-organized data is critical to <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Research-transparency">transparency</a>, <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Reproducibility">reproducibility</a>, and generally maintaining one's sanity when conducting research. When we talk about <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#File-and-data-management">file and data management</a>, we may be referring to one of many aspects of making our data understandable to others, to a computer, or to our future selves that have succumb to memory lapses. Making data comprehensible is really about well-structured and communicated <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Metadata">metadata</a> that is, whenever possible, implemented according to conventions or standards.
 
 So, when we talk about file and data management, broadly speaking, we're talking about
 

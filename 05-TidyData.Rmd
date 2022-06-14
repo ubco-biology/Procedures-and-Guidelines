@@ -2,7 +2,7 @@
 
 *Last updated `r Sys.Date()`*
 
-We've talked about file naming, directory structures, and documentation to ensure accessible, interpretable, and transparent data. Now it's time to talk about organizing individual variables within a given file. When properly organized, data values can be effectively analyzed, summarized, and visualized. When not, they can be onerous to work with and risk misinterpretation.
+We've talked about file naming, directory structures, and documentation to ensure accessible, interpretable, and <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Research-transparency">transparent</a> data. Now it's time to talk about organizing individual variables within a given file. When properly organized, data values can be effectively analyzed, summarized, and visualized. When not, they can be onerous to work with and risk misinterpretation.
 
 In general, your data files should adhere to the principles of \"tidy data\". Tidy data is governed by the following 3 rules^[See: Wickham, H. & Grolemund, G. (2017). [Tidy Data](https://r4ds.had.co.nz/tidy-data.html). *In R for Data Science*.]:
 
@@ -14,7 +14,7 @@ It's easy to veer from these rules, as it's often easier to collect data using d
 
 ## Wide Data
 
-Non-tidy data - sometimes called \"wide\" data as it tends to use more columns, but fewer rows - tends to lump observations together in cells. It is often easier to collect data in this way.
+Non-tidy data - sometimes called <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Wide-format-data">\"wide\" data</a> as it tends to use more columns, but fewer rows - tends to lump observations together in cells. It is often easier to collect data in this way.
 
 So, say we collected data about the number of trout caught at local lakes across several days. We might end up with the following data tables if we used a separate table, sheet of paper etc. to record our findings.
 

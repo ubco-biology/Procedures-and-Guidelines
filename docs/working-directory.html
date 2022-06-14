@@ -23,7 +23,7 @@
 <meta name="author" content="Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar" />
 
 
-<meta name="date" content="2022-06-13" />
+<meta name="date" content="2022-06-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -305,8 +305,9 @@
 │   │   |   |   |     ├── biol-125_research-project_notes.docx</code></pre>
 <p>When you open your <code>Research_Project/</code> folder, we call this your working directory–the directory that holds the files that you are currently working with, or that you currently have access to. If you clicked on your <code>Desktop/</code>, your working directory would switch to your <code>Desktop/</code>, since we know that your <code>Desktop/</code> is just another folder.</p>
 <p>This has implications for how the applications that you work with access the files on your computer. If you opened your file <code>biol-125_research-project_notes.docx</code>, <code>Research-Project</code> would not only be your working directory, it would be Microsoft Word’s working directory for that file. With <code>biol-125_research-project_notes.docx</code> open, if you went to <code>File &gt; Open...</code> in Word, it would prompt you to open a file in the directory <code>Research-Project</code>, because this is where the application is looking for working files.</p>
-<p>Generally, in day to day life, we don’t need to worry about things like working directories. When we conduct research though, and we use tools like <code>R</code>, working directories–and knowing where directories and files are in relation to the directory that you are currently in–have significant implications for how things work and for computational reproducibility.</p>
-<p>In the next section, we’ll look at common directory structures used to organize research. For the moment, we’ll assume that you have a research project and that associated with that research project you have data and that you’re analyzing that data, and that you’re using two different folders to hold the files associated with these activities. So a map something like the following:</p>
+<p>Generally, in day to day life, we don’t need to worry about things like working directories. When we conduct research though, and we use tools like <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#R"><code>R</code></a>, working directories–and knowing where directories and files are in relation to the directory that you are currently in–have significant implications for how things work and for computational <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Reproducibility">reproducibility.
+</a>
+In the next section, we’ll look at common directory structures used to organize research. For the moment, we’ll assume that you have a research project and that associated with that research project you have data and that you’re analyzing that data, and that you’re using two different folders to hold the files associated with these activities. So a map something like the following:</p>
 <pre><code>├── Users/
 │   ├── yourUserName/
 │   │   ├── Downloads/
