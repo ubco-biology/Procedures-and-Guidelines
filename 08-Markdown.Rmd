@@ -41,19 +41,27 @@ A dedicated Markdown editor will format your Markdown as you type, so you get an
 
 In between a plain text editor and a dedicated Markdown editor are those text editors with add-ons to help you navigate your markup. These options provide a lot of flexibility and finding a text editor of this ilk that you like will be of benefit going forward in your degree. An excellent free and open source, cross platform option is [VS Code](https://code.visualstudio.com/), which has built in support for Markdown rendering.
 
-### Atom {-}
+### VS Code {-}
 
-Download Atom at [https://atom.io/](https://atom.io/)
+VS Code is a source code editor. This handy program has many features, one of which is functioning as a text editor. We can use it to create Markdown files by following the instructions below. 
 
-Once downloaded, launch it and you\'ll be presented with an `untitled` blank document. Save it somewhere with a file name of your choosing and a file type of `.md` - so something like, `my-first-note.md`. You can then toggle Markdown preview on and off with your packages menu
+Download VS Code at [https://code.visualstudio.com/](https://code.visualstudio.com/). Once downloaded, launch the program and you\'ll be presented with a `Welcome` page. Select `New File` and you will be prompted to select a file type; choose `Text-File`. 
 
-![Toggling Markdown preview in Atom.](images/MD_preview-toggle.png)
+![VS Code Welcome Page.](images/vs-code-1.png)
 
-<div class = "note">
-One other thing that you\'ll want to do is to set up how Atom handles tabs. A tab may be either `hard` or `soft`. A `hard` tab is encoded with a tab character, which can throw off the interoperability that we\'re trying to achieve with using a plain text editor. A `soft` tab is simply encoded as a series of spaces; this plays much better in general as text is moved between programs and operating systems.
+![VS Code Select a File Type.](images/vs-code-2.png)
 
-So, head into `Settings > Editor > Tab Type` and ensure that it is set to `soft`. At the same time, you should probably turn on `Soft Wrap`.
-</div>
+Next you will prompted to `Choose a language`. In this case we want a Markdown file. Simply click on `Choose a language` and type `Markdown` into the search bar.
+
+![VS Code Choose a Language.](images/vs-code-3.png)
+
+![VS Code Select Markdown as a Language.](images/vs-code-4.png)
+
+Now you\'re ready to start writing your plain text file using Markdown syntax. Don\'t forget to name and save the file to your computer. If you want to preview your document, simply click the `Preview` icon in the top right corner of the window.
+
+![VS Code Markdown Preview Icon.](images/vs-code-5.png)
+
+![VS Code Markdown Preview.](images/vs-code-6.png)
 
 ## Prose
 

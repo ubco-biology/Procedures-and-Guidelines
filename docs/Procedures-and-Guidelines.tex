@@ -579,7 +579,7 @@ Relative paths on the other hand tell us the location of a file relative a worki
 \subsection*{Preferred Method: Creating a Project}\label{preferred-method-creating-a-project}}
 \addcontentsline{toc}{subsection}{Preferred Method: Creating a Project}
 
-Let's say you're working on an experiment and you'd like to write a reproducible lab report using Markdown in RStudio. The first step is to create a new R project--which creates a file ending in \texttt{.Rproj}. A \texttt{.Rproj} file is a file that sits in the root directory of your project. When you open your RStudio session via this project file, it automatically tells \texttt{R} to use that root folder as your working directory. In other words, it tells R to look relatie to this root folder for any files or folders you refer to within your R Markdown script.
+Let's say you're working on an experiment and you'd like to write a reproducible lab report using Markdown in RStudio. The first step is to create a new R project--which creates a file ending in \texttt{.Rproj}. A \texttt{.Rproj} file is a file that sits in the root directory of your project. When you open your RStudio session via this project file, it automatically tells \texttt{R} to use that root folder as your working directory. In other words, it tells R to look to this root folder for any files or folders you refer to within your R Markdown script.
 
 The biggest benefit to this approach for setting a working directory is that if you decide--or need--to move your project's root folder to another location on your computer or transfer your project's root folder to a different computer, all of the file paths specified in your \texttt{R} script will still be valid and work, because they will all be relative to your project's root folder.
 
@@ -651,7 +651,7 @@ Finally, \texttt{R} will bring you back to the main screen and under the `Files'
 
 If you close RStudio and want to re-open the project you'll need to tell R that you want to use the root folder with the project file in it as your working directory. To do this, you'll need to locate the project file on your computer and open it, or open RStudio and select `Open Project' under the `File' drop down menu.
 
-You may have heard of other methods that can be used to set a working directory in \texttt{R}. In fact, there's a built in command--\texttt{setwd()}--to set a working directory other than the one currently being used. If you chose this method over using an R Project file, you would need to set your working directory every time you wanted to work on your project, or, alternatively, have the first line of code in your script set your working directory using an absolute path. The downside of using this method is that it relies on extra steps or \href{https://ubco-biology.github.io/Procedures-and-Guidelines/relative-and-absolute-paths}{absolute paths} to access your working directory. Consequently, if you move the project's root folder--containing all the files related to your experiment--you'll have to edit your \texttt{R} script and change the absolute path. This impacts computational reproducibility. If you send your work to a lab partner or colleague they will have to edit the script, updating the absolute path to match where they've placed the project folder on their computer. An R project negates this problem by leveragin \href{https://ubco-biology.github.io/Procedures-and-Guidelines/relative-and-absolute-paths}{relative paths}.
+You may have heard of other methods that can be used to set a working directory in \texttt{R}. In fact, there's a built in command--\texttt{setwd()}--to set a working directory other than the one currently being used. If you chose this method over using an R Project file, you would need to set your working directory every time you wanted to work on your project, or, alternatively, have the first line of code in your script set your working directory using an absolute path. The downside of using this method is that it relies on extra steps or \href{https://ubco-biology.github.io/Procedures-and-Guidelines/relative-and-absolute-paths}{absolute paths} to access your working directory. Consequently, if you move the project's root folder--containing all the files related to your experiment--you'll have to edit your \texttt{R} script and change the absolute path. This impacts computational reproducibility. If you send your work to a lab partner or colleague they will have to edit the script, updating the absolute path to match where they've placed the project folder on their computer. An R project negates this problem by leveraging \href{https://ubco-biology.github.io/Procedures-and-Guidelines/relative-and-absolute-paths}{relative paths}.
 
 \hypertarget{directory-structures}{%
 \chapter{Directory Structures}\label{directory-structures}}
@@ -1683,23 +1683,53 @@ A dedicated Markdown editor will format your Markdown as you type, so you get an
 
 In between a plain text editor and a dedicated Markdown editor are those text editors with add-ons to help you navigate your markup. These options provide a lot of flexibility and finding a text editor of this ilk that you like will be of benefit going forward in your degree. An excellent free and open source, cross platform option is \href{https://code.visualstudio.com/}{VS Code}, which has built in support for Markdown rendering.
 
-\hypertarget{atom}{%
-\subsection*{Atom}\label{atom}}
-\addcontentsline{toc}{subsection}{Atom}
+\hypertarget{vs-code}{%
+\subsection*{VS Code}\label{vs-code}}
+\addcontentsline{toc}{subsection}{VS Code}
 
-Download Atom at \url{https://atom.io/}
+VS Code is a source code editor. This handy program has many features, one of which is functioning as a text editor. We can use it to create Markdown files by following the instructions below.
 
-Once downloaded, launch it and you'll be presented with an \texttt{untitled} blank document. Save it somewhere with a file name of your choosing and a file type of \texttt{.md} - so something like, \texttt{my-first-note.md}. You can then toggle Markdown preview on and off with your packages menu
+Download VS Code at \url{https://code.visualstudio.com/}. Once downloaded, launch the program and you'll be presented with a \texttt{Welcome} page. Select \texttt{New\ File} and you will be prompted to select a file type; choose \texttt{Text-File}.
 
 \begin{figure}
 \centering
-\includegraphics{images/MD_preview-toggle.png}
-\caption{Toggling Markdown preview in Atom.}
+\includegraphics{images/vs-code-1.png}
+\caption{VS Code Welcome Page.}
 \end{figure}
 
-One other thing that you'll want to do is to set up how Atom handles tabs. A tab may be either \texttt{hard} or \texttt{soft}. A \texttt{hard} tab is encoded with a tab character, which can throw off the interoperability that we're trying to achieve with using a plain text editor. A \texttt{soft} tab is simply encoded as a series of spaces; this plays much better in general as text is moved between programs and operating systems.
+\begin{figure}
+\centering
+\includegraphics{images/vs-code-2.png}
+\caption{VS Code Select a File Type.}
+\end{figure}
 
-So, head into \texttt{Settings\ \textgreater{}\ Editor\ \textgreater{}\ Tab\ Type} and ensure that it is set to \texttt{soft}. At the same time, you should probably turn on \texttt{Soft\ Wrap}.
+Next you will prompted to \texttt{Choose\ a\ language}. In this case we want a Markdown file. Simply click on \texttt{Choose\ a\ language} and type \texttt{Markdown} into the search bar.
+
+\begin{figure}
+\centering
+\includegraphics{images/vs-code-3.png}
+\caption{VS Code Choose a Language.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{images/vs-code-4.png}
+\caption{VS Code Select Markdown as a Language.}
+\end{figure}
+
+Now you're ready to start writing your plain text file using Markdown syntax. Don't forget to name and save the file to your computer. If you want to preview your document, simply click the \texttt{Preview} icon in the top right corner of the window.
+
+\begin{figure}
+\centering
+\includegraphics{images/vs-code-5.png}
+\caption{VS Code Markdown Preview Icon.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{images/vs-code-6.png}
+\caption{VS Code Markdown Preview.}
+\end{figure}
 
 \hypertarget{prose}{%
 \section{Prose}\label{prose}}
