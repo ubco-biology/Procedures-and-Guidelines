@@ -26,15 +26,15 @@ So, say we collected data about the number of trout caught at local lakes across
 
 | Site         | Trout_Caught_Day_2 |
 | :------------ | :------------------ |
-| Mabel-lake   | 1                  |
-| Postill-lake | 3                  |
-| Ellison-lake | 0                  |
+| Mabel-lake   | 3                  |
+| Postill-lake | 4                  |
+| Ellison-lake | 5                  |
 
 | Site         | Trout_Caught_Day_3 |
 | :------------ | :------------------ |
-| Mabel-lake   | 1                  |
-| Postill-lake | 3                  |
-| Ellison-lake | 0                  |
+| Mabel-lake   | 3                  |
+| Postill-lake | 5                  |
+| Ellison-lake | 1                  |
 
 It is also very likely that we set up an Excel sheet where we recorded the site as the first column and our days and fish caught combined in subsequent columns, one column for each day. Even if we hadn't collected our data this way, we might be tempted to group our above data together for analysis or assignment submission in this way.
 
