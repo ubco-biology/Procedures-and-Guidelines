@@ -34,7 +34,7 @@ You\'ll need a text editor or a dedicated <a href="https://ubco-biology.github.i
 A text editor will not format your markdown, it\'ll just display the plain text. When you open the <code>_README.md</code> files noted throughout this book (either in **TextEdit** on a Mac or **Notepad** on Windows), you see the raw, plain text output.
 
 <div class = "note">
-TextEdit on your mac is not actually a plain text editor; while TextEdit can read and open a Markdown file, it cannot create a Markdown file. MacOS does not ship with a plain text editor like Notepad on Windows. So if you\'re on a Mac, you\'ll need to download a text editor.
+TextEdit on your mac is not actually a plain text editor; while TextEdit can read and open a Markdown file, it cannot create a Markdown file. MacOS does not come with a plain text editor like Notepad on Windows. So if you\'re on a Mac, you\'ll need to download a text editor.
 </div>
 
 A dedicated Markdown editor will format your Markdown as you type, so you get an idea as to how it will render if you were to save it as a pdf, html etc. There are a lot of Markdown editors available, many of them free and open source, and many for very specific use cases. When you have some free time, you may choose to check out the following comprehensive list [https://www.markdownguide.org/tools/](https://www.markdownguide.org/tools/).
@@ -173,15 +173,15 @@ Input
 
 ## Code
 
-You can show text as code by encasing it with three backticks, \`\`\`. 
+You can show text as code by encasing it with three backticks, `` ``` ``. 
 
 Input
 
-\`\`\`
+`` ``` ``
 
 This text looks like code
 
-\`\`\`
+`` ``` ``
 
 Output
 

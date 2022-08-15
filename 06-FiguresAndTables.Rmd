@@ -83,11 +83,11 @@ Here are some general guidelines to follow when displaying <a href="https://ubco
 Here are some guidelines for reporting the results of statistical tests: 
 
 * Your *Methods* section should clearly state the <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Significance-level-($\alpha$)">significance level</a> ($\alpha$), and this should be decided prior to the study
-* Test statistics (e.g. Student’s `t` or an `F` from <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Analysis-of-variance">ANOVA</a>) should be rounded to 2 decimal places, and associated <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#P-value-(*p*)">`P-values`</a> should report 3 decimal places, or if smaller than 0.001, then <0.001. `P-values` do not indicate <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Effect-size">`effect size</a>, so reporting $P = 10^{-6}$ is not more impressive than *P* <0.001 
-* Concluding statements should, in the absence of a table, include the test, test statistic value, degrees of freedom `df` or sample sizes, `P-value`, and <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Confidence-interval">`confidence interval</a> (if appropriate) in parentheses.
+* Test statistics (e.g. Student’s `t` or an `F` from <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Analysis-of-variance">ANOVA</a>) should be rounded to 2 decimal places, and associated <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#P-value-(*p*)">`P-values`</a> should report 3 decimal places, or if smaller than 0.001, then <0.001. `P-values` do not indicate <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Effect-size">`effect size`</a>, so reporting $P = 10^{-6}$ is not more impressive than *P* <0.001 
+* Concluding statements should, in the absence of a table, include the test, test statistic value, degrees of freedom `df` or sample sizes, `P-value`, and <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Confidence-interval">`confidence interval`</a> (if appropriate) in parentheses.
 
 * For example: \"On average, hair loss was significantly greater among fathers compared to childless men (Welch’s 2-sample *t*-test; *t* = 4.23; *n* F = 18, *n* C = 20; *P* = 0.018; 95% CI for difference: 9.34 – 18.22%).\"  
-* `Regression and <a href="https://ubco-biology.github.io/Procedures-and-Guidelines/glossary#Analysis-of-variance">`ANOVA</a> results should be shown in a standard ANOVA table format.
+* Regression and ANOVA results should be shown in a standard ANOVA table format.
 
 **Example of ANOVA table format**
 
