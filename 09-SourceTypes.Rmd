@@ -1,0 +1,59 @@
+# Types of Sources
+
+*Last updated `r Sys.Date()`*
+
+As you conduct research and throughout your studies you will encounter many different types of sources. This chapter will briefly introduce and provide examples of three commonly utilized sources: primary, secondary, and review sources. For more in-depth information about types of sources visit the [UBC Library Research Skills for Biologists Guide](https://guides.library.ubc.ca/c.php?g=704417&p=5011059) and the [UBC Literature Review Guide](https://guides.library.ubc.ca/litreviews).
+
+### Primary Sources {-}
+
+Primary sources are scientific papers describing the first hand accounts of events or theories. In other words, an original publication where the author(s) discuss work performed by them.  Examples of primary sources include: 
+
+* conference proceedings 
+* journal articles
+
+The link below provides you with an example of a primary paper found through the UBC Okanagan Library. You will need your cwl to access the paper.
+
+Hay, T. N., Phillips, L. A., Nicholson, B. A., & Jones, M. D. (2015). Ectomycorrhizal community structure and function in interior spruce forests of british columbia under long term fertilization. Forest Ecology and Management, 350, 87-95. [https://doi.org/10.1016/j.foreco.2015.04.023](https://doi.org/10.1016/j.foreco.2015.04.023). 
+
+In contrast, the link here provides you with an example of a non-primary sourced paper [https://en.wikipedia.org/wiki/Spruce%E2%80%93fir_forests](https://en.wikipedia.org/wiki/Spruce%E2%80%93fir_forests).
+
+### Secondary Sources {-}
+
+Secondary sources are scientific papers written by a person who did not participate in the events first hand. The author(s) of a secondary source typically generalizes, interprets, or analyzes primary sources. Examples of secondary sources include: 
+
+* review articles
+* edited volumes
+* books
+* abstracts and indexes
+
+### Review Sources {-}
+
+Review sources are a specific type of secondary source where authors summarize the existing literature for a topic. These reviews are extremely helpful for identifying 
+
+* research already conducted 
+* current knowledge and theories 
+* significant gaps in the literature
+* areas for future research 
+
+Four common types of review sources are literature reviews, scoping reviews, systematic reviews, and meta-analyses.  
+
+**Literature Reviews**
+
+Literature reviews, also known as traditional reviews, provide a comprehensive, critical, and objective analysis of a topic. These reviews do not typically follow a structured methodological protocol and the articles included vary and may not necessarily be exhaustive. Additionally, author(s) of a literature review will offer a qualitative synthesis of the included sources along with a conclusion or discussion about the findings. 
+
+**Scoping Reviews**
+
+Scoping reviews follow a specific **pre-defined** methodological study protocol including a detailed search strategy aimed at gathering a broad and exhaustive list of sources to review. The purpose of following a pre-defined study protocol is to reduce bias and enhance reproducibility of the review. Moreover, a scoping review offers a qualitative synthesis of the evidence based on the included sources along with an evidence based discussion of the findings.
+
+For more information on scoping reviews see the [Joanna Briggs Institute Guidelines](https://jbi-global-wiki.refined.site/space/MANUAL/4687342/Chapter+11%3A+Scoping+reviews) or [PRISMA checklist](https://prisma-statement.org/Extensions/ScopingReviews) for conducting a scoping review.
+
+**Systematic Reviews**
+
+Systematic reviews are similar to scoping reviews in that they follow a specific **pre-defined** methodological study protocol. However, the research question addressed in a systematic review is more specific. Additionally, this type of review will include a critical appraisal of all sources of evidence rather than all sources being considered equally valid. The outcomes of systematic reviews are often used to inform clinical guidelines. 
+
+**Meta-Analyses**
+
+Meta-analyses further expand on systematic reviews by including a quantitative statistical analysis of the results. Typically this involves combining the effect sizes of similar studies to determine an overall effect size related to the research question. 
+
+For more information on systematic reviews and meta-analyses see the [Joanna Briggs Institute Guidelines](https://jbi-global-wiki.refined.site/space/MANUAL/4688650/Chapter+1%3A+JBI+Systematic+Reviews) or [PRISMA checklist](https://prisma-statement.org/PRISMAStatement/Checklist.aspx) for conducting a systematic review.
+

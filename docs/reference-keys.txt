@@ -47,6 +47,7 @@ tables-1
 links
 images
 markdown-flavours
+types-of-sources
 apa-citations
 in-text-citations
 reference-list
