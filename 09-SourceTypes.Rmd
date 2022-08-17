@@ -2,11 +2,13 @@
 
 *Last updated `r Sys.Date()`*
 
-As you conduct research and throughout your studies you will encounter many different types of sources. This chapter will briefly introduce and provide examples of three commonly utilized sources: primary, secondary, and review sources. For more in-depth information about types of sources visit the [UBC Library Research Skills for Biologists Guide](https://guides.library.ubc.ca/c.php?g=704417&p=5011059) and the [UBC Literature Review Guide](https://guides.library.ubc.ca/litreviews).
+As you conduct research and throughout your studies you will encounter many different types of sources. This chapter will briefly introduce and provide examples of three commonly utilized sources: primary, secondary, and review sources. 
+
+For more in-depth information about types of sources visit the [UBC Library Research Skills for Biologists Guide](https://guides.library.ubc.ca/c.php?g=704417&p=5011059) and the [UBC Literature Review Guide](https://guides.library.ubc.ca/litreviews).
 
 ### Primary Sources {-}
 
-Primary sources are scientific papers describing the first hand accounts of events or theories. In other words, an original publication where the author(s) discuss work performed by them.  Examples of primary sources include: 
+Primary sources are scientific papers describing the first hand accounts of events or theories. In other words, an original publication where the author(s) discuss work performed by them. Primary sources can describe either exploratory or confirmatory research. For a refresher on these types of research see [The Burden of Proof](https://ubco-biology.github.io/OS-Introduction/the-burden-of-proof.html) section of the Open Science Primer. Examples of primary sources include: 
 
 * conference proceedings 
 * journal articles
@@ -25,6 +27,8 @@ Secondary sources are scientific papers written by a person who did not particip
 * edited volumes
 * books
 * abstracts and indexes
+
+To help you distinguish between a primary and secondary source, ask yourself "Did the researchers collect data to answer a question or are they reporting on someone else\'s data?" If the answer is the former, the source is primary. However, if the answer is reporting on someone else\'s data the source is secondary.
 
 ### Review Sources {-}
 
@@ -55,5 +59,11 @@ Systematic reviews are similar to scoping reviews in that they follow a specific
 
 Meta-analyses further expand on systematic reviews by including a quantitative statistical analysis of the results. Typically this involves combining the effect sizes of similar studies to determine an overall effect size related to the research question. 
 
-For more information on systematic reviews and meta-analyses see the [Joanna Briggs Institute Guidelines](https://jbi-global-wiki.refined.site/space/MANUAL/4688650/Chapter+1%3A+JBI+Systematic+Reviews) or [PRISMA checklist](https://prisma-statement.org/PRISMAStatement/Checklist.aspx) for conducting a systematic review.
+For more information on evidence synthesis, systematic reviews, and meta-analyses see the following links:
+
+* [Joanna Briggs Institute Guidelines](https://jbi-global-wiki.refined.site/space/MANUAL/4688650/Chapter+1%3A+JBI+Systematic+Reviews) 
+* [PRISMA checklist](https://prisma-statement.org/PRISMAStatement/Checklist.aspx) 
+* [Collaboration for Environmental Evidence](https://environmentalevidence.org/information-for-authors/)
+* O'Dea et al. (2021). *Preferred reporting items for systematic reviews and meta‐analyses in ecology and evolutionary biology: A PRISMA extension*. *Biological Reviews of the Cambridge Philosophical Society*, *96*(5), 1695-1722. [https://doi.org/10.1111/brv.12721](https://doi.org/10.1111/brv.12721)
+
 
