@@ -1,3 +1,5 @@
+# (PART\*) Glossary {-}
+
 # Glossary
 
 *Last updated `r Sys.Date()`*

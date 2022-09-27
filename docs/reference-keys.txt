@@ -1,3 +1,4 @@
+fig:unnamed-chunk-9
 file-and-data-management
 file-naming
 quick-reference
@@ -47,10 +48,14 @@ tables-1
 links
 images
 markdown-flavours
-types-of-sources
 apa-citations
 in-text-citations
 reference-list
+types-of-sources
+academic-integrity
+apa-citations-1
+in-text-citations-1
+reference-list-1
 reference-management-zotero
 installation-first-launch
 browser-plugin
@@ -58,8 +63,15 @@ accounts-sync-setup
 adding-citations
 renaming-pdfs
 syncing-to-the-cloud
-academic-integrity
 copyright-1
+ggplot
+the-basic-graph
+labeling-and-captions
+size-shape-colour
+more-than-one-geom
+more-than-one-plot
+faceting-a-plot
+cusomizing-look-and-feel
 glossary
 object-size
 method-1-estimation

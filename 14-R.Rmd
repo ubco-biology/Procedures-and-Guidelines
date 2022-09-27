@@ -1,0 +1,375 @@
+---
+output: bookdown::html_document2
+---
+
+# (PART\*) R {-}
+
+```{r, setup, include=FALSE}
+knitr::opts_chunk$set(
+  warning = FALSE
+)
+```
+
+# ggplot
+
+ggplot is based on a grammar graphics - a way of approaching describing the construction of a graphic from common building blocks. Building a graphic with ggplot then follows some common patterns of construction.
+
+At its most basic, we supply ggplot with a dataset and some aesthetics--that is, the variables we wish to display on the plot and how they should appear. Laslty, we define a plot type.
+
+Step by step this looks like
+
+1. call ggplot()
+2. provide ggplot with a data set
+3. provide ggplot with the variables of interest and their aesthetic properties
+4. define a plot type with geom_*plotType*()
+
+<div class = "note">
+This is a brief introduction. For more in depth examples and solutions, check out [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/index.html) by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen.
+</div>
+
+## The Basic Graph
+
+<div class = "note">
+The following assumes you're using R and RMarkdown.
+</div>
+
+Install the libraries if needed
+
+```{r, eval = FALSE}
+install.packages("ggplot2")
+install.packages("palmerpenguins")
+```
+
+Load them
+
+```{r}
+library(ggplot2) # for graphics
+library(palmerpenguins) # penguins data set
+```
+
+First, make sure we know a bit about our data set
+
+```{r}
+head(penguins)
+```
+
+Next, we call ggplot, define our data set, and then the variables to plot on the x and y axes:
+
+```{r}
+ggplot(data = penguins, aes(x = sex, y = body_mass_g))
+```
+
+This sets us up with a blank grid with x and y axis ticks corresponding to your variable values and x and y axis labels corresponding to your variables.
+
+Now we call a plot type to represent our data, in this case, a box plot
+
+```{r, warning = TRUE}
+ggplot(data = penguins, aes(x = sex, y = body_mass_g)) +
+  geom_boxplot()
+```
+
+We have some `NA` values in our data set. We won't worry about cleaning those up here. But we will suppress the error message with a code chunk option.
+
+````md
+```{r, warning = FALSE}`r ''`
+ggplot(data = penguins, aes(x = sex, y = body_mass_g)) +
+  geom_boxplot()
+```
+````
+
+```{r, warning = FALSE, echo = FALSE}
+ggplot(data = penguins, aes(x = sex, y = body_mass_g)) +
+  geom_boxplot()
+```
+
+<div class = "note">
+Chunk options are independent of ggplot itself and impact the knitting process of your RMarkdown document. For a more detailed overview of the code chunks options available to you, check out Xie Yihuis [page on Knitr chunk options](https://yihui.org/knitr/options/).
+</div>
+
+## Labeling and captions
+
+Labels default to our variable names, which may not be what we want on our graph. We can override this with `labs()`.
+
+```{r}
+ggplot(data = penguins, aes(x = sex, y = body_mass_g)) +
+  geom_boxplot() +
+  labs(
+    x = "Sex",
+    y = "Body Mass (grams)"
+  )
+```
+
+Captions are also important. There are two ways that we can add this information. The first uses `labs()`:
+```{r}
+ggplot(data = penguins, aes(x = sex, y = body_mass_g)) +
+  geom_boxplot() +
+  labs(
+    x = "Sex",
+    y = "Body Mass (grams)",
+    caption = "Palmer Penguins. Body mass grouped by sex. n = 344."
+  )
+```
+
+The second is better if we're using RMarkdown. Note also that we can include markdown syntax, italicizing the *n*.
+
+````md
+```{r, fig.cap = "Palmer Penguins. Body mass grouped by sex. *n* = 344."}`r ''`  
+ggplot(data = penguins, aes(x = sex, y = body_mass_g)) +  
+  geom_boxplot(na.rm = TRUE) +  
+  labs(
+    x = "Sex",
+    y = "Body Mass (grams)"
+  )
+```
+````
+
+```{r, fig.cap = "Palmer Penguins. Body mass grouped by sex. *n* = 344.", echo = FALSE}
+ggplot(data = penguins, aes(x = sex, y = body_mass_g)) +
+  geom_boxplot(na.rm = TRUE) +
+  labs(
+    x = "Sex",
+    y = "Body Mass (grams)"
+  )
+```
+
+<div class = "note">
+If you're knitting your report to html instead of pdf and you want to take advantage of automatic figure numbering--knitting to pdf will take care of automatic figure numbering by default--use the output option `bookdown::html_document2` in your YAML.
+
+````md
+---
+title: My Report
+output: bookdown::html_document2
+---
+````
+</div>
+
+## Size, shape & colour
+
+Aesthetics such as size, shape, colour, and opacity are powerful ways of visually highlighting aspects of our data. These aesthetics can be mapped to individual variables, which is a great way to increase the number of dimensions--variables--we can plot. They can also be mapped to all data points. When used to map to a variable, we include this within the `aes()` argument. When used to map to all data points associated with a particular geom, we include this within the geom_*plotType*() argument.
+
+Options include:
+
+* size
+* colour
+* fill
+* shape
+* alpha
+
+<div class = "note">
+Things like bars have both colour (the outside line) and fill (the inside body) properties. Things like lines and points have colour, but not fill.
+</div>
+
+Plotting bill length against bill depth:
+
+```{r, warning = FALSE}
+ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point()
+```
+
+Adjusting the aesthetics of all data points
+
+```{r, warning = FALSE}
+ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point(colour = 'red', size = 5, shape = 4)
+```
+
+Increasing the number of variables we're plotting:
+
+```{r, warning = FALSE}
+ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm, colour = island, shape = sex)) +
+  geom_point()
+```
+
+<div class = "note">
+Adding more dimensions does not always increase the clarity of your graph, as the above example demonstrates!
+</div>
+
+And with some proper labeling:
+
+```{r, warning = FALSE}
+ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm, colour = island, shape = sex)) +
+  geom_point() +
+  labs(
+    x = "Sex",
+    y = "Body Mass (grams)",
+    colour = "Island",
+    shape = "Sex"
+  )
+```
+
+## More than one geom
+
+It can be handy occasionally to have more than one geom per plot, like including both lines and dots. To do this, we feed our data set and aesthetic mappings into `ggplot()`, and then call multiple geoms. Using the box plot example from earlier and adding individual data points:
+
+```{r}
+ggplot(data = penguins, aes(x = sex, y = body_mass_g)) +
+  geom_boxplot() +
+  geom_point() +
+  labs(
+    x = "Sex",
+    y = "Body Mass (grams)"
+  )
+```
+
+When there are a lot of data points, using 'jitter' to create lateral space between points can be useful.
+
+```{r}
+ggplot(data = penguins, aes(x = sex, y = body_mass_g)) +
+  geom_boxplot() +
+  geom_jitter(width = 0.25) +
+  labs(
+    x = "Sex",
+    y = "Body Mass (grams)"
+  )
+```
+
+<div class = "note">
+If you start typing `geom_` you'll see a full list of available plots to you with ggplot. If you'd like more in depth coverage of geoms built into ggplot, see the [reference page section on geoms](https://ggplot2.tidyverse.org/reference/index.html#geoms).
+</div>
+
+## More than one plot
+
+There are several ways to place more than one plot side by side. One of the easiest is to use patchwork.
+
+Install
+
+```{r, eval = FALSE}
+install.packages("patchwork")
+```
+
+Load
+
+```{r}
+library(patchwork)
+```
+
+This time we store our plots as variables
+
+```{r}
+barGraph <- ggplot(data = penguins, aes(x = sex, fill = island)) +
+  geom_bar()
+
+dotPlot <- ggplot(data = penguins, aes(x = sex, y = body_mass_g, colour = species)) +
+  geom_jitter(width = 0.1)
+```
+
+Then patchwork will arrange them
+
+```{r}
+barGraph + dotPlot
+```
+
+```{r}
+barGraph / dotPlot
+```
+
+<div class = "note">
+There are many ways in which patchwork can arrange plots. See the chapter [Arranging Plots](https://ggplot2-book.org/arranging-plots.html) in *ggplot2: Elegant Graphics for Data Analysis* for more complex examples.
+</div>
+
+## Faceting a Plot
+
+We can also facet a plot with a call to `facet_grid()`.
+
+```{r}
+dotPlot +
+  facet_grid(cols = vars(sex))
+```
+
+```{r}
+dotPlot +
+  facet_grid(rows = vars(sex))
+```
+
+```{r}
+dotPlot +
+  facet_grid(cols = vars(sex), rows = vars(island))
+```
+
+A slightly different notation is also valid to express the above graph
+
+```{r}
+dotPlot +
+  facet_grid(island ~ sex)
+```
+
+<div class = "note">
+See additional facet options on the [ggplot facet_grid() reference page](https://ggplot2.tidyverse.org/reference/facet_grid.html).
+</div>
+
+## Cusomizing Look and Feel
+
+Many visual aspects of your graph can be customized. Most of these are controlled within themes.
+
+### Themes {-}
+
+There are many built in themes, for example, minimal. If you start to type `theme_` RStudio will prompt you with a list of built in themes to choose from.
+
+```{r}
+dotPlot +
+  theme_minimal()
+```
+
+Within a theme, we can start to customize other elements. Things that we can customize included axes elements, legend elements, panel elements, and plot elements. For example, we can build on the theme minimal and remove the panel grids above, we do this with a separate, additional call to theme():
+
+```{r}
+dotPlot +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank()
+  )
+```
+
+<div class = "note">
+A full list of theme options are available on the [ggplot theme reference page](https://ggplot2.tidyverse.org/reference/theme.html).
+</div>
+
+### Colours {-}
+There are several ways of customizing the colours used in our plots, including using a custom colour palette.
+
+It's critical to remember to use appropriate combinations of colour depending on if your data is divergent, continuous, or qualitative in nature.
+
+Examples of each of these include:
+
+Sequential - for ordered data
+
+![](images/sequential.png)
+
+Diverging - for data with a central location from which other values diverge
+
+![](images/diverging.png)
+
+Qualitative- for categorical data with not natural order
+
+![](images/qualitative.png)
+
+Instead of having to generate your own custom colour palettes, a good alternative are the palettes produced by [ColourBrewer](https://colorbrewer2.org/) that already have due consideration to things like contrast, colour blind audiences, benig print friendly etc.
+
+Install
+
+```{r, eval = FALSE}
+install.packages("RColourBrewer")
+```
+
+Load
+
+```{r}
+library(RColorBrewer)
+```
+
+View the palettes available to us, noting it's grouped by sequential, qualitative, and diverging palettes.
+
+```{r, fig.height= 8}
+display.brewer.all()
+```
+
+Use a palette, by making an additional call to `scale_color_brewer()`
+
+```{r}
+dotPlot +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank()
+  ) +
+  scale_color_brewer(palette = "Dark2")
+```

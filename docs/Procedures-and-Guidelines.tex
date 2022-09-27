@@ -33,6 +33,46 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -77,7 +117,7 @@
 
 \title{Procedures and Guidelines}
 \author{Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar}
-\date{2022-08-17}
+\date{2022-09-27}
 
 \begin{document}
 \maketitle
@@ -163,7 +203,7 @@ This book is divided into 4 sections.
 \hypertarget{file-and-data-management}{%
 \chapter{File and Data Management}\label{file-and-data-management}}
 
-\emph{Last updated 2022-08-17}
+\emph{Last updated 2022-09-27}
 
 Well-organized data is critical to transparency, reproducibility, and generally maintaining one's sanity when conducting research. When we talk about file and data management, we may be referring to one of many aspects of making our data understandable to others, to a computer, or to our future selves that have succumb to memory lapses. Making data comprehensible is really about well-structured and communicated metadata that is, whenever possible, implemented according to conventions or standards.
 
@@ -186,7 +226,7 @@ Organizing and formatting data is a discussion about the best way to sort and pa
 \hypertarget{file-naming}{%
 \chapter{File Naming}\label{file-naming}}
 
-\emph{Last updated 2022-08-17}
+\emph{Last updated 2022-09-27}
 
 File naming isn't exactly fun, but it is crucial for organizing, describing, and managing all kinds of work, especially research. So, let's talk about the file naming conventions that you will be expected to use while at UBCO.
 
@@ -480,7 +520,7 @@ Pither_BIOL116RProject_Lab-report_V3.docx
 \hypertarget{directories}{%
 \chapter{Directories}\label{directories}}
 
-\emph{Last updated 2022-08-17}
+\emph{Last updated 2022-09-27}
 
 Directories are just folders; we'll use the terms interchangeably. All of the files on your computer are organized around folders. In some respects, this means that your computer is synonymous with a filing cabinet; you open it up and there are a bunch of folders holding files and sub-folders. Following this analogy, if you were to open your computer--and you were on a Mac--you'd see 16 folders, including the following:
 
@@ -654,7 +694,7 @@ You may have heard of other methods that can be used to set a working directory 
 \hypertarget{directory-structures}{%
 \chapter{Directory Structures}\label{directory-structures}}
 
-\emph{Last updated 2022-08-17}
+\emph{Last updated 2022-09-27}
 
 Now that we've covered naming conventions and have a sense of how our systems are organized around folder structures, let's pretend that you store everything on your computer in a single folder--some of us are probably known to use our desktops for this. Imagine how long it would take you to find data you collected on a specific day a few years ago. Instead of keeping every document in a single place, we often organize our files using directory or folder structures. This helps us save precious time and improve our productivity.
 
@@ -1054,7 +1094,7 @@ We can start to see that if you were to share your entire project directory with
 \hypertarget{tidy-data}{%
 \chapter{Tidy data}\label{tidy-data}}
 
-\emph{Last updated 2022-08-17}
+\emph{Last updated 2022-09-27}
 
 We've talked about file naming, directory structures, and documentation to ensure accessible, interpretable, and transparent data. Now it's time to talk about organizing individual variables within a given file. When properly organized, data values can be effectively analyzed, summarized, and visualized. When not, they can be onerous to work with and risk misinterpretation.
 
@@ -1274,7 +1314,7 @@ Ellison-lake & 3 & 1 \\
 \hypertarget{figures-tables}{%
 \chapter{Figures \& Tables}\label{figures-tables}}
 
-\emph{Last updated 2022-08-17}
+\emph{Last updated 2022-09-27}
 
 These guidelines are based on current "best practices" in Biology. You may encounter small differences when working with data or reading the results of research from other disciplines. Our aim is to achieve consistency among faculty, instructors, and students in how data are summarized and presented within lab reports and research papers.
 
@@ -1489,7 +1529,7 @@ When displaying data using a figure, follow these guidelines:
 \hypertarget{sketches-drawings}{%
 \chapter{Sketches \& Drawings}\label{sketches-drawings}}
 
-\emph{Last updated 2022-08-17}
+\emph{Last updated 2022-09-27}
 
 We've heard it before, a picture is worth a thousand words. While a common place phrase, it echoes very true in biological research. Describing in text the morphological features of an organism is no easy task. Trying to form a mental image of an organism described in text still more difficult! As a simple example, imagine trying to draw a representation of \emph{Fritillaria pudica} from the botanical description in the \href{http://www.efloras.org/florataxon.aspx?flora_id=1\&taxon_id=242101628}{Flora of North America}. No easy task. So let's talk about sketches\ldots{}
 
@@ -1635,7 +1675,7 @@ This figure is not directed to have the anterior region at the top, the labellin
 \hypertarget{markdown-1}{%
 \chapter{Markdown}\label{markdown-1}}
 
-\emph{Last updated 2022-08-17}
+\emph{Last updated 2022-09-27}
 
 Markdown is a markup language used to format plain text files to help us provide additional meaning to our content. Markup languages are ideal authoring tools because they work on the principle of separating content from formatting. Markup languages are ideal authoring tools for the sciences because they rely on plain text, so any computer anywhere at any time will be able to open them and consequently, we will be able to read them.
 
@@ -2042,10 +2082,110 @@ Everything here is basic, or core, Markdown and will be supported by any markdow
 
 We'll keep it simple for the moment; this is all you really need for your \_README.md files! Later, you'll be introduced to RMarkdown, which, when used in conjunction with R, will allow you to render statistical analyses within your Markdown document and build reference lists, among other things.
 
+\hypertarget{apa-citations}{%
+\chapter{APA Citations}\label{apa-citations}}
+
+\emph{Last updated 2022-09-27}
+
+This chapter is a brief overview of the 7th edition of APA. For a more in depth review, please consult \href{https://guides.library.ubc.ca/apacitationstyle}{the library's APA Citation Guide}. For the full APA manual, please consult the \href{http://resolve.library.ubc.ca/cgi-bin/catsearch?bid=10057275}{Publication Manual of the American Psychological Association}, available through the library.
+
+Additional resources you may wish to consult include:
+
+\begin{itemize}
+\tightlist
+\item
+  The \href{https://apastyle.apa.org/blog/}{APA Style Blog} - great for searching for examples not listed in the 7th edition
+\item
+  Purdue OWL's \href{https://owl.purdue.edu/owl/research_and_citation/apa_style/apa_formatting_and_style_guide/general_format.html}{website} for still more examples
+\end{itemize}
+
+\hypertarget{in-text-citations}{%
+\section{In-text Citations}\label{in-text-citations}}
+
+In-text citations always appear right after the content you are summarizing, paraphrasing, or quoting. The format is as follows:
+
+\textbf{Summarizing or Paraphrasing}
+
+\begin{itemize}
+\tightlist
+\item
+  (Author, YYYY)
+\end{itemize}
+
+\textbf{Quoting}
+
+\begin{itemize}
+\tightlist
+\item
+  (Author, YYYY, p.~\#) 1 page
+\item
+  (Author, YYYY, pp.~\#\#-\#\#) Multiple pages
+\end{itemize}
+
+\hypertarget{narrative-vs-parenthetical}{%
+\subsection*{Narrative vs Parenthetical}\label{narrative-vs-parenthetical}}
+\addcontentsline{toc}{subsection}{Narrative vs Parenthetical}
+
+If you mention the author or authors in text, you do not need to include this information in the brackets, "()". This is called a narrative citation.
+
+\textbf{Narrative in-text citation:} Raimi (2018) outlines the risks and benefits of fracking through economic analysis and energy security benefits.
+
+The alternative is called a parenthetical citation.
+
+\textbf{Parenthetical in-text citation:} Several benefits and risks can be identified in the implementation of fracking for oil extraction. Considerations include regulation, water pollution, tremors etc. (Raimi, 2018).
+
+\hypertarget{quick-format-guide}{%
+\subsection*{Quick Format Guide}\label{quick-format-guide}}
+\addcontentsline{toc}{subsection}{Quick Format Guide}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule()
+\# of Authors & Narrative Example & Parenthetical Example \\
+\midrule()
+\endhead
+1 & Bradley (2017) & (Bradley, 2017) \\
+2 & Janmaat and Rahimova (2018) & (Janmaat \& Rahimova, 2018) \\
+3 or more & Mei et al.~(2018) & (Mei et al., 2018) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{reference-list}{%
+\section{Reference List}\label{reference-list}}
+
+\textbf{NOTE}
+
+\begin{itemize}
+\tightlist
+\item
+  Every source used in your in-text citations needs to be listed as part of your reference list, in alphabetical order by author(s)' last names.
+\item
+  The word \textbf{References} should appear at the top of your reference list, and it should be centred and bolded on the page
+\item
+  Titles should be written in sentence case, that is, capitalize the first word and only subsequent proper nouns. If the title is broken up by a colon (:), capitalize the first word after the colon.
+\item
+  List all authors in the order that they appear in the source.
+\end{itemize}
+
+\hypertarget{journal-article-with-a-doi-1-2-authors}{%
+\subsection*{Journal article with a DOI (1-2 authors)}\label{journal-article-with-a-doi-1-2-authors}}
+\addcontentsline{toc}{subsection}{Journal article with a DOI (1-2 authors)}
+
+List all authors in the reference list and in-text citations.
+
+Janmaat, J., \& Rahimova, N. (2018). Managing drought risk in the Okanagan: A roll for dry-year option contracts? \emph{Canadian Public Policy}, \emph{44}(2), 112-125. \url{https://doi.org/10.3138/cpp.2017-003}
+
+\hypertarget{journal-article-with-a-doi-3-20-authors}{%
+\subsection*{Journal article with a DOI (3-20 authors)}\label{journal-article-with-a-doi-3-20-authors}}
+\addcontentsline{toc}{subsection}{Journal article with a DOI (3-20 authors)}
+
+List all authors in the reference list and only the first author in the in-text citations.
+
+Mei, Y., Yu, K., Lo, J. C. Y., Takeuchi, L. E., Hadjesfandiari, N., Yazdani-Ahmadabadi, H., Brooks, D. E., Lange, D., \& Kizhakkedathu, J. N. (2018). Polymer-nanoparticle interaction as a design principle in the development of a durable ultrathin universal binary antibiofilm coating with long-term activity. \emph{ACS Nano}, \emph{12}(12), 11881-11891. \url{https://doi.org/10.1021/acsnano.8b05512}
+
 \hypertarget{types-of-sources}{%
 \chapter{Types of Sources}\label{types-of-sources}}
 
-\emph{Last updated 2022-08-17}
+\emph{Last updated 2022-09-27}
 
 As you conduct research and throughout your studies you will encounter many different types of sources. This chapter will briefly introduce and provide examples of three commonly utilized sources: primary, secondary, and review sources.
 
@@ -2143,10 +2283,19 @@ For more information on evidence synthesis, systematic reviews, and meta-analyse
   O'Dea et al.~(2021). \emph{Preferred reporting items for systematic reviews and meta‐analyses in ecology and evolutionary biology: A PRISMA extension}. \emph{Biological Reviews of the Cambridge Philosophical Society}, \emph{96}(5), 1695-1722. \url{https://doi.org/10.1111/brv.12721}
 \end{itemize}
 
-\hypertarget{apa-citations}{%
-\chapter{APA Citations}\label{apa-citations}}
+\hypertarget{academic-integrity}{%
+\chapter{Academic Integrity}\label{academic-integrity}}
 
-\emph{Last updated 2022-08-17}
+\emph{Last updated 2022-09-27}
+
+Academic integrity is the act of performing honest, responsible scholarship, much like scientific integrity is honest, responsible science. Academic integrity is very much about how we conduct ourselves in the pursuit of our studies, respecting those we learn from and work with and the contributions they make to our scholarly and scientific endeavours.
+
+Learn more about academic integrity from the \href{https://students.ok.ubc.ca/academic-success/learning-hub/online-resources/academic-integrity/}{UBCO "Academic Integrity Resources for Students"}.
+
+\hypertarget{apa-citations-1}{%
+\chapter{APA Citations}\label{apa-citations-1}}
+
+\emph{Last updated 2022-09-27}
 
 This chapter is a brief overview of the 7th edition of APA. For a more in depth review, please consult \href{https://guides.library.ubc.ca/apacitationstyle}{the library's APA Citation Guide}. For the full APA manual, please consult the \href{http://resolve.library.ubc.ca/cgi-bin/catsearch?bid=10057275}{Publication Manual of the American Psychological Association}, available through the library.
 
@@ -2160,8 +2309,8 @@ Additional resources you may wish to consult include:
   Purdue OWL's \href{https://owl.purdue.edu/owl/research_and_citation/apa_style/apa_formatting_and_style_guide/general_format.html}{website} for still more examples
 \end{itemize}
 
-\hypertarget{in-text-citations}{%
-\section{In-text Citations}\label{in-text-citations}}
+\hypertarget{in-text-citations-1}{%
+\section{In-text Citations}\label{in-text-citations-1}}
 
 In-text citations always appear right after the content you are summarizing, paraphrasing, or quoting. The format is as follows:
 
@@ -2183,8 +2332,8 @@ In-text citations always appear right after the content you are summarizing, par
   (Author, YYYY, pp.~\#\#-\#\#) Multiple pages
 \end{itemize}
 
-\hypertarget{narrative-vs-parenthetical}{%
-\subsection*{Narrative vs Parenthetical}\label{narrative-vs-parenthetical}}
+\hypertarget{narrative-vs-parenthetical-1}{%
+\subsection*{Narrative vs Parenthetical}\label{narrative-vs-parenthetical-1}}
 \addcontentsline{toc}{subsection}{Narrative vs Parenthetical}
 
 If you mention the author or authors in text, you do not need to include this information in the brackets, "()". This is called a narrative citation.
@@ -2195,8 +2344,8 @@ The alternative is called a parenthetical citation.
 
 \textbf{Parenthetical in-text citation:} Several benefits and risks can be identified in the implementation of fracking for oil extraction. Considerations include regulation, water pollution, tremors etc. (Raimi, 2018).
 
-\hypertarget{quick-format-guide}{%
-\subsection*{Quick Format Guide}\label{quick-format-guide}}
+\hypertarget{quick-format-guide-1}{%
+\subsection*{Quick Format Guide}\label{quick-format-guide-1}}
 \addcontentsline{toc}{subsection}{Quick Format Guide}
 
 \begin{longtable}[]{@{}lll@{}}
@@ -2210,8 +2359,8 @@ The alternative is called a parenthetical citation.
 \bottomrule()
 \end{longtable}
 
-\hypertarget{reference-list}{%
-\section{Reference List}\label{reference-list}}
+\hypertarget{reference-list-1}{%
+\section{Reference List}\label{reference-list-1}}
 
 \textbf{NOTE}
 
@@ -2227,16 +2376,16 @@ The alternative is called a parenthetical citation.
   List all authors in the order that they appear in the source.
 \end{itemize}
 
-\hypertarget{journal-article-with-a-doi-1-2-authors}{%
-\subsection*{Journal article with a DOI (1-2 authors)}\label{journal-article-with-a-doi-1-2-authors}}
+\hypertarget{journal-article-with-a-doi-1-2-authors-1}{%
+\subsection*{Journal article with a DOI (1-2 authors)}\label{journal-article-with-a-doi-1-2-authors-1}}
 \addcontentsline{toc}{subsection}{Journal article with a DOI (1-2 authors)}
 
 List all authors in the reference list and in-text citations.
 
 Janmaat, J., \& Rahimova, N. (2018). Managing drought risk in the Okanagan: A roll for dry-year option contracts? \emph{Canadian Public Policy}, \emph{44}(2), 112-125. \url{https://doi.org/10.3138/cpp.2017-003}
 
-\hypertarget{journal-article-with-a-doi-3-20-authors}{%
-\subsection*{Journal article with a DOI (3-20 authors)}\label{journal-article-with-a-doi-3-20-authors}}
+\hypertarget{journal-article-with-a-doi-3-20-authors-1}{%
+\subsection*{Journal article with a DOI (3-20 authors)}\label{journal-article-with-a-doi-3-20-authors-1}}
 \addcontentsline{toc}{subsection}{Journal article with a DOI (3-20 authors)}
 
 List all authors in the reference list and only the first author in the in-text citations.
@@ -2246,7 +2395,7 @@ Mei, Y., Yu, K., Lo, J. C. Y., Takeuchi, L. E., Hadjesfandiari, N., Yazdani-Ahma
 \hypertarget{reference-management-zotero}{%
 \chapter{Reference Management: Zotero}\label{reference-management-zotero}}
 
-\emph{Last updated 2022-08-17}
+\emph{Last updated 2022-09-27}
 
 Imperative to managing our education and research is managing our readings and references. We can do this manually or we can take advantage of a tool - citation management software - specifically designed to keep your references organized, shareable, and easily citable.
 
@@ -2369,28 +2518,514 @@ Head online and log in to your online account at \url{https://www.zotero.org/use
 
 You'll see your recently synced citation and associated attachments.
 
-\hypertarget{academic-integrity}{%
-\chapter{Academic Integrity}\label{academic-integrity}}
-
-\emph{Last updated 2022-08-17}
-
-Academic integrity is the act of performing honest, responsible scholarship, much like scientific integrity is honest, responsible science. Academic integrity is very much about how we conduct ourselves in the pursuit of our studies, respecting those we learn from and work with and the contributions they make to our scholarly and scientific endeavours.
-
-Learn more about academic integrity from the \href{https://students.ok.ubc.ca/academic-success/learning-hub/online-resources/academic-integrity/}{UBCO "Academic Integrity Resources for Students"}.
-
 \hypertarget{copyright-1}{%
 \chapter{Copyright}\label{copyright-1}}
 
-\emph{Last updated 2022-08-17}
+\emph{Last updated 2022-09-27}
 
 Copyright is the legal ownership of a work, like a book, image, graph, journal article. Copyright law governs how and when we are allowed to redistribute what someone else has produced and how others can redistribute what we've produced.
 
 Learn more about copyright at UBC from the \href{https://copyright.ubc.ca/}{UBC Learning Commons}.
 
+\hypertarget{part-r}{%
+\part*{R}\label{part-r}}
+\addcontentsline{toc}{part}{R}
+
+\hypertarget{ggplot}{%
+\chapter{ggplot}\label{ggplot}}
+
+ggplot is based on a grammar graphics - a way of approaching describing the construction of a graphic from common building blocks. Building a graphic with ggplot then follows some common patterns of construction.
+
+At its most basic, we supply ggplot with a dataset and some aesthetics--that is, the variables we wish to display on the plot and how they should appear. Laslty, we define a plot type.
+
+Step by step this looks like
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  call ggplot()
+\item
+  provide ggplot with a data set
+\item
+  provide ggplot with the variables of interest and their aesthetic properties
+\item
+  define a plot type with geom\_\emph{plotType}()
+\end{enumerate}
+
+This is a brief introduction. For more in depth examples and solutions, check out \href{https://ggplot2-book.org/index.html}{ggplot2: Elegant Graphics for Data Analysis} by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen.
+
+\hypertarget{the-basic-graph}{%
+\section{The Basic Graph}\label{the-basic-graph}}
+
+The following assumes you're using R and RMarkdown.
+
+Install the libraries if needed
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{)}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"palmerpenguins"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Load them
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2) }\CommentTok{\# for graphics}
+\FunctionTok{library}\NormalTok{(palmerpenguins) }\CommentTok{\# penguins data set}
+\end{Highlighting}
+\end{Shaded}
+
+First, make sure we know a bit about our data set
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(penguins)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 8
+##   species island    bill_length_mm bill_depth_mm flipper_l~1 body_~2 sex    year
+##   <fct>   <fct>              <dbl>         <dbl>       <int>   <int> <fct> <int>
+## 1 Adelie  Torgersen           39.1          18.7         181    3750 male   2007
+## 2 Adelie  Torgersen           39.5          17.4         186    3800 fema~  2007
+## 3 Adelie  Torgersen           40.3          18           195    3250 fema~  2007
+## 4 Adelie  Torgersen           NA            NA            NA      NA <NA>   2007
+## 5 Adelie  Torgersen           36.7          19.3         193    3450 fema~  2007
+## 6 Adelie  Torgersen           39.3          20.6         190    3650 male   2007
+## # ... with abbreviated variable names 1: flipper_length_mm, 2: body_mass_g
+\end{verbatim}
+
+Next, we call ggplot, define our data set, and then the variables to plot on the x and y axes:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ sex, }\AttributeTok{y =}\NormalTok{ body\_mass\_g))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+This sets us up with a blank grid with x and y axis ticks corresponding to your variable values and x and y axis labels corresponding to your variables.
+
+Now we call a plot type to represent our data, in this case, a box plot
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ sex, }\AttributeTok{y =}\NormalTok{ body\_mass\_g)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 2 rows containing non-finite values (stat_boxplot).
+\end{verbatim}
+
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+We have some \texttt{NA} values in our data set. We won't worry about cleaning those up here. But we will suppress the error message with a code chunk option.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r, warning = FALSE\}}
+\InformationTok{ggplot(data = penguins, aes(x = sex, y = body\_mass\_g)) +}
+\InformationTok{  geom\_boxplot()}
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+Chunk options are independent of ggplot itself and impact the knitting process of your RMarkdown document. For a more detailed overview of the code chunks options available to you, check out Xie Yihuis \href{https://yihui.org/knitr/options/}{page on Knitr chunk options}.
+
+\hypertarget{labeling-and-captions}{%
+\section{Labeling and captions}\label{labeling-and-captions}}
+
+Labels default to our variable names, which may not be what we want on our graph. We can override this with \texttt{labs()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ sex, }\AttributeTok{y =}\NormalTok{ body\_mass\_g)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{x =} \StringTok{"Sex"}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{"Body Mass (grams)"}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+Captions are also important. There are two ways that we can add this information. The first uses \texttt{labs()}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ sex, }\AttributeTok{y =}\NormalTok{ body\_mass\_g)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{x =} \StringTok{"Sex"}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{"Body Mass (grams)"}\NormalTok{,}
+    \AttributeTok{caption =} \StringTok{"Palmer Penguins. Body mass grouped by sex. n = 344."}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+The second is better if we're using RMarkdown. Note also that we can include markdown syntax, italicizing the \emph{n}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r, fig.cap = "Palmer Penguins. Body mass grouped by sex. *n* = 344."\}  }
+\InformationTok{ggplot(data = penguins, aes(x = sex, y = body\_mass\_g)) +  }
+\InformationTok{  geom\_boxplot(na.rm = TRUE) +  }
+\InformationTok{  labs(}
+\InformationTok{    x = "Sex",}
+\InformationTok{    y = "Body Mass (grams)"}
+\InformationTok{  )}
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-9-1.pdf}
+\caption{\label{fig:unnamed-chunk-9}Palmer Penguins. Body mass grouped by sex. \emph{n} = 344.}
+\end{figure}
+
+If you're knitting your report to html instead of pdf and you want to take advantage of automatic figure numbering--knitting to pdf will take care of automatic figure numbering by default--use the output option \texttt{bookdown::html\_document2} in your YAML.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{{-}{-}{-}}
+\AnnotationTok{title:}\CommentTok{ My Report}
+\AnnotationTok{output:}\CommentTok{ bookdown::html\_document2}
+\CommentTok{{-}{-}{-}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{size-shape-colour}{%
+\section{Size, shape \& colour}\label{size-shape-colour}}
+
+Aesthetics such as size, shape, colour, and opacity are powerful ways of visually highlighting aspects of our data. These aesthetics can be mapped to individual variables, which is a great way to increase the number of dimensions--variables--we can plot. They can also be mapped to all data points. When used to map to a variable, we include this within the \texttt{aes()} argument. When used to map to all data points associated with a particular geom, we include this within the geom\_\emph{plotType}() argument.
+
+Options include:
+
+\begin{itemize}
+\tightlist
+\item
+  size
+\item
+  colour
+\item
+  fill
+\item
+  shape
+\item
+  alpha
+\end{itemize}
+
+Things like bars have both colour (the outside line) and fill (the inside body) properties. Things like lines and points have colour, but not fill.
+
+Plotting bill length against bill depth:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ bill\_length\_mm, }\AttributeTok{y =}\NormalTok{ bill\_depth\_mm)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+Adjusting the aesthetics of all data points
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ bill\_length\_mm, }\AttributeTok{y =}\NormalTok{ bill\_depth\_mm)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{colour =} \StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{, }\AttributeTok{size =} \DecValTok{5}\NormalTok{, }\AttributeTok{shape =} \DecValTok{4}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-11-1.pdf}
+
+Increasing the number of variables we're plotting:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ bill\_length\_mm, }\AttributeTok{y =}\NormalTok{ bill\_depth\_mm, }\AttributeTok{colour =}\NormalTok{ island, }\AttributeTok{shape =}\NormalTok{ sex)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-12-1.pdf}
+
+Adding more dimensions does not always increase the clarity of your graph, as the above example demonstrates!
+
+And with some proper labeling:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ bill\_length\_mm, }\AttributeTok{y =}\NormalTok{ bill\_depth\_mm, }\AttributeTok{colour =}\NormalTok{ island, }\AttributeTok{shape =}\NormalTok{ sex)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{x =} \StringTok{"Sex"}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{"Body Mass (grams)"}\NormalTok{,}
+    \AttributeTok{colour =} \StringTok{"Island"}\NormalTok{,}
+    \AttributeTok{shape =} \StringTok{"Sex"}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-13-1.pdf}
+
+\hypertarget{more-than-one-geom}{%
+\section{More than one geom}\label{more-than-one-geom}}
+
+It can be handy occasionally to have more than one geom per plot, like including both lines and dots. To do this, we feed our data set and aesthetic mappings into \texttt{ggplot()}, and then call multiple geoms. Using the box plot example from earlier and adding individual data points:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ sex, }\AttributeTok{y =}\NormalTok{ body\_mass\_g)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{x =} \StringTok{"Sex"}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{"Body Mass (grams)"}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-14-1.pdf}
+
+When there are a lot of data points, using `jitter' to create lateral space between points can be useful.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ sex, }\AttributeTok{y =}\NormalTok{ body\_mass\_g)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_jitter}\NormalTok{(}\AttributeTok{width =} \FloatTok{0.25}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{x =} \StringTok{"Sex"}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{"Body Mass (grams)"}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-15-1.pdf}
+
+If you start typing \texttt{geom\_} you'll see a full list of available plots to you with ggplot. If you'd like more in depth coverage of geoms built into ggplot, see the \href{https://ggplot2.tidyverse.org/reference/index.html\#geoms}{reference page section on geoms}.
+
+\hypertarget{more-than-one-plot}{%
+\section{More than one plot}\label{more-than-one-plot}}
+
+There are several ways to place more than one plot side by side. One of the easiest is to use patchwork.
+
+Install
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"patchwork"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Load
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(patchwork)}
+\end{Highlighting}
+\end{Shaded}
+
+This time we store our plots as variables
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{barGraph }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ sex, }\AttributeTok{fill =}\NormalTok{ island)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{()}
+
+\NormalTok{dotPlot }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ sex, }\AttributeTok{y =}\NormalTok{ body\_mass\_g, }\AttributeTok{colour =}\NormalTok{ species)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_jitter}\NormalTok{(}\AttributeTok{width =} \FloatTok{0.1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Then patchwork will arrange them
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{barGraph }\SpecialCharTok{+}\NormalTok{ dotPlot}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-19-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{barGraph }\SpecialCharTok{/}\NormalTok{ dotPlot}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-20-1.pdf}
+
+There are many ways in which patchwork can arrange plots. See the chapter \href{https://ggplot2-book.org/arranging-plots.html}{Arranging Plots} in \emph{ggplot2: Elegant Graphics for Data Analysis} for more complex examples.
+
+\hypertarget{faceting-a-plot}{%
+\section{Faceting a Plot}\label{faceting-a-plot}}
+
+We can also facet a plot with a call to \texttt{facet\_grid()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dotPlot }\SpecialCharTok{+}
+  \FunctionTok{facet\_grid}\NormalTok{(}\AttributeTok{cols =} \FunctionTok{vars}\NormalTok{(sex))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-21-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dotPlot }\SpecialCharTok{+}
+  \FunctionTok{facet\_grid}\NormalTok{(}\AttributeTok{rows =} \FunctionTok{vars}\NormalTok{(sex))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-22-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dotPlot }\SpecialCharTok{+}
+  \FunctionTok{facet\_grid}\NormalTok{(}\AttributeTok{cols =} \FunctionTok{vars}\NormalTok{(sex), }\AttributeTok{rows =} \FunctionTok{vars}\NormalTok{(island))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-23-1.pdf}
+
+A slightly different notation is also valid to express the above graph
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dotPlot }\SpecialCharTok{+}
+  \FunctionTok{facet\_grid}\NormalTok{(island }\SpecialCharTok{\textasciitilde{}}\NormalTok{ sex)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-24-1.pdf}
+
+See additional facet options on the \href{https://ggplot2.tidyverse.org/reference/facet_grid.html}{ggplot facet\_grid() reference page}.
+
+\hypertarget{cusomizing-look-and-feel}{%
+\section{Cusomizing Look and Feel}\label{cusomizing-look-and-feel}}
+
+Many visual aspects of your graph can be customized. Most of these are controlled within themes.
+
+\hypertarget{themes}{%
+\subsection*{Themes}\label{themes}}
+\addcontentsline{toc}{subsection}{Themes}
+
+There are many built in themes, for example, minimal. If you start to type \texttt{theme\_} RStudio will prompt you with a list of built in themes to choose from.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dotPlot }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-25-1.pdf}
+
+Within a theme, we can start to customize other elements. Things that we can customize included axes elements, legend elements, panel elements, and plot elements. For example, we can build on the theme minimal and remove the panel grids above, we do this with a separate, additional call to theme():
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dotPlot }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}
+    \AttributeTok{panel.grid =} \FunctionTok{element\_blank}\NormalTok{()}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-26-1.pdf}
+
+A full list of theme options are available on the \href{https://ggplot2.tidyverse.org/reference/theme.html}{ggplot theme reference page}.
+
+\hypertarget{colours}{%
+\subsection*{Colours}\label{colours}}
+\addcontentsline{toc}{subsection}{Colours}
+
+There are several ways of customizing the colours used in our plots, including using a custom colour palette.
+
+It's critical to remember to use appropriate combinations of colour depending on if your data is divergent, continuous, or qualitative in nature.
+
+Examples of each of these include:
+
+Sequential - for ordered data
+
+\includegraphics{images/sequential.png}
+
+Diverging - for data with a central location from which other values diverge
+
+\includegraphics{images/diverging.png}
+
+Qualitative- for categorical data with not natural order
+
+\includegraphics{images/qualitative.png}
+
+Instead of having to generate your own custom colour palettes, a good alternative are the palettes produced by \href{https://colorbrewer2.org/}{ColourBrewer} that already have due consideration to things like contrast, colour blind audiences, benig print friendly etc.
+
+Install
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"RColourBrewer"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Load
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(RColorBrewer)}
+\end{Highlighting}
+\end{Shaded}
+
+View the palettes available to us, noting it's grouped by sequential, qualitative, and diverging palettes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{display.brewer.all}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-29-1.pdf}
+
+Use a palette, by making an additional call to \texttt{scale\_color\_brewer()}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dotPlot }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}
+    \AttributeTok{panel.grid =} \FunctionTok{element\_blank}\NormalTok{()}
+\NormalTok{  ) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Dark2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-30-1.pdf}
+
+\hypertarget{part-glossary}{%
+\part*{Glossary}\label{part-glossary}}
+\addcontentsline{toc}{part}{Glossary}
+
 \hypertarget{glossary}{%
 \chapter{Glossary}\label{glossary}}
 
-\emph{Last updated 2022-08-17}
+\emph{Last updated 2022-09-27}
 
 \textbf{A priori hypothesis:} Hypothesis that is generated before the research study takes place. Presenting the hypothesis before the study takes place helps in avoiding replacing the hypothesis later with one that fits the data better aka hypothesizing after the fact (HARKing).
 
