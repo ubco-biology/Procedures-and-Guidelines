@@ -406,29 +406,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Things like bars have both colour (the outside line) and fill (the inside body) properties. Things like lines and points have colour, but not fill.</p>
 </div>
 <p>Plotting bill length against bill depth:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="size-shape-colour.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm)) <span class="sc">+</span></span>
-<span id="cb51-2"><a href="size-shape-colour.html#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="size-shape-colour.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm)) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="size-shape-colour.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="Procedures-and-Guidelines_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>Adjusting the aesthetics of all data points</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="size-shape-colour.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm)) <span class="sc">+</span></span>
-<span id="cb52-2"><a href="size-shape-colour.html#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">&#39;red&#39;</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">shape =</span> <span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="size-shape-colour.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm)) <span class="sc">+</span></span>
+<span id="cb14-2"><a href="size-shape-colour.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">&#39;red&#39;</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">shape =</span> <span class="dv">4</span>)</span></code></pre></div>
 <p><img src="Procedures-and-Guidelines_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>Increasing the number of variables we’re plotting:</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="size-shape-colour.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">colour =</span> island, <span class="at">shape =</span> sex)) <span class="sc">+</span></span>
-<span id="cb53-2"><a href="size-shape-colour.html#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="size-shape-colour.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">colour =</span> island, <span class="at">shape =</span> sex)) <span class="sc">+</span></span>
+<span id="cb15-2"><a href="size-shape-colour.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="Procedures-and-Guidelines_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <div class="note">
 <p>Adding more dimensions does not always increase the clarity of your graph, as the above example demonstrates!</p>
 </div>
 <p>And with some proper labeling:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="size-shape-colour.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">colour =</span> island, <span class="at">shape =</span> sex)) <span class="sc">+</span></span>
-<span id="cb54-2"><a href="size-shape-colour.html#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb54-3"><a href="size-shape-colour.html#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb54-4"><a href="size-shape-colour.html#cb54-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Sex&quot;</span>,</span>
-<span id="cb54-5"><a href="size-shape-colour.html#cb54-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Body Mass (grams)&quot;</span>,</span>
-<span id="cb54-6"><a href="size-shape-colour.html#cb54-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">&quot;Island&quot;</span>,</span>
-<span id="cb54-7"><a href="size-shape-colour.html#cb54-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">shape =</span> <span class="st">&quot;Sex&quot;</span></span>
-<span id="cb54-8"><a href="size-shape-colour.html#cb54-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="size-shape-colour.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">colour =</span> island, <span class="at">shape =</span> sex)) <span class="sc">+</span></span>
+<span id="cb16-2"><a href="size-shape-colour.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb16-3"><a href="size-shape-colour.html#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb16-4"><a href="size-shape-colour.html#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Sex&quot;</span>,</span>
+<span id="cb16-5"><a href="size-shape-colour.html#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Body Mass (grams)&quot;</span>,</span>
+<span id="cb16-6"><a href="size-shape-colour.html#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">&quot;Island&quot;</span>,</span>
+<span id="cb16-7"><a href="size-shape-colour.html#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">shape =</span> <span class="st">&quot;Sex&quot;</span></span>
+<span id="cb16-8"><a href="size-shape-colour.html#cb16-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p><img src="Procedures-and-Guidelines_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 </div>
             </section>
@@ -492,20 +492,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

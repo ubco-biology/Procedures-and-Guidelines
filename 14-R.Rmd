@@ -363,7 +363,7 @@ View the palettes available to us, noting it's grouped by sequential, qualitativ
 display.brewer.all()
 ```
 
-Use a palette, by making an additional call to `scale_color_brewer()`
+Use a palette, by making an additional call to either `scale_color_brewer()` or `scale_fill_brewer()` depending on you graph.
 
 ```{r}
 dotPlot +
@@ -372,4 +372,13 @@ dotPlot +
     panel.grid = element_blank()
   ) +
   scale_color_brewer(palette = "Dark2")
+```
+
+```{r}
+barGraph +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank()
+  ) +
+  scale_fill_brewer(palette = "Set3")
 ```

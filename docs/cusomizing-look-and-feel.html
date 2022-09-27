@@ -397,15 +397,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="themes" class="section level3 unnumbered hasAnchor">
 <h3>Themes<a href="cusomizing-look-and-feel.html#themes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are many built in themes, for example, minimal. If you start to type <code>theme_</code> RStudio will prompt you with a list of built in themes to choose from.</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="cusomizing-look-and-feel.html#cb66-1" aria-hidden="true" tabindex="-1"></a>dotPlot <span class="sc">+</span></span>
-<span id="cb66-2"><a href="cusomizing-look-and-feel.html#cb66-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="cusomizing-look-and-feel.html#cb28-1" aria-hidden="true" tabindex="-1"></a>dotPlot <span class="sc">+</span></span>
+<span id="cb28-2"><a href="cusomizing-look-and-feel.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
 <p><img src="Procedures-and-Guidelines_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 <p>Within a theme, we can start to customize other elements. Things that we can customize included axes elements, legend elements, panel elements, and plot elements. For example, we can build on the theme minimal and remove the panel grids above, we do this with a separate, additional call to theme():</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="cusomizing-look-and-feel.html#cb67-1" aria-hidden="true" tabindex="-1"></a>dotPlot <span class="sc">+</span></span>
-<span id="cb67-2"><a href="cusomizing-look-and-feel.html#cb67-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb67-3"><a href="cusomizing-look-and-feel.html#cb67-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb67-4"><a href="cusomizing-look-and-feel.html#cb67-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb67-5"><a href="cusomizing-look-and-feel.html#cb67-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="cusomizing-look-and-feel.html#cb29-1" aria-hidden="true" tabindex="-1"></a>dotPlot <span class="sc">+</span></span>
+<span id="cb29-2"><a href="cusomizing-look-and-feel.html#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb29-3"><a href="cusomizing-look-and-feel.html#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb29-4"><a href="cusomizing-look-and-feel.html#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb29-5"><a href="cusomizing-look-and-feel.html#cb29-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p><img src="Procedures-and-Guidelines_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 <div class="note">
 <p>A full list of theme options are available on the <a href="https://ggplot2.tidyverse.org/reference/theme.html">ggplot theme reference page</a>.</p>
@@ -424,20 +424,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="images/qualitative.png" /></p>
 <p>Instead of having to generate your own custom colour palettes, a good alternative are the palettes produced by <a href="https://colorbrewer2.org/">ColourBrewer</a> that already have due consideration to things like contrast, colour blind audiences, benig print friendly etc.</p>
 <p>Install</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="cusomizing-look-and-feel.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RColourBrewer&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="cusomizing-look-and-feel.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RColourBrewer&quot;</span>)</span></code></pre></div>
 <p>Load</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="cusomizing-look-and-feel.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="cusomizing-look-and-feel.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span></code></pre></div>
 <p>View the palettes available to us, noting it’s grouped by sequential, qualitative, and diverging palettes.</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="cusomizing-look-and-feel.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">display.brewer.all</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="cusomizing-look-and-feel.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">display.brewer.all</span>()</span></code></pre></div>
 <p><img src="Procedures-and-Guidelines_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
-<p>Use a palette, by making an additional call to <code>scale_color_brewer()</code></p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="cusomizing-look-and-feel.html#cb71-1" aria-hidden="true" tabindex="-1"></a>dotPlot <span class="sc">+</span></span>
-<span id="cb71-2"><a href="cusomizing-look-and-feel.html#cb71-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb71-3"><a href="cusomizing-look-and-feel.html#cb71-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb71-4"><a href="cusomizing-look-and-feel.html#cb71-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb71-5"><a href="cusomizing-look-and-feel.html#cb71-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb71-6"><a href="cusomizing-look-and-feel.html#cb71-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Dark2&quot;</span>)</span></code></pre></div>
+<p>Use a palette, by making an additional call to either <code>scale_color_brewer()</code> or <code>scale_fill_brewer()</code> depending on you graph.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="cusomizing-look-and-feel.html#cb33-1" aria-hidden="true" tabindex="-1"></a>dotPlot <span class="sc">+</span></span>
+<span id="cb33-2"><a href="cusomizing-look-and-feel.html#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb33-3"><a href="cusomizing-look-and-feel.html#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb33-4"><a href="cusomizing-look-and-feel.html#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb33-5"><a href="cusomizing-look-and-feel.html#cb33-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb33-6"><a href="cusomizing-look-and-feel.html#cb33-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Dark2&quot;</span>)</span></code></pre></div>
 <p><img src="Procedures-and-Guidelines_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="cusomizing-look-and-feel.html#cb34-1" aria-hidden="true" tabindex="-1"></a>barGraph <span class="sc">+</span></span>
+<span id="cb34-2"><a href="cusomizing-look-and-feel.html#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb34-3"><a href="cusomizing-look-and-feel.html#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb34-4"><a href="cusomizing-look-and-feel.html#cb34-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb34-5"><a href="cusomizing-look-and-feel.html#cb34-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb34-6"><a href="cusomizing-look-and-feel.html#cb34-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Set3&quot;</span>)</span></code></pre></div>
+<p><img src="Procedures-and-Guidelines_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
 
 </div>
 </div>
@@ -506,20 +513,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

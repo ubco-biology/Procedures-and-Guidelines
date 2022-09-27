@@ -394,18 +394,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="faceting-a-plot" class="section level2 hasAnchor" number="15.6">
 <h2><span class="header-section-number">15.6</span> Faceting a Plot<a href="faceting-a-plot.html#faceting-a-plot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We can also facet a plot with a call to <code>facet_grid()</code>.</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="faceting-a-plot.html#cb62-1" aria-hidden="true" tabindex="-1"></a>dotPlot <span class="sc">+</span></span>
-<span id="cb62-2"><a href="faceting-a-plot.html#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(sex))</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="faceting-a-plot.html#cb24-1" aria-hidden="true" tabindex="-1"></a>dotPlot <span class="sc">+</span></span>
+<span id="cb24-2"><a href="faceting-a-plot.html#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(sex))</span></code></pre></div>
 <p><img src="Procedures-and-Guidelines_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="faceting-a-plot.html#cb63-1" aria-hidden="true" tabindex="-1"></a>dotPlot <span class="sc">+</span></span>
-<span id="cb63-2"><a href="faceting-a-plot.html#cb63-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(sex))</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="faceting-a-plot.html#cb25-1" aria-hidden="true" tabindex="-1"></a>dotPlot <span class="sc">+</span></span>
+<span id="cb25-2"><a href="faceting-a-plot.html#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(sex))</span></code></pre></div>
 <p><img src="Procedures-and-Guidelines_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="faceting-a-plot.html#cb64-1" aria-hidden="true" tabindex="-1"></a>dotPlot <span class="sc">+</span></span>
-<span id="cb64-2"><a href="faceting-a-plot.html#cb64-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(sex), <span class="at">rows =</span> <span class="fu">vars</span>(island))</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="faceting-a-plot.html#cb26-1" aria-hidden="true" tabindex="-1"></a>dotPlot <span class="sc">+</span></span>
+<span id="cb26-2"><a href="faceting-a-plot.html#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(sex), <span class="at">rows =</span> <span class="fu">vars</span>(island))</span></code></pre></div>
 <p><img src="Procedures-and-Guidelines_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 <p>A slightly different notation is also valid to express the above graph</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="faceting-a-plot.html#cb65-1" aria-hidden="true" tabindex="-1"></a>dotPlot <span class="sc">+</span></span>
-<span id="cb65-2"><a href="faceting-a-plot.html#cb65-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(island <span class="sc">~</span> sex)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="faceting-a-plot.html#cb27-1" aria-hidden="true" tabindex="-1"></a>dotPlot <span class="sc">+</span></span>
+<span id="cb27-2"><a href="faceting-a-plot.html#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(island <span class="sc">~</span> sex)</span></code></pre></div>
 <p><img src="Procedures-and-Guidelines_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 <div class="note">
 <p>See additional facet options on the <a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">ggplot facet_grid() reference page</a>.</p>
@@ -472,20 +472,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

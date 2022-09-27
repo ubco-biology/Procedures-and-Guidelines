@@ -394,22 +394,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="more-than-one-geom" class="section level2 hasAnchor" number="15.4">
 <h2><span class="header-section-number">15.4</span> More than one geom<a href="more-than-one-geom.html#more-than-one-geom" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>It can be handy occasionally to have more than one geom per plot, like including both lines and dots. To do this, we feed our data set and aesthetic mappings into <code>ggplot()</code>, and then call multiple geoms. Using the box plot example from earlier and adding individual data points:</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="more-than-one-geom.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb55-2"><a href="more-than-one-geom.html#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb55-3"><a href="more-than-one-geom.html#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb55-4"><a href="more-than-one-geom.html#cb55-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb55-5"><a href="more-than-one-geom.html#cb55-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Sex&quot;</span>,</span>
-<span id="cb55-6"><a href="more-than-one-geom.html#cb55-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Body Mass (grams)&quot;</span></span>
-<span id="cb55-7"><a href="more-than-one-geom.html#cb55-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="more-than-one-geom.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb17-2"><a href="more-than-one-geom.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb17-3"><a href="more-than-one-geom.html#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb17-4"><a href="more-than-one-geom.html#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb17-5"><a href="more-than-one-geom.html#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Sex&quot;</span>,</span>
+<span id="cb17-6"><a href="more-than-one-geom.html#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Body Mass (grams)&quot;</span></span>
+<span id="cb17-7"><a href="more-than-one-geom.html#cb17-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p><img src="Procedures-and-Guidelines_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p>When there are a lot of data points, using ‘jitter’ to create lateral space between points can be useful.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="more-than-one-geom.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb56-2"><a href="more-than-one-geom.html#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb56-3"><a href="more-than-one-geom.html#cb56-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
-<span id="cb56-4"><a href="more-than-one-geom.html#cb56-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb56-5"><a href="more-than-one-geom.html#cb56-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Sex&quot;</span>,</span>
-<span id="cb56-6"><a href="more-than-one-geom.html#cb56-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Body Mass (grams)&quot;</span></span>
-<span id="cb56-7"><a href="more-than-one-geom.html#cb56-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="more-than-one-geom.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb18-2"><a href="more-than-one-geom.html#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb18-3"><a href="more-than-one-geom.html#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb18-4"><a href="more-than-one-geom.html#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb18-5"><a href="more-than-one-geom.html#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Sex&quot;</span>,</span>
+<span id="cb18-6"><a href="more-than-one-geom.html#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Body Mass (grams)&quot;</span></span>
+<span id="cb18-7"><a href="more-than-one-geom.html#cb18-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p><img src="Procedures-and-Guidelines_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <div class="note">
 <p>If you start typing <code>geom_</code> you’ll see a full list of available plots to you with ggplot. If you’d like more in depth coverage of geoms built into ggplot, see the <a href="https://ggplot2.tidyverse.org/reference/index.html#geoms">reference page section on geoms</a>.</p>
@@ -476,20 +476,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
