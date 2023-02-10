@@ -1,0 +1,230 @@
+# Finding & Evaluating Published Evidence
+
+*Last updated `r Sys.Date()`*
+
+## Types of Evidence
+
+Published works in journals are generally divided into three categories: original research, secondary research, and opinion or commentary.
+
+### Original Research
+
+Original research -- also called primary research -- directly reports on the findings from a study. This work is generally considered to be novel, and even with peer review is subject to error that requires close scrutiny.
+
+The quality of this evidence is governed by a number of factors, which include:
+
+* Study type (experimental, observational)
+* Study design (blinding, use of controls etc)
+* Systematic bias (sampling distribution, sampling size, etc)
+* Other bias (financial conflicts, cognitive biases, etc)
+* Level of reporting (access to protocols or registrations, data availabability, code availability, etc)
+* Appropriate choice of statistical analysis
+
+### Secondary Research
+
+Secondary research -- also called synthesis research -- cumulatively reports on the findings of original research. This kind of reporting attempts to establish the extent of knowledge on a specific topic (systematic review), identify if sufficient evidence exists on a specific topic to suggest the evidence is conclusive (meta analysis), scope the degree or level of evidence available in a specific field of inquiry (scoping review), or offer high level commentray backed by some evidence on a specific topic (narrative review).
+
+The quality of this evidence is governed by a number of factors, which include:
+
+* Study type (meta-analysis, systematic review, scoping review, narrative review)
+* Systematic bias (reasonable attempts to find *all* published literature, attempts to find unpublished results, etc)
+* Other bias (financial conflicts, cognitive biases, etc)
+* Level of reporting (access to protocols or registrations, data availabability, code availability, etc)
+* Appropriate choice of statistical analysis (for meta analysis)
+
+### Opinion & Commentary
+
+Commentaries offer 'expert' opinion on topics, sometimes suggesting conclusions, sometime suggesting future directions. While an important part of science communication, these neither report comprehensively on a given study nor systematically evaluate existing published research. These should not be treatee as sources of evidence.
+
+## Sources of Evidence
+
+Biology is a big field, with diverse areas of research. The following databases are the primary databases available through UBC to support research in a breadth of topics in Biology.
+
+### General
+
+#### Web of Science Core Collection
+
+[Link](https://resources.library.ubc.ca/page.php?details=web-of-science-core-collection&id=138)
+
+**Description**
+
+A rich collection of citation indexes representing the citation connections between scholarly research articles found in most globally significant journals, books, and proceedings in the sciences, social sciences and art & humanities.
+
+**Topic coverage**
+
+Life sciences, biomedical sicences, engineering, social sciences, arts & humanities. Strongest coverage of natural sciences, health sciences, engineering, computer science, materials sciences.
+
+**Resources**
+
+*Coming*.
+
+#### Scopus
+
+[Link](https://resources.library.ubc.ca/page.php?details=scopus&id=2677)
+
+**Description**
+
+Citations and abstracts for journal articles, conference proceedings, and other resources in the sciences, social sciences, arts, and humanities.
+
+**Topic coverage**
+
+Very broad. Similar to adding Web of Science and PubMed in one portal.
+
+**Resources**
+
+*Coming*.
+
+#### CAB Abstracts
+
+[Link](https://resources.library.ubc.ca/page.php?details=cab-direct&id=107)
+
+**Description**
+
+Provides international literature in the applied life sciences including all areas of agriculture, forestry, global health, nutrition, and conservation, leisure and tourism. 
+
+**Topic coverage**
+
+Community and Regional Planning, Fisheries, Forestry, Landscape Architecture, Agricultural Sciences, Environmental Design, Food, Nutrition and Health, Human Nutrition
+
+**Resources**
+
+*Coming*.
+
+### Health & Biological Processes
+
+#### PubMed
+
+[Link](https://resources.library.ubc.ca/page.php?details=pubmed&id=166)
+
+**Description**
+
+The U.S. National Library of Medicine's free, web searchable database. The premier international index to biomedical research covering nearly 6000 scholarly journals and indexing over 30 million citations from 1946 to present.
+
+**Topic coverage**
+
+All areas of health reasearch, including clinical research, nursing and allied health and other paramedical professions, as well biochemistry.
+
+**Resources**
+
+*Coming*.
+
+### Niche
+
+There are many niche databases available. These include sources for taxanomic research -- [Zoological Record](https://resources.library.ubc.ca/page.php?details=zoological-record&id=1121) -- agricultural research -- [PubAg](https://resources.library.ubc.ca/page.php?details=pubag&id=2250) -- aquatic research -- [ASFA](https://resources.library.ubc.ca/page.php?id=108) -- chemical substances -- [SciFinder](https://resources.library.ubc.ca/page.php?id=293) etc. 
+
+## Google Scholar and AI Citation Searching
+
+The list of databases under [Sources of Evidence]() are called abstract and indexing databases; they pull or are provided with content from journals and journal publishers; specifically, they are provided with a list of abstracts when a new issue is published. So, when you search, you're not generally searching an article's full text, just it's summary, which is often beneficial. They employ the equivalent to editorial boards to **review the quality of journals** before including them in their index. Their content is relatively **static**; run a search today and run the same search 6 months from now and the only difference will be content that has been added to the index since you last ran your search. The results returned to you are **not dependent on who you are**; while you can re-order a result set by relevance, citation count etc, the pool of results returned to you and your friend(s) will be identical. While they may index millions of articles, they rarely return millions of hits; they are built to **cater to specific disciplines** and as a result, the result sets are usually manageable. You also get access to the full set of results.
+
+**Google Scholar** is pretty amazing, but it works quite differently from the databases in [Sources of Evidence](). The search platform does work with publishers, but it also crawls sites known to host academic content. It frequently searches the full text of articles, not just the abstracts, so it risks bringing in less relevant content. It ingests more or less whatever it can find; there is no editorial review on the content. What it returns in your results list is dependent on who you are and when you're running your search; don't anticipate that running a search at different times, from different machines, or as two different people will ever return the same result set. The database is huge; result sets are consequently also generally overwhelmingly large, but you're also only provided access to the first 1000 hits. All in, there's a fair bit happening behind the scenes that you don't control.
+
+**AI informed citation searching** services are also pretty amazing. These discovery tools generally rely on network analyses, using things like citations, to draw connections between papers and other algorithms to topically cluster papers. The indexes that they have to draw on don't generally come from publishers directly or by crawling the web like Google Scholar does, but rather by leveraging the meta data available through the organizations that, for example, issue DOIs for journal articles.
+
+### When to Use Which
+
+These three kinds of services suggest three different approaches to the discovery of published evidence. Which you use will be determined by what your're trying to acheive with a review of the published evidence.
+
+The first -- those listed under [Sources of Evidence]() -- are curated, stable, and reproducible. When being systematic in your approach, or when you need a confined set of literature that is generally accepted within academia, these should be your primary source of evidence. Any bias introduced here is through publication bias and the curatorial work done on selecting journals to index.
+
+The second -- using a service like Google Scholar -- are great when you are already familiar with a subject area, and need a quick, topical citation. Don't expect to get a full evidence summary here, but do expect to find complimentary evidence to what you've already found, and to find it quickly. The page ranking algorithms used introduce bias. This is somewhat offset by the fact that these systems are rather indescriminate in what they'll include.
+
+The third -- clustering and networking services -- are great compliments to the above two sources, especially for serindipedous discovery. No search will ever return all relevant results; citation tracking and thematic clustering of abstracts can be hugely beneficial to trying to understand the scope of published evidence available. For the purposes of evidence synthesis, these tools on their own are insufficient. For the purposed of large evidence synthesis and exploratory efforts, these tools are invaluable. Bias in these systems will largely result from the clustering algorithms used.
+
+## Grey Literature
+
+Grey literature is a somewhat ambiguous topic. The simplest definition is anything that has not been formally published in an indexed publication - that is, anything that you wouldn't find by searching in a database subscribed to by your library. Grey literature tends to characterized by being difficult to find, hard to cite, and lacking the checks and balances of traditional publication, such as peer review and copy editing. Examples of grey literature include posters, conference abstracts, government reports, and blogs. This may also include pre-prints, especially if those pre-prints never materialize into a formal publication. Gery literature is not inherntly less valuable than formally published literature; however it may require more judicious evaluation before being trusted as quality evidence.
+
+Grey literature is generally found either through a search engine such as Google or DuckDuckGo, on conference websites, on the personal websites of academics, in pre-print repositories, or through government or NGO portals. For example, for Canadian government publications, there is the [Federal Science Libraries Network](https://science-libraries.canada.ca/eng/home/), a search portal for seven science-based departments and agencies of the Canadian government. And while many pre-print servers exist, a common portal and hosting service is [OSF Preprints](https://osf.io/preprints/).
+
+## Searching Basics
+
+There are four key concepts that can help with effective searching: breaking up a search into its conceptual parts, using boolean logic to tie concepts together, using stemming and wildcards to account for variations in how terms are written or articulated, and ensuring that concepts that are comprised of more than one term are grouped together.
+
+### Concepts
+
+Research questions are generally comprised of at least 3 concepts: the organism or population of interest, the intervention or thing being studied in relation to that organism or population, and the measure of interest or the outcome that we're interested in. This is often formalized as a PIO framework - Population, Intervention, Outcome. There are many variations on this, including a PEO -- Population, Exposure, Outcome -- PICO where the C covers a comparison -- PICOS, where the S is for Study type etc. These frameworks can be useful for articulating a research question in terms of it's conceptual components; pick the simplest one that resonates with you and your question.
+
+Putting this into an example, we might ask about the relationship between smoking and cancer in men. We have a population -- men -- an intervention, or perhaps more appropriate an exposure -- smoking -- and an outcome -- cancer. A very simple search for this question might then be:
+
+men AND smoking AND cancer
+
+Similarlily, we might ask if an increase in water salinity increases mortality in zebra fish. Again, we have a population -- zebra fish -- an intervetion or exposure (if an experimental study it would be an intervention, if an observational study it would be an exposure) -- salinity -- and an outcome to measure -- mortality. A very simple search for this question might then be:
+
+"zebra fish" AND salinity AND mortality
+
+### Boolean logic
+
+Boolean logical operators are comprised of AND OR and NOT. Generally when searching the literature, we don't use NOT, but there are circumstances where it may be warranted.
+
+AND is an intersect, OR is a union. AND means both elements must be in the set, OR means either element could be in the set. AND is thus used to find the intersection between concepts while OR is used to find the union among synonyms. In the example
+
+men AND smoking AND cancer
+
+AND is used to find results that have all three terms. Often times, there is more than one way to articualte a given concept, which is when we use OR. For example
+
+men AND smoking AND (cancer OR neoplasm)
+
+We always want to use a reasonable number of synonyms to ensure we are capturing different approaches to describing any given entity or phenomenon.
+
+### Stemming & Wildcards
+
+Words can have alternate spellings. There are two ways to work around this. We could use OR, for example
+
+color OR colour
+
+Alternatively, we could use a wildcard
+
+colo#r
+
+where the # represents 1 or 0 characters.
+
+:::note
+
+Wildcards will differe between databases. Read the documentation to know which wildcards are available and how to use them.
+
+:::
+
+Stemming stems a word. For example, we might want to find the term smoke, smoker, smoking, smoked etc. Again, we could use OR
+
+smoke OR smoker OR smoking OR smoked
+
+Alternatively, we could use a stem
+
+smok*
+
+which will look for the letters *smok* and any combination of letters thereafter, capturing all the variations (and more potentially) of interest.
+
+:::note
+
+The stemming wildcard * is generally pretty universal across databases. However, neither stemming nor wildcards more generally operate in Google or Google Scholar in the same way as they do in the more structured databases listed in the [Sources of Evidence]() section.
+
+### Phrase searching
+
+When a concept is comprised of more than one term, we need to explicity account for that, and we do that with the use of quotations. For example, a search for
+
+zebra fish
+
+is equivalent to a search for 
+
+zebra AND fish
+
+which is significantly broader than a search for 
+
+"zebra fish"
+
+where, in the former, both terms need to be present, and in the latter they need to be not only present, but also directly adjacent to each other.
+
+## Evaluating the Literature
+
+Evaluating published evidence comes in three flavours. These cascade down from conventional markers of quality, to how a study is reported on, and finally to the actual study design.
+
+The first is via proxy measures, which is usually the first thing we learn about. Examples of proxy measures include peer review, author affiliations, society vs commercial publishers etc These are proxy measures because the literature is not being evaluated directly.
+
+The second is via reporting; how much information does a given publication provide on how they conducted their study? This might include things like publication of a protocol, availability of data and scripts etc. These kinds of reporting allow the reader to benchmark bias (protocol) and verify the reproducibility of findings (data and code). There are an increasingly large number of reporting frameworks available. In the biological sciences, two common frameworks include the [Materials Design Analysis Reporting (MDAR) Framework](https://doi.org/10.1073/pnas.2103238118) for primary research and the [Preferred reporting items for systematic reviews and meta-analyses in ecology and evolutionary biology](https://doi.org/10.1111/brv.12721), an extension of the [Preferred Reporting Items for Systematic Reviews and Meta-Analyses](https://www.prisma-statement.org/) (PRISMA) Guidelines originally developped for health research.
+
+The third is with explicit evaluation of the study design and potentially each reported outcome. These tools generally ask questions related to appropriate study design and analysis as a way of evaluating study bias, and usually include questions like, was the study design appropritate for the research question, was the data collected in the most appropriate way, were the statistical tests applied appropriate for the data, etc. There are a lot of tools to choose from out there to engage in this kind of evaluation, not least because what is appropriate for an experimental study will be different from an observational study, let alone whether that experimental study used randomization or not.
+
+These tools are generally used for large knowledge synthesis activities (systematic reviews and meta analyses), but can also be useful guides for systematically evaluating individual studies, especially as a means of building critical literacies.
+
+The National Health and Medical Research Council of Australia, [hosts a great list of tools for a variety of study types](https://www.nhmrc.gov.au/guidelinesforguidelines/develop/assessing-risk-bias).
+
+An evaluation of a variety of tools used in review protocols is available in Farrah, K., Young, K., Tunis, M.C. et al. Risk of bias tools in systematic reviews of health interventions: an analysis of PROSPERO-registered protocols. Syst Rev 8, 280 (2019). [https://doi.org/10.1186/s13643-019-1172-8](https://doi.org/10.1186/s13643-019-1172-8).
