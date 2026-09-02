@@ -49,7 +49,7 @@ Literature reviews, also known as traditional reviews, provide a comprehensive, 
 
 Scoping reviews follow a specific **pre-defined** methodological study protocol including a detailed search strategy aimed at gathering a broad and exhaustive list of sources to review. The purpose of following a pre-defined study protocol is to reduce bias and enhance reproducibility of the review. Moreover, a scoping review offers a qualitative synthesis of the evidence based on the included sources along with an evidence based discussion of the findings.
 
-For more information on scoping reviews see the [Joanna Briggs Institute Guidelines](https://jbi-global-wiki.refined.site/space/MANUAL/4687342/Chapter+11%3A+Scoping+reviews) or [PRISMA checklist](https://prisma-statement.org/Extensions/ScopingReviews) for conducting a scoping review.
+For more information on scoping reviews see the [Joanna Briggs Institute Guidelines](https://jbi-global-wiki.refined.site/space/MANUAL/4687342/Chapter+11%3A+Scoping+reviews) or [PRISMA-ScR guidance](https://www.prisma-statement.org/scoping) for conducting a scoping review.
 
 **Systematic Reviews**
 
@@ -62,7 +62,7 @@ Meta-analyses further expand on systematic reviews by including a quantitative s
 For more information on evidence synthesis, systematic reviews, and meta-analyses see the following links:
 
 * [Joanna Briggs Institute Guidelines](https://jbi-global-wiki.refined.site/space/MANUAL/4688650/Chapter+1%3A+JBI+Systematic+Reviews) 
-* [PRISMA checklist](https://prisma-statement.org/PRISMAStatement/Checklist.aspx) 
+* [PRISMA checklist](https://www.prisma-statement.org/prisma-2020-checklist) 
 * [Collaboration for Environmental Evidence](https://environmentalevidence.org/information-for-authors/)
 * O'Dea et al. (2021). *Preferred reporting items for systematic reviews and meta‐analyses in ecology and evolutionary biology: A PRISMA extension*. *Biological Reviews of the Cambridge Philosophical Society*, *96*(5), 1695-1722. [https://doi.org/10.1111/brv.12721](https://doi.org/10.1111/brv.12721)
 

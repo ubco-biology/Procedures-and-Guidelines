@@ -134,7 +134,7 @@
 
 <a id="Raw-data">**Raw data:**</a> Data that has been collected but not yet processed in any way.   
 
-<a id="Relative-path">**Relative path:**</a> In contrast to an absolute path, a relative path is a URL that only contains a portion of the path. It is relative to the root of the document and thus should start the path with the directory name that contains the document. For example, if you are writing a Markdown document and would like to include an image of a mealworm, place the mealworm image into the same directory (folder) as the Markdown document and the relative path may look like /BIOL116/project/mealworm.png. Whereas the absolute path might look like C:://Documents/BIOL116/project/mealworm.png.
+<a id="Relative-path">**Relative path:**</a> In contrast to an absolute path, a relative path is a URL that only contains a portion of the path. It is relative to the working directory that contains the document, and so should not start with a slash. For example, if you are writing a Markdown document and would like to include an image of a mealworm, place the mealworm image into the same directory (folder) as the Markdown document and the relative path may look like images/mealworm.png. Whereas the absolute path might look like C:/Documents/BIOL116/project/images/mealworm.png.
 
 <a id="Random-assignment">**Random assignment:**</a> Assigning participants of a research study to each condition using a method of randomization. This ensures that each participant has an equal chance of being placed in each condition and helps to minimize bias. 
 
