@@ -74,9 +74,6 @@ boolean-logic
 stemming-wildcards
 phrase-searching
 evaluating-the-literature
-apa-citations-1
-in-text-citations-1
-reference-list-1
 academic-integrity
 reference-management-zotero
 installation-first-launch

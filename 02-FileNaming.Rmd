@@ -8,7 +8,7 @@ We'll start with the rules, we'll then break these rules down and explain the pr
 
 ## Quick Reference
 
-* File names should only contain letters in the English alphabet, numbers from 1-9, dashes `-`, and underscores `_`.
+* File names should only contain letters in the English alphabet, numbers from 0-9, dashes `-`, and underscores `_`.
 * Do not use spaces or special characters, including <code># % & < > : \" / \ | ? * { } $ ! \' @ + ` =</code>
 * File names should be broken down into components that are separated by underscores `_`.
 * If more than one word is needed in each component, these are separated by dashes `-`.

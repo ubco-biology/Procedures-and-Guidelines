@@ -348,7 +348,7 @@ Instead of having to generate your own custom colour palettes, a good alternativ
 Install
 
 ```{r, eval = FALSE}
-install.packages("RColourBrewer")
+install.packages("RColorBrewer")
 ```
 
 Load

@@ -1,20 +1,24 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
-%
 \documentclass[
 ]{book}
+\usepackage{xcolor}
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
+\setcounter{secnumdepth}{5}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -32,7 +36,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{xcolor}
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -44,13 +47,13 @@
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 \newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
 \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
 \newcommand{\BuiltInTok}[1]{#1}
 \newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
@@ -58,7 +61,7 @@
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
 \newcommand{\ExtensionTok}[1]{#1}
 \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\ImportTok}[1]{#1}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
@@ -67,13 +70,16 @@
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
 \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
+\usepackage{caption}
+\captionsetup[table]{skip=6pt}
+\newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -85,30 +91,37 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
-\usepackage[normalem]{ulem}
+\ifLuaTeX
+  \usepackage{luacolor}
+  \usepackage[soul]{lua-ul}
+\else
+  \usepackage{soul}
+\fi
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{5}
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
+% fallback for those not using the hyperref driver hyperxmp:
+\makeatletter
+\@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
+\makeatother
 \hypersetup{
   pdftitle={Procedures and Guidelines},
   pdfauthor={Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar},
@@ -117,7 +130,7 @@
 
 \title{Procedures and Guidelines}
 \author{Clerissa Copeland, Jason Pither, and Mathew Vis-Dunbar}
-\date{2023-02-10}
+\date{2026-09-02}
 
 \begin{document}
 \maketitle
@@ -126,8 +139,7 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{welcome}{%
-\chapter*{Welcome}\label{welcome}}
+\chapter*{Welcome}\label{welcome}
 \addcontentsline{toc}{chapter}{Welcome}
 
 The procedures and guidelines articulated in this document represent accepted standards for the conduct and presentation of student works in the Biology undergraduate curriculum at UBC Okanagan.
@@ -140,8 +152,7 @@ These guidelines are modeled on best practices in the life sciences and where ne
 
 This is a living document. Expect that content will be added over time and adapted as needs and circumstances change.
 
-\hypertarget{copyright}{%
-\section*{Copyright}\label{copyright}}
+\section*{Copyright}\label{copyright}
 \addcontentsline{toc}{section}{Copyright}
 
 This work is licenced under the Creative Commons \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)}
@@ -152,16 +163,14 @@ Copeland, C., Pither, J., Vis-Dunbar, M. (2021). \emph{Procedures and Guidelines
 
 All source files are available at \url{https://github.com/ubco-biology/Procedures-and-Guidelines}.
 
-\hypertarget{ubco-biology-open-materials}{%
-\section*{UBCO Biology open materials}\label{ubco-biology-open-materials}}
+\section*{UBCO Biology open materials}\label{ubco-biology-open-materials}
 \addcontentsline{toc}{section}{UBCO Biology open materials}
 
 This resource is part of a larger project to host UBCO Biology lab materials in an open, accessible format.
 
 All BIOL open materials can be found at \url{https://ubco-biology.github.io/}
 
-\hypertarget{why-procedures-and-guidelines}{%
-\section*{Why Procedures and Guidelines?}\label{why-procedures-and-guidelines}}
+\section*{Why Procedures and Guidelines?}\label{why-procedures-and-guidelines}
 \addcontentsline{toc}{section}{Why Procedures and Guidelines?}
 
 When we talk about procedures and guidelines, we\textquotesingle re very much talking about standards and conventions. Standards and conventions allow the products of research to be easily consumed, interpreted, adapted and re-used. For example, the metric system did wonders for standardizing how we measure distances and weight. The chaos that would ensue if every entomologist took specimen measurements with their own system - or determined wingspan from different points of origin across the same species!
@@ -170,8 +179,7 @@ Standards and conventions allow us to explore our data and outputs to greater ex
 
 These qualities of standards and conventions - easy consumption, interpretation, adaptation, and re-use - are integral to robust, transparent, reproducible research; these qualities underpin the development of a strong evidence base on which to conduct further research and inform practices and policy.
 
-\hypertarget{structure}{%
-\section*{Structure}\label{structure}}
+\section*{Structure}\label{structure}
 \addcontentsline{toc}{section}{Structure}
 
 This book is divided into 4 sections.
@@ -196,14 +204,12 @@ This book is divided into 4 sections.
 
 \textbf{Glossary} is a set of standard definitions for concepts that one will encounter throughout the Biology undergraduate curriculum. When possible, course materials will link directly here.
 
-\hypertarget{part-file-and-data-management}{%
-\part*{File and Data Management}\label{part-file-and-data-management}}
+\part*{File and Data Management}\label{part-file-and-data-management}
 \addcontentsline{toc}{part}{File and Data Management}
 
-\hypertarget{file-and-data-management}{%
-\chapter{File and Data Management}\label{file-and-data-management}}
+\chapter{File and Data Management}\label{file-and-data-management}
 
-\emph{Last updated 2023-02-10}
+\emph{Last updated 2026-09-02}
 
 Well-organized data is critical to transparency, reproducibility, and generally maintaining one's sanity when conducting research. When we talk about file and data management, we may be referring to one of many aspects of making our data understandable to others, to a computer, or to our future selves that have succumb to memory lapses. Making data comprehensible is really about well-structured and communicated metadata that is, whenever possible, implemented according to conventions or standards.
 
@@ -223,22 +229,20 @@ Directory structures, being more complicated, bring with them the need to add ad
 
 Organizing and formatting data is a discussion about the best way to sort and parse our data into columns and rows so that we can effectively produce summaries, statistical calculations, and visualizations; a core concept that you will be introduced to in this guidelines document is that of "tidy data".
 
-\hypertarget{file-naming}{%
-\chapter{File Naming}\label{file-naming}}
+\chapter{File Naming}\label{file-naming}
 
-\emph{Last updated 2023-02-10}
+\emph{Last updated 2026-09-02}
 
 File naming isn't exactly fun, but it is crucial for organizing, describing, and managing all kinds of work, especially research. So, let's talk about the file naming conventions that you will be expected to use while at UBCO.
 
 We'll start with the rules, we'll then break these rules down and explain the processes behind them.
 
-\hypertarget{quick-reference}{%
-\section{Quick Reference}\label{quick-reference}}
+\section{Quick Reference}\label{quick-reference}
 
 \begin{itemize}
 \tightlist
 \item
-  File names should only contain letters in the English alphabet, numbers from 1-9, dashes \texttt{-}, and underscores \texttt{\_}.
+  File names should only contain letters in the English alphabet, numbers from 0-9, dashes \texttt{-}, and underscores \texttt{\_}.
 \item
   Do not use spaces or special characters, including \# \% \& \textless{} \textgreater{} : " / ~\textbar{} ? * \{ \} \$ ! \textquotesingle{} @ + ` =
 \item
@@ -251,41 +255,35 @@ We'll start with the rules, we'll then break these rules down and explain the pr
 
 There are four variations on how these guidelines are implemented depending on what your file contains.
 
-\hypertarget{lab-reports-and-manuscripts}{%
-\subsection{Lab reports and manuscripts}\label{lab-reports-and-manuscripts}}
+\subsection{Lab reports and manuscripts}\label{lab-reports-and-manuscripts}
 
 \textbf{Format} LastName\_Project\_File-contents\_Version.file-type
 
 \textbf{Example} Pither\_BIOL116RProject\_Manuscript\_V0.docx
 
-\hypertarget{figures-and-plots}{%
-\subsection{Figures and plots}\label{figures-and-plots}}
+\subsection{Figures and plots}\label{figures-and-plots}
 
 \textbf{Format} LastName\_Project\_Figure-title\_Version.file-type
 
 \textbf{Example} Pither\_BIOL116RProject\_Figure-freq-plot\_V1.png
 
-\hypertarget{analysis}{%
-\subsection{Analysis}\label{analysis}}
+\subsection{Analysis}\label{analysis}
 
 \textbf{Format} LastName\_Project\_Analysis\_Version.file-type
 
 \textbf{Example} Pither\_BIOL116RProject\_Analysis\_V0.xlsx
 
-\hypertarget{data}{%
-\subsection{Data}\label{data}}
+\subsection{Data}\label{data}
 
 \textbf{Format} LastName\_Date\_Project\_Data-file-description.file-type
 
 \textbf{Example} Pither\_20210921\_BIOL116RProject\_Data.csv
 
-\hypertarget{whats-in-a-name}{%
-\section{What's in a name}\label{whats-in-a-name}}
+\section{What's in a name}\label{whats-in-a-name}
 
 File names need to achieve two primary goals, they need to make sense to a human reading them and they need to be constructed in a way that allows a computer to parse or process them. That is, file names should be \textbf{human interpretable} and \textbf{machine readable}. How do we achieve this?
 
-\hypertarget{human-interpretable}{%
-\subsection*{Human interpretable}\label{human-interpretable}}
+\subsection*{Human interpretable}\label{human-interpretable}
 \addcontentsline{toc}{subsection}{Human interpretable}
 
 To be human interpretable, a file name needs to be meaningful. To do this, it needs to convey some basic information to a person reading it. We do this by integrating metadata into the file name. The metadata elements we include are:
@@ -310,16 +308,14 @@ That is, we should be able to look at a file and tell, \emph{who} created it, \e
 
 All said, that's a fair bit of information to hold in a file name!
 
-\hypertarget{machine-readable}{%
-\subsection*{Machine readable}\label{machine-readable}}
+\subsection*{Machine readable}\label{machine-readable}
 \addcontentsline{toc}{subsection}{Machine readable}
 
 What does it mean for a file name to be machine readable or machine interpretable? It means building our file names in such a way that we can easily organize them so that they can be sorted by an application and in a way that makes sense to us. It also means building our names according to set patterns, which can then be parsed along known delimiters. Lastly, it means building our names in such a way that if we move them from one computer to another, from one application to another, or from one operating system to another, the files remain interpretable in exactly the same way.
 
 How do we do this? We avoid special characters and follow conventions.
 
-\hypertarget{special-characters}{%
-\subsubsection*{Special characters}\label{special-characters}}
+\subsubsection*{Special characters}\label{special-characters}
 \addcontentsline{toc}{subsubsection}{Special characters}
 
 Special characters are all characters \textbf{except}:
@@ -340,20 +336,20 @@ This means that a space " " is a special character, which means that your file n
 
 When operating in a multi-lingual or non-English environment, this can prove problematic, but it is an unfortunate legacy of the development of computer standards that has yet to be fully resolved.
 
-\hypertarget{conventions}{%
-\subsubsection*{Conventions}\label{conventions}}
+\subsubsection*{Conventions}\label{conventions}
 \addcontentsline{toc}{subsubsection}{Conventions}
 
 Convention has file naming proceed in the following order, with each element separated by an underscore \texttt{\_}, and words within an element joined with a dash \texttt{-}. The file type is generally added with a period \texttt{.} and is usually automatically generated when an application creates a file.
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1389}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2222}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1528}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1528}}@{}}
-\toprule()
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1389}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.2222}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1528}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1528}}@{}}
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Element-1
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -367,30 +363,29 @@ Element-1
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 .Element-5
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Last-Name & \_Date & \_Project & \_File-Contents & \_Version & .File-type \\
-\bottomrule()
 \end{longtable}
+}
 
-\hypertarget{dates}{%
-\subsubsection*{Dates}\label{dates}}
+\subsubsection*{Dates}\label{dates}
 \addcontentsline{toc}{subsubsection}{Dates}
 
 Dates should be written in the following format \texttt{yyyymmdd}. They should contain no spaces, no dashes, no words, just 8 numbers. Months and Days that are from 1 - 9 should be led by a 0. For example, January 23, 2020, should be written \textbf{20200123}. When written this way, your computer will always sort your files from the earliest date to the latest date.
 
 Keeping track of dates is especially important for data because the date on which your data was collected has direct relevance. Dates are less important for things like figures because they are derived from previously dated data.
 
-\hypertarget{versions}{%
-\subsubsection*{Versions}\label{versions}}
+\subsubsection*{Versions}\label{versions}
 \addcontentsline{toc}{subsubsection}{Versions}
 
 Version tracking is achieved in file naming by adding \_V\emph{n} where \emph{n} is the version number. With each major change, we increase \emph{n} by 1. So version 1 would read \_V1, and when updated, it would read \_V2.
 
 Versions are very important for things like manuscripts and interpretations of data, such as figures and other visualizations, which we will continue to change and modify throughout a project. Data, however, while it has a collection date, should not be modified, and should not then be versioned.
 
-\hypertarget{an-example}{%
-\section{An example}\label{an-example}}
+\section{An example}\label{an-example}
 
 So what does this look like?
 
@@ -416,8 +411,7 @@ In this scenario, we have \textbf{1 project}, \textbf{1 manuscript}, \textbf{1 d
 
 So, first we will come up with a project name, and then we will \textbf{date our data} and \textbf{version our figures and manuscript}. And we'll see how this evolves over the course of several days.
 
-\hypertarget{day-1}{%
-\subsubsection*{Day 1}\label{day-1}}
+\subsubsection*{Day 1}\label{day-1}
 \addcontentsline{toc}{subsubsection}{Day 1}
 
 We create the following file:
@@ -428,8 +422,7 @@ This is our manuscript, so it will get a version, but no date. Looking at it, we
 
 Let's imagine that I will put my research question, hypothesis, and methods in this document and submit it.
 
-\hypertarget{day-2}{%
-\subsubsection*{Day 2}\label{day-2}}
+\subsubsection*{Day 2}\label{day-2}
 \addcontentsline{toc}{subsubsection}{Day 2}
 
 Today, I conducted the first part of our experiment and collected some data. Now we have the following files:
@@ -441,8 +434,7 @@ Pither_BIOL116RProject_Lab-report_V0.docx
 
 We have not changed our manuscript, so there's no change to the name. However, we have collected some data. We can easily see who collected this data (Pither), when it was collected (September 21, 2021), that it's connected to the BIOL 116 Research Project (BIOL116RProject), and that it's data related to PH exposure. Lastly, it is formatted as comma separated values (csv), which can be opened by any spreadsheet program or text editor.
 
-\hypertarget{day-3-5}{%
-\subsubsection*{Day 3-5}\label{day-3-5}}
+\subsubsection*{Day 3-5}\label{day-3-5}
 \addcontentsline{toc}{subsubsection}{Day 3-5}
 
 I continue to collect data over the next several days, and here is what my files now look like:
@@ -457,8 +449,7 @@ Pither_BIOL116RProject_Lab-report_V0.docx
 
 Again, we have not changed our manuscript, so there's no change to the name. However, we have collected some more data related to PH. We have one file for each day, organized from the earliest day of collection to the most recent.
 
-\hypertarget{day-6}{%
-\subsubsection*{Day 6}\label{day-6}}
+\subsubsection*{Day 6}\label{day-6}
 \addcontentsline{toc}{subsubsection}{Day 6}
 
 Today, I did two things. I have no more data to collect, so I updated my manuscript to include any modifications made to my original methods section, I then submitted this. I also started to analyze my data; to do this, I merged all my data into a single file for analysis. Now my files look like this:
@@ -475,8 +466,7 @@ Pither_BIOL116RProject_Lab-report_V1.docx
 
 At this stage, I have my data collated into a document where I can work on it without impacting the original data. We can see that I have done this in Excel (xlsx), and that I should expect to be able to open this file in Excel. I also now have a V1 of my manuscript, as I have now added a new section to it; when submitting it, my TA knows that the file with V1 should have this updated section.
 
-\hypertarget{day-7}{%
-\subsubsection*{Day 7}\label{day-7}}
+\subsubsection*{Day 7}\label{day-7}
 \addcontentsline{toc}{subsubsection}{Day 7}
 
 Today, I built two visualizations using the data in my analysis document, one linear regression and one bar plot of frequency counts; I save these as images to insert into my manuscript. I then updated my manuscript to include my results and these two figures and submitted V2 of my manuscript. Now my files look like this:
@@ -496,8 +486,7 @@ Pither_BIOL116RProject_Lab-report_V2.docx
 
 We can start to see the advantage here of naming conventions. I can easily see which files are which, what they contain, and what their timeline of development is. Also, my computer easily sorts these into meaningful categories - my data is grouped together, sorted by date. My analyses, figures, and manuscripts are all respectively grouped and sorted by version.
 
-\hypertarget{day-8}{%
-\subsubsection*{Day 8}\label{day-8}}
+\subsubsection*{Day 8}\label{day-8}
 \addcontentsline{toc}{subsubsection}{Day 8}
 
 I got feedback that my linear regression model had an error in it. So I fixed this today, added the new figure into my manuscript, and wrote the discussion and conclusion sections. I'm now ready to submit. Here is what my files look like now (I will be submitting V3 of my manuscript):
@@ -517,10 +506,9 @@ Pither_BIOL116RProject_Lab-report_V2.docx
 Pither_BIOL116RProject_Lab-report_V3.docx
 \end{verbatim}
 
-\hypertarget{directories}{%
-\chapter{Directories}\label{directories}}
+\chapter{Directories}\label{directories}
 
-\emph{Last updated 2023-02-10}
+\emph{Last updated 2026-09-02}
 
 Directories are just folders; we'll use the terms interchangeably. All of the files on your computer are organized around folders. In some respects, this means that your computer is synonymous with a filing cabinet; you open it up and there are a bunch of folders holding files and sub-folders. Following this analogy, if you were to open your computer--and you were on a Mac--you'd see 16 folders, including the following:
 
@@ -551,8 +539,7 @@ If we were to represent this graphically--as a hierarchy--we'd have something li
 │   │   ├── Desktop/
 \end{verbatim}
 
-\hypertarget{working-directory}{%
-\section{Working directory}\label{working-directory}}
+\section{Working directory}\label{working-directory}
 
 Your \textbf{working directory} is the folder you're working in or the folder that holds the file that you have open.
 
@@ -593,28 +580,23 @@ In the next section, we'll look at common directory structures used to organize 
 
 If you have a file in your \texttt{Analysis/} folder open, \texttt{Analysis/} is your working directory. If this file needs to access a file with data in your \texttt{Data/} directory, you need to be explicit about where this file lives--it lives up one level in the hierarchy in another folder called \texttt{Data/}.
 
-\hypertarget{relative-and-absolute-paths}{%
-\section{Relative and Absolute Paths}\label{relative-and-absolute-paths}}
+\section{Relative and Absolute Paths}\label{relative-and-absolute-paths}
 
 When talking about file locations, a path tells us where a file lives within a directory structure. Paths can be absolute or relative. In general, relative paths are preferrable for reproducibility.
 
-\hypertarget{absolute-paths}{%
-\subsection*{Absolute paths}\label{absolute-paths}}
+\subsection*{Absolute paths}\label{absolute-paths}
 \addcontentsline{toc}{subsection}{Absolute paths}
 
 Absolute paths tell us the location of a file relative to the whole directory structure. Using the previous example, the absolute path of \texttt{biol-125\_research-project\_notes.docx} is \texttt{/Users/yourUserName/Desktop/BIOL-125/Research-Project/}.
 
-\hypertarget{relative-paths}{%
-\subsection*{Relative paths}\label{relative-paths}}
+\subsection*{Relative paths}\label{relative-paths}
 \addcontentsline{toc}{subsection}{Relative paths}
 
 Relative paths on the other hand tell us the location of a file relative a working directory. So, if you're working directory is your Desktop, the relative path of \texttt{biol-125\_research-project\_notes.docx} is \texttt{BIOL-125/Research-Project}.
 
-\hypertarget{set-a-working-directory-in-rstudio}{%
-\section{Set a Working Directory in RStudio}\label{set-a-working-directory-in-rstudio}}
+\section{Set a Working Directory in RStudio}\label{set-a-working-directory-in-rstudio}
 
-\hypertarget{preferred-method-creating-a-project}{%
-\subsection*{Preferred Method: Creating a Project}\label{preferred-method-creating-a-project}}
+\subsection*{Preferred Method: Creating a Project}\label{preferred-method-creating-a-project}
 \addcontentsline{toc}{subsection}{Preferred Method: Creating a Project}
 
 Let's say you're working on an experiment and you'd like to write a reproducible lab report using Markdown in RStudio. The first step is to create a new R project--which creates a file ending in \texttt{.Rproj}. A \texttt{.Rproj} file is a file that sits in the root directory of your project. When you open your RStudio session via this project file, it automatically tells \texttt{R} to use that root folder as your working directory. In other words, it tells R to look to this root folder for any files or folders you refer to within your R Markdown script.
@@ -635,66 +617,63 @@ So if you have a bunch of files related to your experiment and these are already
 
 Let's go through an example of how to create a new project with each method.
 
-\hypertarget{create-a-new-project-in-a-new-folder}{%
-\subsection*{Create a New Project in a New Folder}\label{create-a-new-project-in-a-new-folder}}
+\subsection*{Create a New Project in a New Folder}\label{create-a-new-project-in-a-new-folder}
 \addcontentsline{toc}{subsection}{Create a New Project in a New Folder}
 
 The first step is to open RStudio and select `New Project' from the `File' drop down menu.
 
-\includegraphics{images/D_new-project-1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/D_new-project-1.png}}
 
 You will then be asked to specify if you'd like to create a `New Directory' or use an `Existing Directory'. In this case select `New Directory'.
 
-\includegraphics{images/D_new-project-in-new-folder-2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/D_new-project-in-new-folder-2.png}}
 
 You will then be prompted to choose a project type. Choose `New Project'.
 
-\includegraphics{images/D_new-project-in-new-folder-3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/D_new-project-in-new-folder-3.png}}
 
 Now name what will be your working directory/root folder according to appropriate \href{https://ubco-biology.github.io/Procedures-and-Guidelines/directory-naming}{naming conventions}. Click `Browse' and select a location to save this folder to on your computer.
 
-\includegraphics{images/D_new-project-in-new-folder-4.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/D_new-project-in-new-folder-4.png}}
 
 Then click `Create Project'.
 
-\includegraphics{images/D_new-project-in-new-folder-5.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/D_new-project-in-new-folder-5.png}}
 
 Finally, \texttt{R} will bring you back to the main screen and under the `Files' region (bottom right panel) you will see your new project file. Now \texttt{R} is automatically using your new folder containing the project file as the working directory. As you create new files associated with your experiment, make sure you save them within the root folder that contains this project file.
 
-\includegraphics{images/D_new-project-in-new-folder-6.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/D_new-project-in-new-folder-6.png}}
 
-\hypertarget{create-a-new-project-in-an-existing-folder}{%
-\subsection*{Create a New Project in an Existing Folder}\label{create-a-new-project-in-an-existing-folder}}
+\subsection*{Create a New Project in an Existing Folder}\label{create-a-new-project-in-an-existing-folder}
 \addcontentsline{toc}{subsection}{Create a New Project in an Existing Folder}
 
 Recall, that the first step is to open RStudio and select `New Project' from the `File' drop down menu.
 
-\includegraphics{images/D_new-project-1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/D_new-project-1.png}}
 
 You will then be asked to specify if you'd like to create a `New Directory' or use an `Existing Directory'. In this case select `Existing Directory'.
 
-\includegraphics{images/D_new-project-old-folder-2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/D_new-project-old-folder-2.png}}
 
 Select the folder from your computer that you'd like to use as your working directory for the project.
 
-\includegraphics{images/D_new-project-old-folder-3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/D_new-project-old-folder-3.png}}
 
 Then click `Create Project'.
 
-\includegraphics{images/D_new-project-old-folder-4.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/D_new-project-old-folder-4.png}}
 
 Finally, \texttt{R} will bring you back to the main screen and under the `Files' region (bottom right panel) you will see your new project file. Now \texttt{R} is automatically using your new folder containing the project file as the working directory. Remember, as you create new files associated with your experiment, make sure you save them within the root folder that contains this project file.
 
-\includegraphics{images/D_new-project-old-folder-5.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/D_new-project-old-folder-5.png}}
 
 If you close RStudio and want to re-open the project you'll need to tell R that you want to use the root folder with the project file in it as your working directory. To do this, you'll need to locate the project file on your computer and open it, or open RStudio and select `Open Project' under the `File' drop down menu.
 
 You may have heard of other methods that can be used to set a working directory in \texttt{R}. In fact, there's a built in command--\texttt{setwd()}--to set a working directory other than the one currently being used. If you chose this method over using an R Project file, you would need to set your working directory every time you wanted to work on your project, or, alternatively, have the first line of code in your script set your working directory using an absolute path. The downside of using this method is that it relies on extra steps or \href{https://ubco-biology.github.io/Procedures-and-Guidelines/relative-and-absolute-paths}{absolute paths} to access your working directory. Consequently, if you move the project's root folder--containing all the files related to your experiment--you'll have to edit your \texttt{R} script and change the absolute path. This impacts computational reproducibility. If you send your work to a lab partner or colleague they will have to edit the script, updating the absolute path to match where they've placed the project folder on their computer. An R project negates this problem by leveraging \href{https://ubco-biology.github.io/Procedures-and-Guidelines/relative-and-absolute-paths}{relative paths}.
 
-\hypertarget{directory-structures}{%
-\chapter{Directory Structures}\label{directory-structures}}
+\chapter{Directory Structures}\label{directory-structures}
 
-\emph{Last updated 2023-02-10}
+\emph{Last updated 2026-09-02}
 
 Now that we've covered naming conventions and have a sense of how our systems are organized around folder structures, let's pretend that you store everything on your computer in a single folder--some of us are probably known to use our desktops for this. Imagine how long it would take you to find data you collected on a specific day a few years ago. Instead of keeping every document in a single place, we often organize our files using directory or folder structures. This helps us save precious time and improve our productivity.
 
@@ -702,8 +681,7 @@ One major aspect of Open Science is ensuring transparency in the research proces
 
 The way we currently organize folders and files on our computer may make sense to us, but a problem arises when we need to share those folders and files with other people. A folder name that is meaningful for us may make no sense to another person. So let's cover some conventions to help you organize the files on your computer in a way that is meaningful to both you and others.
 
-\hypertarget{directory-hierarchies}{%
-\section{Directory Hierarchies}\label{directory-hierarchies}}
+\section{Directory Hierarchies}\label{directory-hierarchies}
 
 First, let's talk about how to properly structure a folder hierarchy.
 
@@ -725,10 +703,9 @@ The structure should look something like the following:
 
 Here, our root folder is called Project-Folder and it contains three subdirectories, one for data, Experiment-Data, one for analyses, Experiment-Analysis, and one for a report Experiment-Report. Each subdirectory then contains one or many files.
 
-\hypertarget{directory-naming}{%
-\section{Directory Naming}\label{directory-naming}}
+\section{Directory Naming}\label{directory-naming}
 
-Key file naming conventions, such as avoiding special characters, are equally as important for directories as they are for naming files. Remember, we consider special characters to be anything other than letters in the English alphabet, numbers from 1-9, dashes "-", and underscores "\_".
+Key file naming conventions, such as avoiding special characters, are equally as important for directories as they are for naming files. Remember, we consider special characters to be anything other than letters in the English alphabet, numbers from 0-9, dashes "-", and underscores "\_".
 
 In case there is any doubt, here are some examples of what are considered special characters - characters you want to avoid!
 
@@ -738,8 +715,7 @@ In case there is any doubt, here are some examples of what are considered specia
 
 \textbf{Remember}: when we name the root folder we want to clearly communicate what the project is. And similarly, within this root folder, we want clearly labeled subfolders for each relevant aspect of the project. Common discrete subdirectories include ones for figures, data, manuscript etc.
 
-\hypertarget{readme-files-and-data-dictionaries}{%
-\section{readme files and data dictionaries}\label{readme-files-and-data-dictionaries}}
+\section{readme files and data dictionaries}\label{readme-files-and-data-dictionaries}
 
 When naming files we embed metadata into our file naming conventions to encode relevant information for the reader. But we can only store so much information in a file name. So we also include three additional files:
 
@@ -755,8 +731,7 @@ When naming files we embed metadata into our file naming conventions to encode r
 
 These files - containing a brief description of the major folder contents, naming conventions, and data structure - are critical for transparency and reproducibility because they allow others to easily understand the contents of your directory and data without needing to ask you. This is especially helpful when working with a group or sharing directories with others.
 
-\hypertarget{general-rules}{%
-\subsection*{General rules}\label{general-rules}}
+\subsection*{General rules}\label{general-rules}
 \addcontentsline{toc}{subsection}{General rules}
 
 A readme file and data dictionary should:
@@ -771,24 +746,21 @@ A readme file and data dictionary should:
   \_README and \_DATA-DICTIONARY files should be in all caps, so they really stand out; this should be the first thing you look at when looking at any directory or folder, as this is your guide to its contents.
 \end{itemize}
 
-\hypertarget{file-formats}{%
-\subsection*{File formats}\label{file-formats}}
+\subsection*{File formats}\label{file-formats}
 \addcontentsline{toc}{subsection}{File formats}
 
 Readme files and data dictionaries should be written in plain text, for this will ensure that the files describing your project can be opened on any computer. You will often see readme files called \_README.txt or \_DATA-DICTIONARY.txt.
 
 Our example readme and data dictionaries use a plain text format called markdown.
 
-\hypertarget{markdown}{%
-\subsubsection*{markdown}\label{markdown}}
+\subsubsection*{markdown}\label{markdown}
 \addcontentsline{toc}{subsubsection}{markdown}
 
 We recommend that you create your readme files as markdown, a way of formatting plain text files, allowing us to provide additional meaning to our content. For example, in plain text, if we want to emphasize content, we don't really have a way of doing this. In markdown, we can use italics and bolding if needed. We can also create lists and tables.
 
 Learn the basic syntax of markdown \href{https://ubco-biology.github.io/Procedures-and-Guidelines/markdown-1.html}{here}.
 
-\hypertarget{root-folder-readme}{%
-\section{Root folder readme}\label{root-folder-readme}}
+\section{Root folder readme}\label{root-folder-readme}
 
 To create a root folder readme file, use any markdown or text editor (e.g.~VS Code, Typora, notepad etc.), open a new file and save it to the root folder for your project, ensuring the file type is .md.
 
@@ -812,8 +784,7 @@ Next, we want to add some content to our \_README.md. The purpose of this docume
 
 To see an example root directory readme file click \href{files/DS_rootREADME.md}{here}.
 
-\hypertarget{data-directory-readme}{%
-\section{Data directory readme}\label{data-directory-readme}}
+\section{Data directory readme}\label{data-directory-readme}
 
 Next, we want to create another readme file, but this file will be placed within the subfolder that contains our project\textquotesingle s data. To do this, open any markdown or text editor (e.g.~VS Code, Typora, notepad etc.), open a new file and save it to the data subfolder for your project, ensuring the file type is .md. Name your readme file \_README.md.
 
@@ -835,8 +806,7 @@ The purpose of this readme file is to provide a description of data collection m
 
 To see an example data directory readme file click \href{files/DS_dataREADME.md}{here}.
 
-\hypertarget{data-dictionary}{%
-\section{Data dictionary}\label{data-dictionary}}
+\section{Data dictionary}\label{data-dictionary}
 
 Lastly, we need to create a data dictionary which elaborates on how our data is stored and organized. To do this, open any markdown or text editor (e.g.~VS Code, Typora, notepad etc.), open a new file and save it to the data subfolder for your project. This time we will save the file as \_DATA-DICTIONARY.md.
 
@@ -858,8 +828,7 @@ A data dictionary helps others understand the meaning of each element in your da
 
 To see an example data dictionary click \href{files/DS_DATA-DICTIONARY.md}{here}.
 
-\hypertarget{example-biol-116}{%
-\section{Example BIOL 116}\label{example-biol-116}}
+\section{Example BIOL 116}\label{example-biol-116}
 
 In our previous BIOL 116 example, we used a flat folder structure to hold all of our files. With this example, no readme files were created, as we made the assumption that the project was "simple" enough in its structure to not warrant a readme file. On reflection, this was an oversight, and we probably should have created a readme file describing what was in each file. Neither did we create a data dictionary. We'll do better on future assignments now that we know about the value of both forms of documentation. Anyway, in that example, we ended up with one folder of files that looked like the following before submitting our final assignment:
 
@@ -880,8 +849,7 @@ Pither_BIOL116RProject_Lab-report_V3.docx
 
 We can see that this might start to get unwieldy if we have a few more files joining the party. So let's break this apart into folders\ldots{}
 
-\hypertarget{top-level-folder}{%
-\subsection*{Top Level folder}\label{top-level-folder}}
+\subsection*{Top Level folder}\label{top-level-folder}
 \addcontentsline{toc}{subsection}{Top Level folder}
 
 \begin{verbatim}
@@ -900,8 +868,7 @@ Report/
 
 Note that we created a \_README.md file to describe our directory structure. We'll now distribute our files across these folders\ldots{}
 
-\hypertarget{data-folder}{%
-\subsection*{Data Folder}\label{data-folder}}
+\subsection*{Data Folder}\label{data-folder}
 \addcontentsline{toc}{subsection}{Data Folder}
 
 Creating a \_README.md and a \_DATA-DICTIONARY.md to describe our data files and their contents\ldots{}
@@ -915,16 +882,14 @@ Pither_20210923_BIOL116RProject_ph-data.csv
 Pither_20210924_BIOL116RProject_ph-data.csv
 \end{verbatim}
 
-\hypertarget{analysis-folder}{%
-\subsection*{Analysis Folder}\label{analysis-folder}}
+\subsection*{Analysis Folder}\label{analysis-folder}
 \addcontentsline{toc}{subsection}{Analysis Folder}
 
 \begin{verbatim}
 Pither_BIOL116RProject_Analysis_V0.xlsx
 \end{verbatim}
 
-\hypertarget{figures-folder}{%
-\subsection*{Figures Folder}\label{figures-folder}}
+\subsection*{Figures Folder}\label{figures-folder}
 \addcontentsline{toc}{subsection}{Figures Folder}
 
 \begin{verbatim}
@@ -933,8 +898,7 @@ Pither_BIOL116RProject_Figure-linear-reg_V0.png
 Pither_BIOL116RProject_Figure-linear-reg_V1.png
 \end{verbatim}
 
-\hypertarget{report-folder}{%
-\subsection*{Report Folder}\label{report-folder}}
+\subsection*{Report Folder}\label{report-folder}
 \addcontentsline{toc}{subsection}{Report Folder}
 
 \begin{verbatim}
@@ -944,21 +908,18 @@ Pither_BIOL116RProject_Lab-report_V2.docx
 Pither_BIOL116RProject_Lab-report_V3.docx
 \end{verbatim}
 
-\hypertarget{screenshot}{%
-\subsection*{Screenshot}\label{screenshot}}
+\subsection*{Screenshot}\label{screenshot}
 \addcontentsline{toc}{subsection}{Screenshot}
 
 And finally a screenshot from our desktop file manager\ldots{}
 
-\includegraphics{images/DS_biol116-directory-example.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/DS_biol116-directory-example.png}}
 
-\hypertarget{example-biol-125}{%
-\section{Example BIOL 125}\label{example-biol-125}}
+\section{Example BIOL 125}\label{example-biol-125}
 
 Let's work through another example where we start our project off using both appropriate directory structure and file naming conventions. Say you're a student in BIOL 125 working on a research project testing mealworm food preferences\ldots{}
 
-\hypertarget{day-1-1}{%
-\subsection*{Day 1}\label{day-1-1}}
+\subsection*{Day 1}\label{day-1-1}
 \addcontentsline{toc}{subsection}{Day 1}
 
 On day one of our research project, we are asked to prepare the beginning of a lab report that states our research question, hypothesis, and proposed methods. First, we need to create the root folder for our project:
@@ -983,10 +944,9 @@ Pither_BIOL125MealwormProject_report_V0.docx
 
 Here is what our project directory looks like so far:
 
-\includegraphics{images/DS_directory-example-1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/DS_directory-example-1.png}}
 
-\hypertarget{day-2-1}{%
-\subsection*{Day 2}\label{day-2-1}}
+\subsection*{Day 2}\label{day-2-1}
 \addcontentsline{toc}{subsection}{Day 2}
 
 Today, we completed a pilot experiment and collected some data. We saved this data file into our project's corresponding Data folder using appropriate naming conventions.
@@ -1009,10 +969,9 @@ Next, let's create a data dictionary for our new dataset. It should look somethi
 
 Now our project directory looks like this:
 
-\includegraphics{images/DS_directory-example-2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/DS_directory-example-2.png}}
 
-\hypertarget{day-3}{%
-\subsection*{Day 3}\label{day-3}}
+\subsection*{Day 3}\label{day-3}
 \addcontentsline{toc}{subsection}{Day 3}
 
 Now that our group has completed its pilot project, we decided to expand our data collection and start recording how far mealworms are willing to travel to get food. In addition to this new distance data, we continued to collect data on food preferences.
@@ -1046,10 +1005,9 @@ Pither_BIOL125MealwormProject_report_V1.docx
 
 Now our project directory looks like:
 
-\includegraphics{images/DS_directory-example-3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/DS_directory-example-3.png}}
 
-\hypertarget{day-4-5}{%
-\subsection*{Day 4-5}\label{day-4-5}}
+\subsection*{Day 4-5}\label{day-4-5}
 \addcontentsline{toc}{subsection}{Day 4-5}
 
 Over these days, we collected our last rounds of data, created some figures, and analyzed the data. So we have a bunch of new files that we need to make sure are placed correctly within our project directory.
@@ -1071,10 +1029,9 @@ Next, we'll save our analysis into the Analysis/ subfolder and the figures into 
 
 Now our project directory looks like:
 
-\includegraphics{images/DS_directory-example-4.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/DS_directory-example-4.png}}
 
-\hypertarget{day-6-1}{%
-\subsection*{Day 6}\label{day-6-1}}
+\subsection*{Day 6}\label{day-6-1}
 \addcontentsline{toc}{subsection}{Day 6}
 
 Today is the last day of our project and we completed the final copy of our report. We will make sure this is saved into the Report folder using the appropriate naming conventions.
@@ -1087,14 +1044,13 @@ Pither_BIOL125MealwormProject_report_V2.docx
 
 Our final directory looks like this:
 
-\includegraphics{images/DS_directory-example-5.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/DS_directory-example-5.png}}
 
 We can start to see that if you were to share your entire project directory with another person, it would be relatively easy for them to locate files and understand the meaning behind each document in our project. They would also know when changes were made and who made these changes, so if they had any questions, they'd know exactly who to ask!
 
-\hypertarget{tidy-data}{%
-\chapter{Tidy data}\label{tidy-data}}
+\chapter{Tidy data}\label{tidy-data}
 
-\emph{Last updated 2023-02-10}
+\emph{Last updated 2026-09-02}
 
 We've talked about file naming, directory structures, and documentation to ensure accessible, interpretable, and transparent data. Now it's time to talk about organizing individual variables within a given file. When properly organized, data values can be effectively analyzed, summarized, and visualized. When not, they can be onerous to work with and risk misinterpretation.
 
@@ -1112,56 +1068,65 @@ In general, your data files should adhere to the principles of "tidy data". Tidy
 
 It's easy to veer from these rules, as it's often easier to collect data using data collection tools that violate these rules. When this is the case, we need to know how to re-organize our data to make it "tidy".
 
-\hypertarget{wide-data}{%
-\section{Wide Data}\label{wide-data}}
+\section{Wide Data}\label{wide-data}
 
 Non-tidy data - sometimes called "wide" data as it tends to use more columns, but fewer rows - tends to lump observations together in cells. It is often easier to collect data in this way.
 
 So, say we collected data about the number of trout caught at local lakes across several days. We might end up with the following data tables if we used a separate table, sheet of paper etc. to record our findings.
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}ll@{}}
-\toprule()
+\toprule\noalign{}
 Site & Trout\_Caught\_Day\_1 \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Mabel-lake & 1 \\
 Postill-lake & 3 \\
 Ellison-lake & 0 \\
-\bottomrule()
 \end{longtable}
+}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}ll@{}}
-\toprule()
+\toprule\noalign{}
 Site & Trout\_Caught\_Day\_2 \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Mabel-lake & 3 \\
 Postill-lake & 4 \\
 Ellison-lake & 5 \\
-\bottomrule()
 \end{longtable}
+}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}ll@{}}
-\toprule()
+\toprule\noalign{}
 Site & Trout\_Caught\_Day\_3 \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Mabel-lake & 3 \\
 Postill-lake & 5 \\
 Ellison-lake & 1 \\
-\bottomrule()
 \end{longtable}
+}
 
 It is also very likely that we set up an Excel sheet where we recorded the site as the first column and our days and fish caught combined in subsequent columns, one column for each day. Even if we hadn't collected our data this way, we might be tempted to group our above data together for analysis or assignment submission in this way.
 
 Doing this, we'd end up with a table something like the following:
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1733}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2667}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2800}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2800}}@{}}
-\toprule()
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1733}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2800}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2800}}@{}}
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Site
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -1171,13 +1136,15 @@ Trout\_Caught\_Day\_2
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Trout\_Caught\_Day\_3
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Mabel-lake & 1 & 3 & 3 \\
 Postill-lake & 3 & 4 & 5 \\
 Ellison-Lake & 0 & 5 & 1 \\
-\bottomrule()
 \end{longtable}
+}
 
 But for analysis - for "tidy" data - we want one column per variable. In this case, we have three variables:
 
@@ -1193,8 +1160,7 @@ But for analysis - for "tidy" data - we want one column per variable. In this ca
 
 So let's get this cleaned up\ldots{}
 
-\hypertarget{tidy-data-1}{%
-\section{Tidy Data}\label{tidy-data-1}}
+\section{Tidy Data}\label{tidy-data-1}
 
 In the previous example, our data were organized where day and quantity caught shared common columns. That is, not every variable had a dedicated column and consequently, not every variable had a value in every given cell - day did not have any cell values.
 
@@ -1202,46 +1168,58 @@ Tidy data breaks this down and reserves one column per variable and one row per 
 
 First, working with a collection tool where we have one table per day:
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}lll@{}}
-\toprule()
+\toprule\noalign{}
 Site & Day & Trout\_Caught \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Mabel-lake & 1 & 1 \\
 Postill-lake & 1 & 3 \\
 Ellison-lake & 1 & 0 \\
-\bottomrule()
 \end{longtable}
+}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}lll@{}}
-\toprule()
+\toprule\noalign{}
 Site & Day & Trout\_Caught \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Mabel-lake & 2 & 3 \\
 Postill-lake & 2 & 4 \\
 Ellison-lake & 2 & 5 \\
-\bottomrule()
 \end{longtable}
+}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}lll@{}}
-\toprule()
+\toprule\noalign{}
 Site & Day & Trout\_Caught \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Mabel-lake & 3 & 3 \\
 Postill-lake & 3 & 5 \\
 Ellison-lake & 3 & 1 \\
-\bottomrule()
 \end{longtable}
+}
 
 And second, gathering this data into a single dataset, sorted by site:
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}lll@{}}
-\toprule()
+\toprule\noalign{}
 Site & Day & Trout\_Caught \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Mabel-lake & 1 & 1 \\
 Mabel-lake & 2 & 3 \\
 Mabel-lake & 3 & 3 \\
@@ -1251,24 +1229,23 @@ Postill-lake & 3 & 5 \\
 Ellison-lake & 1 & 0 \\
 Ellison-lake & 2 & 5 \\
 Ellison-lake & 3 & 1 \\
-\bottomrule()
 \end{longtable}
+}
 
 Now that's tidy data!
 
-\hypertarget{side-by-side-comparison}{%
-\section{Side by Side Comparison}\label{side-by-side-comparison}}
+\section{Side by Side Comparison}\label{side-by-side-comparison}
 
-\hypertarget{wide-data-1}{%
-\subsection*{Wide Data}\label{wide-data-1}}
+\subsection*{Wide Data}\label{wide-data-1}
 \addcontentsline{toc}{subsection}{Wide Data}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1857}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2714}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2714}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2714}}@{}}
-\toprule()
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1857}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2714}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2714}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2714}}@{}}
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Site
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -1278,23 +1255,27 @@ Trout\_Caught\_Day\_2
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Trout\_Caught\_Day\_3
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Mabel-lake & 1 & 3 & 3 \\
 Postill-lake & 3 & 4 & 5 \\
 Ellison-Lake & 0 & 5 & 1 \\
-\bottomrule()
 \end{longtable}
+}
 
-\hypertarget{tidy-data-2}{%
-\subsection*{Tidy Data}\label{tidy-data-2}}
+\subsection*{Tidy Data}\label{tidy-data-2}
 \addcontentsline{toc}{subsection}{Tidy Data}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}lll@{}}
-\toprule()
+\toprule\noalign{}
 Site & Day & Trout\_Caught \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Mabel-lake & 1 & 1 \\
 Mabel-lake & 2 & 3 \\
 Mabel-lake & 3 & 3 \\
@@ -1304,22 +1285,19 @@ Postill-lake & 3 & 5 \\
 Ellison-lake & 1 & 0 \\
 Ellison-lake & 2 & 5 \\
 Ellison-lake & 3 & 1 \\
-\bottomrule()
 \end{longtable}
+}
 
-\hypertarget{part-data-presentation}{%
-\part*{Data Presentation}\label{part-data-presentation}}
+\part*{Data Presentation}\label{part-data-presentation}
 \addcontentsline{toc}{part}{Data Presentation}
 
-\hypertarget{figures-tables}{%
-\chapter{Figures \& Tables}\label{figures-tables}}
+\chapter{Figures \& Tables}\label{figures-tables}
 
-\emph{Last updated 2023-02-10}
+\emph{Last updated 2026-09-02}
 
 These guidelines are based on current "best practices" in Biology. You may encounter small differences when working with data or reading the results of research from other disciplines. Our aim is to achieve consistency among faculty, instructors, and students in how data are summarized and presented within lab reports and research papers.
 
-\hypertarget{tables}{%
-\section{Tables}\label{tables}}
+\section{Tables}\label{tables}
 
 When presenting data in a table keep in mind the following:
 
@@ -1335,8 +1313,7 @@ When presenting data in a table keep in mind the following:
   Use horizontal lines only; these are often placed above and below headings, and at the bottom of tables.
 \end{itemize}
 
-\hypertarget{example}{%
-\subsection*{Example}\label{example}}
+\subsection*{Example}\label{example}
 \addcontentsline{toc}{subsection}{Example}
 
 The following is an example of a properly formatted table.
@@ -1389,8 +1366,7 @@ Root mass (mg)
 
 * data for two individuals misplaced
 
-\hypertarget{descriptive-summary-statistics}{%
-\section{Descriptive \& Summary Statistics}\label{descriptive-summary-statistics}}
+\section{Descriptive \& Summary Statistics}\label{descriptive-summary-statistics}
 
 Here are some general guidelines to follow when displaying descriptive or summary statistics:
 
@@ -1436,8 +1412,7 @@ Here are some general guidelines to follow when displaying descriptive or summar
   Report a frequency table (raw data) or a summary table with proportions for categories (the main descriptive statistic of interest), along with the confidence interval for the proportion if appropriate.
 \end{itemize}
 
-\hypertarget{results-of-statistical-tests}{%
-\section{Results of Statistical Tests}\label{results-of-statistical-tests}}
+\section{Results of Statistical Tests}\label{results-of-statistical-tests}
 
 Here are some guidelines for reporting the results of statistical tests:
 
@@ -1458,19 +1433,21 @@ Here are some guidelines for reporting the results of statistical tests:
 
 \textbf{Table 3.}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}llllll@{}}
-\toprule()
+\toprule\noalign{}
 & SS & df & MS & F & P \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Treatment & 7.224 & 2 & 3.6122 & 7.29 & 0.004 \\
 Error & 9.415 & 19 & 0.4955 & & \\
 Total & 16.640 & 21 & 4.1078 & & \\
-\bottomrule()
 \end{longtable}
+}
 
-\hypertarget{figures}{%
-\section{Figures}\label{figures}}
+\section{Figures}\label{figures}
 
 When displaying data using a figure, follow these guidelines:
 
@@ -1510,31 +1487,28 @@ When displaying data using a figure, follow these guidelines:
   Note that the stripchart has the advantage of showing all the data (i.e.~each observation is represented by a point), whereas the boxplot summarizes the data visually. When sample sizes per group are very large, it would get very messy if you tried to show all the data. However, there are graphs like \href{https://www.r-graph-gallery.com/violin.html}{"violin plots"} that offer a nice compromise.
 \end{itemize}
 
-\hypertarget{examples}{%
-\subsection*{Examples}\label{examples}}
+\subsection*{Examples}\label{examples}
 \addcontentsline{toc}{subsection}{Examples}
 
-\includegraphics{images/FT_fig-1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/FT_fig-1.png}}
 
 \textbf{Figure 1.} Aggression was significantly higher among isolated ants (\emph{n} = 8) compared to the control group (\emph{n} = 6) (see text for details). Shown are individual observations (grey circles), group means (solid circles) with +/- 1 SEM.
 
-\includegraphics{images/FT_fig-2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/FT_fig-2.png}}
 
 \textbf{Figure 2.} Height of male (\emph{n} = 64) and female (\emph{n} = 90) students within BIOL202. Thick horizontal lines represent group medians, large circles represent group means, boxes delimit 1st to 3rd quartiles, whiskers extend to 1.5 x IQR, and small circles represent extreme observations.
 
-\includegraphics{images/FT_fig-3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/FT_fig-3.png}}
 
 \textbf{Figure 3}. Head circumference versus height for \emph{n} = 150 BIOL202 students. The positive association is highly significant (Pearson \emph{r} = 0.82; \emph{P} \textless{} 0.001).
 
-\hypertarget{sketches-drawings}{%
-\chapter{Sketches \& Drawings}\label{sketches-drawings}}
+\chapter{Sketches \& Drawings}\label{sketches-drawings}
 
-\emph{Last updated 2023-02-10}
+\emph{Last updated 2026-09-02}
 
-We've heard it before, a picture is worth a thousand words. While a common place phrase, it echoes very true in biological research. Describing in text the morphological features of an organism is no easy task. Trying to form a mental image of an organism described in text still more difficult! As a simple example, imagine trying to draw a representation of \emph{Fritillaria pudica} from the botanical description in the \href{http://www.efloras.org/florataxon.aspx?flora_id=1\&taxon_id=242101628}{Flora of North America}. No easy task. So let's talk about sketches\ldots{}
+We've heard it before, a picture is worth a thousand words. While a common place phrase, it echoes very true in biological research. Describing in text the morphological features of an organism is no easy task. Trying to form a mental image of an organism described in text still more difficult! As a simple example, imagine trying to draw a representation of \emph{Fritillaria pudica} from the botanical description in the \href{http://www.efloras.org/florataxon.aspx?flora_id=1&taxon_id=242101628}{Flora of North America}. No easy task. So let's talk about sketches\ldots{}
 
-\hypertarget{the-role-of-sketches}{%
-\section{The Role of Sketches}\label{the-role-of-sketches}}
+\section{The Role of Sketches}\label{the-role-of-sketches}
 
 Detailed notetaking is an essential aspect of the research process. There are countless benefits to taking detailed notes throughout as you work in the lab or on research projects. Some of these benefits include:
 
@@ -1564,15 +1538,13 @@ While detailed written notes can be extremely helpful, their combination with sk
 
 Providing a quick simple sketch alongside your written notes provides additional context to help both yourself and your reader understand what you observed or your train of thought.
 
-\hypertarget{sketching-guidelines}{%
-\section{Sketching Guidelines}\label{sketching-guidelines}}
+\section{Sketching Guidelines}\label{sketching-guidelines}
 
 As we've seen elsewhere, convention and standards help us communicate in unambiguous terms - they allow others in our field to easily interpret what we\textquotesingle re trying to say, and they allow us to process our information in computational environments in known and reproducible ways.
 
 The same goes for how we construct sketches in biological research. These sketches are generally simple in their articulation and are embedded within your notebook.
 
-\hypertarget{general-guidelines}{%
-\subsection*{General Guidelines}\label{general-guidelines}}
+\subsection*{General Guidelines}\label{general-guidelines}
 \addcontentsline{toc}{subsection}{General Guidelines}
 
 \begin{itemize}
@@ -1587,8 +1559,7 @@ The same goes for how we construct sketches in biological research. These sketch
   Label lines should be straight and should not intersect.
 \end{itemize}
 
-\hypertarget{organisms-and-structures}{%
-\subsection*{Organisms and Structures}\label{organisms-and-structures}}
+\subsection*{Organisms and Structures}\label{organisms-and-structures}
 \addcontentsline{toc}{subsection}{Organisms and Structures}
 
 Some additional guideline to ensure your sketches are clear and readable when drawing organisms or their structures include:
@@ -1614,8 +1585,7 @@ Some additional guideline to ensure your sketches are clear and readable when dr
   \end{itemize}
 \end{itemize}
 
-\hypertarget{microscopes}{%
-\subsection*{Microscopes}\label{microscopes}}
+\subsection*{Microscopes}\label{microscopes}
 \addcontentsline{toc}{subsection}{Microscopes}
 
 When drawing organisms or structures viewed under the microscope:
@@ -1628,35 +1598,31 @@ When drawing organisms or structures viewed under the microscope:
   Put the scale (or magnification) of your drawing at the bottom right of your drawing. Instructions for determining scale/magnification \href{a-magnification-of-a-drawing.html}{can be found here}.
 \end{itemize}
 
-\hypertarget{good-example-sketches}{%
-\section{Good Example Sketches}\label{good-example-sketches}}
+\section{Good Example Sketches}\label{good-example-sketches}
 
-\hypertarget{example-1}{%
-\subsection*{Example 1}\label{example-1}}
+\subsection*{Example 1}\label{example-1}
 \addcontentsline{toc}{subsection}{Example 1}
 
 This sketch is properly labeled and label lines do not intersect. It contains a descriptive caption below the sketch with the species identified with proper formatting and capitalization and scale noted.
 
 \begin{figure}
 \centering
-\includegraphics{images/JSSG_good-journal-style-fig-1.png}
+\pandocbounded{\includegraphics[keepaspectratio,alt={Caption Whole (wet) mount of Vorticella campanula viewed at 400x total magnification using a brightfield compound microscope. Macronucleus not seen. Image produced by Clerissa Copeland licensed under CC BY-NC-SA 4.0}]{images/JSSG_good-journal-style-fig-1.png}}
 \caption{\emph{Caption} Whole (wet) mount of \emph{Vorticella campanula} viewed at 400x total magnification using a brightfield compound microscope. Macronucleus not seen.Image produced by Clerissa Copeland licensed under \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA 4.0}}
 \end{figure}
 
-\hypertarget{example-2}{%
-\subsection*{Example 2}\label{example-2}}
+\subsection*{Example 2}\label{example-2}
 \addcontentsline{toc}{subsection}{Example 2}
 
 This figure is properly labeled and label lines do not intersect. It contains a descriptive caption below the sketch for easy interpretation, and depth is indicated with a dashed line.
 
 \begin{figure}
 \centering
-\includegraphics{images/JSSG_good-journal-style-fig-2.png}
+\pandocbounded{\includegraphics[keepaspectratio,alt={Caption Column chromatography apparatus set-up used to purify the experiment sample. Silica gel represents the stationary phase whereas the eluent represents the mobile phase. As the components of the sample separated, the stopcock was closed and the collection flask swapped such that only the compound of interest was collected. Image prodced by Clerissa Copeland licensed under CC BY-NC-SA 4.0}]{images/JSSG_good-journal-style-fig-2.png}}
 \caption{\emph{Caption} Column chromatography apparatus set-up used to purify the experiment sample. Silica gel represents the stationary phase whereas the eluent represents the mobile phase. As the components of the sample separated, the stopcock was closed and the collection flask swapped such that only the compound of interest was collected.Image prodced by Clerissa Copeland licensed under \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA 4.0}}
 \end{figure}
 
-\hypertarget{poor-example-sketch}{%
-\section{Poor Example Sketch}\label{poor-example-sketch}}
+\section{Poor Example Sketch}\label{poor-example-sketch}
 
 This figure is not directed to have the anterior region at the top, the labelling, while potentially accurate, is not all directionally to the right of the drawing itself. It employs shading and it\textquotesingle s wrapped in a circle. Did we miss anything? Oh, the caption is above, not below the sketch and the genus and specific epithet are not properly formatted.
 
@@ -1664,18 +1630,16 @@ This figure is not directed to have the anterior region at the top, the labellin
 
 \begin{figure}
 \centering
-\includegraphics{images/JSSG_poor-journal-style-fig-1.png}
+\pandocbounded{\includegraphics[keepaspectratio,alt={Image prodced by Clerissa Copeland licensed under CC BY-NC-SA 4.0}]{images/JSSG_poor-journal-style-fig-1.png}}
 \caption{Image prodced by Clerissa Copeland licensed under \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA 4.0}}
 \end{figure}
 
-\hypertarget{part-writing-and-citing}{%
-\part*{Writing and Citing}\label{part-writing-and-citing}}
+\part*{Writing and Citing}\label{part-writing-and-citing}
 \addcontentsline{toc}{part}{Writing and Citing}
 
-\hypertarget{markdown-1}{%
-\chapter{Markdown}\label{markdown-1}}
+\chapter{Markdown}\label{markdown-1}
 
-\emph{Last updated 2023-02-10}
+\emph{Last updated 2026-09-02}
 
 Markdown is a markup language used to format plain text files to help us provide additional meaning to our content. Markup languages are ideal authoring tools because they work on the principle of separating content from formatting. Markup languages are ideal authoring tools for the sciences because they rely on plain text, so any computer anywhere at any time will be able to open them and consequently, we will be able to read them.
 
@@ -1697,19 +1661,17 @@ In fact, when we think about the best practices in science, Markdown is an essen
 
 To learn more about Markdown see Matt Cone's Markdown Guide \href{https://www.markdownguide.org/getting-started\#:~:text=Why\%20Use\%20Markdown\%3F\%201\%20Markdown\%20can\%20be\%20used,future\%20proof.\%20...\%205\%20Markdown\%20is\%20everywhere.\%20}{here}.
 
-\hypertarget{how-markdown-works}{%
-\section{How Markdown Works}\label{how-markdown-works}}
+\section{How Markdown Works}\label{how-markdown-works}
 
 Markdown is a two step process. You write, with markup, in a plain text file. Another application then formats your document based on your markup.
 
-\includegraphics{images/MD_translation.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/MD_translation.png}}
 
 This makes markdown very useful for producing many different types of documents from the same piece of prose, whether that be pdf, html, docx, you name it. It also means that you have one working, editable document, which is plain text, and a series of distributable copies in other formats. More importantly, formatted in a way to address the needs of that particular audience.
 
 All of the content that you\textquotesingle re reading right now was authored in Markdown. Note at the top of the page, you can download this content as a pdf or as an epub. But we only had to write it once.
 
-\hypertarget{what-you-need-to-get-started}{%
-\section{What You Need to Get Started}\label{what-you-need-to-get-started}}
+\section{What You Need to Get Started}\label{what-you-need-to-get-started}
 
 You\textquotesingle ll need a text editor or a dedicated Markdown editor! What's the difference?
 
@@ -1721,8 +1683,7 @@ A dedicated Markdown editor will format your Markdown as you type, so you get an
 
 In between a plain text editor and a dedicated Markdown editor are those text editors with add-ons to help you navigate your markup. These options provide a lot of flexibility and finding a text editor of this ilk that you like will be of benefit going forward in your degree. An excellent free and open source, cross platform option is \href{https://code.visualstudio.com/}{VS Code}, which has built in support for Markdown rendering.
 
-\hypertarget{vs-code}{%
-\subsection*{VS Code}\label{vs-code}}
+\subsection*{VS Code}\label{vs-code}
 \addcontentsline{toc}{subsection}{VS Code}
 
 VS Code is a source code editor. This handy program has many features, one of which is functioning as a text editor. We can use it to create Markdown files by following the instructions below.
@@ -1731,13 +1692,13 @@ Download VS Code at \url{https://code.visualstudio.com/}. Once downloaded, launc
 
 \begin{figure}
 \centering
-\includegraphics{images/vs-code-1.png}
+\pandocbounded{\includegraphics[keepaspectratio,alt={VS Code Welcome Page.}]{images/vs-code-1.png}}
 \caption{VS Code Welcome Page.}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{images/vs-code-2.png}
+\pandocbounded{\includegraphics[keepaspectratio,alt={VS Code Select a File Type.}]{images/vs-code-2.png}}
 \caption{VS Code Select a File Type.}
 \end{figure}
 
@@ -1745,13 +1706,13 @@ Next you will prompted to \texttt{Choose\ a\ language}. In this case we want a M
 
 \begin{figure}
 \centering
-\includegraphics{images/vs-code-3.png}
+\pandocbounded{\includegraphics[keepaspectratio,alt={VS Code Choose a Language.}]{images/vs-code-3.png}}
 \caption{VS Code Choose a Language.}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{images/vs-code-4.png}
+\pandocbounded{\includegraphics[keepaspectratio,alt={VS Code Select Markdown as a Language.}]{images/vs-code-4.png}}
 \caption{VS Code Select Markdown as a Language.}
 \end{figure}
 
@@ -1759,18 +1720,17 @@ Now you\textquotesingle re ready to start writing your plain text file using Mar
 
 \begin{figure}
 \centering
-\includegraphics{images/vs-code-5.png}
+\pandocbounded{\includegraphics[keepaspectratio,alt={VS Code Markdown Preview Icon.}]{images/vs-code-5.png}}
 \caption{VS Code Markdown Preview Icon.}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{images/vs-code-6.png}
+\pandocbounded{\includegraphics[keepaspectratio,alt={VS Code Markdown Preview.}]{images/vs-code-6.png}}
 \caption{VS Code Markdown Preview.}
 \end{figure}
 
-\hypertarget{prose}{%
-\section{Prose}\label{prose}}
+\section{Prose}\label{prose}
 
 You can just start writing if you\textquotesingle ve opened up a new document in MacDown, Markdown Edit, or whatever text or Markdown editor you happen to be using.
 
@@ -1784,11 +1744,9 @@ However, there's a couple of things you\textquotesingle ll note right away:
   Just hitting \textquotesingle Enter\textquotesingle{} once doesn't put you on a new line. You need to hit \textquotesingle Enter\textquotesingle{} twice.
 \end{itemize}
 
-\hypertarget{structure-1}{%
-\section{Structure}\label{structure-1}}
+\section{Structure}\label{structure-1}
 
-\hypertarget{headings}{%
-\subsection*{Headings}\label{headings}}
+\subsection*{Headings}\label{headings}
 \addcontentsline{toc}{subsection}{Headings}
 
 You can add structure to your text document by adding headers with different hierarchies. To do this, you add a number sign \texttt{\#} before the text. The number of \texttt{\#} symbols indicates the hierarchy of the header.
@@ -1814,13 +1772,11 @@ This is a third-tier header
 
 This is a fourth-tier header
 
-\hypertarget{emphasis-and-style}{%
-\section{Emphasis and Style}\label{emphasis-and-style}}
+\section{Emphasis and Style}\label{emphasis-and-style}
 
 There are a number of different Markdown syntaxes that we can use to add style and emphasis to specific parts of our document. Below are a few examples.
 
-\hypertarget{italics}{%
-\subsection*{Italics}\label{italics}}
+\subsection*{Italics}\label{italics}
 \addcontentsline{toc}{subsection}{Italics}
 
 You can make text italicized by encasing the text in a single asterisk \texttt{*} or underscore \texttt{\_}.
@@ -1839,8 +1795,7 @@ Output
 
 \emph{This is also italicized}
 
-\hypertarget{bold}{%
-\subsection*{Bold}\label{bold}}
+\subsection*{Bold}\label{bold}
 \addcontentsline{toc}{subsection}{Bold}
 
 You can make text bold by encasing the text in two asterisks \texttt{**} or underscores
@@ -1860,8 +1815,7 @@ Output
 
 \textbf{This is also bold}
 
-\hypertarget{bold-and-italics}{%
-\subsubsection*{Bold and Italics}\label{bold-and-italics}}
+\subsubsection*{Bold and Italics}\label{bold-and-italics}
 \addcontentsline{toc}{subsubsection}{Bold and Italics}
 
 If you want to make text both bold and italicized you can encase the text with three asterisks \texttt{***} or underscores \texttt{\_\_\_}.
@@ -1882,8 +1836,7 @@ Output
 
 \textbf{NOTE} When italicizing or bolding characters within a string of text, it\textquotesingle s better to use an asterisk \texttt{*} rather than an underscore \texttt{\_}. For example: Biology *is* awesome NOT Biology \_is\_ awesome
 
-\hypertarget{strikethrough}{%
-\subsection*{Strikethrough}\label{strikethrough}}
+\subsection*{Strikethrough}\label{strikethrough}
 \addcontentsline{toc}{subsection}{Strikethrough}
 
 You can strike through text by encasing it with two tildes, \texttt{\textasciitilde{}\textasciitilde{}}.
@@ -1896,10 +1849,9 @@ Input
 
 Output
 
-\sout{This text has a strike through it}
+\st{This text has a strike through it}
 
-\hypertarget{code}{%
-\section{Code}\label{code}}
+\section{Code}\label{code}
 
 You can show text as code by encasing it with three backticks, \texttt{\textasciigrave{}\textasciigrave{}\textasciigrave{}}.
 
@@ -1917,8 +1869,7 @@ Output
 This text looks like code
 \end{verbatim}
 
-\hypertarget{blockquotes}{%
-\section{Blockquotes}\label{blockquotes}}
+\section{Blockquotes}\label{blockquotes}
 
 To create a blockquote using markdown, you need to place a greater-than, \texttt{\textgreater{}} sign in front of the text.
 
@@ -1936,11 +1887,9 @@ This text is placed within a block quote
 
 Leave a blank line both before the blockquote and after it.
 
-\hypertarget{lists}{%
-\section{Lists}\label{lists}}
+\section{Lists}\label{lists}
 
-\hypertarget{ordered-lists}{%
-\subsection*{Ordered lists}\label{ordered-lists}}
+\subsection*{Ordered lists}\label{ordered-lists}
 \addcontentsline{toc}{subsection}{Ordered lists}
 
 To create an ordered list in Markdown, you'll need to place the item number and a period in front of the text.
@@ -1966,8 +1915,7 @@ Output:
   Third item
 \end{enumerate}
 
-\hypertarget{unordered-lists}{%
-\subsection*{Unordered lists}\label{unordered-lists}}
+\subsection*{Unordered lists}\label{unordered-lists}
 \addcontentsline{toc}{subsection}{Unordered lists}
 
 You can create an unordered list by placing an asterisk \texttt{*}, dash \texttt{-}, or plus sign \texttt{+} in front of the text.
@@ -2004,8 +1952,7 @@ Output
   third item
 \end{itemize}
 
-\hypertarget{tables-1}{%
-\section{Tables}\label{tables-1}}
+\section{Tables}\label{tables-1}
 
 When creating tables using Markdown, pipes \texttt{\textbar{}} separate columns while line breaks are used to separate rows. The column header is separated by three or more hyphens \texttt{-\/-\/-} between each column\textquotesingle s pipe \texttt{\textbar{}}. A colon \texttt{:} can be added to the left of the hyphens to left align the column, to the right to right align, and on both ends to centre. The following example is left aligned.
 
@@ -2020,15 +1967,18 @@ Input
 
 Output
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}lll@{}}
-\toprule()
+\toprule\noalign{}
 Column 1 Header & Column 2 Header & Column 3 Header \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Column 1 item & Column 2 item & Column 3 item \\
 Column 1 item & Column 2 item & Column 3 item \\
-\bottomrule()
 \end{longtable}
+}
 
 \textbf{NOTE}
 
@@ -2040,8 +1990,7 @@ Column 1 item & Column 2 item & Column 3 item \\
   Put a space, " ", between each pipe \texttt{\textbar{}} and the following word or dash \texttt{-}
 \end{itemize}
 
-\hypertarget{links}{%
-\section{Links}\label{links}}
+\section{Links}\label{links}
 
 To create a link to a url or another document, encase the text with square brackets, \texttt{{[}\ {]}}, and follow the text immediately with the link encased in parentheses, \texttt{(\ )}.
 
@@ -2055,8 +2004,7 @@ Output
 
 To visit the UBC Okanagan Faculty of Biology website click \href{https://biology.ok.ubc.ca/}{here}.
 
-\hypertarget{images}{%
-\section{Images}\label{images}}
+\section{Images}\label{images}
 
 Creating a link to an image follows a similar format to that of links, but the square brackets encasing the text are preceded with an exclamation mark \texttt{!}. You can place either the url link or path to the image on your computer in the parentheses. If using a path on your computer, use a relative path.
 
@@ -2071,21 +2019,19 @@ Output
 
 \begin{figure}
 \centering
-\includegraphics{images/MD_Caterpillar.jpg}
-\caption{A magnificent caterpillar. Photo by \href{https://unsplash.com/@erik_karits?utm_source=unsplash\&utm_medium=referral\&utm_content=creditCopyText}{Erik Karits} on \href{https://unsplash.com/?utm_source=unsplash\&utm_medium=referral\&utm_content=creditCopyText}{Unsplash}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={A magnificent caterpillar. Photo by Erik Karits on Unsplash}]{images/MD_Caterpillar.jpg}}
+\caption{A magnificent caterpillar. Photo by \href{https://unsplash.com/@erik_karits?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText}{Erik Karits} on \href{https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText}{Unsplash}}
 \end{figure}
 
-\hypertarget{markdown-flavours}{%
-\section{Markdown Flavours}\label{markdown-flavours}}
+\section{Markdown Flavours}\label{markdown-flavours}
 
 Everything here is basic, or core, Markdown and will be supported by any markdown editor. Since Markdown is simply encoding document structure through markup, several different implementations have expanded on this core set and allow you to do other things, including footnotes, references etc.
 
 We\textquotesingle ll keep it simple for the moment; this is all you really need for your \_README.md files! Later, you\textquotesingle ll be introduced to RMarkdown, which, when used in conjunction with R, will allow you to render statistical analyses within your Markdown document and build reference lists, among other things.
 
-\hypertarget{apa-citations}{%
-\chapter{APA Citations}\label{apa-citations}}
+\chapter{APA Citations}\label{apa-citations}
 
-\emph{Last updated 2023-02-10}
+\emph{Last updated 2026-09-02}
 
 This chapter is a brief overview of the 7th edition of APA. For a more in depth review, please consult \href{https://guides.library.ubc.ca/apacitationstyle}{the library's APA Citation Guide}. For the full APA manual, please consult the \href{http://resolve.library.ubc.ca/cgi-bin/catsearch?bid=10057275}{Publication Manual of the American Psychological Association}, available through the library.
 
@@ -2099,8 +2045,7 @@ Additional resources you may wish to consult include:
   Purdue OWL's \href{https://owl.purdue.edu/owl/research_and_citation/apa_style/apa_formatting_and_style_guide/general_format.html}{website} for still more examples
 \end{itemize}
 
-\hypertarget{in-text-citations}{%
-\section{In-text Citations}\label{in-text-citations}}
+\section{In-text Citations}\label{in-text-citations}
 
 In-text citations always appear right after the content you are summarizing, paraphrasing, or quoting. The format is as follows:
 
@@ -2122,8 +2067,7 @@ In-text citations always appear right after the content you are summarizing, par
   (Author, YYYY, pp.~\#\#-\#\#) Multiple pages
 \end{itemize}
 
-\hypertarget{narrative-vs-parenthetical}{%
-\subsection*{Narrative vs Parenthetical}\label{narrative-vs-parenthetical}}
+\subsection*{Narrative vs Parenthetical}\label{narrative-vs-parenthetical}
 \addcontentsline{toc}{subsection}{Narrative vs Parenthetical}
 
 If you mention the author or authors in text, you do not need to include this information in the brackets, "()". This is called a narrative citation.
@@ -2134,23 +2078,24 @@ The alternative is called a parenthetical citation.
 
 \textbf{Parenthetical in-text citation:} Several benefits and risks can be identified in the implementation of fracking for oil extraction. Considerations include regulation, water pollution, tremors etc. (Raimi, 2018).
 
-\hypertarget{quick-format-guide}{%
-\subsection*{Quick Format Guide}\label{quick-format-guide}}
+\subsection*{Quick Format Guide}\label{quick-format-guide}
 \addcontentsline{toc}{subsection}{Quick Format Guide}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}lll@{}}
-\toprule()
+\toprule\noalign{}
 \# of Authors & Narrative Example & Parenthetical Example \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1 & Bradley (2017) & (Bradley, 2017) \\
 2 & Janmaat and Rahimova (2018) & (Janmaat \& Rahimova, 2018) \\
 3 or more & Mei et al.~(2018) & (Mei et al., 2018) \\
-\bottomrule()
 \end{longtable}
+}
 
-\hypertarget{reference-list}{%
-\section{Reference List}\label{reference-list}}
+\section{Reference List}\label{reference-list}
 
 \textbf{NOTE}
 
@@ -2166,33 +2111,29 @@ The alternative is called a parenthetical citation.
   List all authors in the order that they appear in the source.
 \end{itemize}
 
-\hypertarget{journal-article-with-a-doi-1-2-authors}{%
-\subsection*{Journal article with a DOI (1-2 authors)}\label{journal-article-with-a-doi-1-2-authors}}
+\subsection*{Journal article with a DOI (1-2 authors)}\label{journal-article-with-a-doi-1-2-authors}
 \addcontentsline{toc}{subsection}{Journal article with a DOI (1-2 authors)}
 
 List all authors in the reference list and in-text citations.
 
 Janmaat, J., \& Rahimova, N. (2018). Managing drought risk in the Okanagan: A roll for dry-year option contracts? \emph{Canadian Public Policy}, \emph{44}(2), 112-125. \url{https://doi.org/10.3138/cpp.2017-003}
 
-\hypertarget{journal-article-with-a-doi-3-20-authors}{%
-\subsection*{Journal article with a DOI (3-20 authors)}\label{journal-article-with-a-doi-3-20-authors}}
+\subsection*{Journal article with a DOI (3-20 authors)}\label{journal-article-with-a-doi-3-20-authors}
 \addcontentsline{toc}{subsection}{Journal article with a DOI (3-20 authors)}
 
 List all authors in the reference list and only the first author in the in-text citations.
 
 Mei, Y., Yu, K., Lo, J. C. Y., Takeuchi, L. E., Hadjesfandiari, N., Yazdani-Ahmadabadi, H., Brooks, D. E., Lange, D., \& Kizhakkedathu, J. N. (2018). Polymer-nanoparticle interaction as a design principle in the development of a durable ultrathin universal binary antibiofilm coating with long-term activity. \emph{ACS Nano}, \emph{12}(12), 11881-11891. \url{https://doi.org/10.1021/acsnano.8b05512}
 
-\hypertarget{types-of-sources}{%
-\chapter{Types of Sources}\label{types-of-sources}}
+\chapter{Types of Sources}\label{types-of-sources}
 
-\emph{Last updated 2023-02-10}
+\emph{Last updated 2026-09-02}
 
 As you conduct research and throughout your studies you will encounter many different types of sources. This chapter will briefly introduce and provide examples of three commonly utilized sources: primary, secondary, and review sources.
 
-For more in-depth information about types of sources visit the \href{https://guides.library.ubc.ca/c.php?g=704417\&p=5011059}{UBC Library Research Skills for Biologists Guide} and the \href{https://guides.library.ubc.ca/litreviews}{UBC Literature Review Guide}.
+For more in-depth information about types of sources visit the \href{https://guides.library.ubc.ca/c.php?g=704417&p=5011059}{UBC Library Research Skills for Biologists Guide} and the \href{https://guides.library.ubc.ca/litreviews}{UBC Literature Review Guide}.
 
-\hypertarget{primary-sources}{%
-\subsection*{Primary Sources}\label{primary-sources}}
+\subsection*{Primary Sources}\label{primary-sources}
 \addcontentsline{toc}{subsection}{Primary Sources}
 
 Primary sources are scientific papers describing the first hand accounts of events or theories. In other words, an original publication where the author(s) discuss work performed by them. Primary sources can describe either exploratory or confirmatory research. For a refresher on these types of research see \href{https://ubco-biology.github.io/OS-Introduction/the-burden-of-proof.html}{The Burden of Proof} section of the Open Science Primer. Examples of primary sources include:
@@ -2211,8 +2152,7 @@ Hay, T. N., Phillips, L. A., Nicholson, B. A., \& Jones, M. D. (2015). Ectomycor
 
 In contrast, the link here provides you with an example of a non-primary sourced paper \url{https://en.wikipedia.org/wiki/Spruce\%E2\%80\%93fir_forests}.
 
-\hypertarget{secondary-sources}{%
-\subsection*{Secondary Sources}\label{secondary-sources}}
+\subsection*{Secondary Sources}\label{secondary-sources}
 \addcontentsline{toc}{subsection}{Secondary Sources}
 
 Secondary sources are scientific papers written by a person who did not participate in the events first hand. The author(s) of a secondary source typically generalizes, interprets, or analyzes primary sources. Examples of secondary sources include:
@@ -2231,8 +2171,7 @@ Secondary sources are scientific papers written by a person who did not particip
 
 To help you distinguish between a primary and secondary source, ask yourself ``Did the researchers collect data to answer a question or are they reporting on someone else\textquotesingle s data?'' If the answer is the former, the source is primary. However, if the answer is reporting on someone else\textquotesingle s data the source is secondary.
 
-\hypertarget{review-sources}{%
-\subsection*{Review Sources}\label{review-sources}}
+\subsection*{Review Sources}\label{review-sources}
 \addcontentsline{toc}{subsection}{Review Sources}
 
 Review sources are a specific type of secondary source where authors summarize the existing literature for a topic. These reviews are extremely helpful for identifying
@@ -2259,7 +2198,7 @@ Literature reviews, also known as traditional reviews, provide a comprehensive, 
 
 Scoping reviews follow a specific \textbf{pre-defined} methodological study protocol including a detailed search strategy aimed at gathering a broad and exhaustive list of sources to review. The purpose of following a pre-defined study protocol is to reduce bias and enhance reproducibility of the review. Moreover, a scoping review offers a qualitative synthesis of the evidence based on the included sources along with an evidence based discussion of the findings.
 
-For more information on scoping reviews see the \href{https://jbi-global-wiki.refined.site/space/MANUAL/4687342/Chapter+11\%3A+Scoping+reviews}{Joanna Briggs Institute Guidelines} or \href{https://prisma-statement.org/Extensions/ScopingReviews}{PRISMA checklist} for conducting a scoping review.
+For more information on scoping reviews see the \href{https://jbi-global-wiki.refined.site/space/MANUAL/4687342/Chapter+11\%3A+Scoping+reviews}{Joanna Briggs Institute Guidelines} or \href{https://www.prisma-statement.org/scoping}{PRISMA-ScR guidance} for conducting a scoping review.
 
 \textbf{Systematic Reviews}
 
@@ -2276,25 +2215,22 @@ For more information on evidence synthesis, systematic reviews, and meta-analyse
 \item
   \href{https://jbi-global-wiki.refined.site/space/MANUAL/4688650/Chapter+1\%3A+JBI+Systematic+Reviews}{Joanna Briggs Institute Guidelines}
 \item
-  \href{https://prisma-statement.org/PRISMAStatement/Checklist.aspx}{PRISMA checklist}
+  \href{https://www.prisma-statement.org/prisma-2020-checklist}{PRISMA checklist}
 \item
   \href{https://environmentalevidence.org/information-for-authors/}{Collaboration for Environmental Evidence}
 \item
   O'Dea et al.~(2021). \emph{Preferred reporting items for systematic reviews and meta‐analyses in ecology and evolutionary biology: A PRISMA extension}. \emph{Biological Reviews of the Cambridge Philosophical Society}, \emph{96}(5), 1695-1722. \url{https://doi.org/10.1111/brv.12721}
 \end{itemize}
 
-\hypertarget{finding-evaluating-published-evidence}{%
-\chapter{Finding \& Evaluating Published Evidence}\label{finding-evaluating-published-evidence}}
+\chapter{Finding \& Evaluating Published Evidence}\label{finding-evaluating-published-evidence}
 
-\emph{Last updated 2023-02-10}
+\emph{Last updated 2026-09-02}
 
-\hypertarget{types-of-evidence}{%
-\section{Types of Evidence}\label{types-of-evidence}}
+\section{Types of Evidence}\label{types-of-evidence}
 
 Published works in journals are generally divided into three categories: original research, secondary research, and opinion or commentary.
 
-\hypertarget{original-research}{%
-\subsection{Original Research}\label{original-research}}
+\subsection{Original Research}\label{original-research}
 
 Original research -- also called primary research -- directly reports on the findings from a study. This work is generally considered to be novel, and even with peer review is subject to error that requires close scrutiny.
 
@@ -2316,8 +2252,7 @@ The quality of this evidence is governed by a number of factors, which include:
   Appropriate choice of statistical analysis
 \end{itemize}
 
-\hypertarget{secondary-research}{%
-\subsection{Secondary Research}\label{secondary-research}}
+\subsection{Secondary Research}\label{secondary-research}
 
 Secondary research -- also called synthesis research -- cumulatively reports on the findings of original research. This kind of reporting attempts to establish the extent of knowledge on a specific topic (systematic review), identify if sufficient evidence exists on a specific topic to suggest the evidence is conclusive (meta analysis), scope the degree or level of evidence available in a specific field of inquiry (scoping review), or offer high level commentray backed by some evidence on a specific topic (narrative review).
 
@@ -2337,23 +2272,19 @@ The quality of this evidence is governed by a number of factors, which include:
   Appropriate choice of statistical analysis (for meta analysis)
 \end{itemize}
 
-\hypertarget{opinion-commentary}{%
-\subsection{Opinion \& Commentary}\label{opinion-commentary}}
+\subsection{Opinion \& Commentary}\label{opinion-commentary}
 
 Commentaries offer `expert' opinion on topics, sometimes suggesting conclusions, sometime suggesting future directions. While an important part of science communication, these neither report comprehensively on a given study nor systematically evaluate existing published research. These should not be treatee as sources of evidence.
 
-\hypertarget{sources-of-evidence}{%
-\section{Sources of Evidence}\label{sources-of-evidence}}
+\section{Sources of Evidence}\label{sources-of-evidence}
 
 Biology is a big field, with diverse areas of research. The following databases are the primary databases available through UBC to support research in a breadth of topics in Biology.
 
-\hypertarget{general}{%
-\subsection{General}\label{general}}
+\subsection{General}\label{general}
 
-\hypertarget{web-of-science-core-collection}{%
-\subsubsection{Web of Science Core Collection}\label{web-of-science-core-collection}}
+\subsubsection{Web of Science Core Collection}\label{web-of-science-core-collection}
 
-\href{https://resources.library.ubc.ca/page.php?details=web-of-science-core-collection\&id=138}{Link}
+\href{https://resources.library.ubc.ca/page.php?details=web-of-science-core-collection&id=138}{Link}
 
 \textbf{Description}
 
@@ -2367,10 +2298,9 @@ Life sciences, biomedical sicences, engineering, social sciences, arts \& humani
 
 \emph{Coming}.
 
-\hypertarget{scopus}{%
-\subsubsection{Scopus}\label{scopus}}
+\subsubsection{Scopus}\label{scopus}
 
-\href{https://resources.library.ubc.ca/page.php?details=scopus\&id=2677}{Link}
+\href{https://resources.library.ubc.ca/page.php?details=scopus&id=2677}{Link}
 
 \textbf{Description}
 
@@ -2384,10 +2314,9 @@ Very broad. Similar to adding Web of Science and PubMed in one portal.
 
 \emph{Coming}.
 
-\hypertarget{cab-abstracts}{%
-\subsubsection{CAB Abstracts}\label{cab-abstracts}}
+\subsubsection{CAB Abstracts}\label{cab-abstracts}
 
-\href{https://resources.library.ubc.ca/page.php?details=cab-direct\&id=107}{Link}
+\href{https://resources.library.ubc.ca/page.php?details=cab-direct&id=107}{Link}
 
 \textbf{Description}
 
@@ -2401,13 +2330,11 @@ Community and Regional Planning, Fisheries, Forestry, Landscape Architecture, Ag
 
 \emph{Coming}.
 
-\hypertarget{health-biological-processes}{%
-\subsection{Health \& Biological Processes}\label{health-biological-processes}}
+\subsection{Health \& Biological Processes}\label{health-biological-processes}
 
-\hypertarget{pubmed}{%
-\subsubsection{PubMed}\label{pubmed}}
+\subsubsection{PubMed}\label{pubmed}
 
-\href{https://resources.library.ubc.ca/page.php?details=pubmed\&id=166}{Link}
+\href{https://resources.library.ubc.ca/page.php?details=pubmed&id=166}{Link}
 
 \textbf{Description}
 
@@ -2421,13 +2348,11 @@ All areas of health reasearch, including clinical research, nursing and allied h
 
 \emph{Coming}.
 
-\hypertarget{niche}{%
-\subsection{Niche}\label{niche}}
+\subsection{Niche}\label{niche}
 
-There are many niche databases available. These include sources for taxanomic research -- \href{https://resources.library.ubc.ca/page.php?details=zoological-record\&id=1121}{Zoological Record} -- agricultural research -- \href{https://resources.library.ubc.ca/page.php?details=pubag\&id=2250}{PubAg} -- aquatic research -- \href{https://resources.library.ubc.ca/page.php?id=108}{ASFA} -- chemical substances -- \href{https://resources.library.ubc.ca/page.php?id=293}{SciFinder} etc.
+There are many niche databases available. These include sources for taxanomic research -- \href{https://resources.library.ubc.ca/page.php?details=zoological-record&id=1121}{Zoological Record} -- agricultural research -- \href{https://resources.library.ubc.ca/page.php?details=pubag&id=2250}{PubAg} -- aquatic research -- \href{https://resources.library.ubc.ca/page.php?id=108}{ASFA} -- chemical substances -- \href{https://resources.library.ubc.ca/page.php?id=293}{SciFinder} etc.
 
-\hypertarget{google-scholar-and-ai-citation-searching}{%
-\section{Google Scholar and AI Citation Searching}\label{google-scholar-and-ai-citation-searching}}
+\section{Google Scholar and AI Citation Searching}\label{google-scholar-and-ai-citation-searching}
 
 The list of databases under \href{}{Sources of Evidence} are called abstract and indexing databases; they pull or are provided with content from journals and journal publishers; specifically, they are provided with a list of abstracts when a new issue is published. So, when you search, you're not generally searching an article's full text, just it's summary, which is often beneficial. They employ the equivalent to editorial boards to \textbf{review the quality of journals} before including them in their index. Their content is relatively \textbf{static}; run a search today and run the same search 6 months from now and the only difference will be content that has been added to the index since you last ran your search. The results returned to you are \textbf{not dependent on who you are}; while you can re-order a result set by relevance, citation count etc, the pool of results returned to you and your friend(s) will be identical. While they may index millions of articles, they rarely return millions of hits; they are built to \textbf{cater to specific disciplines} and as a result, the result sets are usually manageable. You also get access to the full set of results.
 
@@ -2435,8 +2360,7 @@ The list of databases under \href{}{Sources of Evidence} are called abstract and
 
 \textbf{AI informed citation searching} services are also pretty amazing. These discovery tools generally rely on network analyses, using things like citations, to draw connections between papers and other algorithms to topically cluster papers. The indexes that they have to draw on don't generally come from publishers directly or by crawling the web like Google Scholar does, but rather by leveraging the meta data available through the organizations that, for example, issue DOIs for journal articles.
 
-\hypertarget{when-to-use-which}{%
-\subsection{When to Use Which}\label{when-to-use-which}}
+\subsection{When to Use Which}\label{when-to-use-which}
 
 These three kinds of services suggest three different approaches to the discovery of published evidence. Which you use will be determined by what your're trying to acheive with a review of the published evidence.
 
@@ -2446,20 +2370,17 @@ The second -- using a service like Google Scholar -- are great when you are alre
 
 The third -- clustering and networking services -- are great compliments to the above two sources, especially for serindipedous discovery. No search will ever return all relevant results; citation tracking and thematic clustering of abstracts can be hugely beneficial to trying to understand the scope of published evidence available. For the purposes of evidence synthesis, these tools on their own are insufficient. For the purposed of large evidence synthesis and exploratory efforts, these tools are invaluable. Bias in these systems will largely result from the clustering algorithms used.
 
-\hypertarget{grey-literature}{%
-\section{Grey Literature}\label{grey-literature}}
+\section{Grey Literature}\label{grey-literature}
 
 Grey literature is a somewhat ambiguous topic. The simplest definition is anything that has not been formally published in an indexed publication - that is, anything that you wouldn't find by searching in a database subscribed to by your library. Grey literature tends to characterized by being difficult to find, hard to cite, and lacking the checks and balances of traditional publication, such as peer review and copy editing. Examples of grey literature include posters, conference abstracts, government reports, and blogs. This may also include pre-prints, especially if those pre-prints never materialize into a formal publication. Gery literature is not inherntly less valuable than formally published literature; however it may require more judicious evaluation before being trusted as quality evidence.
 
 Grey literature is generally found either through a search engine such as Google or DuckDuckGo, on conference websites, on the personal websites of academics, in pre-print repositories, or through government or NGO portals. For example, for Canadian government publications, there is the \href{https://science-libraries.canada.ca/eng/home/}{Federal Science Libraries Network}, a search portal for seven science-based departments and agencies of the Canadian government. And while many pre-print servers exist, a common portal and hosting service is \href{https://osf.io/preprints/}{OSF Preprints}.
 
-\hypertarget{searching-basics}{%
-\section{Searching Basics}\label{searching-basics}}
+\section{Searching Basics}\label{searching-basics}
 
 There are four key concepts that can help with effective searching: breaking up a search into its conceptual parts, using boolean logic to tie concepts together, using stemming and wildcards to account for variations in how terms are written or articulated, and ensuring that concepts that are comprised of more than one term are grouped together.
 
-\hypertarget{concepts}{%
-\subsection{Concepts}\label{concepts}}
+\subsection{Concepts}\label{concepts}
 
 Research questions are generally comprised of at least 3 concepts: the organism or population of interest, the intervention or thing being studied in relation to that organism or population, and the measure of interest or the outcome that we're interested in. This is often formalized as a PIO framework - Population, Intervention, Outcome. There are many variations on this, including a PEO -- Population, Exposure, Outcome -- PICO where the C covers a comparison -- PICOS, where the S is for Study type etc. These frameworks can be useful for articulating a research question in terms of it's conceptual components; pick the simplest one that resonates with you and your question.
 
@@ -2471,8 +2392,7 @@ Similarlily, we might ask if an increase in water salinity increases mortality i
 
 ``zebra fish'' AND salinity AND mortality
 
-\hypertarget{boolean-logic}{%
-\subsection{Boolean logic}\label{boolean-logic}}
+\subsection{Boolean logic}\label{boolean-logic}
 
 Boolean logical operators are comprised of AND OR and NOT. Generally when searching the literature, we don't use NOT, but there are circumstances where it may be warranted.
 
@@ -2486,8 +2406,7 @@ men AND smoking AND (cancer OR neoplasm)
 
 We always want to use a reasonable number of synonyms to ensure we are capturing different approaches to describing any given entity or phenomenon.
 
-\hypertarget{stemming-wildcards}{%
-\subsection{Stemming \& Wildcards}\label{stemming-wildcards}}
+\subsection{Stemming \& Wildcards}\label{stemming-wildcards}
 
 Words can have alternate spellings. There are two ways to work around this. We could use OR, for example
 
@@ -2511,12 +2430,9 @@ smok*
 
 which will look for the letters \emph{smok} and any combination of letters thereafter, capturing all the variations (and more potentially) of interest.
 
-:::note
-
 The stemming wildcard * is generally pretty universal across databases. However, neither stemming nor wildcards more generally operate in Google or Google Scholar in the same way as they do in the more structured databases listed in the \href{}{Sources of Evidence} section.
 
-\hypertarget{phrase-searching}{%
-\subsection{Phrase searching}\label{phrase-searching}}
+\subsection{Phrase searching}\label{phrase-searching}
 
 When a concept is comprised of more than one term, we need to explicity account for that, and we do that with the use of quotations. For example, a search for
 
@@ -2532,8 +2448,7 @@ which is significantly broader than a search for
 
 where, in the former, both terms need to be present, and in the latter they need to be not only present, but also directly adjacent to each other.
 
-\hypertarget{evaluating-the-literature}{%
-\section{Evaluating the Literature}\label{evaluating-the-literature}}
+\section{Evaluating the Literature}\label{evaluating-the-literature}
 
 Evaluating published evidence comes in three flavours. These cascade down from conventional markers of quality, to how a study is reported on, and finally to the actual study design.
 
@@ -2549,119 +2464,17 @@ The National Health and Medical Research Council of Australia, \href{https://www
 
 An evaluation of a variety of tools used in review protocols is available in Farrah, K., Young, K., Tunis, M.C. et al.~Risk of bias tools in systematic reviews of health interventions: an analysis of PROSPERO-registered protocols. Syst Rev 8, 280 (2019). \url{https://doi.org/10.1186/s13643-019-1172-8}.
 
-\hypertarget{apa-citations-1}{%
-\chapter{APA Citations}\label{apa-citations-1}}
+\chapter{Academic Integrity}\label{academic-integrity}
 
-\emph{Last updated 2023-02-10}
-
-This chapter is a brief overview of the 7th edition of APA. For a more in depth review, please consult \href{https://guides.library.ubc.ca/apacitationstyle}{the library's APA Citation Guide}. For the full APA manual, please consult the \href{http://resolve.library.ubc.ca/cgi-bin/catsearch?bid=10057275}{Publication Manual of the American Psychological Association}, available through the library.
-
-Additional resources you may wish to consult include:
-
-\begin{itemize}
-\tightlist
-\item
-  The \href{https://apastyle.apa.org/blog/}{APA Style Blog} - great for searching for examples not listed in the 7th edition
-\item
-  Purdue OWL's \href{https://owl.purdue.edu/owl/research_and_citation/apa_style/apa_formatting_and_style_guide/general_format.html}{website} for still more examples
-\end{itemize}
-
-\hypertarget{in-text-citations-1}{%
-\section{In-text Citations}\label{in-text-citations-1}}
-
-In-text citations always appear right after the content you are summarizing, paraphrasing, or quoting. The format is as follows:
-
-\textbf{Summarizing or Paraphrasing}
-
-\begin{itemize}
-\tightlist
-\item
-  (Author, YYYY)
-\end{itemize}
-
-\textbf{Quoting}
-
-\begin{itemize}
-\tightlist
-\item
-  (Author, YYYY, p.~\#) 1 page
-\item
-  (Author, YYYY, pp.~\#\#-\#\#) Multiple pages
-\end{itemize}
-
-\hypertarget{narrative-vs-parenthetical-1}{%
-\subsection*{Narrative vs Parenthetical}\label{narrative-vs-parenthetical-1}}
-\addcontentsline{toc}{subsection}{Narrative vs Parenthetical}
-
-If you mention the author or authors in text, you do not need to include this information in the brackets, "()". This is called a narrative citation.
-
-\textbf{Narrative in-text citation:} Raimi (2018) outlines the risks and benefits of fracking through economic analysis and energy security benefits.
-
-The alternative is called a parenthetical citation.
-
-\textbf{Parenthetical in-text citation:} Several benefits and risks can be identified in the implementation of fracking for oil extraction. Considerations include regulation, water pollution, tremors etc. (Raimi, 2018).
-
-\hypertarget{quick-format-guide-1}{%
-\subsection*{Quick Format Guide}\label{quick-format-guide-1}}
-\addcontentsline{toc}{subsection}{Quick Format Guide}
-
-\begin{longtable}[]{@{}lll@{}}
-\toprule()
-\# of Authors & Narrative Example & Parenthetical Example \\
-\midrule()
-\endhead
-1 & Bradley (2017) & (Bradley, 2017) \\
-2 & Janmaat and Rahimova (2018) & (Janmaat \& Rahimova, 2018) \\
-3 or more & Mei et al.~(2018) & (Mei et al., 2018) \\
-\bottomrule()
-\end{longtable}
-
-\hypertarget{reference-list-1}{%
-\section{Reference List}\label{reference-list-1}}
-
-\textbf{NOTE}
-
-\begin{itemize}
-\tightlist
-\item
-  Every source used in your in-text citations needs to be listed as part of your reference list, in alphabetical order by author(s)' last names.
-\item
-  The word \textbf{References} should appear at the top of your reference list, and it should be centred and bolded on the page
-\item
-  Titles should be written in sentence case, that is, capitalize the first word and only subsequent proper nouns. If the title is broken up by a colon (:), capitalize the first word after the colon.
-\item
-  List all authors in the order that they appear in the source.
-\end{itemize}
-
-\hypertarget{journal-article-with-a-doi-1-2-authors-1}{%
-\subsection*{Journal article with a DOI (1-2 authors)}\label{journal-article-with-a-doi-1-2-authors-1}}
-\addcontentsline{toc}{subsection}{Journal article with a DOI (1-2 authors)}
-
-List all authors in the reference list and in-text citations.
-
-Janmaat, J., \& Rahimova, N. (2018). Managing drought risk in the Okanagan: A roll for dry-year option contracts? \emph{Canadian Public Policy}, \emph{44}(2), 112-125. \url{https://doi.org/10.3138/cpp.2017-003}
-
-\hypertarget{journal-article-with-a-doi-3-20-authors-1}{%
-\subsection*{Journal article with a DOI (3-20 authors)}\label{journal-article-with-a-doi-3-20-authors-1}}
-\addcontentsline{toc}{subsection}{Journal article with a DOI (3-20 authors)}
-
-List all authors in the reference list and only the first author in the in-text citations.
-
-Mei, Y., Yu, K., Lo, J. C. Y., Takeuchi, L. E., Hadjesfandiari, N., Yazdani-Ahmadabadi, H., Brooks, D. E., Lange, D., \& Kizhakkedathu, J. N. (2018). Polymer-nanoparticle interaction as a design principle in the development of a durable ultrathin universal binary antibiofilm coating with long-term activity. \emph{ACS Nano}, \emph{12}(12), 11881-11891. \url{https://doi.org/10.1021/acsnano.8b05512}
-
-\hypertarget{academic-integrity}{%
-\chapter{Academic Integrity}\label{academic-integrity}}
-
-\emph{Last updated 2023-02-10}
+\emph{Last updated 2026-09-02}
 
 Academic integrity is the act of performing honest, responsible scholarship, much like scientific integrity is honest, responsible science. Academic integrity is very much about how we conduct ourselves in the pursuit of our studies, respecting those we learn from and work with and the contributions they make to our scholarly and scientific endeavours.
 
 Learn more about academic integrity from the \href{https://students.ok.ubc.ca/academic-success/learning-hub/online-resources/academic-integrity/}{UBCO "Academic Integrity Resources for Students"}.
 
-\hypertarget{reference-management-zotero}{%
-\chapter{Reference Management: Zotero}\label{reference-management-zotero}}
+\chapter{Reference Management: Zotero}\label{reference-management-zotero}
 
-\emph{Last updated 2023-02-10}
+\emph{Last updated 2026-09-02}
 
 Imperative to managing our education and research is managing our readings and references. We can do this manually or we can take advantage of a tool - citation management software - specifically designed to keep your references organized, shareable, and easily citable.
 
@@ -2686,8 +2499,7 @@ Zotero is comprised of 4 components
   A \textbf{word processor plugin} that facilitates creating citations and reference lists while writing.
 \end{enumerate}
 
-\hypertarget{installation-first-launch}{%
-\section{Installation \& first launch}\label{installation-first-launch}}
+\section{Installation \& first launch}\label{installation-first-launch}
 
 First, get your environment set up. \textbf{Quite your word processor} and \textbf{make sure that you are in a position to quite your web browser}.
 
@@ -2695,22 +2507,20 @@ Now, the \textbf{desktop application and word processor plugin}.
 
 Head to \url{https://www.zotero.org/download/}, download Zotero and Run the installer.
 
-\includegraphics{images/Z_DownloadZotero.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/Z_DownloadZotero.png}}
 
-\hypertarget{first-launch}{%
-\subsection*{First launch}\label{first-launch}}
+\subsection*{First launch}\label{first-launch}
 \addcontentsline{toc}{subsection}{First launch}
 
 Once installation is complete, if you launch the program, you should be greeted with the following:
 
-\includegraphics{images/Z_FirstLaunch.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/Z_FirstLaunch.png}}
 
 That\textquotesingle s step one and four covered, as the word processor plugin is installed automatically.
 
 The plugin works with Microsoft Office, LibreOffice, and Google Docs. More on this later.
 
-\hypertarget{browser-plugin}{%
-\section{Browser plugin}\label{browser-plugin}}
+\section{Browser plugin}\label{browser-plugin}
 
 At this stage, Zotero will have launched a new window in your web browser, and you should see the opportunity to install the web browser plugin.
 
@@ -2718,35 +2528,32 @@ If this doesn\textquotesingle t happen, simply return to \url{https://www.zotero
 
 Zotero will automatically detect your browser. We recommend using either Chrome or Firefox; the plugin for Safari is currently in beta development and a bit more complicated to get configured.
 
-\includegraphics{images/Z_BrowserPluginZotero.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/Z_BrowserPluginZotero.png}}
 
 Now, to make sure everything is lined up, quite and then relaunch your web browser. You should then see a small icon in the upper right hand corner. If you\textquotesingle re in Chrome, you\textquotesingle ll have a puzzle piece in this same spot, click that and you\textquotesingle ll see you\textquotesingle re extensions, including the Zotero extension.
 
-\includegraphics{images/Z_PluginSuccess.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/Z_PluginSuccess.png}}
 
-\hypertarget{accounts-sync-setup}{%
-\section{Accounts \& sync setup}\label{accounts-sync-setup}}
+\section{Accounts \& sync setup}\label{accounts-sync-setup}
 
 An account is required for cloud syncing and sharing folders.
 
 Fill in the necessary credentials here \url{https://www.zotero.org/user/register/} and we're almost done.
 
-\hypertarget{connecting-zotero-desktop-with-the-cloud}{%
-\subsection*{Connecting Zotero Desktop with the Cloud}\label{connecting-zotero-desktop-with-the-cloud}}
+\subsection*{Connecting Zotero Desktop with the Cloud}\label{connecting-zotero-desktop-with-the-cloud}
 \addcontentsline{toc}{subsection}{Connecting Zotero Desktop with the Cloud}
 
 Now that you\textquotesingle ve created an account, let\textquotesingle s get your Desktop application connected with you account.
 
 In Zotero, go to \texttt{Edit\ \textgreater{}\ Preferences} and in the preferences tab go to \texttt{Sync}, fill in your credentials and click \texttt{Set\ Up\ Syncing}.
 
-\includegraphics{images/Z_Sync.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/Z_Sync.png}}
 
-\hypertarget{adding-citations}{%
-\section{Adding citations}\label{adding-citations}}
+\section{Adding citations}\label{adding-citations}
 
 First things first - because we want to be organized - in Zotero, create a folder for your project by right clicking on \texttt{My\ Library\ \textgreater{}\ New\ Collections...} and give it a name, like \texttt{BIOL\ Research} because that\textquotesingle s informative.
 
-\includegraphics{images/Z_BIOLResearch.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/Z_BIOLResearch.png}}
 
 Say we\textquotesingle re searching Web of Science Core Collection, we find an article we\textquotesingle re interested in and we follow the link to read the article. And let\textquotesingle s say that takes us here (que to follow the link): \url{https://www.sciencedirect.com/science/article/pii/S0929139312000224}
 
@@ -2754,10 +2561,9 @@ We\textquotesingle ll see that when we\textquotesingle re looking at an article,
 
 Click on it, and Zotero will harvest both the requisite metadata and the pdf for you.
 
-\includegraphics{images/Z_FirstImport.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/Z_FirstImport.png}}
 
-\hypertarget{renaming-pdfs}{%
-\section{Renaming PDFs}\label{renaming-pdfs}}
+\section{Renaming PDFs}\label{renaming-pdfs}
 
 Head back into Zotero and you\textquotesingle ll see your reference.
 
@@ -2765,40 +2571,35 @@ Select the arrow adjacent to the title and you\textquotesingle ll see your PDF.
 
 Right click the PDF and select \texttt{Rename\ File\ from\ Parent\ Metadata}. There! You\textquotesingle ve got a nicely titled article. Double click the PDF and it opens in your default PDF reader.
 
-\includegraphics{images/Z_PDFRename.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/Z_PDFRename.png}}
 
-\hypertarget{syncing-to-the-cloud}{%
-\section{Syncing to the cloud}\label{syncing-to-the-cloud}}
+\section{Syncing to the cloud}\label{syncing-to-the-cloud}
 
 Click the sync button and send your citation and PDF to the cloud.
 
 Sync happens automatically on every launch. And notes or highlights that you make on your PDF will also be synced and updated.
 
-\includegraphics{images/Z_PDFSync.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/Z_PDFSync.png}}
 
-\hypertarget{zotero-cloud}{%
-\subsection*{Zotero Cloud}\label{zotero-cloud}}
+\subsection*{Zotero Cloud}\label{zotero-cloud}
 \addcontentsline{toc}{subsection}{Zotero Cloud}
 
 Head online and log in to your online account at \url{https://www.zotero.org/user/login/}
 
 You\textquotesingle ll see your recently synced citation and associated attachments.
 
-\hypertarget{copyright-1}{%
-\chapter{Copyright}\label{copyright-1}}
+\chapter{Copyright}\label{copyright-1}
 
-\emph{Last updated 2023-02-10}
+\emph{Last updated 2026-09-02}
 
 Copyright is the legal ownership of a work, like a book, image, graph, journal article. Copyright law governs how and when we are allowed to redistribute what someone else has produced and how others can redistribute what we've produced.
 
 Learn more about copyright at UBC from the \href{https://copyright.ubc.ca/}{UBC Learning Commons}.
 
-\hypertarget{part-r}{%
-\part*{R}\label{part-r}}
+\part*{R}\label{part-r}
 \addcontentsline{toc}{part}{R}
 
-\hypertarget{ggplot}{%
-\chapter{ggplot}\label{ggplot}}
+\chapter{ggplot}\label{ggplot}
 
 ggplot is based on a grammar graphics - a way of approaching describing the construction of a graphic from common building blocks. Building a graphic with ggplot then follows some common patterns of construction.
 
@@ -2821,8 +2622,7 @@ Step by step this looks like
 
 This is a brief introduction. For more in depth examples and solutions, check out \href{https://ggplot2-book.org/index.html}{ggplot2: Elegant Graphics for Data Analysis} by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen.
 
-\hypertarget{the-basic-graph}{%
-\section{The Basic Graph}\label{the-basic-graph}}
+\section{The Basic Graph}\label{the-basic-graph}
 
 The following assumes you're using R and RMarkdown.
 
@@ -2844,6 +2644,17 @@ Load them
 \end{Highlighting}
 \end{Shaded}
 
+\begin{verbatim}
+## 
+## Attaching package: 'palmerpenguins'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:datasets':
+## 
+##     penguins, penguins_raw
+\end{verbatim}
+
 First, make sure we know a bit about our data set
 
 \begin{Shaded}
@@ -2854,15 +2665,15 @@ First, make sure we know a bit about our data set
 
 \begin{verbatim}
 ## # A tibble: 6 x 8
-##   species island    bill_length_mm bill_depth_mm flipper_l~1 body_~2 sex    year
-##   <fct>   <fct>              <dbl>         <dbl>       <int>   <int> <fct> <int>
-## 1 Adelie  Torgersen           39.1          18.7         181    3750 male   2007
-## 2 Adelie  Torgersen           39.5          17.4         186    3800 fema~  2007
-## 3 Adelie  Torgersen           40.3          18           195    3250 fema~  2007
-## 4 Adelie  Torgersen           NA            NA            NA      NA <NA>   2007
-## 5 Adelie  Torgersen           36.7          19.3         193    3450 fema~  2007
-## 6 Adelie  Torgersen           39.3          20.6         190    3650 male   2007
-## # ... with abbreviated variable names 1: flipper_length_mm, 2: body_mass_g
+##   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##   <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
+## 1 Adelie  Torgersen           39.1          18.7               181        3750
+## 2 Adelie  Torgersen           39.5          17.4               186        3800
+## 3 Adelie  Torgersen           40.3          18                 195        3250
+## 4 Adelie  Torgersen           NA            NA                  NA          NA
+## 5 Adelie  Torgersen           36.7          19.3               193        3450
+## 6 Adelie  Torgersen           39.3          20.6               190        3650
+## # i 2 more variables: sex <fct>, year <int>
 \end{verbatim}
 
 Next, we call ggplot, define our data set, and then the variables to plot on the x and y axes:
@@ -2873,7 +2684,7 @@ Next, we call ggplot, define our data set, and then the variables to plot on the
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-4-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-4-1.pdf}}
 
 This sets us up with a blank grid with x and y axis ticks corresponding to your variable values and x and y axis labels corresponding to your variables.
 
@@ -2887,10 +2698,11 @@ Now we call a plot type to represent our data, in this case, a box plot
 \end{Shaded}
 
 \begin{verbatim}
-## Warning: Removed 2 rows containing non-finite values (`stat_boxplot()`).
+## Warning: Removed 2 rows containing non-finite outside the scale range
+## (`stat_boxplot()`).
 \end{verbatim}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-5-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-5-1.pdf}}
 
 We have some \texttt{NA} values in our data set. We won't worry about cleaning those up here. But we will suppress the error message with a code chunk option.
 
@@ -2903,12 +2715,11 @@ We have some \texttt{NA} values in our data set. We won't worry about cleaning t
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-6-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-6-1.pdf}}
 
 Chunk options are independent of ggplot itself and impact the knitting process of your RMarkdown document. For a more detailed overview of the code chunks options available to you, check out Xie Yihuis \href{https://yihui.org/knitr/options/}{page on Knitr chunk options}.
 
-\hypertarget{labeling-and-captions}{%
-\section{Labeling and captions}\label{labeling-and-captions}}
+\section{Labeling and captions}\label{labeling-and-captions}
 
 Labels default to our variable names, which may not be what we want on our graph. We can override this with \texttt{labs()}.
 
@@ -2923,7 +2734,7 @@ Labels default to our variable names, which may not be what we want on our graph
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-7-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-7-1.pdf}}
 
 Captions are also important. There are two ways that we can add this information. The first uses \texttt{labs()}:
 
@@ -2939,7 +2750,7 @@ Captions are also important. There are two ways that we can add this information
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-8-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-8-1.pdf}}
 
 The second is better if we're using RMarkdown. Note also that we can include markdown syntax, italicizing the \emph{n}.
 
@@ -2958,7 +2769,7 @@ The second is better if we're using RMarkdown. Note also that we can include mar
 
 \begin{figure}
 \centering
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-9-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:unnamed-chunk-9}Palmer Penguins. Body mass grouped by sex. n = 344.}]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-9-1.pdf}}
 \caption{\label{fig:unnamed-chunk-9}Palmer Penguins. Body mass grouped by sex. \emph{n} = 344.}
 \end{figure}
 
@@ -2973,8 +2784,7 @@ If you're knitting your report to html instead of pdf and you want to take advan
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{size-shape-colour}{%
-\section{Size, shape \& colour}\label{size-shape-colour}}
+\section{Size, shape \& colour}\label{size-shape-colour}
 
 Aesthetics such as size, shape, colour, and opacity are powerful ways of visually highlighting aspects of our data. These aesthetics can be mapped to individual variables, which is a great way to increase the number of dimensions--variables--we can plot. They can also be mapped to all data points. When used to map to a variable, we include this within the \texttt{aes()} argument. When used to map to all data points associated with a particular geom, we include this within the geom\_\emph{plotType}() argument.
 
@@ -3005,7 +2815,7 @@ Plotting bill length against bill depth:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-10-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-10-1.pdf}}
 
 Adjusting the aesthetics of all data points
 
@@ -3016,7 +2826,7 @@ Adjusting the aesthetics of all data points
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-11-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-11-1.pdf}}
 
 Increasing the number of variables we're plotting:
 
@@ -3027,7 +2837,7 @@ Increasing the number of variables we're plotting:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-12-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-12-1.pdf}}
 
 Adding more dimensions does not always increase the clarity of your graph, as the above example demonstrates!
 
@@ -3046,10 +2856,9 @@ And with some proper labeling:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-13-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-13-1.pdf}}
 
-\hypertarget{more-than-one-geom}{%
-\section{More than one geom}\label{more-than-one-geom}}
+\section{More than one geom}\label{more-than-one-geom}
 
 It can be handy occasionally to have more than one geom per plot, like including both lines and dots. To do this, we feed our data set and aesthetic mappings into \texttt{ggplot()}, and then call multiple geoms. Using the box plot example from earlier and adding individual data points:
 
@@ -3065,7 +2874,7 @@ It can be handy occasionally to have more than one geom per plot, like including
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-14-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-14-1.pdf}}
 
 When there are a lot of data points, using `jitter' to create lateral space between points can be useful.
 
@@ -3081,12 +2890,11 @@ When there are a lot of data points, using `jitter' to create lateral space betw
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-15-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-15-1.pdf}}
 
 If you start typing \texttt{geom\_} you'll see a full list of available plots to you with ggplot. If you'd like more in depth coverage of geoms built into ggplot, see the \href{https://ggplot2.tidyverse.org/reference/index.html\#geoms}{reference page section on geoms}.
 
-\hypertarget{more-than-one-plot}{%
-\section{More than one plot}\label{more-than-one-plot}}
+\section{More than one plot}\label{more-than-one-plot}
 
 There are several ways to place more than one plot side by side. One of the easiest is to use patchwork.
 
@@ -3126,7 +2934,7 @@ Then patchwork will arrange them
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-19-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-19-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3134,12 +2942,11 @@ Then patchwork will arrange them
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-20-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-20-1.pdf}}
 
 There are many ways in which patchwork can arrange plots. See the chapter \href{https://ggplot2-book.org/arranging-plots.html}{Arranging Plots} in \emph{ggplot2: Elegant Graphics for Data Analysis} for more complex examples.
 
-\hypertarget{faceting-a-plot}{%
-\section{Faceting a Plot}\label{faceting-a-plot}}
+\section{Faceting a Plot}\label{faceting-a-plot}
 
 We can also facet a plot with a call to \texttt{facet\_grid()}.
 
@@ -3150,7 +2957,7 @@ We can also facet a plot with a call to \texttt{facet\_grid()}.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-21-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-21-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3159,7 +2966,7 @@ We can also facet a plot with a call to \texttt{facet\_grid()}.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-22-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-22-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3168,7 +2975,7 @@ We can also facet a plot with a call to \texttt{facet\_grid()}.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-23-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-23-1.pdf}}
 
 A slightly different notation is also valid to express the above graph
 
@@ -3179,17 +2986,15 @@ A slightly different notation is also valid to express the above graph
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-24-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-24-1.pdf}}
 
 See additional facet options on the \href{https://ggplot2.tidyverse.org/reference/facet_grid.html}{ggplot facet\_grid() reference page}.
 
-\hypertarget{cusomizing-look-and-feel}{%
-\section{Cusomizing Look and Feel}\label{cusomizing-look-and-feel}}
+\section{Cusomizing Look and Feel}\label{cusomizing-look-and-feel}
 
 Many visual aspects of your graph can be customized. Most of these are controlled within themes.
 
-\hypertarget{themes}{%
-\subsection*{Themes}\label{themes}}
+\subsection*{Themes}\label{themes}
 \addcontentsline{toc}{subsection}{Themes}
 
 There are many built in themes, for example, minimal. If you start to type \texttt{theme\_} RStudio will prompt you with a list of built in themes to choose from.
@@ -3201,7 +3006,7 @@ There are many built in themes, for example, minimal. If you start to type \text
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-25-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-25-1.pdf}}
 
 Within a theme, we can start to customize other elements. Things that we can customize included axes elements, legend elements, panel elements, and plot elements. For example, we can build on the theme minimal and remove the panel grids above, we do this with a separate, additional call to theme():
 
@@ -3215,12 +3020,11 @@ Within a theme, we can start to customize other elements. Things that we can cus
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-26-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-26-1.pdf}}
 
 A full list of theme options are available on the \href{https://ggplot2.tidyverse.org/reference/theme.html}{ggplot theme reference page}.
 
-\hypertarget{colours}{%
-\subsection*{Colours}\label{colours}}
+\subsection*{Colours}\label{colours}
 \addcontentsline{toc}{subsection}{Colours}
 
 There are several ways of customizing the colours used in our plots, including using a custom colour palette.
@@ -3231,15 +3035,15 @@ Examples of each of these include:
 
 Sequential - for ordered data
 
-\includegraphics{images/sequential.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/sequential.png}}
 
 Diverging - for data with a central location from which other values diverge
 
-\includegraphics{images/diverging.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/diverging.png}}
 
 Qualitative- for categorical data with not natural order
 
-\includegraphics{images/qualitative.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/qualitative.png}}
 
 Instead of having to generate your own custom colour palettes, a good alternative are the palettes produced by \href{https://colorbrewer2.org/}{ColourBrewer} that already have due consideration to things like contrast, colour blind audiences, benig print friendly etc.
 
@@ -3247,7 +3051,7 @@ Install
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{install.packages}\NormalTok{(}\StringTok{"RColourBrewer"}\NormalTok{)}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"RColorBrewer"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3267,7 +3071,7 @@ View the palettes available to us, noting it's grouped by sequential, qualitativ
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-29-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-29-1.pdf}}
 
 Use a palette, by making an additional call to either \texttt{scale\_color\_brewer()} or \texttt{scale\_fill\_brewer()} depending on you graph.
 
@@ -3282,7 +3086,7 @@ Use a palette, by making an additional call to either \texttt{scale\_color\_brew
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-30-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-30-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3295,16 +3099,14 @@ Use a palette, by making an additional call to either \texttt{scale\_color\_brew
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-31-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{Procedures-and-Guidelines_files/figure-latex/unnamed-chunk-31-1.pdf}}
 
-\hypertarget{part-glossary}{%
-\part*{Glossary}\label{part-glossary}}
+\part*{Glossary}\label{part-glossary}
 \addcontentsline{toc}{part}{Glossary}
 
-\hypertarget{glossary}{%
-\chapter{Glossary}\label{glossary}}
+\chapter{Glossary}\label{glossary}
 
-\emph{Last updated 2023-02-10}
+\emph{Last updated 2026-09-02}
 
 \textbf{A priori hypothesis:} Hypothesis that is generated before the research study takes place. Presenting the hypothesis before the study takes place helps in avoiding replacing the hypothesis later with one that fits the data better aka hypothesizing after the fact (HARKing).
 
@@ -3368,7 +3170,7 @@ Use a palette, by making an additional call to either \texttt{scale\_color\_brew
 
 \textbf{HARKing:} A form of questionable research practices where the researcher changes their hypothesis after the study is conducted so that the hypothesis better fits the data. In other words, the researcher suggests that this after the fact hypothesis was formed a priori. This has a number of implications including harming the progress of science by preventing the research community from identifying already falsified hypotheses, contributes to the replication crisis, and it increases the probability that the findings are not reproducible or generalizable in the population of interest.
 
-\textbf{Hypothesis:} A proposed explanation for an observed phenomenon. Often structured in an ``If\ldots{} then\ldots{} because\ldots{}'' format. Hypotheses must be present a priori, be falsifiable, and measurable.
+\textbf{Hypothesis:} A proposed explanation for an observed phenomenon. Often structured in an ``If\ldots{} then\ldots{} because\ldots'' format. Hypotheses must be present a priori, be falsifiable, and measurable.
 
 \textbf{Hypothesis testing:} Typically involves setting a null and alternative hypothesis and performing an appropriate statistical analysis to test those hypotheses. Often used in confirmatory research.
 
@@ -3436,7 +3238,7 @@ Use a palette, by making an additional call to either \texttt{scale\_color\_brew
 
 \textbf{Raw data:} Data that has been collected but not yet processed in any way.
 
-\textbf{Relative path:} In contrast to an absolute path, a relative path is a URL that only contains a portion of the path. It is relative to the root of the document and thus should start the path with the directory name that contains the document. For example, if you are writing a Markdown document and would like to include an image of a mealworm, place the mealworm image into the same directory (folder) as the Markdown document and the relative path may look like /BIOL116/project/mealworm.png. Whereas the absolute path might look like C:://Documents/BIOL116/project/mealworm.png.
+\textbf{Relative path:} In contrast to an absolute path, a relative path is a URL that only contains a portion of the path. It is relative to the working directory that contains the document, and so should not start with a slash. For example, if you are writing a Markdown document and would like to include an image of a mealworm, place the mealworm image into the same directory (folder) as the Markdown document and the relative path may look like images/mealworm.png. Whereas the absolute path might look like C:/Documents/BIOL116/project/images/mealworm.png.
 
 \textbf{Random assignment:} Assigning participants of a research study to each condition using a method of randomization. This ensures that each participant has an equal chance of being placed in each condition and helps to minimize bias.
 
@@ -3480,12 +3282,10 @@ Use a palette, by making an additional call to either \texttt{scale\_color\_brew
 
 \textbf{Wide format data:} A method for organizing data where each row represents an individual subject and each column represents an observation for that subject.
 
-\hypertarget{part-appendix}{%
-\part*{Appendix}\label{part-appendix}}
+\part*{Appendix}\label{part-appendix}
 \addcontentsline{toc}{part}{Appendix}
 
-\hypertarget{a1-magnification-of-a-drawing}{%
-\chapter*{A1: Magnification of A Drawing}\label{a1-magnification-of-a-drawing}}
+\chapter*{A1: Magnification of A Drawing}\label{a1-magnification-of-a-drawing}
 \addcontentsline{toc}{chapter}{A1: Magnification of A Drawing}
 
 To determine the scale of a sketch or drawing, we must know the size of the object we\textquotesingle re drawing and the size of the image we\textquotesingle re representing this object with. Mathematically, this is expressed as
@@ -3504,21 +3304,18 @@ where
   \(o\) = size of object
 \end{itemize}
 
-\hypertarget{object-size}{%
-\section{Object Size}\label{object-size}}
+\section{Object Size}\label{object-size}
 
 Two different methods are described here to calculate an object\textquotesingle s size under the microscope. The first uses estimation whereas the second, more precise measure, involves calibration of an ocular micrometer. It is very likely that you frequently won\textquotesingle t have access to an ocular micrometer, in which case the estimation method should suffice.
 
-\hypertarget{method-1-estimation}{%
-\section{Method 1: Estimation}\label{method-1-estimation}}
+\section{Method 1: Estimation}\label{method-1-estimation}
 
-\hypertarget{field-of-view-diameter}{%
-\subsection*{Field of View Diameter}\label{field-of-view-diameter}}
+\subsection*{Field of View Diameter}\label{field-of-view-diameter}
 \addcontentsline{toc}{subsection}{Field of View Diameter}
 
 First, determine the field of view diameter of your microscope for each objective setting.
 
-These values might be provided to you in your lab manual. If so, proceed to the next section, \protect\hyperlink{estimating-object-size}{estimating object size}.
+These values might be provided to you in your lab manual. If so, proceed to the next section, \hyperref[estimating-object-size]{estimating object size}.
 
 To calculate field of view diameter, we first need to know the field number (FN). When you look at your microscope eyepiece, the FN is displayed after the ocular lens magnification. For example, you might see 10x/16. In this case, 10x is the ocular lens magnification and 16 mm is the FN.
 
@@ -3544,12 +3341,13 @@ Assuming the FN on our microscope is 16 mm, let's calculate the field of view di
 
 Repeat this process for the remainder of the objectives on your microscope. Your final result should look something like this:
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2381}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2738}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2262}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2619}}@{}}
-\toprule()
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2381}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2738}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2262}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2619}}@{}}
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Ocular-magnification
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -3559,17 +3357,18 @@ Total-magnification
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Field-of-view-diameter
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 10x & 4x & 40x & 4 mm \\
 10x & 10x & 100x & 1.6 mm \\
 10x & 40x & 400x & 0.4 mm \\
 10x & 100x & 1000x & 0.16 mm \\
-\bottomrule()
 \end{longtable}
+}
 
-\hypertarget{estimating-object-size}{%
-\subsection*{Estimating Object Size}\label{estimating-object-size}}
+\subsection*{Estimating Object Size}\label{estimating-object-size}
 \addcontentsline{toc}{subsection}{Estimating Object Size}
 
 Next, estimate the size of the object you are looking at.
@@ -3595,18 +3394,17 @@ For example, suppose you are looking at a protozoan that extends 3/4 of the way 
 
 \begin{figure}
 \centering
-\includegraphics{images/DM_estimating-object-size.png}
+\pandocbounded{\includegraphics[keepaspectratio,alt={Caption Estimating object size. Image produced by Clerissa Copeland licensed under CC BY-NC-SA 4.0}]{images/DM_estimating-object-size.png}}
 \caption{\emph{Caption} Estimating object size.Image produced by Clerissa Copeland licensed under \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA 4.0}}
 \end{figure}
 
-\hypertarget{method-2-ocular-micrometer}{%
-\section{Method 2: Ocular Micrometer}\label{method-2-ocular-micrometer}}
+\section{Method 2: Ocular Micrometer}\label{method-2-ocular-micrometer}
 
 The ocular micrometer is inserted into one of the eyepieces of the microscope and looks like a ruler.
 
 \begin{figure}
 \centering
-\includegraphics{images/DM_ocular-micrometer.png}
+\pandocbounded{\includegraphics[keepaspectratio,alt={Caption The Ocular Micrometer. Image produced by Mathew Vis-Dunbar licensed under CC BY-NC-SA 4.0}]{images/DM_ocular-micrometer.png}}
 \caption{\emph{Caption} The Ocular Micrometer.Image produced by Mathew Vis-Dunbar licensed under \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA 4.0}}
 \end{figure}
 
@@ -3614,8 +3412,7 @@ The distance between the markings on the micrometer are used to measure objects 
 
 In order to determine the size represented by the increments at different magnifications, the ocular micrometer must be calibrated against a stage micrometer (a special slide containing a scale marked off in 10\(\mu\)m increments).
 
-\hypertarget{calibrating-the-ocular-micrometer}{%
-\subsection*{Calibrating the Ocular Micrometer}\label{calibrating-the-ocular-micrometer}}
+\subsection*{Calibrating the Ocular Micrometer}\label{calibrating-the-ocular-micrometer}
 \addcontentsline{toc}{subsection}{Calibrating the Ocular Micrometer}
 
 To calibrate the ocular micrometer, follow these steps:
@@ -3635,7 +3432,7 @@ To calibrate the ocular micrometer, follow these steps:
 
 \begin{figure}
 \centering
-\includegraphics{images/DM_ocular-micrometer-calibration.png}
+\pandocbounded{\includegraphics[keepaspectratio,alt={Caption Calibration of the ocular micrometer. Note that this diagram is only an example and will not necessarily reflect the alignment you will see under your own microscope. Image produced by Mathew Vis-Dunbar licensed under {[}CC BY-NC-SA 4.0{]}}]{images/DM_ocular-micrometer-calibration.png}}
 \caption{\emph{Caption} Calibration of the ocular micrometer. Note that this diagram is only an example and will not necessarily reflect the alignment you will see under your own microscope.Image produced by Mathew Vis-Dunbar licensed under {[}CC BY-NC-SA 4.0{]}}
 \end{figure}
 
@@ -3677,8 +3474,7 @@ Example: Using a particular objective lens, you find that there are 5 ocular uni
 
 Make sure to measure more than one specimen and report the range of sizes for each dimension to account for the natural variation that occurs in the population. For example, a bacillus-shaped bacterium that ranges between 1 to 5 \(\mu m\) in width and 4 to 10 \(\mu m\) in length would be expressed as 1-5\(\mu m\) x 4-10 \(\mu m\).
 
-\hypertarget{drawing-size}{%
-\section{Drawing Size}\label{drawing-size}}
+\section{Drawing Size}\label{drawing-size}
 
 Next, you must measure your drawing.
 
@@ -3686,12 +3482,11 @@ Now that you have estimated the size of the object, you must measure your drawin
 
 \begin{figure}
 \centering
-\includegraphics{images/DM_measuring-drawing-size.png}
+\pandocbounded{\includegraphics[keepaspectratio,alt={Caption Measuring drawing size. Image produced by Clerissa Copeland licensed under CC BY-NC-SA 4.0}]{images/DM_measuring-drawing-size.png}}
 \caption{\emph{Caption} Measuring drawing size.Image produced by Clerissa Copeland licensed under \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA 4.0}}
 \end{figure}
 
-\hypertarget{calculating-scale}{%
-\section{Calculating Scale}\label{calculating-scale}}
+\section{Calculating Scale}\label{calculating-scale}
 
 Lastly, you can determine the drawing magnification using the following formula:
 
@@ -3725,7 +3520,7 @@ Here is the final image.
 
 \begin{figure}
 \centering
-\includegraphics{images/DM_final-image.png}
+\pandocbounded{\includegraphics[keepaspectratio,alt={Whole (wet) mount of Vorticella campanula viewed at 400x total magnification using a brightfield compound microscope. Macronucleus not seen. Image produced by Clerissa Copeland licensed under CC BY-NC-SA 4.0}]{images/DM_final-image.png}}
 \caption{Whole (wet) mount of \emph{Vorticella campanula} viewed at 400x total magnification using a brightfield compound microscope. Macronucleus not seen.Image produced by Clerissa Copeland licensed under \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA 4.0}}
 \end{figure}
 

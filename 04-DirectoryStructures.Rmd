@@ -32,7 +32,7 @@ Here, our root folder is called <code>Project-Folder</code> and it contains thre
 
 ## Directory Naming
 
-Key file naming conventions, such as avoiding special characters, are equally as important for directories as they are for naming files. Remember, we consider special characters to be anything other than letters in the English alphabet, numbers from 1-9, dashes \"-\", and underscores \"\_\".
+Key file naming conventions, such as avoiding special characters, are equally as important for directories as they are for naming files. Remember, we consider special characters to be anything other than letters in the English alphabet, numbers from 0-9, dashes \"-\", and underscores \"\_\".
 
 In case there is any doubt, here are some examples of what are considered special characters - characters you want to avoid!
 
