@@ -197,6 +197,8 @@ which will look for the letters *smok* and any combination of letters thereafter
 
 The stemming wildcard * is generally pretty universal across databases. However, neither stemming nor wildcards more generally operate in Google or Google Scholar in the same way as they do in the more structured databases listed in the [Sources of Evidence]() section.
 
+:::
+
 ### Phrase searching
 
 When a concept is comprised of more than one term, we need to explicity account for that, and we do that with the use of quotations. For example, a search for
